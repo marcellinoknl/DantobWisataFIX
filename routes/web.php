@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\homepageController;
+use App\Http\Controllers\objekWisataController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Home Page
-Route::get('/', function () {
-    return view('homepage-index');
-});
 
-//Destination
-Route::get('/objek-wisata', function () {
-    return view('objek-wisata');
-});
+Route::get('/',[homepageController::class, 'indexAction']);
+// Route::get('/beranda',[MahasiswaController::class, 'Peraturan']);
+
+
+//Destination => objek wisata
+
+Route::get('/objek-wisata',[objekWisataController::class, 'indexAction']);
+

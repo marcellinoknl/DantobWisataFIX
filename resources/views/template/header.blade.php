@@ -26,15 +26,15 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="/">Danau Toba<span>Travel & Tourism</span></a>
+			<a class="navbar-brand" href="{{url('/')}}>Danau Toba<span>Travel & Tourism</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.html" class="nav-link">Beranda</a></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">Desa Wisata</a></li>
+					<li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Beranda</a></li>
+					<li class="nav-item"><a href="{{url('/objek-wisata')}}" class="nav-link">Desa Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
                         <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Blog</a>
