@@ -61,4 +61,8 @@ Route::get('/galeriwisata',[geleriWisataController::class, 'indexAction']);
 
 
 //--ADMIN SIDE--
+//Index utama
 Route::get('/admin-wisata',[adminIndexController::class, 'indexAction']);
+
+//Kelola Objek Wisatawa
+Route::get('/kelolaobjek',[objekWisataController::class, 'kelolaindexAction']);

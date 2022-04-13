@@ -138,7 +138,7 @@
               <h4 class="mb-2">Selamat Datang !</h4>
               <p class="mb-4">Masuk Dengan Akun, untuk Menjelajah Lebih Jauh</p>
 
-              <form id="formAuthentication" class="mb-3" action="{{ url('/beranda') }}" method="POST" enctype="multipart/form-data">
+              <form id="formAuthentication" class="mb-3" action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email or Username</label>
                   <input

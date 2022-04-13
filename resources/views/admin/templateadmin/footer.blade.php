@@ -32,7 +32,9 @@ var nav = $('.fixed-button');
          nav.removeClass('active');
      }
  });
+ 
 </script>
+
 </body>
 
 </html>

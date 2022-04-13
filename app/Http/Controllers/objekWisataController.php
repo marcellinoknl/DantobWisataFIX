@@ -9,4 +9,8 @@ class objekWisataController extends Controller
     public function indexAction() {
         return view('user-page.objek-wisata');
     }
+
+    public function kelolaindexAction() {
+        return view('admin.kelolaobjekwisata');
+    }
 }

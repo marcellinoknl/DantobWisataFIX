@@ -177,11 +177,14 @@
 			</div>
 		</section> --}}
 
-				<!-- Banner -->
+		<!-- Banner -->
 		<section class="ftco-section services-section">
-			<div class="sec-banner bg0 p-t-80 p-b-50">
-				<div class="container">
-					<div class="row">
+			<div class="container">
+				<div class="row d-flex">
+					<div class="col-md-12 order-md-last heading-section pl-md-5 ftco-animate d-flex align-items-center">
+						<div class="w-100">
+					<span class="subheading">Ingin Tahu Lebih Tentang Danau Toba ?</span>
+					<div class="row d-flex">
 						<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 							<!-- Block1 -->
 							<div class="block1 wrap-pic-w">
@@ -667,7 +670,7 @@
 		</section>
 
 
-		<section class="ftco-section">
+		{{-- <section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center pb-4">
 					<div class="col-md-12 heading-section text-center ftco-animate">
@@ -738,8 +741,8 @@
 					</div>
 				</div>
 			</div>
-		</section>
-
+		</section> --}}
+{{-- 
 		<section class="ftco-intro ftco-section ftco-no-pt">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -753,6 +756,6 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 
 	@include('template/footer')
