@@ -26,7 +26,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="{{url('/')}}>Danau Toba<span>Travel & Tourism</span></a>
+			<a class="navbar-brand" href="{{url('/')}}">Danau Toba<span>Travel & Tourism</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -34,20 +34,20 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Beranda</a></li>
-					<li class="nav-item"><a href="{{url('/objek-wisata')}}" class="nav-link">Desa Wisata</a></li>
+					<li class="nav-item"><a href="{{url('/objek-wisata')}}" class="nav-link">Destinasi Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
                         <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Blog</a>
                         </li>
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                          <button class="dropdown-item" type="button">Atraksi</button>
-                          <button class="dropdown-item" type="button">Event</button>
-                          <button class="dropdown-item" type="button">Berita</button>
+							<a href="{{url('/atraksi')}}"><button class="dropdown-item" type="button">Atraksi</button></a>
+							<a href="{{url('/eventwisata')}}"><button class="dropdown-item" type="button">Event</button></a>
+							<a href="{{url('/beritawisata')}}"><button class="dropdown-item" type="button">Berita</button></a>
                         </div>
                       </div>
-					<li class="nav-item"><a href="blog.html" class="nav-link">Fasilitas</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">Berita</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link" ><i class="fa fa-sign-in" aria-hidden="true"></i> Masuk</a></li>
+					<li class="nav-item"><a href="{{url('/fasilitaswisata')}}" class="nav-link">Fasilitas</a></li>
+					<li class="nav-item"><a href="{{url('/galeriwisata')}}" class="nav-link">Galeri</a></li>
+                    <li class="nav-item"><a href="{{url('/masuk')}}" class="nav-link" ><i class="fa fa-sign-in" aria-hidden="true"></i> Masuk</a></li>
 				</ul>
 			</div>
 		</div>
