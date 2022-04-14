@@ -1,39 +1,55 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="footer">
 
-<!-- Warning Section Ends -->
-<!-- Required Jquery -->
-<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js"></script>
-<!-- jquery slimscroll js -->
-<script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
-<!-- modernizr js -->
-<script type="text/javascript" src="assets/js/modernizr/modernizr.js"></script>
-<!-- am chart -->
-<script src="assets/pages/widget/amchart/amcharts.min.js"></script>
-<script src="assets/pages/widget/amchart/serial.min.js"></script>
-<!-- Todo js -->
-<script type="text/javascript " src="assets/pages/todo/todo.js "></script>
-<!-- Custom js -->
-<script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
-<script type="text/javascript" src="assets/js/script.js"></script>
-<script type="text/javascript " src="assets/js/SmoothScroll.js"></script>
-<script src="assets/js/pcoded.min.js"></script>
-<script src="assets/js/demo-12.js"></script>
-<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script>
-var $window = $(window);
-var nav = $('.fixed-button');
-    $window.scroll(function(){
-        if ($window.scrollTop() >= 200) {
-         nav.addClass('active');
-     }
-     else {
-         nav.removeClass('active');
-     }
- });
- 
-</script>
+            <p><?php echo date("Y"); ?> © Pariwisata Danau Toba Admin. - <a href="{{ url('/')}}">Pariwisata Danau Toba</a></p>
+        </div>
+    </div>
+</div>
+</section>
+</div>
+</div>
+</div>
+
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/menubar/sidebar.js"></script>
+<script src="assets/js/lib/preloader/pace.min.js"></script>
+<!-- sidebar -->
+
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<!-- bootstrap -->
+
+<script src="assets/js/lib/calendar-2/moment.latest.min.js"></script>
+<script src="assets/js/lib/calendar-2/pignose.calendar.min.js"></script>
+<script src="assets/js/lib/calendar-2/pignose.init.js"></script>
+
+
+<script src="assets/js/lib/weather/jquery.simpleWeather.min.js"></script>
+<script src="assets/js/lib/weather/weather-init.js"></script>
+<script src="assets/js/lib/circle-progress/circle-progress.min.js"></script>
+<script src="assets/js/lib/circle-progress/circle-progress-init.js"></script>
+<script src="assets/js/lib/chartist/chartist.min.js"></script>
+<script src="assets/js/lib/sparklinechart/jquery.sparkline.min.js"></script>
+<script src="assets/js/lib/sparklinechart/sparkline.init.js"></script>
+<script src="assets/js/lib/owl-carousel/owl.carousel.min.js"></script>
+<script src="assets/js/lib/owl-carousel/owl.carousel-init.js"></script>
+<!-- scripit init-->
+<script src="assets/js/dashboard2.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.flash.min.js"></script>
+    <script src="assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="assets/js/lib/data-table/datatables-init.js"></script>
+
 
 </body>
 

@@ -66,3 +66,15 @@ Route::get('/admin-wisata',[adminIndexController::class, 'indexAction']);
 
 //Kelola Objek Wisatawa
 Route::get('/kelolaobjek',[objekWisataController::class, 'kelolaindexAction']);
+
+//kelola event
+Route::get('/kelolaevent',[eventController::class, 'kelolaindexAction']);
+
+//kelola atraksi
+Route::get('/kelolaatraksi',[atraksiController::class, 'kelolaindexAction']);
+
+//kelolaberita
+Route::get('/kelolaberita',[beritaController::class, 'kelolaindexAction']);
+
+//kelola galeriwisata
+Route::get('/kelolagaleri',[geleriWisataController::class, 'kelolaindexAction']);

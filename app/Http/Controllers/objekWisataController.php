@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Objek_Wisata;
 
 use Illuminate\Http\Request;
 
@@ -11,6 +12,11 @@ class objekWisataController extends Controller
     }
 
     public function kelolaindexAction() {
-        return view('admin.kelolaobjekwisata');
+
+        $objekwisata = Objek_Wisata::all();
+        return view('admin.kelolaobjekwisata',compact('objekwisata'));
     }
+    
+
+
 }

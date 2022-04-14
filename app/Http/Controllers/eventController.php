@@ -9,4 +9,8 @@ class eventController extends Controller
     public function indexAction() {
         return view('user-page.blog.event');
     }
+
+    public function kelolaindexAction() {
+        return view('admin.kelolaevent');
+    }
 }

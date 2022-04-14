@@ -9,4 +9,7 @@ class fasilitasController extends Controller
     public function indexAction() {
         return view('user-page.fasilitas');
     }
+    public function kelolaindexAction() {
+        return view('admin.kelolafasilitas');
+    }
 }
