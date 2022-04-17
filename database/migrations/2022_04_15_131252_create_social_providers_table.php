@@ -14,7 +14,10 @@ class CreateSocialProvidersTable extends Migration
     public function up()
     {
         Schema::create('social_providers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('user_id');
+            $table->string('provider_id');
+            $table->string('provider');
             $table->timestamps();
         });
     }

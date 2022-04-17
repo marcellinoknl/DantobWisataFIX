@@ -14,7 +14,7 @@ class CreateKategoriGaleriTable extends Migration
     public function up()
     {
         Schema::create('kategori_galeri', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
         });
     }

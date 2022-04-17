@@ -14,7 +14,7 @@ class CreateBeritaWisataTable extends Migration
     public function up()
     {
         Schema::create('berita_wisata', function (Blueprint $table) {
-            $table->id('id_berita');
+            $table->increments('id_berita');
             $table->string('judul_berita');
             $table->date('tanggal');
             $table->time('waktu');

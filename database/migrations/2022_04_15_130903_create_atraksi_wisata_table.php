@@ -14,7 +14,7 @@ class CreateAtraksiWisataTable extends Migration
     public function up()
     {
         Schema::create('atraksi_wisata', function (Blueprint $table) {
-            $table->id('atraksi_id');
+            $table->increments('atraksi_id');
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('file_foto');

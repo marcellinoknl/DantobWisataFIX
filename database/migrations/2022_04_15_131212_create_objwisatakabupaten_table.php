@@ -14,7 +14,10 @@ class CreateObjwisatakabupatenTable extends Migration
     public function up()
     {
         Schema::create('objwisatakabupaten', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_obj_wisata_kabupaten');
+            $table->string('gambarobjwisatakabupaten');
+            $table->string('deskripsi_objek_wisata_kabupaten');
+            $table->integer('wisata_obj_id');
             $table->timestamps();
         });
     }

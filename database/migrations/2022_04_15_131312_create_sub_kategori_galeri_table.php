@@ -14,7 +14,9 @@ class CreateSubKategoriGaleriTable extends Migration
     public function up()
     {
         Schema::create('sub_kategori_galeri', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_sub_kt_hgaleri');
+            $table->string('judul');
+            $table->integer('id_kategori');
             $table->timestamps();
         });
     }

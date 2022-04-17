@@ -14,7 +14,7 @@ class CreateFasilitasWisataTable extends Migration
     public function up()
     {
         Schema::create('fasilitas_wisata', function (Blueprint $table) {
-            $table->id('id_fasilitas');
+            $table->increments('id_fasilitas');
             $table->string('nama_fasilitas');
             $table->text('deskripsi');
             $table->timestamps();

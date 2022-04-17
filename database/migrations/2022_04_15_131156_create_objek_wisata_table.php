@@ -14,8 +14,13 @@ class CreateObjekWisataTable extends Migration
     public function up()
     {
         Schema::create('objek_wisata', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_obj_wisata');
+            $table->string('nama_wisata');
+            $table->string('deskripsi');
+            $table->string('file_foto');
+            $table->integer('kategori_id')->nullable();
             $table->timestamps();
+            
         });
     }
 
