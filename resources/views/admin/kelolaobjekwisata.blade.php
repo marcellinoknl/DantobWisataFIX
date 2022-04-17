@@ -15,8 +15,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Table-Export</li>
+                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Objek Wisata</li>
                             </ol>
                         </div>
                     </div>
@@ -39,12 +39,13 @@
                                                 <th class="text-center"width="20%">Foto Wisata</th>
                                                 <th class="text-center" width="20%">Aksi</th>
                                             </tr>
+                                            <?php $number=1;?>
                                         </thead>
                                         
                                         <tbody>
                                             @foreach($objekwisata as $objekwisatas)
                                             <tr>
-                                                <td class="text-center">{{$objekwisatas->id_obj_wisata}}</td>
+                                                <td class="text-center"><?php echo $number++; ?>    </td>
                                                 <td class="text-center">{{$objekwisatas->nama_wisata}}</td>
                                                 <td class="text-center">{{$objekwisatas->deskripsi}}</td>
                                                 <td><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>

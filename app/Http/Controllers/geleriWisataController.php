@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\GaleriWisata;
 
 use Illuminate\Http\Request;
 
@@ -10,6 +11,8 @@ class geleriWisataController extends Controller
         return view('user-page.galeri-wisata');
     }
     public function kelolaindexAction() {
-        return view('admin.kelolagaleri');
+
+        $galeriwisata = GaleriWisata::all();
+        return view('admin.kelolagaleri',compact('galeriwisata'));
     }
 }

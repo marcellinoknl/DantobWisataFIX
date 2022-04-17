@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\EventWisata;
 
 use Illuminate\Http\Request;
 
@@ -11,6 +12,8 @@ class eventController extends Controller
     }
 
     public function kelolaindexAction() {
-        return view('admin.kelolaevent');
+
+        $eventwisata = EventWisata::all();
+        return view('admin.kelolaevent',compact('eventwisata'));
     }
 }

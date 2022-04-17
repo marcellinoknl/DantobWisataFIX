@@ -15,8 +15,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Table-Export</li>
+                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Objek Wisata</li>
                             </ol>
                         </div>
                     </div>
@@ -33,44 +33,25 @@
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Salary</th>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">Gambar</th>                                            
+                                                <th class="text-center" >Aksi</th>
                                             </tr>
+                                            <?php $number=1;?>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>$170,750</td>
-                                            </tr>
                                         
+                                        <tbody>
+                                            @foreach($galeriwisata as $galeriwisatas)
                                             <tr>
-                                                <td>Shad Decker</td>
-                                                <td>Regional Director</td>
-                                                <td>Edinburgh</td>
-                                                <td>$183,000</td>
+                                                <td class="text-center"><?php echo $number++; ?>    </td>
+                                                <td><img src="{{'images/galeriwisata/'.$galeriwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
+                                                <td><button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
+                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;"> Hapus</span></button>
+                                                </td>
+                                                </div>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td>John Bruce</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>$112,000</td>
-                                            </tr>
+                                           @endforeach
                                         </tbody>
                                     </table>
                                 </div>
