@@ -32,47 +32,30 @@
                                 <div class="table-responsive">
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                         <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Salary</th>
+                                        <tr>
+                                                 <th class="text-center" width="15%">Nomor</th>
+                                                <th class="text-center" width="15%">Judul Atraksi</th>
+                                                <th class="text-center"width="30%">Deskripsi Atraksi</th>
+                                                <th class="text-center"width="20%">Foto Atraksi</th>
+                                                <th class="text-center" width="25%">Aksi</th>
                                             </tr>
                                         </thead>
+
                                         <tbody>
+                                            @foreach($atraksi as $atraksiwisatas)
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>$320,800</td>
+                                                <td class="text-center">{{$atraksiwisatas->atraksi_id}}</td>
+                                                <td class="text-center">{{$atraksiwisatas->judul}}</td>
+                                                <td class="text-center">{{$atraksiwisatas->deskripsi}}</td>
+                                                <td><img src="{{'images/Atraksi/'.$atraksiwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
+                                                <td >  
+                                                <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
+                                                <button class="btn btn-danger"href='deleteatraksi/{atraksi_id}/{{$atraksiwisatas->atraksi_id}}'"><span class="ti-trash"style="color:black;"> Hapus</span></button>
+                                                </div>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>$170,750</td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <td>Shad Decker</td>
-                                                <td>Regional Director</td>
-                                                <td>Edinburgh</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>John Bruce</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>$112,000</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                           @endforeach
+                                        </tbody>                                      
                                 </div>
                             </div>
                         </div>

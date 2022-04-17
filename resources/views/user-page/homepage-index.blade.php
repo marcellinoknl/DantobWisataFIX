@@ -1,15 +1,15 @@
 @include('template/header')
 	
-	<div class="hero-wrap js-fullheight" style="background-image: url('images/bg_5.jpg');">
+	<div class="hero-wrap js-fullheight" style="background-image: url('images/bgpa.jpeg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
 				<div class="col-md-7 ftco-animate">
-					<span class="subheading">Welcome to Pacific</span>
-					<h1 class="mb-4">Discover Your Favorite Place with Us</h1>
-					<p class="caps">Travel to the any corner of the world, without going around in circles</p>
+					<span class="subheading">Selamat Datang Di Wisata Kawasan Danau Toba</span>
+					<h1 class="mb-4">Kunjugi Tempat Favorit Anda</h1>
+					<p class="caps">Kepingan Surga Toba</p>
 				</div>
-				<a href="https://www.youtube.com/watch?v=e9B_a2L7Zr4" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
+				<a href="https://www.youtube.com/watch?v=ojw2VEkh42E" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
 					<span class="fa fa-play"></span>
 				</a>
 			</div>
@@ -489,7 +489,7 @@
 					</div>
 					<div class="col-md-4 ftco-animate">
 						<div class="project-wrap">
-							<a href="#" class="img" style="background-image: url(images/destination-6.jpg);">
+							<a href="#" class="img" style="background-image: url(images/bgpa.jpeg);">
 								<span class="price">$550/person</span>
 							</a>
 							<div class="text p-4">
@@ -513,7 +513,7 @@
 			<div class="container py-md-5">
 				<div class="row py-md-5">
 					<div class="col-md d-flex align-items-center justify-content-center">
-						<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
+						<a href="https://www.youtube.com/watch?v=ojw2VEkh42E" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
 							<span class="fa fa-play"></span>
 						</a>
 					</div>

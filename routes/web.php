@@ -72,6 +72,7 @@ Route::get('/kelolaevent',[eventController::class, 'kelolaindexAction']);
 
 //kelola atraksi
 Route::get('/kelolaatraksi',[atraksiController::class, 'kelolaindexAction']);
+Route::get('/deleteatraksi/{atraksi_id}',[atraksiController::class, 'delete']);
 
 //kelolaberita
 Route::get('/kelolaberita',[beritaController::class, 'kelolaindexAction']);

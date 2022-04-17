@@ -32,47 +32,29 @@
                                 <div class="table-responsive">
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                         <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Salary</th>
+                                        <tr>
+                                                <th class="text-center"width="20%">Nomor</th>
+                                                <th class="text-center"width="20%">Judul Berita</th>
+                                                <th class="text-center" width="35%">Isi Berita</th>
+                                                <th class="text-center"width="20%">Foto</th>
+                                                 <th class="text-center" width="20%">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($kelolaberita as $beritawisatas)
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>$320,800</td>
+                                                <td class="text-center">{{$beritawisatas->id_berita}}</td>
+                                                <td class="text-center">{{$beritawisatas->judul_berita}}</td>
+                                                <td class="text-center">{{$beritawisatas->isi_berita}}</td>
+                                                <td><img src="{{'images/beritawisata/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
+                                                <td >  
+                                                <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
+                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;"> Hapus</span></button>
+                                                </div>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>$170,750</td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <td>Shad Decker</td>
-                                                <td>Regional Director</td>
-                                                <td>Edinburgh</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>John Bruce</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>$112,000</td>
-                                            </tr>
+                                           @endforeach
                                         </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
