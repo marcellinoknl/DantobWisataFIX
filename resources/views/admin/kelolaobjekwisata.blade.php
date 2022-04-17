@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1>Hello, <span>Welcome Here</span></h1>
+                            <h1>KELOLA OBJEK WISATA</h1>
                         </div>
                     </div>
                 </div>
@@ -27,6 +27,9 @@
             <section id="main-content">
                 <div class="row">
                     <div class="col-lg-12">
+                        <a href="{{ url('/tambah-objek-wisata')}}"
+                        <button class="btn btn-success" ><span class="ti-plus"style="color:black;"> Tambah Objek Wisata</span></button>
+                    </a>
                         <div class="card">
                             <div class="bootstrap-data-table-panel">
                                 <div class="table-responsive">
@@ -50,7 +53,7 @@
                                                 <td class="text-center">{{$objekwisatas->deskripsi}}</td>
                                                 <td><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
                                                 <td >  
-                                                <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
+                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                 <button class="btn btn-danger"><span class="ti-trash"style="color:black;"> Hapus</span></button>
                                                 </div>
                                                 </td>

@@ -66,6 +66,10 @@ Route::get('/admin-wisata',[adminIndexController::class, 'indexAction']);
 
 //Kelola Objek Wisatawa
 Route::get('/kelolaobjek',[objekWisataController::class, 'kelolaindexAction']);
+Route::get('/tambah-objek-wisata',[objekWisataController::class, 'tambah']);
+Route::get('/ubah-objek-wisata/{id}',[objekWisataController::class, 'edit']);
+Route::post('/ubah-objek-wisata/{id}',[objekWisataController::class, 'update'])->name('objekwisata.ubah');
+Route::post('/tambah-objek-wisata/store',[objekWisataController::class, 'store'])->name('formobjekwisata.store');
 
 //kelola event
 Route::get('/kelolaevent',[eventController::class, 'kelolaindexAction']);
