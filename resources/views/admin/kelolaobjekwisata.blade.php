@@ -54,7 +54,7 @@
                                                 <td><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
                                                 <td >  
                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
-                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;"> Hapus</span></button>
+                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;" onclick="window.location.href='/objekwisata/hapus/{{$objekwisatas->id_obj_wisata}}'"> Hapus</span></button>
                                                 </div>
                                                 </td>
                                             </tr>

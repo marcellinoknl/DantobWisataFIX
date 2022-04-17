@@ -70,6 +70,7 @@ Route::get('/tambah-objek-wisata',[objekWisataController::class, 'tambah']);
 Route::get('/ubah-objek-wisata/{id}',[objekWisataController::class, 'edit']);
 Route::post('/ubah-objek-wisata/{id}',[objekWisataController::class, 'update'])->name('objekwisata.ubah');
 Route::post('/tambah-objek-wisata/store',[objekWisataController::class, 'store'])->name('formobjekwisata.store');
+Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
 
 //kelola event
 Route::get('/kelolaevent',[eventController::class, 'kelolaindexAction']);

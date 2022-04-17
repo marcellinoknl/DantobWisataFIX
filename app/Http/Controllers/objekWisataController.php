@@ -59,6 +59,12 @@ class objekWisataController extends Controller
             return redirect('kelolaobjek');         
     
         }
+
+        public function hapus($id_obj_wisata){
+            $hapus = Objek_Wisata::find($id_obj_wisata);
+             if($hapus->delete()){}
+               return redirect()->back();
+        }
     
 
 
