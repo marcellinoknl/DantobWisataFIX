@@ -27,6 +27,9 @@
             <section id="main-content">
                 <div class="row">
                     <div class="col-lg-12">
+                        <a href="{{ url('/tambah-event-wisata')}}">
+                            <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Event Wisata</span></button>
+                        </a>
                         <div class="card">
                             <div class="bootstrap-data-table-panel">
                                 <div class="table-responsive">
@@ -50,7 +53,7 @@
                                                 <td class="text-center">{{$eventwisatas->deskripsi_event}}</td>
                                                 <td><img src="{{'images/eventwisata/'.$eventwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
                                                 <td >  
-                                                <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
+                                                <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;" onclick="window.location.href='/ubah-event-wisata/{{$eventwisatas->id_event}}'"> Ubah</span></button>
                                                 
                                                 </div><button class="btn btn-danger"><span class="ti-trash"style="color:black;" onclick="window.location.href='/eventwisata/hapus/{{$eventwisatas->id_event}}'"> Hapus</span></button>
                                                 </td>
