@@ -25,61 +25,83 @@ use App\Http\Controllers\accountController;
 */
 
 //Login
-Route::get('/masuk',[accountController::class, 'login']);
+Route::get('/masuk', [accountController::class, 'login']);
 
 //Register
-Route::get('/daftarakun',[accountController::class, 'register']);
+Route::get('/daftarakun', [accountController::class, 'register']);
 
 //Forgot Password
-Route::get('/lupapassword',[accountController::class, 'forgotpassword']);
+Route::get('/lupapassword', [accountController::class, 'forgotpassword']);
 
 // --USER SIDE--
 //Home Page
-Route::get('/',[homepageController::class, 'indexAction']);
+Route::get('/', [homepageController::class, 'indexAction']);
 // Route::get('/beranda',[MahasiswaController::class, 'Peraturan']);
 
 
 //Destination => objek wisata
-Route::get('/objek-wisata',[objekWisataController::class, 'indexAction']);
+Route::get('/objek-wisata', [objekWisataController::class, 'indexAction']);
 
 //blog
 //atraksiController
-Route::get('/atraksi',[atraksiController::class, 'indexAction']);
+Route::get('/atraksi', [atraksiController::class, 'indexAction']);
 
 //event controller
-Route::get('/eventwisata',[eventController::class, 'indexAction']);
+Route::get('/eventwisata', [eventController::class, 'indexAction']);
 
 //berita
-Route::get('/beritawisata',[beritaController::class, 'indexAction']);
+Route::get('/beritawisata', [beritaController::class, 'indexAction']);
 
 //fasiltias
-Route::get('/fasilitaswisata',[fasilitasController::class, 'indexAction']);
+Route::get('/fasilitaswisata', [fasilitasController::class, 'indexAction']);
 
 //galeri wisata
-Route::get('/galeriwisata',[geleriWisataController::class, 'indexAction']);
+Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 
 
 
 //--ADMIN SIDE--
 //Index utama
-Route::get('/admin-wisata',[adminIndexController::class, 'indexAction']);
+Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
 
 //Kelola Objek Wisatawa
-Route::get('/kelolaobjek',[objekWisataController::class, 'kelolaindexAction']);
-Route::get('/tambah-objek-wisata',[objekWisataController::class, 'tambah']);
-Route::get('/ubah-objek-wisata/{id}',[objekWisataController::class, 'edit']);
-Route::post('/ubah-objek-wisata/{id}',[objekWisataController::class, 'update'])->name('objekwisata.ubah');
-Route::post('/tambah-objek-wisata/store',[objekWisataController::class, 'store'])->name('formobjekwisata.store');
+Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
+Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
+Route::get('/ubah-objek-wisata/{id}', [objekWisataController::class, 'edit']);
+Route::post('/ubah-objek-wisata/{id}', [objekWisataController::class, 'update'])->name('objekwisata.ubah');
+Route::post('/tambah-objek-wisata/store', [objekWisataController::class, 'store'])->name('formobjekwisata.store');
 Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
 
 //kelola event
-Route::get('/kelolaevent',[eventController::class, 'kelolaindexAction']);
+Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
+Route::get('/tambah-event-wisata', [eventController::class, 'tambah']);
+Route::get('/ubah-event-wisata/{id}', [eventController::class, 'edit']);
+Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
+Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
 Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
 
+
 //kelola atraksi
-Route::get('/kelolaatraksi',[atraksiController::class, 'kelolaindexAction']);
-Route::get('/tambah-atraksi-wisata',[atraksiController::class, 'tambah']);
-Route::get('/ubah-atraksi-wisata/{id}',[atraksiController::class, 'edit']);
-Route::post('/ubah-atraksi-wisata/{id}',[atraksiController::class, 'update'])->name('atraksiwisata.ubah');
-Route::post('/tambah-atraksi-wisata/store',[atraksiController::class, 'store'])->name('formatraksiwisata.store');
+Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
+Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);
+Route::get('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'edit']);
+Route::post('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'update'])->name('atraksiwisata.ubah');
+Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
 Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
+
+
+//kelolaberita
+Route::get('/kelolaberita', [beritaController::class, 'kelolaindexAction']);
+Route::get('/tambah-berita-wisata', [beritaController::class, 'tambah']);
+Route::get('/ubah-berita-wisata/{id}', [beritaController::class, 'edit']);
+Route::post('/ubah-berita-wisata/{id}', [beritaController::class, 'update'])->name('beritawisata.ubah');
+Route::post('/tambah-berita-wisata/store', [beritaController::class, 'store'])->name('formberitawisata.store');
+Route::get('/berita/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
+
+//kelola galeriwisata
+Route::get('/kelolagaleri', [geleriWisataController::class, 'kelolaindexAction']);
+Route::get('/tambah-galeri-wisata', [geleriWisataController::class, 'tambah']);
+Route::get('/ubah-galeri-wisata/{id}', [geleriWisataController::class, 'edit']);
+Route::post('/ubah-galeri-wisata/{id}', [geleriWisataController::class, 'update'])->name('galeriwisata.ubah');
+Route::post('/tambah-galeri-wisata/store', [geleriWisataController::class, 'store'])->name('formgaleriwisata.store');
+Route::get('/galeri/hapus/{id}', [geleriWisataController::class, 'hapus'])->name('galeriwisata.hapus');

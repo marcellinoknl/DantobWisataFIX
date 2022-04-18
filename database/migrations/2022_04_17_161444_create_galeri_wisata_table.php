@@ -15,6 +15,7 @@ class CreateGaleriWisataTable extends Migration
     {
         Schema::create('galeri_wisata', function (Blueprint $table) {
             $table->id('id_galeri');
+            $table->string('judul');
             $table->string('file_foto');
             $table->timestamps();
         });
