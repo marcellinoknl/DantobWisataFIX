@@ -24,6 +24,16 @@
                 <!-- /# column -->
             </div>
             <!-- /# row -->
+            <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                        <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="{{ url('/berita-wisata')}}"
+                        <button class="btn btn-success" ><span class="ti-plus"style="color:black;"> Tambah Berita Wisata</span></button>
+                    </a>
             
             <section id="main-content">
                 <div class="row">

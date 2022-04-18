@@ -32,7 +32,7 @@
                                 <form action="{{route('formatraksiwisata.store')}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nama Atraksi</label>
+                                            <label class="col-sm-3 col-form-label">Judul Atraksi</label>
                                             <div class="col-sm-9">
                                                 <input type="text" required="required" id="namawisata" name="nama_wisata" class="form-control" >
                                             </div>
