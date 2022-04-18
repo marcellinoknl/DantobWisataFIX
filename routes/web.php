@@ -77,8 +77,11 @@ Route::get('/kelolaevent',[eventController::class, 'kelolaindexAction']);
 
 //kelola atraksi
 Route::get('/kelolaatraksi',[atraksiController::class, 'kelolaindexAction']);
-Route::get('/deleteatraksi/{atraksi_id}',[atraksiController::class, 'delete']);
-
+Route::get('/tambah-atraksi-wisata',[atraksiController::class, 'tambah']);
+Route::get('/ubah-atraksi-wisata/{id}',[atraksiController::class, 'edit']);
+Route::post('/ubah-atraksi-wisata/{id}',[atraksiController::class, 'update'])->name('atraksiwisata.ubah');
+Route::post('/tambah-atraksi-wisata/store',[atraksiController::class, 'store'])->name('formatraksiwisata.store');
+Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
 //kelolaberita
 Route::get('/kelolaberita',[beritaController::class, 'kelolaindexAction']);
 
