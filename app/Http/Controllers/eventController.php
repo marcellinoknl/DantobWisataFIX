@@ -16,4 +16,13 @@ class eventController extends Controller
         $eventwisata = EventWisata::all();
         return view('admin.kelolaevent',compact('eventwisata'));
     }
+    public function hapus($id_event){
+        $hapus = EventWisata::find($id_event);
+         if($hapus->delete()){}
+           return redirect()->back();
+    }
+
+
+
 }
+

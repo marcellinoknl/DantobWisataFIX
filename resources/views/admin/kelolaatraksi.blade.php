@@ -28,6 +28,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
+                        <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="{{ url('/tambah-atraksi-wisata')}}"
+                        <button class="btn btn-success" ><span class="ti-plus"style="color:black;"> Tambah Atraksi Wisata</span></button>
+                    </a>
                             <div class="bootstrap-data-table-panel">
                                 <div class="table-responsive">
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -49,8 +55,9 @@
                                                 <td class="text-center">{{$atraksiwisatas->deskripsi}}</td>
                                                 <td><img src="{{'images/Atraksi/'.$atraksiwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
                                                 <td >  
-                                                <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
-                                                <button class="btn btn-danger"href='deleteatraksi/{atraksi_id}/{{$atraksiwisatas->atraksi_id}}'"><span class="ti-trash"style="color:black;"> Hapus</span></button>
+                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-atraksi-wisata/{{$atraksiwisatas->atraksi_id}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
+                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;" onclick="window.location.href='/atraksiwisata/hapus/{{$atraksiwisatas->atraksi_id}}'"> Hapus</span></button>
+                                                <!-- <button class="btn btn-danger"href='deleteatraksi/{atraksi_id}/{{$atraksiwisatas->atraksi_id}}'"><span class="ti-trash"style="color:black;"> Hapus</span></button> -->
                                                 </div>
                                                 </td>
                                             </tr>

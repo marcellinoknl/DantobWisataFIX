@@ -24,6 +24,7 @@
                 <!-- /# column -->
             </div>
             <!-- /# row -->
+            
             <section id="main-content">
                 <div class="row">
                     <div class="col-lg-12">
@@ -49,7 +50,7 @@
                                                 <td><img src="{{'images/beritawisata/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
                                                 <td >  
                                                 <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
-                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;"> Hapus</span></button>
+                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;" onclick="window.location.href='/beritawisata/hapus/{{$beritawisatas->id_berita}}'"> Hapus</span></button>
                                                 </div>
                                                 </td>
                                             </tr>

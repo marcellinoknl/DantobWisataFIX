@@ -14,4 +14,16 @@ class beritaController extends Controller
         $kelolaberita = Berita_Wisata::all();
         return view('admin.kelolaberita',compact('kelolaberita'));
     }
+    
+    public function hapus($id_berita){
+        $hapus = Berita_Wisata::find($id_berita);
+         if($hapus->delete()){}
+           return redirect()->back();
+    }
+
+
+
 }
+
+
+

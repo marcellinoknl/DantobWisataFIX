@@ -51,8 +51,8 @@
                                                 <td><img src="{{'images/eventwisata/'.$eventwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
                                                 <td >  
                                                 <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
-                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;"> Hapus</span></button>
-                                                </div>
+                                                
+                                                </div><button class="btn btn-danger"><span class="ti-trash"style="color:black;" onclick="window.location.href='/eventwisata/hapus/{{$eventwisatas->id_event}}'"> Hapus</span></button>
                                                 </td>
                                             </tr>
                                            @endforeach
