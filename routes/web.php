@@ -91,11 +91,11 @@ Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->na
 
 //kelolaberita
 Route::get('/kelolaberita',[beritaController::class, 'kelolaindexAction']);
-// Route::get('/tambah-event-wisata',[beritaController::class, 'tambah']);
-// Route::get('/ubah-event-wisata/{id}',[beritaController::class, 'edit']);
-// Route::post('/ubah-event-wisata/{id}',[beritaController::class, 'update'])->name('eventwisata.ubah');
-// Route::post('/tambah-event-wisata/store',[beritaController::class, 'store'])->name('formeventwisata.store');
-Route::get('/event/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
+Route::get('/tambah-berita-wisata',[beritaController::class, 'tambah']);
+Route::get('/ubah-berita-wisata/{id}',[beritaController::class, 'edit']);
+Route::post('/ubah-berita-wisata/{id}',[beritaController::class, 'update'])->name('beritawisata.ubah');
+Route::post('/tambah-berita-wisata/store',[beritaController::class, 'store'])->name('formberitawisata.store');
+Route::get('/berita/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
 
 //kelola galeriwisata
 Route::get('/kelolagaleri',[geleriWisataController::class, 'kelolaindexAction']);
