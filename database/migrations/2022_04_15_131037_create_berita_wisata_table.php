@@ -15,7 +15,11 @@ class CreateBeritaWisataTable extends Migration
     {
         Schema::create('berita_wisata', function (Blueprint $table) {
             $table->increments('id_berita');
+<<<<<<< HEAD
             $table->string('judul_berita')->nullable();
+=======
+            $table->string('judul_berita');
+>>>>>>> c9819573eb4ad6f9c87daee1db5f52830b53ebed
             $table->longtext('isi_berita');
             $table->string('file_foto');
             $table->timestamps();
