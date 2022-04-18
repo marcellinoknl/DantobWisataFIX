@@ -34,6 +34,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Judul Atraksi </label>
                                             <div class="col-sm-9">
+
                                                 <input type="text" required="required" id="judulatrkasi" name="judul" class="form-control" value="{{$update->judul}}">
                                             </div>
                                         </div>
@@ -43,7 +44,9 @@
                                                 <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/Atraksi/'.$update->file_foto)}}">
                                                
                                                 <div class="custom-file">
+
                                                     <input type="file" class="custom-file-input" id="gambaratraksi" onchange="previewImage()"name="file_foto"  value="{{$update->file_foto}}">
+
                                                     <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                                   </div>
                                             </div>
@@ -52,7 +55,9 @@
                                             <label class="col-sm-3 col-form-label">Deskripsi Atraksi</label>
                                         </div>
                                         <div class ="mb-3 row">
+
                                             <textarea type="text" required="required" id="deskripsiatraksi" name="deskripsi" height="300px" class="form-control" >{{$update->deskripsi}}</textarea>
+
                                         </div>
                                         <br><br>    
                                         <button type="button" class="btn btn-danger" onclick="window.location.href='/editproduk'"><i class="ti-close"></i> Batal</button>
@@ -70,7 +75,9 @@
 
     <script> 
                     function previewImage() {
+
         const image = document.querySelector('#gambaratraksi')
+
         const imgPreview = document.querySelector('.img-preview')
 
         imgPreview.style.display = 'block';

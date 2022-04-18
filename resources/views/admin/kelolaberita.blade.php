@@ -28,6 +28,17 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
+                        <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="{{ url('/berita-wisata')}}"
+                        <button class="btn btn-success" ><span class="ti-plus"style="color:black;"> Tambah Berita Wisata</span></button>
+                    </a>
+            
+            <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
                             <div class="bootstrap-data-table-panel">
                                 <div class="table-responsive">
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -49,7 +60,7 @@
                                                 <td><img src="{{'images/beritawisata/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;"/></td>
                                                 <td >  
                                                 <button class="btn btn-warning"><span class="ti-pencil-alt"style="color:black;"> Ubah</span></button>
-                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;"> Hapus</span></button>
+                                                <button class="btn btn-danger"><span class="ti-trash"style="color:black;" onclick="window.location.href='/beritawisata/hapus/{{$beritawisatas->id_berita}}'"> Hapus</span></button>
                                                 </div>
                                                 </td>
                                             </tr>

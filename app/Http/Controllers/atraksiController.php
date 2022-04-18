@@ -65,6 +65,4 @@ class atraksiController extends Controller
                        return redirect()->back();
                 }
             
-        
-        
-        }
+            }

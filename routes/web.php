@@ -74,6 +74,7 @@ Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->
 
 //kelola event
 Route::get('/kelolaevent',[eventController::class, 'kelolaindexAction']);
+Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
 
 //kelola atraksi
 Route::get('/kelolaatraksi',[atraksiController::class, 'kelolaindexAction']);
@@ -82,8 +83,3 @@ Route::get('/ubah-atraksi-wisata/{id}',[atraksiController::class, 'edit']);
 Route::post('/ubah-atraksi-wisata/{id}',[atraksiController::class, 'update'])->name('atraksiwisata.ubah');
 Route::post('/tambah-atraksi-wisata/store',[atraksiController::class, 'store'])->name('formatraksiwisata.store');
 Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
-//kelolaberita
-Route::get('/kelolaberita',[beritaController::class, 'kelolaindexAction']);
-
-//kelola galeriwisata
-Route::get('/kelolagaleri',[geleriWisataController::class, 'kelolaindexAction']);
