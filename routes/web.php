@@ -105,3 +105,10 @@ Route::get('/ubah-galeri-wisata/{id}', [geleriWisataController::class, 'edit']);
 Route::post('/ubah-galeri-wisata/{id}', [geleriWisataController::class, 'update'])->name('galeriwisata.ubah');
 Route::post('/tambah-galeri-wisata/store', [geleriWisataController::class, 'store'])->name('formgaleriwisata.store');
 Route::get('/galeri/hapus/{id}', [geleriWisataController::class, 'hapus'])->name('galeriwisata.hapus');
+
+//Kelola fasilitas 
+Route::get('/sampul-fasilitas', [fasilitasController::class, 'kelolaindexActionSampul']);
+Route::get('/tambah-sampul-fasilitas', [fasilitasController::class, 'tambahsampul']);
+Route::get('/daftar-fasilitas', [fasilitasController::class, 'kelolaindexActionDaftarFasilitas']);
+Route::get('/tambah-fasilitas-wisata', [fasilitasController::class, 'tambahfasilitas']);
+
