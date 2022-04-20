@@ -58,11 +58,11 @@
                                                                             <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$sampuls->nama_sampul}}</td>
                                                                             <td class="text-center">{{$sampuls->id}}</td>
-                                                                            <td><img src="{{'images/sampulfasilitas/'.$sampuls->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
+                                                                            <td><img src="{{'images/fasilitas/'.$sampuls->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
                                                                             <td>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-sampulfasilitas-wisata/{{$sampuls->id}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
-                                                                                <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/sampulfasilitas/hapus/{{$sampuls->id}}'"> Hapus</span></button>
-                                                                               
+                                                                                <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/sampul-fasilitas/hapus/{{$sampuls->id}}'"> Hapus</span></button>
+
                                                             </div>
                                                             </td>
                                                             </tr>

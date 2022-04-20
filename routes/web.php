@@ -109,6 +109,13 @@ Route::get('/galeri/hapus/{id}', [geleriWisataController::class, 'hapus'])->name
 //Kelola fasilitas 
 Route::get('/sampul-fasilitas', [fasilitasController::class, 'kelolaindexActionSampul']);
 Route::get('/tambah-sampul-fasilitas', [fasilitasController::class, 'tambahsampul']);
+Route::post('/tambah-sampul-fasilitaswisata/store', [fasilitasController::class, 'store'])->name('formsampulfasilitas.store');
+Route::get('/sampul-fasilitas/hapus/{id}', [fasilitasController::class, 'hapusSampul'])->name('sampulfasilitas.hapus');
+
 Route::get('/daftar-fasilitas', [fasilitasController::class, 'kelolaindexActionDaftarFasilitas']);
 Route::get('/tambah-fasilitas-wisata', [fasilitasController::class, 'tambahfasilitas']);
+Route::get('/ubah-fasilitas-wisata/{id}', [fasilitasController::class, 'editfasilitas']);
+Route::post('/ubah-fasilitas-wisata/{id}', [fasilitasController::class, 'update'])->name('fasilitaswisata.ubah');
+Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
+Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
 
