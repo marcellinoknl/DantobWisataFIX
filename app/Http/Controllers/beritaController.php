@@ -35,7 +35,7 @@ class beritaController extends Controller
             $objek->file_foto = $file;
         }
 
-        $objek->save();
+        $objek->save(); 
         return redirect('kelolaberita');
     }
 

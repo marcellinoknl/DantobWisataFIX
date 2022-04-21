@@ -56,7 +56,7 @@
 					<li class="nav-item"><a href="{{url('/objek-wisata')}}" class="nav-link">Destinasi Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
                         <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <a href="/blog" class="nav-link">Blog</a>
+                            <a href="/blog" class="nav-link">Katalog</a>
                         </li>
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
 							<a href="{{url('/atraksi')}}"><button class="dropdown-item" type="button">Atraksi</button></a>
