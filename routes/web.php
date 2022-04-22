@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homepageController;
 use App\Http\Controllers\objekWisataController;
+use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\atraksiController;
 use App\Http\Controllers\eventController;
 use App\Http\Controllers\beritaController;
@@ -71,6 +72,14 @@ Route::get('/ubah-objek-wisata/{id}', [objekWisataController::class, 'edit']);
 Route::post('/ubah-objek-wisata/{id}', [objekWisataController::class, 'update'])->name('objekwisata.ubah');
 Route::post('/tambah-objek-wisata/store', [objekWisataController::class, 'store'])->name('formobjekwisata.store');
 Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
+
+//kelola kabupaten
+Route::get('/kelolakab', [KabupatenController::class, 'kelolaindexAction']);
+Route::get('/tambah-kab', [KabupatenController::class, 'tambah']);
+Route::get('/ubah-kab/{id}', [KabupatenController::class, 'edit']);
+Route::post('/ubah-kab/{id}', [KabupatenController::class, 'update'])->name('kabupaten.ubah');
+Route::post('/tambah-kab/store', [KabupatenController::class, 'store'])->name('formkabupaten.store');
+Route::get('/kabupaten/hapus/{id}', [KabupatenController::class, 'hapus'])->name('kabupaten.hapus');
 
 //kelola event
 Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);

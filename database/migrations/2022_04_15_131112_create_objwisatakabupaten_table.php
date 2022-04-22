@@ -15,7 +15,7 @@ class CreateObjwisatakabupatenTable extends Migration
     {
         Schema::create('objwisatakabupaten', function (Blueprint $table) {
             $table->increments('id_obj_wisata_kabupaten');
-            $table->string('gambarobjwisatakabupaten');
+            $table->string('file_foto');
             $table->string('nama_kab');
             $table->timestamps();
         });

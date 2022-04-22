@@ -1,50 +1,43 @@
 <?php
-use Illuminate\Support\Facades\DB;
-namespace App\Http\Controllers;
-use App\Models\Objek_Wisata;
 
+namespace App\Http\Controllers;
+use App\Models\Kabupaten;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class objekWisataController extends Controller
+class KabupatenController extends Controller
 {
-    public function indexAction() {
-        return view('user-page.objek-wisata');
-    }
-
     public function kelolaindexAction() {
 
-        $objekwisata = Objek_Wisata::all();
-        return view('admin.kelolaobjekwisata',compact('objekwisata'));
+        $kabupaten = Kabupaten::all();
+        return view('admin.kelola-kab',compact('kabupaten'));
     }
 
     public function tambah(){
-        return view('admin.tambah-objek-wisata');
+        return view('admin.tambah-kab');
     }
 
-
-
     public function store(Request $request){
-        $objek = new Objek_Wisata();
-        $objek->nama_wisata = $request->nama_wisata;
-        $objek->deskripsi = $request->deskripsi;
+        $kabupaten = new Kabupaten();
+        $kabupaten->nama_kab = $request->nama_kab;
         if ($request->hasFile('file_foto')){
             $file= $request->file('file_foto')->getClientOriginalName();
             $request->file('file_foto')->move('images/objekwisata',$file);
-            $objek->file_foto = $file;
+            $kabupaten->file_foto = $file;
         } 
   
-        $objek -> save();
-        return redirect('kelolaobjek');
+        $kabupaten -> save();
+        return redirect('kelolakab');
         
     }
 
-    public function edit($id_obj_wisata){
-        $update = Objek_Wisata::find($id_obj_wisata);
-        return view('admin.ubah-objekwisata',compact('update'));
+    public function edit($id_obj_wisata_kabupaten){
+        $update = Kabupaten::find($id_obj_wisata_kabupaten);
+        return view('admin.ubah-kab',compact('update'));
     }
 
-    public function update(request $request, $id_obj_wisata){
-        $update = Objek_Wisata::find($id_obj_wisata);
+    public function update(request $request, $id_obj_wisata_kabupaten){
+        $update = Kabupaten::find($id_obj_wisata_kabupaten);
             $file = $update->file_foto;
             if ($request->hasFile('file_foto')){
                 $file= $request->file('file_foto')->getClientOriginalName();
@@ -60,12 +53,9 @@ class objekWisataController extends Controller
     
         }
 
-        public function hapus($id_obj_wisata){
-            $hapus = Objek_Wisata::find($id_obj_wisata);
+        public function hapus($id_obj_wisata_kabupaten){
+            $hapus = Kabupaten::find($id_obj_wisata_kabupaten);
              if($hapus->delete()){}
                return redirect()->back();
         }
-    
-
-
 }
