@@ -45,7 +45,6 @@
                                                                         <tr>
                                                                             <th class="text-center" width="15%">Nomor</th>
                                                                             <th class="text-center" width="20%">Nama Sampul</th>
-                                                                            <th class="text-center" width="20%">Jenis Fasilitas</th>
                                                                             <th class="text-center" width="35%">Gambar</th>
                                                                             <th class="text-center" width="30%">Aksi</th>
                                                                         </tr>
@@ -57,14 +56,12 @@
                                                                         <tr>
                                                                             <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$sampuls->nama_sampul}}</td>
-                                                                            <td class="text-center">{{$sampuls->id}}</td>
-                                                                            <td><img src="{{'images/fasilitas/'.$sampuls->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
-                                                                            <td>
+                                                                            <td class="text-center"><img  src="{{'images/fasilitas/'.$sampuls->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
+                                                                            <td class="text-center">
+                                                                                <button class="btn btn-info" onclick="window.location.href='/ubah-sampulfasilitas-wisata/{{$sampuls->id}}'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-sampulfasilitas-wisata/{{$sampuls->id}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/sampul-fasilitas/hapus/{{$sampuls->id}}'"> Hapus</span></button>
-
-                                                            </div>
-                                                            </td>
+                                                                            </td>
                                                             </tr>
                                                             @endforeach
                                                             </tbody>

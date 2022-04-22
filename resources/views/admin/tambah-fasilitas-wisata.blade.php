@@ -54,7 +54,7 @@
                                                 <select   required="required" id="id_sampul_fasilitas" name="id_sampul_fasilitas" class="form-control" >
                                                     <option selected>Pilih Kategori</option>
                                                     @foreach($sampul_fasilitas as $sampul)
-                                                    <option value="{{$sampul->id}}">{{$sampul->id}}</option>
+                                                    <option value="{{$sampul->id}}">{{$sampul->nama_sampul}}</option>
                                                     @endforeach
                                                 </select>
 

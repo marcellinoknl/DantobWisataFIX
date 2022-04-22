@@ -61,7 +61,7 @@
                                                                             <td class="text-center">{{$fasilitas->nama_fasilitas}}</td>
                                                                             <td class="text-center">{{$fasilitas->deskripsi}}</td>
                                                                             <td class="text-center">{{$fasilitas->lokasi}}</td>
-                                                                            <td class="text-center">{{$fasilitas->id_sampul_fasilitas}}</td>
+                                                                            <td class="text-center">{{$fasilitas->nama_sampul}}</td>
                                                                             <td><img src="{{'images/fasilitas/'.$fasilitas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
                                                                             <td>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-fasilitas-wisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>

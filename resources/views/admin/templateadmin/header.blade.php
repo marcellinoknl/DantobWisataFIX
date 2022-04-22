@@ -48,7 +48,13 @@
                     <li><a href="{{url('/admin-wisata')}}"><i class="ti-home"></i> Dashboard </a></li>
 
                     <li class="label">Kelola Data Wisata</li>
-                    <li><a href="{{url('/kelolaobjek')}}"><i class="ti-layout-grid4-alt"></i> Kelola Objek Wisata </a></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Objek Wisata <span
+                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="{{url('/kelolaobjek')}}">Kelola Kabupaten</a></li>
+                            <li><a href="{{url('/kelolaobjek')}}">Kelola Per-Objek Wisata</a></li>
+                        </ul>
+                    </li>
                     <li><a href="{{url('/kelolaatraksi')}}"><i class="ti-layout-grid4-alt"></i> Kelola Atraksi Wisata </a></li>
                     <li><a href="{{url('/kelolaevent')}}"><i class="ti-layout-grid4-alt"></i> Kelola Event Wisata </a></li>
                     <li><a href="{{url('/kelolaberita')}}"><i class="ti-layout-grid4-alt"></i> Kelola Berita Wisata </a></li>

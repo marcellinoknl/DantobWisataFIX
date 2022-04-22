@@ -5,9 +5,9 @@
 	<div class="container">
 		<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
 			<div class="col-md-7 ftco-animate">
-				<span class="subheading">Welcome to Pacific</span>
-				<h1 class="mb-4">Discover Your Favorite Place with Us</h1>
-				<p class="caps">Travel to the any corner of the world, without going around in circles</p>
+				<span class="subheading">Selamat Datang Di Wisata Kawasan Danau Toba</span>
+				<h1 class="mb-4">Kunjugi Tempat Favorit Anda</h1>
+				<p class="caps">Kepingan Surga Toba</p>
 			</div>
 			<a href="https://www.youtube.com/watch?v=e9B_a2L7Zr4" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
 				<span class="fa fa-play"></span>
@@ -263,7 +263,7 @@
 							<img src="images/sibeabea.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Tinjau
+								SAMOSIR
 								
 							</a>
 						</div>
@@ -277,7 +277,7 @@
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
 				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
+					Lihat Selengkapnya
 				</a>
 			</div>
 		</div>

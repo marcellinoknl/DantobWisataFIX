@@ -17,7 +17,10 @@ class fasilitasController extends Controller
 
     }
     public function kelolaindexActionDaftarFasilitas() {
-        $fasilitas = Fasilitas::all();
+        $fasilitas = DB::table('fasilitas_wisata')
+        ->select('fasilitas_wisata.*','sampul_fasilitas.nama_sampul')
+        ->join('sampul_fasilitas', 'sampul_fasilitas.id','=','fasilitas_wisata.id_sampul_fasilitas')
+        ->get();
         return view('admin.kelola-fasilitas',compact('fasilitas'));
 
     }
