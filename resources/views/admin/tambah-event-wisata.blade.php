@@ -31,63 +31,63 @@
                             <div class="card-body">
                                 <form action="{{route('formeventwisata.store')}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Judul Event</label>
-                                            <div class="col-sm-9">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Judul Event</label>
+                                        <div class="col-sm-9">
 
-                                                <input type="text" required="required" id="judulevent" name="judul_event" class="form-control" >
+                                            <input type="text" required="required" id="judulevent" name="judul_event" class="form-control">
 
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Gambar Event Wisata</label>
+                                        <div class="col-sm-9">
+                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
+                                            <div class="custom-file">
+
+                                                <input type="file" class="custom-file-input" id="gambarevent" onchange="previewImage()" name="file_foto">
+
+                                                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Gambar Event Wisata</label>
-                                            <div class="col-sm-9">
-                                                <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
-                                                <div class="custom-file">
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Deskripsi Event</label>
+                                    </div>
+                                    <div class="mb-3 row">
 
-                                                    <input type="file" class="custom-file-input" id="gambarevent" onchange="previewImage()"name="file_foto">
+                                        <textarea type="text" required="required" id="deskripsievent" name="deskripsi_event" height="300px" class="form-control"></textarea>
 
-                                                    <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                                  </div>
-                                            </div>
-                                        </div>  
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Deskripsi Event</label>
-                                        </div>
-                                        <div class ="mb-3 row">
-
-                                            <textarea type="text" required="required" id="deskripsievent" name="deskripsi_event" height="300px" class="form-control" ></textarea>
-
-                                        </div>
-                                        <br><br>    
-                                        <button type="button" class="btn btn-danger" onclick="window.location.href='/editproduk'"><i class="ti-close"></i> Batal</button>
-                                        <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
-                                    </form>
+                                    </div>
+                                    <br><br>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/editproduk'"><i class="ti-close"></i> Batal</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
+                                </form>
                             </div>
                         </div>
 
-                        </div>
-                        <!-- /# card -->
                     </div>
-                    <!-- /# column -->
+                    <!-- /# card -->
                 </div>
-                <!-- /# row -->
+                <!-- /# column -->
+        </div>
+        <!-- /# row -->
 
-    <script> 
-                    function previewImage() {
+        <script>
+            function previewImage() {
 
-        const image = document.querySelector('#gambarevent')
+                const image = document.querySelector('#gambarevent')
 
-        const imgPreview = document.querySelector('.img-preview')
+                const imgPreview = document.querySelector('.img-preview')
 
-        imgPreview.style.display = 'block';
+                imgPreview.style.display = 'block';
 
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.files[0])
+                const oFReader = new FileReader();
+                oFReader.readAsDataURL(image.files[0])
 
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src = oFREvent.target.result;
-        }
-    }
-    </script>
-@include('admin.templateadmin.footer')
+                oFReader.onload = function(oFREvent) {
+                    imgPreview.src = oFREvent.target.result;
+                }
+            }
+        </script>
+        @include('admin.templateadmin.footer')
