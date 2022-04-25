@@ -1,6 +1,6 @@
 <?php
-use Illuminate\Support\Facades\DB;
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use App\Models\Objek_Wisata;
 
 use Illuminate\Http\Request;
