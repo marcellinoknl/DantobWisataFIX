@@ -16,7 +16,8 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
 
-
+	{{-- card style --}}
+	<link href="{{asset('css/cardStyle.css')}}" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="css/about.css">
 

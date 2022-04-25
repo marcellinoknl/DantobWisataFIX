@@ -253,24 +253,9 @@
 				</div>
 			</div>
 
-			<div class="row isotope-grid">
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<!-- Block2 -->
-					<div class="title bold black-text" style="text-center"> SAMOSIR
-					<div class="block2">
-					</div>
-						<div class="block2-pic hov-img0">
-							<img src="images/sibeabea.jpg" alt="IMG-PRODUCT">
-
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								SAMOSIR
-								
-							</a>
-						</div>
-
-						
-						</div>
-					</div>
+				<div class="mycard">
+					<img src="images/objekwisata/lumbanbulbul.jpeg" alt="" class="mycard-image">
+					<h3 class="mycard-title">Samosir</h3>
 				</div>
 			</div>
 
