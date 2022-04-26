@@ -68,7 +68,7 @@
                                             <textarea type="text" required="required" id="deskripsiwisata" name="deskripsi" height="300px" class="form-control" ></textarea>
                                         </div>
                                         <br><br>    
-                                        <button type="button" class="btn btn-danger" onclick="window.location.href='/editproduk'"><i class="ti-close"></i> Batal</button>
+                                        <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaobjek'"><i class="ti-close"></i> Batal</button>
                                         <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
                                     </form>
                             </div>

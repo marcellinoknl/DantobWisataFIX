@@ -72,6 +72,11 @@ class fasilitasController extends Controller
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
         return view('admin.ubah-fasilitaswisata', compact('update','sampul_fasilitas'));
     }
+    public function editsampul($id)
+    {
+        $update = SampulFasilitas::find($id);
+        return view('admin.ubah-sampulfasilitas-wisata', compact('update'));
+    }
 
     public function update(request $request, $id_fasilitas)
     {
@@ -112,9 +117,9 @@ class fasilitasController extends Controller
         return redirect()->back();
     }
 
-    public function hapusSampul($id_sampul_fasilitas)
+    public function hapusSampul($id)
     {
-        $hapus = SampulFasilitas::find($id_sampul_fasilitas);
+        $hapus = SampulFasilitas::find($id);
         if ($hapus->delete()) {
         }
         return redirect()->back();
