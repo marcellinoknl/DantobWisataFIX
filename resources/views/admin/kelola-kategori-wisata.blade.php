@@ -53,10 +53,10 @@
                                                                     <tbody>
                                                                         @foreach($kategori as $kat)
                                                                         <tr>
-                                                                            <td class="text-center">{{$kat->id_kategori}}</td>
+                                                                            <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$kat->nama_kategori}}</td>
                                                                             <td>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-galeri-wisata/{{$kat->id_kategori}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-kat/{{$kat->id_kategori}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/kategoriwisata/hapus/{{$kat->id_kategori}}'"> Hapus</span></button>
                                                                             </td>
                                                                             </div>

@@ -49,12 +49,13 @@
                                                                             <th class="text-center" width="20%">Foto Atraksi</th>
                                                                             <th class="text-center" width="25%">Aksi</th>
                                                                         </tr>
+                                                                        <?php $number = 1; ?>
                                                                     </thead>
 
                                                                     <tbody>
                                                                         @foreach($atraksi as $atraksiwisatas)
                                                                         <tr>
-                                                                            <td class="text-center">{{$atraksiwisatas->atraksi_id}}</td>
+                                                                            <td class="text-center"> <?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$atraksiwisatas->judul}}</td>
                                                                             <td class="text-center">{{$atraksiwisatas->deskripsi}}</td>
                                                                             <td><img src="{{'images/Atraksi/'.$atraksiwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>

@@ -45,7 +45,7 @@
 
                                             <div class="custom-file">
 
-                                                <input type="file" class="custom-file-input" id="gambaratraksi" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
+                                                <input type="file" class="custom-file-input" id="gambaraberita" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>

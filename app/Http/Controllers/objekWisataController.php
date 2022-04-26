@@ -53,7 +53,9 @@ class objekWisataController extends Controller
 
     public function edit($id_obj_wisata){
         $update = Objek_Wisata::find($id_obj_wisata);
-        return view('admin.ubah-objekwisata',compact('update'));
+        $kabupaten = DB::table('objwisatakabupaten')->get();
+        $kategori = DB::table('kategori_wisata')->get();
+        return view('admin.ubah-objekwisata',compact('update','kabupaten','kategori'));
     }
 
     public function update(request $request, $id_obj_wisata){

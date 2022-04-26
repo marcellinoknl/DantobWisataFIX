@@ -38,6 +38,30 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kabupaten</label>
+                                            <div class="col-sm-9">
+                                                    
+                                                <select   required="required" id="id_obj_wisata_kabupaten" name="id_obj_wisata_kabupaten" class="form-control"  >
+                                                    <option selected>Pilih Kabupaten</option>
+                                                    @foreach($kabupaten as $kab)
+                                                    <option value="{{$kab->id_obj_wisata_kabupaten}}">{{$kab->nama_kab}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kategori</label>
+                                            <div class="col-sm-9">
+                                                    
+                                                <select   required="required" id="id_kat_wisata" name="id_kat_wisata" class="form-control"  >
+                                                    <option selected>Pilih Kategori</option>
+                                                    @foreach($kategori as $kat)
+                                                    <option value="{{$kat->id_kategori}}">{{$kat->nama_kategori}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Gambar Objek Wisata</label>
                                             <div class="col-sm-9">
                                                 <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/objekwisata/'.$update->file_foto)}}">

@@ -54,7 +54,7 @@
                                                                     <tbody>
                                                                         @foreach($galeriwisata as $galeriwisatas)
                                                                         <tr>
-                                                                            <td class="text-center">{{$galeriwisatas->id_galeri}}</td>
+                                                                            <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$galeriwisatas->judul}}</td>
                                                                             <td><img src="{{'images/galeriwisata/'.$galeriwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
                                                                             <td>

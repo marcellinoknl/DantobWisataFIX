@@ -43,17 +43,18 @@
                                                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center" width="20%">Nomor</th>
+                                                                            <th class="text-center" width="10%">Nomor</th>
                                                                             <th class="text-center" width="20%">Judul Berita</th>
-                                                                            <th class="text-center" width="35%">Isi Berita</th>
+                                                                            <th class="text-center" width="30%">Isi Berita</th>
                                                                             <th class="text-center" width="20%">Foto</th>
                                                                             <th class="text-center" width="20%">Aksi</th>
                                                                         </tr>
+                                                                        <?php $number = 1; ?>
                                                                     </thead>
                                                                     <tbody>
                                                                         @foreach($kelolaberita as $beritawisatas)
                                                                         <tr>
-                                                                            <td class="text-center">{{$beritawisatas->id_berita}}</td>
+                                                                            <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$beritawisatas->judul_berita}}</td>
                                                                             <td class="text-center">{{$beritawisatas->isi_berita}}</td>
                                                                             <td><img src="{{'images/berita/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>

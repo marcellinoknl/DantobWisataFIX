@@ -29,7 +29,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('formsampulfasilitas.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('formsampulfasilitas.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Sampul  </label>
@@ -44,7 +44,7 @@
 
                                             <div class="custom-file">
 
-                                                <input type="file" class="custom-file-input" id="gambaratraksi" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
+                                                <input type="file" class="custom-file-input" id="file_foto" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
@@ -52,7 +52,7 @@
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/sampul-fasilitas'"><i class="ti-close"></i> Batal</button>
-                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>
                         </div>

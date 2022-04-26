@@ -54,9 +54,10 @@ class KategoriWisataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_kategori)
     {
-        //
+        $update = Kategori_Wisata::find($id_kategori);
+        return view('admin.ubah-kategoriwisata', compact('update'));
     }
 
     /**
@@ -68,7 +69,13 @@ class KategoriWisataController extends Controller
      */
     public function update(Request $request, $id_kategori)
     {
-        //
+        $update = Kategori_Wisata::find($id_kategori);
+        
+        $update->nama_kategori = $request->nama_kategori;
+        
+        $update->save();
+
+        return redirect('kelolakat');
     }
 
     /**

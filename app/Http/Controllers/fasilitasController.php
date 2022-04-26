@@ -78,6 +78,27 @@ class fasilitasController extends Controller
         return view('admin.ubah-sampulfasilitas-wisata', compact('update'));
     }
 
+    public function updatesampul(request $request, $id){
+        $this->validate(
+            $request,
+            [
+                'nama_sampul' => 'required'
+            ]
+        );
+        $update = SampulFasilitas::find($id);
+        $file = $update->file_foto;
+        if ($request->hasFile('file_foto')) {
+            $file = $request->file('file_foto')->getClientOriginalName();
+            $request->file('file_foto')->move('images/fasilitas', $file);
+            $update->file_foto = $file;
+        }
+        $update->nama_sampul = $request->nama_sampul;
+        $update->file_foto = $file;
+        $update->save();
+
+        return redirect('sampul-fasilitas');
+    }
+
     public function update(request $request, $id_fasilitas)
     {
         $this->validate(

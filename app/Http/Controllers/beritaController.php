@@ -51,7 +51,7 @@ class beritaController extends Controller
         $file = $update->file_foto;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
-            $request->file('file_foto')->move('images/Atraksi', $file);
+            $request->file('file_foto')->move('images/berita', $file);
             $update->file_foto = $file;
         }
         $update->judul_berita = $request->judul_berita;
