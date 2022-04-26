@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> TAMBAH GALERI WISATA </h1>
+                            <h1> UBAH GALERI WISATA </h1>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                                             <textarea type="text" required="required" id="deskripsiwisata" name="deskripsi" height="300px" class="form-control" >{{$update->deskripsi}}</textarea>
                                         </div> -->
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/editproduk'"><i class="ti-close"></i> Batal</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolagaleri'"><i class="ti-close"></i> Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>
