@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 class objekWisataController extends Controller
 {
     public function indexAction() {
-        return view('user-page.objek-wisata');
+        $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
+        return view('user-page.objek-wisata',['objwisatakabupaten'=>$objwisatakabupaten]);
     }
 
     public function kelolaindexAction() {

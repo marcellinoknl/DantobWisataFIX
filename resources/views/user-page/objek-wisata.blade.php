@@ -252,11 +252,20 @@
 					</div>
 				</div>
 			</div>
-
+			
+			<div class="container border p-md-2 p-2">
+				<div class="row g-2 g-md-4">
+					@foreach ($objwisatakabupaten as $objekwisatas)
+					<div class="col-6 col-md-3 py-4">
 				<div class="mycard">
-					<img src="images/objekwisata/lumbanbulbul.jpeg" alt="" class="mycard-image">
-					<h3 class="mycard-title">Samosir</h3>
+					<img src="{{url('images/objekwisata/'.$objekwisatas->file_foto )}}" alt="" class="mycard-image">
+					<h3 class="mycard-title">{{$objekwisatas->nama_kab}}</h3>
 				</div>
+			</div>
+			@endforeach
+			</div>
+		</div>
+				
 			</div>
 
 			<!-- Load more -->

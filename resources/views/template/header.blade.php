@@ -42,6 +42,10 @@
 
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	
+
+
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -53,7 +57,7 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Beranda</a></li>
+					<li class="nav-item active "><a href="{{url('/')}}" class="nav-link" >Beranda</a></li>
 					<li class="nav-item"><a href="{{url('/objek-wisata')}}" class="nav-link">Destinasi Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
                         <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -55,7 +55,7 @@
                                     </div> -->
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolakab'"><i class="ti-close"></i> Batal</button>
-                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>
                         </div>

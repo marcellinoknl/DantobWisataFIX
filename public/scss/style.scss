@@ -470,7 +470,7 @@ h1, h2, h3, h4, h5,
 				color: $white;
 				@include transition(.3s);
 				border: 1px solid transparent;
-				background: rgba(255,255,255,1);
+				background: rgb(222, 88, 48);
 				background: $primary;
 				&:after{
 					opacity: 1;
