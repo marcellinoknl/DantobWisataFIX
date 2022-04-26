@@ -38,16 +38,6 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Gambar Objek Wisata</label>
-                                            <div class="col-sm-9">
-                                                <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="gambarwisata" onchange="previewImage()"name="file_foto">
-                                                    <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                                  </div>
-                                            </div>
-                                        </div>  
-                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kabupaten</label>
                                             <div class="col-sm-9">
 
@@ -60,7 +50,29 @@
 
                                             </div>
                                         </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kategori</label>
+                                            <div class="col-sm-9">
 
+                                                <select   required="required" id="id_kat_wisata" name="id_kat_wisata" class="form-control" >
+                                                    <option selected>Pilih Kategori</option>
+                                                    @foreach($kategori as $kat)
+                                                    <option value="{{$kat->id_kategori}}">{{$kat->nama_kategori}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Gambar Objek Wisata</label>
+                                            <div class="col-sm-9">
+                                                <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="gambarwisata" onchange="previewImage()"name="file_foto">
+                                                    <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                                                  </div>
+                                            </div>
+                                        </div>  
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Deskripsi Wisata</label>
                                         </div>

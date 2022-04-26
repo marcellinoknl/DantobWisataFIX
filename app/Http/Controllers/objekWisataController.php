@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Objek_Wisata;
+use App\Models\Kategori_Wisata;
 use App\Models\Kabupaten;
 
 use Illuminate\Http\Request;
@@ -27,7 +28,8 @@ class objekWisataController extends Controller
 
     public function tambah(){
         $kabupaten = Kabupaten::all();
-        return view('admin.tambah-objek-wisata',compact('kabupaten'));
+        $kategori = Kategori_Wisata::all();
+        return view('admin.tambah-objek-wisata',compact('kabupaten','kategori'));
     }
 
 
@@ -37,7 +39,7 @@ class objekWisataController extends Controller
         $objek->nama_wisata = $request->nama_wisata;
         $objek->deskripsi = $request->deskripsi;
         $objek->id_obj_wisata_kabupaten = $request->id_obj_wisata_kabupaten;
-        // $objek->id_kat_wisata = $request->id_kat_wisata;
+        $objek->id_kat_wisata = $request->id_kat_wisata;
         if ($request->hasFile('file_foto')){
             $file= $request->file('file_foto')->getClientOriginalName();
             $request->file('file_foto')->move('images/objekwisata',$file);
@@ -65,6 +67,7 @@ class objekWisataController extends Controller
             $update->nama_wisata= $request->nama_wisata;
             $update->file_foto = $file;
             $update->deskripsi = $request->deskripsi;
+            $update->id_kat_wisata = $request->id_kat_wisata;
             $update -> save();
            
             return redirect('kelolaobjek');         

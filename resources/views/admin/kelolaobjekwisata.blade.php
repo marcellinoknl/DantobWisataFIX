@@ -62,7 +62,8 @@
                                                                             <td class="text-center">{{$objekwisatas->nama_wisata}}</td>
                                                                             <td class="text-center">{{$objekwisatas->deskripsi}}</td>
                                                                             <td class="text-center">{{$objekwisatas->nama_kab}}</td>
-                                                                            <td></td>
+                                                                            <td class="text-center">{{$objekwisatas->nama_kategori}}</td>
+                                                                            
                                                                             {{-- <td class="text-center">{{$objekwisatas->nama_kategori}}</td> --}}
                                                                             <td><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
                                                                             <td>

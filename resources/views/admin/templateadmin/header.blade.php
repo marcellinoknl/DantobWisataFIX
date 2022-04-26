@@ -51,7 +51,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Objek Wisata <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="{{url('/kelolakategoriwisata')}}">Kelola Kategori Wisata</a></li>
+                            <li><a href="{{url('/kelolakat')}}">Kelola Kategori Wisata</a></li>
                             <li><a href="{{url('/kelolakab')}}">Kelola Kabupaten</a></li>
                             <li><a href="{{url('/kelolaobjek')}}">Kelola Per-Objek Wisata</a></li>
                         </ul>

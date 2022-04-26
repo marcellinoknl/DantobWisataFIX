@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Kategori_Wisata;
 use Illuminate\Http\Request;
 
 class KategoriWisataController extends Controller
@@ -13,19 +13,15 @@ class KategoriWisataController extends Controller
      */
     public function index()
     {
-        $kategori = Berita_Wisata::all();
-        return view('admin.kelolaberita', compact('kelolaberita'));
+        $kategori = Kategori_Wisata::all();
+        return view('admin.kelola-kategori-wisata', compact('kategori'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function tambah()
     {
-        //
+        return view('admin.tambah-kelola-kategori-wisata');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +31,10 @@ class KategoriWisataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kategori = new Kategori_Wisata();
+        $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->save();
+        return redirect('kelolakat');
     }
 
     /**
@@ -67,7 +66,7 @@ class KategoriWisataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_kategori)
     {
         //
     }
@@ -78,8 +77,11 @@ class KategoriWisataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_kategori)
     {
-        //
+        $hapus = Kategori_Wisata::find($id_kategori);
+        if ($hapus->delete()) {
+        }
+        return redirect()->back();
     }
 }

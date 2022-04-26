@@ -9,6 +9,7 @@ use App\Http\Controllers\eventController;
 use App\Http\Controllers\beritaController;
 use App\Http\Controllers\fasilitasController;
 use App\Http\Controllers\geleriWisataController;
+use App\Http\Controllers\KategoriWisataController;
 use App\Http\Controllers\adminController\adminIndexController;
 use App\Http\Controllers\accountController;
 
@@ -80,6 +81,14 @@ Route::get('/ubah-kab/{id}', [KabupatenController::class, 'edit']);
 Route::post('/ubah-kab/{id}', [KabupatenController::class, 'update'])->name('kabupaten.ubah');
 Route::post('/tambah-kab/store', [KabupatenController::class, 'store'])->name('formkabupaten.store');
 Route::get('/kabupaten/hapus/{id}', [KabupatenController::class, 'hapus'])->name('kabupaten.hapus');
+
+//kelola kategori wisata
+Route::get('/kelolakat', [KategoriWisataController::class, 'index']);
+Route::get('/tambah-kat', [KategoriWisataController::class, 'tambah']);
+Route::get('/ubah-kat/{id}', [KategoriWisataController::class, 'edit']);
+Route::post('/ubah-kat/{id}', [KategoriWisataController::class, 'update'])->name('kategori.ubah');
+Route::post('/tambah-kat/store', [KategoriWisataController::class, 'store'])->name('formkategoriwisata.store');
+Route::get('/kategoriwisata/hapus/{id}', [KategoriWisataController::class, 'destroy'])->name('kabupaten.hapus');
 
 //kelola event
 Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);

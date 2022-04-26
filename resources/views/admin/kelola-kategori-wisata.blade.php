@@ -31,7 +31,7 @@
                             <section id="main-content">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <a href="{{ url('/tambah-kategori-wisata')}}" <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Kateogri Wisata</span></button>
+                                        <a href="{{ url('/tambah-kat')}}" <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Kategori Wisata</span></button>
                                         </a>
 
                                         <section id="main-content">
@@ -44,20 +44,20 @@
                                                                     <thead>
                                                                         <tr>
                                                                             <th class="text-center" width="10%">No</th>
-                                                                            <th class="text-center" width="20%">Nama Kategori</th>
-                                                                            <th class="text-center" width="35%">Aksi</th>
+                                                                            <th class="text-center" width="60%">Nama Kategori</th>
+                                                                            <th class="text-center" width="30%">Aksi</th>
                                                                         </tr>
                                                                         <?php $number = 1; ?>
                                                                     </thead>
 
                                                                     <tbody>
-                                                                        @foreach($kategori_wisata as $kat)
+                                                                        @foreach($kategori as $kat)
                                                                         <tr>
-                                                                            <td class="text-center">{{$kat->id_galeri}}</td>
+                                                                            <td class="text-center">{{$kat->id_kategori}}</td>
                                                                             <td class="text-center">{{$kat->nama_kategori}}</td>
                                                                             <td>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-galeri-wisata/{{$galeriwisatas->id_galeri}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
-                                                                                <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/galeri/hapus/{{$galeriwisatas->id_galeri}}'"> Hapus</span></button>
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-galeri-wisata/{{$kat->id_kategori}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
+                                                                                <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/kategoriwisata/hapus/{{$kat->id_kategori}}'"> Hapus</span></button>
                                                                             </td>
                                                                             </div>
                                                             </tr>
