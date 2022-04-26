@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\Objek_Wisata;
+use App\Models\Kabupaten;
 
 use Illuminate\Http\Request;
 
@@ -12,13 +14,20 @@ class objekWisataController extends Controller
     }
 
     public function kelolaindexAction() {
-
-        $objekwisata = Objek_Wisata::all();
+        
+        
+        $objekwisata = DB::table('objek_wisata')
+        ->select('objek_wisata.*','objwisatakabupaten.nama_kab','kategori_wisata.nama_kategori')
+        ->join('objwisatakabupaten', 'objwisatakabupaten.id_obj_wisata_kabupaten','=','objek_wisata.id_obj_wisata_kabupaten')
+        ->join('kategori_wisata', 'kategori_wisata.id_kategori','=','objek_wisata.id_kat_wisata')
+        ->get();
         return view('admin.kelolaobjekwisata',compact('objekwisata'));
+
     }
 
     public function tambah(){
-        return view('admin.tambah-objek-wisata');
+        $kabupaten = Kabupaten::all();
+        return view('admin.tambah-objek-wisata',compact('kabupaten'));
     }
 
 
@@ -27,6 +36,8 @@ class objekWisataController extends Controller
         $objek = new Objek_Wisata();
         $objek->nama_wisata = $request->nama_wisata;
         $objek->deskripsi = $request->deskripsi;
+        $objek->id_obj_wisata_kabupaten = $request->id_obj_wisata_kabupaten;
+        // $objek->id_kat_wisata = $request->id_kat_wisata;
         if ($request->hasFile('file_foto')){
             $file= $request->file('file_foto')->getClientOriginalName();
             $request->file('file_foto')->move('images/objekwisata',$file);

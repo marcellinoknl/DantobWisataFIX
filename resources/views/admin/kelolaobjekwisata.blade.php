@@ -45,10 +45,12 @@
                                                                         <thead>
                                                                             <tr>
                                                                                 <th class="text-center" width="10%">No</th>
-                                                                                <th class="text-center" width="15%">Nama Wisata</th>
-                                                                                <th class="text-center" width="35%">Deskripsi Wisata</th>
-                                                                                <th class="text-center" width="20%">Foto Wisata</th>
-                                                                                <th class="text-center" width="20%">Aksi</th>
+                                                                                <th class="text-center" width="10%">Nama Wisata</th>
+                                                                                <th class="text-center" width="20%">Deskripsi Wisata</th>
+                                                                                <th class="text-center" width="10%">Kabupaten</th>
+                                                                                <th class="text-center" width="10%">Kategori</th>
+                                                                                <th class="text-center" width="25%">Foto Wisata</th>
+                                                                                <th class="text-center" width="15%">Aksi</th>
                                                                             </tr>
                                                                             <?php $number = 1; ?>
                                                                         </thead>
@@ -59,6 +61,9 @@
                                                                             <td class="text-center"><?php echo $number++; ?> </td>
                                                                             <td class="text-center">{{$objekwisatas->nama_wisata}}</td>
                                                                             <td class="text-center">{{$objekwisatas->deskripsi}}</td>
+                                                                            <td class="text-center">{{$objekwisatas->nama_kab}}</td>
+                                                                            <td></td>
+                                                                            {{-- <td class="text-center">{{$objekwisatas->nama_kategori}}</td> --}}
                                                                             <td><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
                                                                             <td>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>

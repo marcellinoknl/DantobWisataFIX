@@ -48,6 +48,20 @@
                                             </div>
                                         </div>  
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kabupaten</label>
+                                            <div class="col-sm-9">
+
+                                                <select   required="required" id="id_obj_wisata_kabupaten" name="id_obj_wisata_kabupaten" class="form-control" >
+                                                    <option selected>Pilih Kabupaten</option>
+                                                    @foreach($kabupaten as $kabupaten)
+                                                    <option value="{{$kabupaten->id_obj_wisata_kabupaten}}">{{$kabupaten->nama_kab}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Deskripsi Wisata</label>
                                         </div>
                                         <div class ="mb-3 row">

@@ -54,7 +54,7 @@ class fasilitasController extends Controller
        
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
         $fasilitas->deskripsi = $request->deskripsi;
-        $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas;
+        $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas; 
         $fasilitas->lokasi = $request->lokasi;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
