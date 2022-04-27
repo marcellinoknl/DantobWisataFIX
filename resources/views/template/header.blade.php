@@ -39,7 +39,7 @@
 		<link rel="stylesheet" type="text/css" href="template2/css/util.css">
 		<link rel="stylesheet" type="text/css" href="template2/css/main.css">
 	<!--===============================================================================================-->
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
 
