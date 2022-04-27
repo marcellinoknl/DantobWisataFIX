@@ -45,6 +45,10 @@ class KabupatenSeeder extends Seeder
             [
                 'nama_kab' => 'karo',
                 'file_foto' => 'karo.jpg'
+            ],
+            [
+                'nama_kab' => 'nias',
+                'file_foto' => 'karnaval.jpg'
             ]
         ]);
     }
