@@ -43,13 +43,10 @@ class KabupatenSeeder extends Seeder
                 'file_foto' => 'taput.jpg'
             ],
             [
-                'nama_kab' => 'karo',
+                'nama_kab' => 'Karo',
                 'file_foto' => 'karo.jpg'
-            ],
-            [
-                'nama_kab' => 'nias',
-                'file_foto' => 'karnaval.jpg'
             ]
+            
         ]);
     }
 }
