@@ -56,7 +56,7 @@
                                         </div>
                                         <div class ="mb-3 row">
 
-                                            <textarea type="text" required="required" id="deskripsiatraksi" name="deskripsi" height="300px" class="form-control" >{{$update->deskripsi}}</textarea>
+                                            <textarea type="text" required="required" id="deskripsiatraksi" name="deskripsi" cols="200px" rows="20" >{{$update->deskripsi}}</textarea>
 
                                         </div>
                                         <br><br>    

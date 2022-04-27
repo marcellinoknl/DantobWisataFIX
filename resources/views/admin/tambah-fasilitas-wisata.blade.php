@@ -77,7 +77,7 @@
                                         </div>
                                         <div class ="mb-3 row">
 
-                                            <textarea type="text" required="required" id="deskripsi" name="deskripsi" height="300px" class="form-control" ></textarea>
+                                            <textarea type="text" required="required" id="deskripsi" name="deskripsi" cols="200px" rows="20" ></textarea>
 
                                         </div>
                                         <br><br>    

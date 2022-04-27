@@ -55,8 +55,7 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi Event</label>
                                     </div>
                                     <div class="mb-3 row">
-
-                                        <textarea type="text" required="required" id="deskripsievent" name="deskripsi_event" height="300px" class="form-control"></textarea>
+                                   <textarea type="text" required="required" id="deskripsievent" name="deskripsi_event" cols="200px" rows="20"></textarea>
 
                                     </div>
                                     <br><br>

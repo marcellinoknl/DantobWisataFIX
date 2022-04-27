@@ -55,8 +55,8 @@
                                             <label class="col-sm-3 col-form-label">Deskripsi Atraksi</label>
                                         </div>
                                         <div class ="mb-3 row">
-
-                                            <textarea type="text" required="required" id="deskripsiatraksi" name="deskripsi" height="300px" class="form-control" ></textarea>
+                                        <!-- <textarea required="required" id="deskripsiatraksi" name="deskripsi" cols="200px" rows="20" ></textarea> -->
+                                        <textarea required="required" id="deskripsiatraksi" name="deskripsi" height="300px"cols="200px" rows="20"  ></textarea>
 
                                         </div>
                                         <br><br>    
