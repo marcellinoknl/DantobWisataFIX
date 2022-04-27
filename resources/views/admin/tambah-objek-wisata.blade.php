@@ -77,7 +77,7 @@
                                             <label class="col-sm-3 col-form-label">Deskripsi Wisata</label>
                                         </div>
                                         <div class ="mb-3 row">
-                                            <textarea type="text" required="required" id="deskripsiwisata" name="deskripsi" height="300px" class="form-control" ></textarea>
+                                            <textarea required="required" id="deskripsiwisata" name="deskripsi" cols="200px" rows="20" ></textarea>
                                         </div>
                                         <br><br>    
                                         <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaobjek'"><i class="ti-close"></i> Batal</button>
