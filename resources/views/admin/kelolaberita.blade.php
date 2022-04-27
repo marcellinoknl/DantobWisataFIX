@@ -57,8 +57,9 @@
                                                                             <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$beritawisatas->judul_berita}}</td>
                                                                             <td class="text-center">{{$beritawisatas->isi_berita}}</td>
-                                                                            <td><img src="{{'images/berita/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
+                                                                            <td class="text-center"><img src="{{'images/berita/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
+                                                                                 <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-berita-wisata/{{$beritawisatas->id_berita}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/berita/hapus/{{$beritawisatas->id_berita}}'"> Hapus</span></button>
                                                             </div>

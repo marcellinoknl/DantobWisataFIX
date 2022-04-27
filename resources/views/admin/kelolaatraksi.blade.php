@@ -58,8 +58,9 @@
                                                                             <td class="text-center"> <?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$atraksiwisatas->judul}}</td>
                                                                             <td class="text-center">{{$atraksiwisatas->deskripsi}}</td>
-                                                                            <td><img src="{{'images/Atraksi/'.$atraksiwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
+                                                                            <td class="text-center"><img src="{{'images/Atraksi/'.$atraksiwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
+                                                                            <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-atraksi-wisata/{{$atraksiwisatas->atraksi_id}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/atraksiwisata/hapus/{{$atraksiwisatas->atraksi_id}}'"> Hapus</span></button>
                                                                                 <!-- <button class="btn btn-danger"href='deleteatraksi/{atraksi_id}/{{$atraksiwisatas->atraksi_id}}'"><span class="ti-trash"style="color:black;"> Hapus</span></button> -->

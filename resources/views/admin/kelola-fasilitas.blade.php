@@ -62,8 +62,9 @@
                                                                             <td class="text-center">{{$fasilitas->deskripsi}}</td>
                                                                             <td class="text-center">{{$fasilitas->lokasi}}</td>
                                                                             <td class="text-center">{{$fasilitas->nama_sampul}}</td>
-                                                                            <td><img src="{{'images/fasilitas/'.$fasilitas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
+                                                                            <td class="text-center"><img src="{{'images/fasilitas/'.$fasilitas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
+                                                                            <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-fasilitas-wisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/fasilitas/hapus/{{$fasilitas->id_fasilitas}}'"> Hapus</span></button>
                                                                                

@@ -58,10 +58,11 @@
                                                                             <td class="text-center"><?php echo $number++; ?> </td>
                                                                             <td class="text-center">{{$eventwisatas->judul_event}}</td>
                                                                             <td class="text-center">{{$eventwisatas->deskripsi_event}}</td>
-                                                                            <td><img src="{{'images/eventwisata/'.$eventwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
+                                                                            <td class="text-center"><img src="{{'images/eventwisata/'.$eventwisatas->file_foto }}"style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
+                                                                                 <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
                                                                                 <button class="btn btn-warning"><span class="ti-pencil-alt" style="color:black;" onclick="window.location.href='/ubah-event-wisata/{{$eventwisatas->id_event}}'"> Ubah</span></button>
-                                                            </div><button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/eventwisata/hapus/{{$eventwisatas->id_event}}'"> Hapus</span></button>
+                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/eventwisata/hapus/{{$eventwisatas->id_event}}'"> Hapus</span></button>
                                                             </td>
                                                             </tr>
                                                             @endforeach

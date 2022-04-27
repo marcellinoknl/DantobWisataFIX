@@ -56,8 +56,8 @@
                                                                         @foreach($kabupaten as $kabupatens)
                                                                         <tr>
                                                                             <td class="text-center"><?php echo $number++; ?> </td>
-                                                                            <td class="text-center">{{$kabupatens->nama_kab}}</td>
-                                                                            <td><img src="{{'images/objekwisata/'.$kabupatens->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
+                                                                            <td class="text-center">{{$kabupatens->nama_kab}}</td>                                                                        
+                                                                            <td><center><img src="{{'images/objekwisata/'.$kabupatens->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></center></td>
                                                                             <td>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-kab/{{$kabupatens->id_obj_wisata_kabupaten}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/kabupaten/hapus/{{$kabupatens->id_obj_wisata_kabupaten}}'"> Hapus</span></button>

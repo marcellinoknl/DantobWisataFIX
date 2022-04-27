@@ -56,7 +56,7 @@
                                                                         <tr>
                                                                             <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$galeriwisatas->judul}}</td>
-                                                                            <td><img src="{{'images/galeriwisata/'.$galeriwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover;" /></td>
+                                                                            <td class="text-center"><img src="{{'images/galeriwisata/'.$galeriwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"/></td>
                                                                             <td>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-galeri-wisata/{{$galeriwisatas->id_galeri}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
                                                                                 <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/galeri/hapus/{{$galeriwisatas->id_galeri}}'"> Hapus</span></button>
