@@ -60,6 +60,17 @@ class objekWisataController extends Controller
     }
 
     public function update(request $request, $id_obj_wisata){
+        $this->validate(
+            $request,
+            [
+                'nama_wisata' => 'required',
+                'deskripsi' => 'required',
+                'nama_kategori' => 'required',
+                'deskripsi' => 'required',
+                'nama_kabupaten' => 'required',
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+            ]
+        );
         $update = Objek_Wisata::find($id_obj_wisata);
             $file = $update->file_foto;
             if ($request->hasFile('file_foto')){
@@ -70,7 +81,8 @@ class objekWisataController extends Controller
             $update->nama_wisata= $request->nama_wisata;
             $update->file_foto = $file;
             $update->deskripsi = $request->deskripsi;
-            $update->id_kat_wisata = $request->id_kat_wisata;
+            $update->id_kat_wisata = $request->nama_kategori;
+            $update->id_obj_wisata_kabupaten = $request->nama_kabupaten;
             $update -> save();
            
             return redirect('kelolaobjek');         

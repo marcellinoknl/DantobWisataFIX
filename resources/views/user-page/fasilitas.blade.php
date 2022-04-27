@@ -26,15 +26,15 @@
 
             <div class="row g-5 g-md-7">
                 @foreach ($sampul_fasilitas as $sampuls)
-                <div class="row g-2 g-md-3">
-                    <div class="col-6 col-md-4 py-4 px-4">
-                        <div class="mycard-lebar">
-                            <img src="{{ url('images/fasilitas/' . $sampuls->file_foto)}}" alt=""
-                                class="mycard-image-lebar">
-                            <h3 class="mycard-title-lebar">{{ $sampuls->nama_sampul}}</h3>
+                    <div class="row g-2 g-md-3">
+                        <div class="col-6 col-md-4 py-4 px-4">
+                            <div class="mycard-lebar">
+                                <img src="{{ url('images/fasilitas/' . $sampuls->file_foto) }}" alt=""
+                                    class="mycard-image-lebar">
+                                <h3 class="mycard-title-lebar">{{ $sampuls->nama_sampul }}</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>

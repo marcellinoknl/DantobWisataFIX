@@ -34,31 +34,46 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nama Wisata</label>
                                             <div class="col-sm-9">
-                                                <input type="text" required="required" id="namawisata" name="nama_wisata" class="form-control" value="{{$update->nama_wisata}}">
+                                                <input type="text" id="namawisata" name="nama_wisata" class="form-control  @error('nama_wisata') is-invalid @enderror" value="{{$update->nama_wisata}}">
+                                                @error('nama_wisata')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kabupaten</label>
                                             <div class="col-sm-9">
                                                     
-                                                <select   required="required" id="id_obj_wisata_kabupaten" name="id_obj_wisata_kabupaten" class="form-control"  >
-                                                    <option selected>Pilih Kabupaten</option>
+                                                <select   id="id_obj_wisata_kabupaten" name="nama_kabupaten" class="form-control @error('nama_kabupaten') is-invalid @enderror"  >
+                                                    <option value="">Pilih Kabupaten</option>
                                                     @foreach($kabupaten as $kab)
                                                     <option value="{{$kab->id_obj_wisata_kabupaten}}">{{$kab->nama_kab}}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('nama_kabupaten')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kategori</label>
                                             <div class="col-sm-9">
                                                     
-                                                <select   required="required" id="id_kat_wisata" name="id_kat_wisata" class="form-control"  >
-                                                    <option selected>Pilih Kategori</option>
+                                                <select   id="id_kat_wisata" name="nama_kategori" class="form-control @error('nama_kategori') is-invalid @enderror"  >
+                                                    <option value="">Pilih Kategori</option>
                                                     @foreach($kategori as $kat)
                                                     <option value="{{$kat->id_kategori}}">{{$kat->nama_kategori}}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('nama_kategori')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
