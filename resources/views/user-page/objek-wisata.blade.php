@@ -1,18 +1,10 @@
 @include('template/header')
 
-<div class="hero-wrap js-fullheight" style="background-image: url(images/bgpa.jpeg);">
-    <div class="overlay"></div>
+<div class="hero-wrap  " style="background-image: url(images/bgpa.jpeg); width: 100%; height:75%;">
+    <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-            <div class="col-md-7 ftco-animate">
-                <span class="subheading">Selamat Datang Di Wisata Kawasan Danau Toba</span>
-                <h1 class="mb-4">Kunjugi Tempat Favorit Anda</h1>
-                <p class="caps">Kepingan Surga Toba</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=e9B_a2L7Zr4"
-                class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
-                <span class="fa fa-play"></span>
-            </a>
+            
         </div>
     </div>
 </div>
@@ -20,9 +12,8 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; color:black;">Jelajahi Budaya dan Warisan Unik di Danau
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Budaya dan Warisan Unik di Danau
             Toba</h1>
-        <br>
         <p class="caption" style=" color:black;">Memiliki Budaya dan Warisan yang unik menjadikan Danau Toba
             sebagai destinasi yang harus di kunjungi.
             Berbagai macam wisata yang menyatu dengan budaya yang ada membuat kamu tidak akan melukapan keindahan Danau

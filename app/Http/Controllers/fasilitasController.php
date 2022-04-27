@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class fasilitasController extends Controller
 {
     public function indexAction() {
-        return view('user-page.fasilitas');
+        $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
+        return view('user-page.fasilitas',['sampul_fasilitas'=>$sampul_fasilitas]);
     }
     public function kelolaindexActionSampul() {
         $sampulfasilitas = SampulFasilitas::all();

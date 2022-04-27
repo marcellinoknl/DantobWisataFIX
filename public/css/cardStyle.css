@@ -9,6 +9,17 @@
     position: relative;
     overflow: hidden;
 }
+.mycard-lebar{
+    width:250px;
+    height:200px;
+    background-color:#333;
+    border-radius: 10px;
+    outline-offset: -8px;
+    box-shadow: 3px 3px 10px
+    rgba(0,0,0, 0.1);
+    position: relative;
+    overflow: hidden;  
+}
 
 .mycard-image{
     position: absolute;
@@ -20,8 +31,34 @@
     transition: transform 0.75s;
 }
 
+.mycard-image-lebar{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit :cover;
+    opacity: 0.6;
+    transition: transform 0.75s;  
+}
+
 .mycard:hover .mycard-image{
     transform: scale(1.48);
+}
+
+.mycard-lebar:hover .mycard-image-lebar{
+    transform: scale(1.48);
+}
+
+.mycard-title-lebar{
+    position: absolute;
+    right: -50px;
+    left: -50px;
+    text-align: center;
+    color: #ffffff;
+    bottom:70px;
+    font-size:20px;
+    text-shadow: 0 0 1px
+    rgba(0,0,0, .5);
 }
 
 .mycard-title{

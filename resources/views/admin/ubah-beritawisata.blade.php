@@ -56,7 +56,7 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea type="text" required="required" id="isi_berita" name="isi_berita" deskripsi" cols="200px" rows="20">{{$update->isi_berita}}</textarea>
+                                        <textarea type="text" required="required" id="isi_berita" name="isi_berita"  cols="200px" rows="20">{{$update->isi_berita}}</textarea>
 
                                     </div>
                                     <br><br>
