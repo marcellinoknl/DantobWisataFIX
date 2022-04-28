@@ -35,13 +35,18 @@
                                         <label class="col-sm-3 col-form-label">Judul Berita </label>
                                         <div class="col-sm-9">
 
-                                            <input type="text" required="required" id="judul_berita" name="judul_berita" class="form-control" value="{{$update->judul_berita}}">
+                                            <input type="text"  id="judul_berita" name="judul_berita" class="form-control @error('judul_berita') is-invalid @enderror"value="{{$update->judul_berita}}">
+                                            @error('judul_berita')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Gambar </label>
                                         <div class="col-sm-9">
-                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/berita/'.$update->file_foto)}}">
+                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/berita/'.$update->file_foto)}}"value="{{$update->file_foto}}">
 
                                             <div class="custom-file">
 
@@ -56,8 +61,12 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea type="text" required="required" id="isi_berita" name="isi_berita"  cols="200px" rows="20">{{$update->isi_berita}}</textarea>
-
+                                        <textarea type="text" id="isi_berita" name="isi_berita"  cols="200px" rows="20"class="form-control @error('isi_berita') is-invalid @enderror">{{$update->isi_berita}}</textarea>
+                                        @error('isi_berita')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaberita'"><i class="ti-close"></i> Batal</button>

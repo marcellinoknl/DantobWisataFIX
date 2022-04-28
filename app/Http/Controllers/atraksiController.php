@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\Atraksi_Wisata;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 class atraksiController extends Controller
 {
     public function indexAction() {
-        $atraksi_wisata = DB::table('atraksi_wisata')->get();
-        return view('user-page.blog.atraksi',['atraksi_wisata'=>$atraksi_wisata]);
+        return view('user-page.blog.atraksi');
     }
     public function kelolaindexAction() {
         

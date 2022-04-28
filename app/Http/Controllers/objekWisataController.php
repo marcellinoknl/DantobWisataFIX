@@ -36,6 +36,17 @@ class objekWisataController extends Controller
 
 
     public function store(Request $request){
+        $this->validate(
+            $request,
+            [
+                'nama_wisata' => 'required',
+                'deskripsi' => 'required',
+                'nama_kategori' => 'required',
+                'deskripsi' => 'required',
+                'nama_kabupaten' => 'required',
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+            ]
+        );
         $objek = new Objek_Wisata();
         $objek->nama_wisata = $request->nama_wisata;
         $objek->deskripsi = $request->deskripsi;
