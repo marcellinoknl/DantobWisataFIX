@@ -43,6 +43,7 @@ Route::get('/', [homepageController::class, 'indexAction']);
 
 //Destination => objek wisata
 Route::get('/objek-wisata', [objekWisataController::class, 'indexAction']);
+Route::get('/objek-wisata/detail1/{id}', [objekWisataController::class, 'indexAction2']);
 
 //blog
 //atraksiController

@@ -12,8 +12,9 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Budaya dan Warisan Unik di Danau
-            Toba</h1>
+        @if($objwisatakabupaten->nama_kab === $nama_kab)
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;"> {{$objwisatakabupaten->nama_kab}}</h1>
+        @endif
         <p class="caption" style=" color:black;">Memiliki Budaya dan Warisan yang unik menjadikan Danau Toba
             sebagai destinasi yang harus di kunjungi.
             Berbagai macam wisata yang menyatu dengan budaya yang ada membuat kamu tidak akan melukapan keindahan Danau
@@ -22,16 +23,14 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
-            <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Kabupaten yang Ingin Kamu Tinjau!</h4>
+            <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Destinasi yang Ingin Kamu Tinjau!</h4>
             <div class="row g-2 g-md-4">
-                @foreach ($objwisatakabupaten as $objekwisatas)
+                @foreach ($objek_wisata as $objek_wisatas)
                     <div class="col-6 col-md-3 py-4">
                         <div class="mycard">
-                            <a href="{{url('/objek-wisata/detail1/'.$objekwisatas->id_obj_wisata_kabupaten)}}">
-                            <img src="{{ url('images/objekwisata/' . $objekwisatas->file_foto) }}" alt=""
+                            <img src="{{ url('images/objekwisata/' . $objek_wisatas->file_foto) }}" alt=""
                                 class="mycard-image">
-                            </a>
-                            <h3 class="mycard-title">{{ $objekwisatas->nama_kab }}</h3>
+                            <h3 class="mycard-title">{{ $objek_wisatas->nama_wisata }}</h3>
                         </div>
                     </div>
                 @endforeach
