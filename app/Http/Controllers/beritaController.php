@@ -47,6 +47,14 @@ class beritaController extends Controller
 
     public function update(request $request, $id_berita)
     {
+        $this->validate(
+            $request,
+            [
+                'judul_berita' => 'required',
+                'isi_berita' => 'required',
+                 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+            ]
+        );
         $update =  Berita_Wisata::find($id_berita);
         $file = $update->file_foto;
         if ($request->hasFile('file_foto')) {

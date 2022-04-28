@@ -51,7 +51,6 @@ class KabupatenController extends Controller
         }
         $update->nama_kab = $request->nama_kab;
         $update->file_foto = $file;
-        // $update->deskripsi = $request->deskripsi;
         $update->save();
 
         return redirect('kelolakab');
