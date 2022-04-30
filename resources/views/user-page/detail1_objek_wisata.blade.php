@@ -12,9 +12,9 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        @if($objwisatakabupaten->nama_kab === $nama_kab)
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;"> {{$objwisatakabupaten->nama_kab}}</h1>
-        @endif
+        {{-- @if($objwisatakabupaten->nama_kab === $nama_kab) --}}
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;"> SAMOSIR</h1>
+        {{-- @endif --}}
         <p class="caption" style=" color:black;">Memiliki Budaya dan Warisan yang unik menjadikan Danau Toba
             sebagai destinasi yang harus di kunjungi.
             Berbagai macam wisata yang menyatu dengan budaya yang ada membuat kamu tidak akan melukapan keindahan Danau
