@@ -20,7 +20,7 @@
     {{-- card style --}}
     <link href="{{ asset('css/cardStyle.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="css/about.css')}}">
+    <link rel="stylesheet" type="{{asset('text/css" href="css/about.css')}}">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
