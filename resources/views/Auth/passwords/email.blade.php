@@ -25,7 +25,7 @@
          name="viewport"
          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
          />
-      <title>Daftar Akun</title>
+      <title>Forgot Password Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
       <meta name="description" content="" />
       <!-- Favicon -->
       <link rel="icon" type="image/x-icon" href="../auth/assets/img/favicon/favicon.ico" />
@@ -54,14 +54,10 @@
       <script src="../auth/assets/js/config.js"></script>
    </head>
    <body>
-      <div class="container">
-      <div class="row justify-content-center">
       <div class="container-xxl">
          <div class="authentication-wrapper authentication-basic container-p-y">
-            <div class="authentication-inner">
+            <div class="authentication-inner py-4">
                <div class="card">
-                  <!-- <div class="card-header">{{ __('Register') }}</div> -->
-                  <div class="card-header"></div>
                   <div class="card-body">
                      <div class="app-brand justify-content-center">
                         <a href="{{url('/')}}" class="app-brand-link gap-2">
@@ -120,79 +116,42 @@
                                  </g>
                               </svg>
                            </span>
-                           <span class="app-brand-text demo text-body fw-bolder">danau toba</span>
+                           <span class="app-brand-text demo text-body fw-bolder">Danau Toba</span>
                         </a>
                      </div>
-                     <!-- /Logo -->
-                     <h4 class="mb-2">Halo Wisatawan,</h4>
-                     <p class="mb-4">Anda Harus Mempunyai Akun Agar Dapat Masuk!</p>
-                     <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('register') }}">
+                     <h4 class="mb-2">Lupa Kata Sandi? 🔒</h4>
+                     <p class="mb-4">Masukkan email Anda untuk melakukan reset Kata Sandi </p>
+                     @if (session('status'))
+                     <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                     </div>
+                     @endif
+                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
                         <div class=" mb-3">
-                           <label for="name"  class=" form-label text-md-end">{{ __('Name') }}</label>
-                           <input id="name" type="text" placeholder="Masukkan Nama Anda" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                           @error('name')
-                           <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                           </span>
-                           @enderror
+                           <label for="email" class=" col-form-label text-md-end">{{ __('Email ') }}</label>
+                           <input id="email" type="email" placeholder="Masukkan email Anda" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         </div>
-                        <div class=" mb-3">
-                           <label for="email" class="col-form-label text-md-end">{{ __('Email Address') }}</label>
-                           <input id="email" type="email"placeholder="Masukkan Email Anda" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                           @error('email')
-                           <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                           </span>
-                           @enderror
-                        </div>
-                        <div class="mb-3">
-                           <label for="password" class=" col-form-label text-md-end">{{ __('Password') }}</label>
-                           <input id="password" type="password" placeholder="Masukkan Password Anda"class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                           @error('password')
-                           <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                           </span>
-                           @enderror
-                        </div>
-                        <div class=" mb-3">
-                           <label for="password-confirm" class=" col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-                           <input id="password-confirm"placeholder="Konfirmasi Password Anda" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                        </div>
-                        <div class="mb-3">
-                           <div class="form-check">
-                              <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                              <label class="form-check-label" for="terms-conditions">
-                              Saya setuju terkait
-                              <a href="javascript:void(0);">privacy policy & terms</a>
-                              </label>
-                           </div>
-                        </div>
-                        <button class="btn btn-secondary d-grid w-100" style="background-color:green">Daftarkan Sekarang</button>
+                        <button class="btn btn-warning d-grid w-100">Kirimkan Reset Link</button>
                      </form>
-                     <p class="text-center">
-                        <span>Sudah Punya Akun?</span>
-                        <a href="{{url('/login')}}">
-                        <span>Masuk</span>
+                     <div class="text-center">
+                        <a href="{{url('/login')}}" class="d-flex align-items-center justify-content-center">
+                        <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
+                        Kembali ke Halaman Masuk
                         </a>
-                     </p>
+                     </div>
                   </div>
                </div>
-               <!-- Register Card -->
+               <!-- /Forgot Password -->
             </div>
          </div>
       </div>
       <!-- / Content -->
       <div class="buy-now">
-         <a
-            href="{{url('/')}}"
-            target="_self"
-            class="btn btn-danger btn-buy-now"
-            >Beranda</a
-            >
+         <a href="{{url('/')}}"target="_self"class="btn btn-danger btn-buy-now">Beranda</a>
       </div>
       <!-- Core JS -->
-      <!-- build:js assets/vendor/js/core.js -->
+      <!-- build:js auth/assets/vendor/js/core.js -->
       <script src="../auth/assets/vendor/libs/jquery/jquery.js"></script>
       <script src="../auth/assets/vendor/libs/popper/popper.js"></script>
       <script src="../auth/assets/vendor/js/bootstrap.js"></script>
