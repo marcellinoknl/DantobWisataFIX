@@ -20,9 +20,7 @@
     <!-- Styles -->
     <!-- <link rel="stylesheet" href="{{ asset('css/styledelet.css') }}">
      <link rel="stylesheet" href="{{ asset('css/reset.css') }}"> -->
-    <link href="{{asset('assets/css/lib/styledelet.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/css/lib/reset.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
+     <link href="{{asset('assets/css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/chartist/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/themify-icons.css')}}" rel="stylesheet">
@@ -33,8 +31,7 @@
     <link href="{{asset('assets/css/lib/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/helper.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-    <script src="{{asset('assets/js/main1.js')}}"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Styles -->
     <link href="{{asset('assets/css/lib/themify-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/data-table/buttons.bootstrap.min.css')}}" rel="stylesheet" />

@@ -39,7 +39,7 @@
 <script src="{{asset('assets/js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
 <!-- scripit init-->
 <script src="{{asset('assets/js/dashboard2.js')}}"></script>
-<script src="{{asset('assets/js/main1.js')}}"></script>
+
     <!-- scripit init-->
     <script src="{{asset('assets/js/lib/data-table/datatables.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
