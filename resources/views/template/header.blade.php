@@ -35,8 +35,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('template2/vendor/MagnificPopup/magnific-popup.css') }}">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('template2/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template2/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('template2/css/util.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template2/css/main.css') }}">
@@ -44,6 +43,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js%22%3E"></script>
+    </script>
 
 
 
@@ -54,8 +58,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">Pariwisata<span>Danau Toba</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
 
@@ -65,27 +68,41 @@
                     <li class="nav-item"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
                             Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
-                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Katalog</a>
                         </li>
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                            <a href="{{ url('/atraksi') }}"><button class="dropdown-item"
-                                    type="button">Atraksi</button></a>
-                            <a href="{{ url('/eventwisata') }}"><button class="dropdown-item"
-                                    type="button">Event</button></a>
-                            <a href="{{ url('/beritawisata') }}"><button class="dropdown-item"
-                                    type="button">Berita</button></a>
+                            <a href="{{ url('/atraksi') }}"><button class="dropdown-item" type="button">Atraksi</button></a>
+                            <a href="{{ url('/eventwisata') }}"><button class="dropdown-item" type="button">Event</button></a>
+                            <a href="{{ url('/beritawisata') }}"><button class="dropdown-item" type="button">Berita</button></a>
                         </div>
                     </div>
-                    <li class="nav-item"><a href="{{ url('/fasilitaswisata') }}"
-                            class="nav-link">Fasilitas</a></li>
+                    <li class="nav-item"><a href="{{ url('/fasilitaswisata') }}" class="nav-link">Fasilitas</a></li>
                     <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
-                    <li class="nav-item"><a href="{{ url('/masuk') }}" class="nav-link"><i
-                                class="fa fa-sign-in" aria-hidden="true"></i> Masuk</a></li>
+                    @guest
+                    @if (Route::has('login'))
+                    <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i> Masuk</a></li>
+                    @endif
+                    @else
+                    <div class="navbar-nav ml-auto dropdown show">
+                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="/blog" class="nav-link">{{ Auth::user()->name }}</a>
+                        </li>
+
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><button class="dropdown-item" type="button">{{ __('Logout') }}</button></a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>
+        @endguest
     </nav>
-    <!-- END nav -->
+</body>
+<!-- END nav -->

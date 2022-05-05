@@ -18,6 +18,10 @@
     <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
     <!-- Styles -->
+    <!-- <link rel="stylesheet" href="{{ asset('css/styledelet.css') }}">
+     <link rel="stylesheet" href="{{ asset('css/reset.css') }}"> -->
+    <link href="{{asset('assets/css/lib/styledelet.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/lib/reset.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/chartist/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/font-awesome.min.css')}}" rel="stylesheet">
@@ -29,13 +33,16 @@
     <link href="{{asset('assets/css/lib/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/helper.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-        <!-- Styles -->
+    <script src="{{asset('assets/js/main1.js')}}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Styles -->
     <link href="{{asset('assets/css/lib/themify-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/data-table/buttons.bootstrap.min.css')}}" rel="stylesheet" />
 
 
 
 </head>
+
 <body>
 
     <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
@@ -43,13 +50,13 @@
             <div class="nano-content">
                 <ul>
                     <div class="logo"><a href="{{url('/admin-wisata')}}">
-                            <!-- <img src="assets/images/logo.png" alt="" /> --><span>Danau Toba Admin</span></a></div>
+                            <!-- <img src="assets/images/logo.png" alt="" /> --><span>Danau Toba Admin</span>
+                        </a></div>
                     <li class="label">Halaman Utama</li>
                     <li><a href="{{url('/admin-wisata')}}"><i class="ti-home"></i> Dashboard </a></li>
 
                     <li class="label">Kelola Data Wisata</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Objek Wisata <span
-                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{url('/kelolakat')}}">Kelola Kategori Wisata</a></li>
                             <li><a href="{{url('/kelolakab')}}">Kelola Kabupaten</a></li>
@@ -60,8 +67,7 @@
                     <li><a href="{{url('/kelolaevent')}}"><i class="ti-layout-grid4-alt"></i> Kelola Event Wisata </a></li>
                     <li><a href="{{url('/kelolaberita')}}"><i class="ti-layout-grid4-alt"></i> Kelola Berita Wisata </a></li>
                     <li><a href="{{url('/kelolagaleri')}}"><i class="ti-layout-grid4-alt"></i> Kelola Galeri Wisata </a></li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Fasilitas <span
-                        class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{url('/sampul-fasilitas')}}">Kelola Sampul Fasilitas</a></li>
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Per-Fasilitas</a></li>
@@ -95,8 +101,7 @@
                                         <ul>
                                             <li>
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/3.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -107,8 +112,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/3.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -119,8 +123,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/3.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -132,8 +135,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/3.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -165,8 +167,7 @@
                                         <ul>
                                             <li class="notification-unread">
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/1.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/1.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -178,8 +179,7 @@
                                             </li>
                                             <li class="notification-unread">
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/2.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/2.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -191,8 +191,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/3.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
@@ -204,8 +203,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img"
-                                                        src="assets/images/avatar/2.jpg" alt="" />
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/2.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
