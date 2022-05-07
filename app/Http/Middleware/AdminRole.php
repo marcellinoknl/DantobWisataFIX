@@ -18,6 +18,8 @@ class AdminRole
     {
         if (auth()->user()->role == 2) {
             return $next($request);
+        } elseif (auth()->user()->role == 1) {
+            return $next($request);
         }
         return redirect()->back()->with('error', "you don't have access to Admin");
     }
