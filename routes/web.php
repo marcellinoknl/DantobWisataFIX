@@ -28,8 +28,8 @@ use App\Http\Controllers\accountController;
 
 
 
-//Forgot Password
-Route::get('/lupapassword', [accountController::class, 'forgotpassword']);
+
+
 
 // --USER SIDE--
 //Home Page
@@ -60,13 +60,13 @@ Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 
 
 //--AUTHOR SIDE--
-//Index utama
-Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
+
 
 
 Route::group(['middleware' => ['auth',  'admin']], function () {
 
-
+    //Index utama
+    Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
     //Kelola Objek Wisatawa
     Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
     Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);

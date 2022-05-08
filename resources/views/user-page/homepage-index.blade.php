@@ -1,5 +1,4 @@
 @include('template/header')
-	
 	<div class="hero-wrap js-fullheight" style="background-image: url('images/bgpa.jpeg');">
 		<div class="overlay"></div>
 		<div class="container">
@@ -16,7 +15,18 @@
 		</div>
 	</div>
 
-
+	@if(session('error'))
+          <div class="dropdown">
+              <a class="dropdown">
+              <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <div>
+              Hallo <strong>{{ Auth::user()->name}} </strong>,{{session('error')}}
+            </div>
+            
+          </div>
+              </a>                   
+            </div>
+    @endif
 		<!-- Banner -->
 		<section class="ftco-section services-section">
 			<div class="container">

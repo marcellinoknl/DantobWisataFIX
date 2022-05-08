@@ -52,6 +52,18 @@
 </head>
 
 <body>
+    @if(session('error'))
+    <div class="dropdown">
+        <a class="dropdown">
+            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <div>
+                    Hallo <strong>{{ Auth::user()->name}} </strong>,{{session('error')}}
+                </div>
+
+            </div>
+        </a>
+    </div>
+    @endif
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">Pariwisata<span>Danau Toba</span></a>
