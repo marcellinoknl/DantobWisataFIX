@@ -27,6 +27,10 @@ use App\Http\Controllers\accountController;
 */
 
 
+
+
+
+
 // --USER SIDE--
 //Home Page
 Route::get('/', [homepageController::class, 'indexAction']);
@@ -56,12 +60,12 @@ Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 
 
 //--AUTHOR SIDE--
-//Index utama
 
 
 
-Route::group(['middleware' => ['auth',  'author']], function () {
+Route::group(['middleware' => ['auth',  'admin']], function () {
 
+    //Index utama
     Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
     //Kelola Objek Wisatawa
     Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
@@ -95,7 +99,14 @@ Route::group(['middleware' => ['auth',  'author']], function () {
     Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
     Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
 
-    Route::group(['middleware' => ['auth',  'admin']], function () {
+    Route::get('/sampul-atraksi', [atraksiController::class, 'kelolaindexActionSampul']);
+    Route::get('/tambah-sampul-atraksi', [atraksiController::class, 'tambahsampul']);
+    Route::get('/ubah-sampulatraksi/{id}', [atraksiController::class, 'editsampul']);
+    Route::post('/ubah-sampulatraksi/{id}', [atraksiController::class, 'updatesampul'])->name('formsampulatraksi.ubah');
+    Route::post('/tambah-sampul-atraksi/store', [atraksiController::class, 'storesampul'])->name('formsampulatraksi.store');
+    Route::get('/sampul-atraksi/hapus/{id}', [atraksiController::class, 'hapusSampul'])->name('sampulatraksi.hapus');
+
+    Route::group(['admin' => 2], function () {
         //kelola kabupaten
         Route::get('/kelolakab', [KabupatenController::class, 'kelolaindexAction']);
         Route::get('/tambah-kab', [KabupatenController::class, 'tambah']);
@@ -136,6 +147,8 @@ Route::group(['middleware' => ['auth',  'author']], function () {
         Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
         Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
 
+
+
         // //Kelola Objek Wisatawa
         // Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
         // Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
@@ -174,4 +187,5 @@ Route::group(['middleware' => ['auth',  'author']], function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
