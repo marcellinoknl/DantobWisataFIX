@@ -26,14 +26,6 @@ use App\Http\Controllers\accountController;
 |
 */
 
-//Login
-Route::get('/masuk', [accountController::class, 'login']);
-
-//Register
-Route::get('/daftarakun', [accountController::class, 'register']);
-
-//Forgot Password
-Route::get('/lupapassword', [accountController::class, 'forgotpassword']);
 
 // --USER SIDE--
 //Home Page
@@ -65,12 +57,12 @@ Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 
 //--AUTHOR SIDE--
 //Index utama
-Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
 
 
-Route::group(['middleware' => ['auth',  'admin']], function () {
 
+Route::group(['middleware' => ['auth',  'author']], function () {
 
+    Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
     //Kelola Objek Wisatawa
     Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
     Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
@@ -103,7 +95,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
     Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
 
-    Route::group(['admin' => 2], function () {
+    Route::group(['middleware' => ['auth',  'admin']], function () {
         //kelola kabupaten
         Route::get('/kelolakab', [KabupatenController::class, 'kelolaindexAction']);
         Route::get('/tambah-kab', [KabupatenController::class, 'tambah']);
