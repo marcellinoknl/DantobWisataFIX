@@ -183,11 +183,3 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
 });
 
 //--ADMIN SIDE--
-
-
-Auth::routes();
-
-
-Auth::routes();
-
-
