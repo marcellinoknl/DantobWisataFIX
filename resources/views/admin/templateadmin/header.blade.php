@@ -60,7 +60,12 @@
                             <li><a href="{{url('/kelolaobjek')}}">Kelola Per-Objek Wisata</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{url('/kelolaatraksi')}}"><i class="ti-layout-grid4-alt"></i> Kelola Atraksi Wisata </a></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="{{url('/sampul-atraksi')}}">Kelola Sampul Atraksi</a></li>
+                            <li><a href="{{url('/kelolaatraksi')}}">Kelola Atraksi Wisata</a></li>
+                        </ul>
+                    </li>
                     <li><a href="{{url('/kelolaevent')}}"><i class="ti-layout-grid4-alt"></i> Kelola Event Wisata </a></li>
                     <li><a href="{{url('/kelolaberita')}}"><i class="ti-layout-grid4-alt"></i> Kelola Berita Wisata </a></li>
                     <li><a href="{{url('/kelolagaleri')}}"><i class="ti-layout-grid4-alt"></i> Kelola Galeri Wisata </a></li>

@@ -26,11 +26,7 @@ use App\Http\Controllers\accountController;
 |
 */
 
-//Login
-Route::get('/masuk', [accountController::class, 'login']);
 
-//Register
-Route::get('/daftarakun', [accountController::class, 'register']);
 
 //Forgot Password
 Route::get('/lupapassword', [accountController::class, 'forgotpassword']);
@@ -103,6 +99,13 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
     Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
 
+    Route::get('/sampul-atraksi', [atraksiController::class, 'kelolaindexActionSampul']);
+    Route::get('/tambah-sampul-atraksi', [atraksiController::class, 'tambahsampul']);
+    Route::get('/ubah-sampulatraksi/{id}', [atraksiController::class, 'editsampul']);
+    Route::post('/ubah-sampulatraksi/{id}', [atraksiController::class, 'updatesampul'])->name('formsampulatraksi.ubah');
+    Route::post('/tambah-sampul-atraksi/store', [atraksiController::class, 'storesampul'])->name('formsampulatraksi.store');
+    Route::get('/sampul-atraksi/hapus/{id}', [atraksiController::class, 'hapusSampul'])->name('sampulatraksi.hapus');
+
     Route::group(['admin' => 2], function () {
         //kelola kabupaten
         Route::get('/kelolakab', [KabupatenController::class, 'kelolaindexAction']);
@@ -144,6 +147,8 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
         Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
         Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
 
+
+
         // //Kelola Objek Wisatawa
         // Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
         // Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
@@ -182,4 +187,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+

@@ -73,16 +73,18 @@
                                             </div>
                                             <!-- /# column -->
                                     </div>
-                                    <div class="modal fade" id="myModal" role="dialog">
+
+                                    {{-- modal pop up hapus --}}
+                                    <div class="modal fade" id="myModal" role="dialog" style="position: absolute; top: -670px;">
                                         <div class="modal-dialog">
                                             <!-- Modal content-->
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title">Hapus Data</h4>
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Hapus Kategori</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"><i class="ti-close"></i></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Apakah Anda yakin ingin menghapusnya?</p>
+                                                    <p>Apakah Anda yakin ingin menghapus <b>{{$kat->nama_kategori}}</b> ?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
