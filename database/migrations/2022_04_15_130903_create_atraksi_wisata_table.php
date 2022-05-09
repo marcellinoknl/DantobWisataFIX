@@ -18,6 +18,8 @@ class CreateAtraksiWisataTable extends Migration
             $table->string('judul')->nullable();
             $table->text('deskripsi');
             $table->string('file_foto');
+            $table->integer('id_sampul_atraksi')->unsigned();
+            $table->foreign('id_sampul_atraksi')->references('id')->on('sampul_atraksi')->onDelete('cascade');
             $table->timestamps();
         });
     }

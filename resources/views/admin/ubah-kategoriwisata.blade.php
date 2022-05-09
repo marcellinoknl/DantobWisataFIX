@@ -15,7 +15,7 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata') }}">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Ubah Kategori Wisata</li>
                             </ol>
                         </div>
@@ -29,18 +29,24 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('kategori.ubah',$update->id_kategori)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('kategori.ubah', $update->id_kategori) }}" method="post"
+                                    enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Kategori</label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="required" id="nama_kategori" name="nama_kategori" class="form-control" value="{{$update->nama_kategori}}">
+                                            <input type="text" required="required" id="nama_kategori"
+                                                name="nama_kategori" class="form-control"
+                                                value="{{ $update->nama_kategori }}">
                                         </div>
                                     </div>
-                                   
+
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolakat'"><i class="ti-close"></i> Batal</button>
-                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
+                                    <button type="button" class="btn btn-danger"
+                                        onclick="window.location.href='/kelolakat'"><i class="ti-close"></i>
+                                        Batal</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i>
+                                        Ubah</button>
                                 </form>
                             </div>
                         </div>
