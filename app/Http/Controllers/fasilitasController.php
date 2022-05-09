@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Fasilitas;
 use App\Models\SampulFasilitas;
 use Illuminate\Support\Facades\DB;
@@ -8,22 +9,23 @@ use Illuminate\Http\Request;
 
 class fasilitasController extends Controller
 {
-    public function indexAction() {
+    public function indexAction()
+    {
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
-        return view('user-page.fasilitas',['sampul_fasilitas'=>$sampul_fasilitas]);
+        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas]);
     }
-    public function kelolaindexActionSampul() {
+    public function kelolaindexActionSampul()
+    {
         $sampulfasilitas = SampulFasilitas::all();
-        return view('admin.kelola-sampul-fasilitas',compact('sampulfasilitas'));
-
+        return view('admin.kelola-sampul-fasilitas', compact('sampulfasilitas'));
     }
-    public function kelolaindexActionDaftarFasilitas() {
+    public function kelolaindexActionDaftarFasilitas()
+    {
         $fasilitas = DB::table('fasilitas_wisata')
-        ->select('fasilitas_wisata.*','sampul_fasilitas.nama_sampul')
-        ->join('sampul_fasilitas', 'sampul_fasilitas.id','=','fasilitas_wisata.id_sampul_fasilitas')
-        ->get();
-        return view('admin.kelola-fasilitas',compact('fasilitas'));
-
+            ->select('fasilitas_wisata.*', 'sampul_fasilitas.nama_sampul')
+            ->join('sampul_fasilitas', 'sampul_fasilitas.id', '=', 'fasilitas_wisata.id_sampul_fasilitas')
+            ->get();
+        return view('admin.kelola-fasilitas', compact('fasilitas'));
     }
 
     public function tambahsampul()
@@ -44,18 +46,19 @@ class fasilitasController extends Controller
         return redirect('sampul-fasilitas');
     }
 
-    public function tambahfasilitas(){
+    public function tambahfasilitas()
+    {
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
-        return view('admin.tambah-fasilitas-wisata',compact('sampul_fasilitas'));
+        return view('admin.tambah-fasilitas-wisata', compact('sampul_fasilitas'));
     }
 
     public function storefasilitas(Request $request)
     {
         $fasilitas = new Fasilitas();
-       
+
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
         $fasilitas->deskripsi = $request->deskripsi;
-        $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas; 
+        $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas;
         $fasilitas->lokasi = $request->lokasi;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
@@ -71,7 +74,7 @@ class fasilitasController extends Controller
     {
         $update = Fasilitas::find($id_fasilitas);
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
-        return view('admin.ubah-fasilitaswisata', compact('update','sampul_fasilitas'));
+        return view('admin.ubah-fasilitaswisata', compact('update', 'sampul_fasilitas'));
     }
     public function editsampul($id)
     {
@@ -79,7 +82,8 @@ class fasilitasController extends Controller
         return view('admin.ubah-sampulfasilitas-wisata', compact('update'));
     }
 
-    public function updatesampul(request $request, $id){
+    public function updatesampul(request $request, $id)
+    {
         $this->validate(
             $request,
             [

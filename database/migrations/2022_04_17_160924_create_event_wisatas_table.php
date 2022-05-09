@@ -18,6 +18,8 @@ class CreateEventWisatasTable extends Migration
             $table->string('judul_event');
             $table->string('deskripsi_event');
             $table->string('file_foto');
+            $table->integer('id_sampul_event')->unsigned();
+            $table->foreign('id_sampul_event')->references('id')->on('sampul_event')->onDelete('cascade');
             $table->timestamps();
         });
     }

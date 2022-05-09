@@ -15,7 +15,7 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata') }}">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Kelola Atraksi Wisata</li>
                             </ol>
                         </div>
@@ -29,65 +29,86 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('formatraksiwisata.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('formatraksiwisata.store') }}" method="post"
+                                    enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Judul Atraksi</label>
-                                            <div class="col-sm-9">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Judul Atraksi</label>
+                                        <div class="col-sm-9">
 
-                                                <input type="text" required="required" id="judulatraksi" name="judul" class="form-control" >
+                                            <input type="text" required="required" id="judulatraksi" name="judul"
+                                                class="form-control">
 
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Kategori</label>
+                                        <div class="col-sm-9">
+
+                                            <select required="required" id="id_sampul_atraksi" name="id_sampul_atraksi"
+                                                class="form-control">
+                                                <option selected>Pilih Kategori</option>
+                                                @foreach ($sampul as $sampuls)
+                                                    <option value="{{ $sampuls->id }}">
+                                                        {{ $sampuls->nama_sampul }}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Gambar Atraksi Wisata</label>
+                                        <div class="col-sm-9">
+                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
+                                            <div class="custom-file">
+
+                                                <input type="file" class="custom-file-input" id="gambaratraksi"
+                                                    onchange="previewImage()" name="file_foto">
+
+                                                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Gambar Atraksi Wisata</label>
-                                            <div class="col-sm-9">
-                                                <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
-                                                <div class="custom-file">
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Deskripsi Atraksi</label>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <!-- <textarea required="required" id="deskripsiatraksi" name="deskripsi" cols="200px" rows="20"></textarea> -->
+                                        <textarea required="required" id="deskripsiatraksi" name="deskripsi" height="300px" cols="200px" rows="20"></textarea>
 
-                                                    <input type="file" class="custom-file-input" id="gambaratraksi" onchange="previewImage()"name="file_foto">
-
-                                                    <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                                  </div>
-                                            </div>
-                                        </div>  
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Deskripsi Atraksi</label>
-                                        </div>
-                                        <div class ="mb-3 row">
-                                        <!-- <textarea required="required" id="deskripsiatraksi" name="deskripsi" cols="200px" rows="20" ></textarea> -->
-                                        <textarea required="required" id="deskripsiatraksi" name="deskripsi" height="300px"cols="200px" rows="20"  ></textarea>
-
-                                        </div>
-                                        <br><br>    
-                                        <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaatraksi'"><i class="ti-close"></i> Batal</button>
-                                        <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
-                                    </form>
+                                    </div>
+                                    <br><br>
+                                    <button type="button" class="btn btn-danger"
+                                        onclick="window.location.href='/kelolaatraksi'"><i class="ti-close"></i>
+                                        Batal</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i>
+                                        Tambah</button>
+                                </form>
                             </div>
                         </div>
 
-                        </div>
-                        <!-- /# card -->
                     </div>
-                    <!-- /# column -->
+                    <!-- /# card -->
                 </div>
-                <!-- /# row -->
+                <!-- /# column -->
+        </div>
+        <!-- /# row -->
 
-    <script> 
-                    function previewImage() {
+        <script>
+            function previewImage() {
 
-        const image = document.querySelector('#gambaratraksi')
+                const image = document.querySelector('#gambaratraksi')
 
-        const imgPreview = document.querySelector('.img-preview')
+                const imgPreview = document.querySelector('.img-preview')
 
-        imgPreview.style.display = 'block';
+                imgPreview.style.display = 'block';
 
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.files[0])
+                const oFReader = new FileReader();
+                oFReader.readAsDataURL(image.files[0])
 
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src = oFREvent.target.result;
-        }
-    }
-    </script>
-@include('admin.templateadmin.footer')
+                oFReader.onload = function(oFREvent) {
+                    imgPreview.src = oFREvent.target.result;
+                }
+            }
+        </script>
+        @include('admin.templateadmin.footer')
