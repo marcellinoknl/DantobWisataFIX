@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate">
-                <h1 class="mb-4" style="text-align: center;">FASILITAS</h1>
+                <h1 class="mb-4" style="text-align: center;">ATRAKSI</h1>
             </div>
         </div>
     </div>
@@ -15,7 +15,7 @@
 
     <div class="container">
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
-            Fasilitas
+            Atraksi
         </h1>
         <p class="caption" style=" color:black;">
             Beberapa Fasilitas yang dapat membantu anda selama mengunjungi Danau Toba
@@ -25,13 +25,13 @@
         <div class="container p-md-2 p-2">
 
             <div class="row g-5 g-md-7">
-                @foreach ($atraksi_wisata as $atraksi)
+                @foreach ($sampul_atraksi as $sampuls)
                     <div class="row g-2 g-md-3">
                         <div class="col-6 col-md-4 py-4 px-4">
                             <div class="mycard-lebar">
-                                <img src="{{ url('images/Atraksi/' . $atraksi->file_foto) }}" alt=""
+                                <img src="{{ url('images/Atraksi/' . $sampuls->file_foto) }}" alt=""
                                     class="mycard-image-lebar">
-                                <h3 class="mycard-title-lebar">{{ $atraksi->nama_sampul }}</h3>
+                                <h3 class="mycard-title-lebar">{{ $sampuls->nama_sampul }}</h3>
                             </div>
                         </div>
                     </div>
