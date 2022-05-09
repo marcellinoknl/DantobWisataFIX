@@ -91,6 +91,13 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
     Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
 
+    Route::get('/sampul-event', [eventController::class, 'kelolaindexActionSampul']);
+    Route::get('/tambah-sampul-event', [eventController::class, 'tambahsampul']);
+    Route::get('/ubah-sampulevent/{id}', [eventController::class, 'editsampul']);
+    Route::post('/ubah-sampulevent/{id}', [eventController::class, 'updatesampul'])->name('formsampulevent.ubah');
+    Route::post('/tambah-sampul-event/store', [eventController::class, 'storesampul'])->name('formsampulevent.store');
+    Route::get('/sampul-event/hapus/{id}', [eventController::class, 'hapusSampul'])->name('sampulevent.hapus');
+
     //kelola atraksi
     Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
     Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);

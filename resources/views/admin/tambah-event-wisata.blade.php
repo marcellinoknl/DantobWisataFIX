@@ -40,6 +40,20 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Kategori</label>
+                                        <div class="col-sm-9">
+                                            <select required="required" id="id_sampul_event" name="id_sampul_event"
+                                                class="form-control">
+                                                <option selected>Pilih Kategori</option>
+                                                @foreach ($sampul as $sampuls)
+                                                    <option value="{{ $sampuls->id }}">
+                                                        {{ $sampuls->nama_sampul }}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Gambar Event Wisata</label>
                                         <div class="col-sm-9">
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">

@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> UBAH EVENT WISATA </h1>
+                            <h1> TAMBAH SAMPUL EVENT </h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Event</li>
+                                <li class="breadcrumb-item active">Kelola Sampul Event</li>
                             </ol>
                         </div>
                     </div>
@@ -29,53 +29,27 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('eventwisata.ubah',$update->id_event)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('formsampulevent.store')}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Judul Event </label>
+                                        <label class="col-sm-3 col-form-label">Nama Sampul  </label>
                                         <div class="col-sm-9">
-
-                                            <input type="text" required="required" id="judulevent" name="judul_event" class="form-control" value="{{$update->judul_event}}">
+                                            <input type="text" required="required" id="namasampul" name="nama_sampul" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-sm-9">
-
-                                            <select required="required" id="id_sampul_event" name="id_sampul_event"
-                                                class="form-control">
-                                                <option selected>Pilih Kategori</option>
-                                                @foreach ($sampul as $sampuls)
-                                                    <option value="{{ $sampuls->id }}">
-                                                        {{ $sampuls->nama_sampul }}</option>
-                                                @endforeach
-                                            </select>
-
-                                        </div>
-                                    </div>
-                                    
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Gambar Event</label>
+                                        <label class="col-sm-3 col-form-label">Gambar Sampul </label>
                                         <div class="col-sm-9">
-                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/eventwisata/'.$update->file_foto)}}">
-
+                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                             <div class="custom-file">
-
-                                                <input type="file" class="custom-file-input" id="gambarevent" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
-
+                                                <input type="file" class="custom-file-input" id="file_foto" onchange="previewImage()" name="file_foto">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Deskripsi Event</label>
-                                    </div>
-                                    <div class="mb-3 row">
-
-                                        <textarea type="text" required="required" id="deskripsi_event" name="deskripsi_event" cols="200px" rows="20">{{$update->deskripsi_event}}</textarea>
-
-                                    </div>
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaevent'"><i class="ti-close"></i> Batal</button>
-                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/sampul-event'"><i class="ti-close"></i> Batal</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
                                 </form>
                             </div>
                         </div>
@@ -89,9 +63,7 @@
 
         <script>
             function previewImage() {
-
-                const image = document.querySelector('#gambarevent')
-
+                const image = document.querySelector('#file_foto')
                 const imgPreview = document.querySelector('.img-preview')
 
                 imgPreview.style.display = 'block';

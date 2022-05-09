@@ -44,8 +44,9 @@
                                                                     <thead>
                                                                         <tr>
                                                                             <th class="text-center" width="10%">No</th>
+                                                                            <th class="text-center" width="10%">Kategori</th>
                                                                             <th class="text-center" width="15%">Judul Event</th>
-                                                                            <th class="text-center" width="35%">Deskripsi Event</th>
+                                                                            <th class="text-center" width="25%">Deskripsi Event</th>
                                                                             <th class="text-center" width="20%">Gambar</th>
                                                                             <th class="text-center" width="20%">Aksi</th>
                                                                         </tr>
@@ -57,27 +58,30 @@
                                                                         <tr>
                                                                             <td class="text-center"><?php echo $number++; ?> </td>
                                                                             <td class="text-center">{{$eventwisatas->judul_event}}</td>
+                                                                            <td class="text-center">
+                                                                                    {{ $eventwisatas->nama_sampul }}
+                                                                                </td>
                                                                             <td class="text-center">{{$eventwisatas->deskripsi_event}}</td>
                                                                             <td class="text-center"><img src="{{'images/eventwisata/'.$eventwisatas->file_foto }}"style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
                                                                                  <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
                                                                                 <button class="btn btn-warning"><span class="ti-pencil-alt" style="color:black;" onclick="window.location.href='/ubah-event-wisata/{{$eventwisatas->id_event}}'"> Ubah</span></button>
                                                                                  <button class="btn btn-danger"><span class="ti-trash" style="color:black;" onclick="window.location.href='/eventwisata/hapus/{{$eventwisatas->id_event}}'"> Hapus</span></button>
-                                                            </td>
-                                                            </tr>
-                                                            @endforeach
-                                                            </tbody>
-                                                            </table>
-                                                        </div>
+                                                                            </td>
+                                                                            </tr>
+                                                                            @endforeach
+                                                                            </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </section>
+                                                <!-- /# card -->
+                                        </div>
+                                        <!-- /# column -->
                                     </div>
-                                </div>
-                                <!-- /# card -->
-                        </div>
-                        <!-- /# column -->
-                    </div>
-                    <!-- /# row -->
-                    @include('admin.templateadmin.footer')
+                                    <!-- /# row -->
+                                    @include('admin.templateadmin.footer')

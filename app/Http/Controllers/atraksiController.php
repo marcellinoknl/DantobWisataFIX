@@ -75,7 +75,7 @@ class atraksiController extends Controller
 
     public function hapus($atraksi_id)
     {
-        $hapus = atraksi_Wisata::find($atraksi_id);
+        $hapus = Atraksi_Wisata::find($atraksi_id);
         if ($hapus->delete()) {
         }
         return redirect()->back();
@@ -98,7 +98,7 @@ class atraksiController extends Controller
         $sampul->nama_sampul = $request->nama_sampul;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
-            $request->file('file_foto')->move('images/fasilitas', $file);
+            $request->file('file_foto')->move('images/Atraksi', $file);
             $sampul->file_foto = $file;
         }
 

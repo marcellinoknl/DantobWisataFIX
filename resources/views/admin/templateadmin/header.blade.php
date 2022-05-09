@@ -66,7 +66,11 @@
                             <li><a href="{{url('/kelolaatraksi')}}">Kelola Atraksi Wisata</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{url('/kelolaevent')}}"><i class="ti-layout-grid4-alt"></i> Kelola Event Wisata </a></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Event <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                            <li><a href="{{url('/sampul-event')}}">Kelola Sampul Event</a></li>
+                            <li><a href="{{url('/kelolaevent')}}">Kelola Event Wisata</a></li>
+                        </ul>
                     <li><a href="{{url('/kelolaberita')}}"><i class="ti-layout-grid4-alt"></i> Kelola Berita Wisata </a></li>
                     <li><a href="{{url('/kelolagaleri')}}"><i class="ti-layout-grid4-alt"></i> Kelola Galeri Wisata </a></li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>

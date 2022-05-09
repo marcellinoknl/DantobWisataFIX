@@ -17,18 +17,24 @@ class eventController extends Controller
     public function kelolaindexAction()
     {
 
-        $eventwisata = EventWisata::all();
+        $eventwisata = DB::table('event_wisatas')
+        ->select('event_wisatas.*', 'sampul_event.nama_sampul')
+        ->join('sampul_event', 'sampul_event.id', '=', 'event_wisatas.id_sampul_event')
+        ->get();
         return view('admin.kelolaevent', compact('eventwisata'));
     }
 
     public function tambah()
     {
-        return view('admin.tambah-event-wisata');
+        $sampul = SampulEvent::all();
+
+        return view('admin.tambah-event-wisata', compact('sampul'));
     }
     public function store(Request $request)
     {
         $objek = new EventWisata();
         $objek->judul_event = $request->judul_event;
+        $objek->id_sampul_event = $request->id_sampul_event;
         $objek->deskripsi_event = $request->deskripsi_event;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
@@ -73,12 +79,12 @@ class eventController extends Controller
     //sampul event
     public function kelolaindexActionSampul()
     {
-        $sampulatraksi = SampulEvent::all();
-        return view('admin.sampul-atraksi', compact('sampulatraksi'));
+        $sampul = SampulEvent::all();
+        return view('admin.sampul-event', compact('sampul'));
     }
     public function tambahsampul()
     {
-        return view('admin.tambah-sampul-atraksi');
+        return view('admin.tambah-sampul-event');
     }
 
     public function storesampul(Request $request)
@@ -87,18 +93,18 @@ class eventController extends Controller
         $sampul->nama_sampul = $request->nama_sampul;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
-            $request->file('file_foto')->move('images/fasilitas', $file);
+            $request->file('file_foto')->move('images/eventwisata', $file);
             $sampul->file_foto = $file;
         }
 
         $sampul->save();
-        return redirect('sampul-atraksi');
+        return redirect('sampul-event');
     }
 
     public function editsampul($id)
     {
         $update = SampulEvent::find($id);
-        return view('admin.ubah-sampulatraksi', compact('update'));
+        return view('admin.ubah-sampulevent', compact('update'));
     }
 
     public function updatesampul(request $request, $id)
@@ -114,14 +120,14 @@ class eventController extends Controller
         $file = $update->file_foto;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
-            $request->file('file_foto')->move('images/Atraksi', $file);
+            $request->file('file_foto')->move('images/eventwisata', $file);
             $update->file_foto = $file;
         }
-        $update->id_sampul_atraksi = $request->nama_sampul;
+        $update->id_sampul_event = $request->nama_sampul;
         $update->file_foto = $file;
         $update->save();
 
-        return redirect('sampul-atraksi');
+        return redirect('sampul-event');
     }
     public function hapusSampul($id)
     {
