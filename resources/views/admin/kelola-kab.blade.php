@@ -79,7 +79,12 @@
                                                                                             class="ti-pencil-alt"
                                                                                             style="color:black;">
                                                                                             Ubah</span></button>
-                                                                                            <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"><span class="ti-trash" style="color:black;"> Hapus</span></button>
+                                                                                    <button class="btn btn-danger"
+                                                                                        data-toggle="modal"
+                                                                                        data-target="#myModal"><span
+                                                                                            class="ti-trash"
+                                                                                            style="color:black;">
+                                                                                            Hapus</span></button>
                                                             </div>
                                                             </td>
                                                             </tr>
@@ -91,6 +96,47 @@
                                                                         <div class="modal-body">
                                                                             <img src="{{ url('images/objekwisata/' . $kabupatens->file_foto) }}"
                                                                                 class="img-fluid">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {{-- modal pop up hapus --}}
+                                                            <div class="modal fade" id="myModal" role="dialog">
+                                                                <div class="modal-dialog" style="
+                                                                   position: absolute;
+                                                                    top: auto;
+                                                                    right: 0;
+                                                                    bottom: 8cm;
+                                                                    left: 0;
+                                                                    z-index: 10040;
+                                                                    overflow: auto;
+                                                                    overflow-y: auto;">
+                                                                    <!-- Modal content-->
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 class="modal-title">Hapus Kabupaten
+                                                                            </h4>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal"><i
+                                                                                    class="ti-close"></i></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <p>Apakah Anda yakin ingin menghapus
+                                                                                Kabupaten
+                                                                                <b>{{ $kabupatens->nama_kab }}</b> ?
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">Batal</button>
+                                                                            <button class="btn btn-danger"
+                                                                                onclick="window.location.href='/kabupaten/hapus/{{ $kabupatens->id_obj_wisata_kabupaten }}'"
+                                                                                data-toggle="modal"
+                                                                                data-target="#myModal"><span
+                                                                                    class="ti-trash"
+                                                                                    style="color:black;">
+                                                                                    Hapus</span></button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -109,24 +155,6 @@
                         </div>
                         <!-- /# column -->
                     </div>
-                    {{-- modal pop up hapus --}}
-                                    <div class="modal fade" id="myModal" role="dialog" style="position: absolute; top: -1460px;">
-                                        <div class="modal-dialog">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">Hapus Kabupaten</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"><i class="ti-close"></i></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Apakah Anda yakin ingin menghapus Kabupaten <b>{{$kabupatens->nama_kab}}</b> ?</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                    <button class="btn btn-danger" onclick="window.location.href='/kabupaten/hapus/{{ $kabupatens->id_obj_wisata_kabupaten }}'"data-toggle="modal" data-target="#myModal"><span class="ti-trash" style="color:black;"> Hapus</span></button>
-                                             </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                     <!-- /# row -->
                     @include('admin.templateadmin.footer')

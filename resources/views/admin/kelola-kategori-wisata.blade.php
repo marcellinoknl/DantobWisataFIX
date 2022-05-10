@@ -31,7 +31,9 @@
                             <section id="main-content">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <a href="{{ url('/tambah-kat')}}" <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Kategori Wisata</span></button>
+                                        <a href="{{ url('/tambah-kat') }}" <button class="btn btn-success"><span
+                                                class="ti-plus" style="color:black;"> Tambah Kategori
+                                                Wisata</span></button>
                                         </a>
                                         <section id="main-content">
                                             <div class="row">
@@ -39,30 +41,71 @@
                                                     <div class="card">
                                                         <div class="bootstrap-data-table-panel">
                                                             <div class="table-responsive">
-                                                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                                                <table id="bootstrap-data-table-export"
+                                                                    class="table table-striped table-bordered">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center" width="10%">No</th>
-                                                                            <th class="text-center" width="60%">Nama Kategori</th>
-                                                                            <th class="text-center" width="30%">Aksi</th>
+                                                                            <th class="text-center" width="10%">No
+                                                                            </th>
+                                                                            <th class="text-center" width="60%">Nama
+                                                                                Kategori</th>
+                                                                            <th class="text-center" width="30%">Aksi
+                                                                            </th>
                                                                         </tr>
                                                                         <?php $number = 1; ?>
                                                                     </thead>
                                                                     <tbody>
-                                                                        @foreach($kategori as $kat)
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <?php echo $number++; ?>
-                                                                            </td>
-                                                                            <td class="text-center">
-                                                                                {{$kat->nama_kategori}}
-                                                                            </td>
-                                                                            <td>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-kat/{{$kat->id_kategori}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
-                                                                                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"><span class="ti-trash" style="color:black;"> Hapus</span></button>
-                                                                            </td>
+                                                                        @foreach ($kategori as $kat)
+                                                                            <tr>
+                                                                                <td class="text-center">
+                                                                                    <?php echo $number++; ?>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    {{ $kat->nama_kategori }}
+                                                                                </td>
+                                                                                <td>
+                                                                                    <button class="btn btn-warning"
+                                                                                        onclick="window.location.href='/ubah-kat/{{ $kat->id_kategori }}'"><span
+                                                                                            class="ti-pencil-alt"
+                                                                                            style="color:black;">
+                                                                                            Ubah</span></button>
+                                                                                    <button class="btn btn-danger"
+                                                                                        data-toggle="modal"
+                                                                                        data-target="#myModal"><span
+                                                                                            class="ti-trash"
+                                                                                            style="color:black;">
+                                                                                            Hapus</span></button>
+                                                                                </td>
                                                             </div>
                                                             </tr>
+                                                            {{-- modal pop up hapus --}}
+                                                            <div class="modal fade" id="myModal" role="dialog"
+                                                                style="position: absolute; top: 0; left: 0;">
+                                                                <div class="modal-dialog">
+                                                                    <!-- Modal content-->
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 class="modal-title">Hapus Kategori
+                                                                            </h4>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal"><i
+                                                                                    class="ti-close"></i></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <p>Apakah Anda yakin ingin menghapus
+                                                                                <b>{{ $kat->nama_kategori }}</b> ?
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">Batal</button>
+                                                                            <button type="button" class="btn btn-danger"
+                                                                                onclick="window.location.href='/kategoriwisata/hapus/{{ $kat->id_kategori }}'">Hapus</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             @endforeach
                                                             </tbody>
                                                             </table>
@@ -74,24 +117,6 @@
                                             <!-- /# column -->
                                     </div>
 
-                                    {{-- modal pop up hapus --}}
-                                    <div class="modal fade" id="myModal" role="dialog" style="position: absolute; top: -670px;">
-                                        <div class="modal-dialog">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">Hapus Kategori</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"><i class="ti-close"></i></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Apakah Anda yakin ingin menghapus <b>{{$kat->nama_kategori}}</b> ?</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/kategoriwisata/hapus/{{$kat->id_kategori}}'">Hapus</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <!-- /# row -->
                                     @include('admin.templateadmin.footer')
