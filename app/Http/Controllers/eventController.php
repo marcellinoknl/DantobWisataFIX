@@ -113,7 +113,7 @@ class eventController extends Controller
             $request,
             [
                 'nama_sampul' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                
             ]
         );
         $update = SampulEvent::find($id);
@@ -123,7 +123,7 @@ class eventController extends Controller
             $request->file('file_foto')->move('images/eventwisata', $file);
             $update->file_foto = $file;
         }
-        $update->id_sampul_event = $request->nama_sampul;
+        $update->nama_sampul = $request->nama_sampul;
         $update->file_foto = $file;
         $update->save();
 

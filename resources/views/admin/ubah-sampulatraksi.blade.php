@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> UBAH KATEGORI ATRAKSI </h1>
+                            <h1> UBAH SAMPUL ATRAKSI </h1>
                         </div>
                     </div>
                 </div>
@@ -15,8 +15,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata') }}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Ubah Kategori Atraksi</li>
+                                <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Sampul Atraksi</li>
                             </ol>
                         </div>
                     </div>
@@ -29,23 +29,30 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('formsampulatraksi.ubah', $update->id) }}" method="post"
-                                    enctype="multipart/form-data">
+                                <form action="{{route('formsampulatraksi.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Nama Kategori</label>
+                                        <label class="col-sm-3 col-form-label">Nama Sampul  </label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="required" id="nama_sampul" name="nama_sampul"
-                                                class="form-control" value="{{ $update->nama_sampul }}">
+                                            <input type="text" required="required" id="namasampul" name="nama_sampul" class="form-control"value="{{$update->nama_sampul}}">
                                         </div>
                                     </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Gambar </label>
+                                        <div class="col-sm-9">
+                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/Atraksi/'.$update->file_foto)}}">
 
+                                            <div class="custom-file">
+
+                                                <input type="file" class="custom-file-input" id="file_foto" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
+
+                                                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <br><br>
-                                    <button type="button" class="btn btn-danger"
-                                        onclick="window.location.href='/sampul-atraksi'"><i class="ti-close"></i>
-                                        Batal</button>
-                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i>
-                                        Ubah</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/sampul-atraksi'"><i class="ti-close"></i> Batal</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>
                         </div>
@@ -55,5 +62,21 @@
                 </div>
                 <!-- /# column -->
         </div>
+        <!-- /# row -->
 
+        <script>
+            function previewImage() {
+                const image = document.querySelector('#file_foto')
+                const imgPreview = document.querySelector('.img-preview')
+
+                imgPreview.style.display = 'block';
+
+                const oFReader = new FileReader();
+                oFReader.readAsDataURL(image.files[0])
+
+                oFReader.onload = function(oFREvent) {
+                    imgPreview.src = oFREvent.target.result;
+                }
+            }
+        </script>
         @include('admin.templateadmin.footer')

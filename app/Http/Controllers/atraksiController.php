@@ -118,7 +118,7 @@ class atraksiController extends Controller
             $request,
             [
                 'nama_sampul' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
             ]
         );
         $update = SampulAtraksi::find($id);
@@ -128,7 +128,7 @@ class atraksiController extends Controller
             $request->file('file_foto')->move('images/Atraksi', $file);
             $update->file_foto = $file;
         }
-        $update->id_sampul_atraksi = $request->nama_sampul;
+        $update->nama_sampul = $request->nama_sampul;
         $update->file_foto = $file;
         $update->save();
 
