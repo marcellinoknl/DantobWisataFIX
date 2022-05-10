@@ -70,7 +70,7 @@
                                                                                             src="{{ 'images/objekwisata/' . $kabupatens->file_foto }}"
                                                                                             style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"
                                                                                             alt="" data-toggle="modal"
-                                                                                            data-target="#myModal{{ $kabupatens->id_obj_wisata_kabupaten }}" />
+                                                                                            data-target="#myModalgambar{{ $kabupatens->id_obj_wisata_kabupaten }}" />
                                                                                     </center>
                                                                                 </td>
                                                                                 <td>
@@ -81,7 +81,7 @@
                                                                                             Ubah</span></button>
                                                                                     <button class="btn btn-danger"
                                                                                         data-toggle="modal"
-                                                                                        data-target="#myModal"><span
+                                                                                        data-target="#myModal{{ $kabupatens->id_obj_wisata_kabupaten }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
                                                                                             Hapus</span></button>
@@ -89,7 +89,7 @@
                                                             </td>
                                                             </tr>
                                                             <!-- gedein gambar -->
-                                                            <div id="myModal{{ $kabupatens->id_obj_wisata_kabupaten }}"
+                                                            <div id="myModalgambar{{ $kabupatens->id_obj_wisata_kabupaten }}"
                                                                 class="modal fade" tabindex="-1" role="dialog">
                                                                 <div class="modal-dialog modal-dialog-centered">
                                                                     <div class="modal-content">
@@ -101,7 +101,9 @@
                                                                 </div>
                                                             </div>
                                                             {{-- modal pop up hapus --}}
-                                                            <div class="modal fade" id="myModal" role="dialog">
+                                                            <div class="modal fade"
+                                                                id="myModal{{ $kabupatens->id_obj_wisata_kabupaten }}"
+                                                                role="dialog">
                                                                 <div class="modal-dialog" style="
                                                                    position: absolute;
                                                                     top: auto;
