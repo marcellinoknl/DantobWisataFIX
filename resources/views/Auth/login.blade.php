@@ -62,7 +62,7 @@
                   <div class="card-body">
                      <!-- Logo -->
                      <div class="app-brand justify-content-center">
-                        <a href="{{url('/')}}" class="app-brand-link gap-2">
+                        <a href="{{ url('/') }}" class="app-brand-link gap-2">
                            <span class="app-brand-logo demo">
                               <svg
                                  width="25"
@@ -122,6 +122,17 @@
                         </a>
                      </div>
                      <!-- /Logo -->
+                     @if (session('login'))
+<div class="dropdown">
+                        <a class="dropdown">
+                            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                                <div>
+                                    <strong>Warning</strong>,{{ session('login') }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+@endif
                      <h4 class="mb-2">Selamat Datang !</h4>
                      <p class="mb-4">Masuk Dengan Akun, untuk Menjelajah Lebih Jauh</p>
                      <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('login') }}"enctype="multipart/form-data">
@@ -130,22 +141,28 @@
                            <label for="email" class=" form-label ">{{ __('EMAIL OR USERNAME') }}</label>
                            <input id="email" placeholder="Masukkan Email atau User Name Anda"type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                            @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+    <span class="invalid-feedback" role="alert">
+                                                                                            <strong>{{ $message }}</strong>
+                                                                                        </span>
+@enderror
                         </div>
                         <div class="mb-3 form-password-toggle">
                            <div class="d-flex justify-content-between">
                               <label for="password" class=" col-form-label text-md-end">{{ __('Kata Sandi') }}</label>
-                              <a href="{{url('/password/reset')}}">
+                              <a href="{{ url('/password/reset') }}">
                               <small>Lupa Kata Sandi?</small>
                               </a>
                            </div>
                            <div class="input-group input-group-merge">
                               <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                  aria-describedby="password"/>
-                              <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>                      
+                                 
+                              <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                              @error('password')
+    <span class="invalid-feedback" role="alert">
+                                                                                 <strong>{{ $message }}</strong>
+                                                                                 </span>
+@enderror
                            </div>
                         </div>
                         <div class=" mb-3">
@@ -163,14 +180,14 @@
                                    {{ __('Login') }}
                                </button> -->
                         <!-- @if (Route::has('password.request'))
-                           <a class="btn btn-link" href="{{ route('password.request') }}">
+<a class="btn btn-link" href="{{ route('password.request') }}">
                                {{ __('Forgot Your Password?') }}
                            </a>
-                           @endif -->
+@endif -->
                      </form>
                      <p class="text-center">
                         <span>Belum Mempunyai Akun?</span>
-                        <a href="{{url('/register')}}">
+                        <a href="{{ url('/register') }}">
                         <span>Daftar Sekarang</span>
                         </a>
                      </p>
@@ -182,8 +199,7 @@
       </div>
       <!-- / Content -->
       <div class="buy-now">
-         <a href="{{url('/')}}"target="_self"class="btn btn-danger btn-buy-now">Beranda</a
-            >
+         <a href="{{ url('/') }}"target="_self"class="btn btn-danger btn-buy-now">Beranda</a>
       </div>
       <!-- Core JS -->
       <!-- build:js auth/assets/vendor/js/core.js -->
