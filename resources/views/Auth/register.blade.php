@@ -64,7 +64,7 @@
                   <div class="card-header"></div>
                   <div class="card-body">
                      <div class="app-brand justify-content-center">
-                        <a href="{{url('/')}}" class="app-brand-link gap-2">
+                        <a href="{{ url('/') }}" class="app-brand-link gap-2">
                            <span class="app-brand-logo demo">
                               <svg
                                  width="25"
@@ -132,32 +132,42 @@
                            <label for="name"  class=" form-label text-md-end">{{ __('Name') }}</label>
                            <input id="name" type="text" placeholder="Masukkan Nama Anda" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                            @error('name')
-                           <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                           </span>
-                           @enderror
+    <span class="invalid-feedback" role="alert">
+                                                                   <strong>{{ $message }}</strong>
+                                                                   </span>
+@enderror
                         </div>
                         <div class=" mb-3">
                            <label for="email" class="col-form-label text-md-end">{{ __('Email Address') }}</label>
                            <input id="email" type="email"placeholder="Masukkan Email Anda" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                            @error('email')
-                           <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                           </span>
-                           @enderror
+    <span class="invalid-feedback" role="alert">
+                                                                   <strong>{{ $message }}</strong>
+                                                                   </span>
+@enderror
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-password-toggle">
+                           <div class="d-flex justify-content-between">
                            <label for="password" class=" col-form-label text-md-end">{{ __('Password') }}</label>
-                           <input id="password" type="password" placeholder="Masukkan Password Anda"class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                           </div>
+                           <div class="input-group input-group-merge">
+                           <input id="password" type="password" placeholder="Masukkan Password Anda"class="form-control @error('password') is-invalid @enderror" name="password" aria-describedby="password" required autocomplete="new-password">
+                           <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                            @error('password')
-                           <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                           </span>
-                           @enderror
+    <span class="invalid-feedback" role="alert">
+                                                                   <strong>{{ $message }}</strong>
+                                                                   </span>
+@enderror
                         </div>
-                        <div class=" mb-3">
+                        </div>
+                        <div class=" mb-3 form-password-toggle">
+                           <div class="d-flex justify-content-between">
                            <label for="password-confirm" class=" col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-                           <input id="password-confirm"placeholder="Konfirmasi Password Anda" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                           </div>
+                           <div class="input-group input-group-merge">
+                           <input id="password-confirm"placeholder="Konfirmasi Password Anda" type="password" class="form-control" name="password_confirmation" aria-describedby="password" required autocomplete="new-password"   aria-describedby="password">
+                           <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                        </div>
                         </div>
                         <div class="mb-3">
                            <div class="form-check">
@@ -172,7 +182,7 @@
                      </form>
                      <p class="text-center">
                         <span>Sudah Punya Akun?</span>
-                        <a href="{{url('/login')}}">
+                        <a href="{{ url('/login') }}">
                         <span>Masuk</span>
                         </a>
                      </p>
@@ -185,7 +195,7 @@
       <!-- / Content -->
       <div class="buy-now">
          <a
-            href="{{url('/')}}"
+            href="{{ url('/') }}"
             target="_self"
             class="btn btn-danger btn-buy-now"
             >Beranda</a
