@@ -108,7 +108,8 @@
                                                                    position: absolute;
                                                                     top: auto;
                                                                     right: 0;
-                                                                    bottom: 8cm;
+                                                                    bottom:6cm;
+                                                                    box-align: centered;
                                                                     left: 0;
                                                                     z-index: 10040;
                                                                     overflow: auto;
