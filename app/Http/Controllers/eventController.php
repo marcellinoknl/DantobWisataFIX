@@ -11,16 +11,17 @@ class eventController extends Controller
 {
     public function indexAction()
     {
-        return view('user-page.blog.event');
+        $sampul_event = DB::table('sampul_event')->get();
+        return view('user-page.blog.event', ['sampul_event' => $sampul_event]);
     }
 
     public function kelolaindexAction()
     {
 
         $eventwisata = DB::table('event_wisatas')
-        ->select('event_wisatas.*', 'sampul_event.nama_sampul')
-        ->join('sampul_event', 'sampul_event.id', '=', 'event_wisatas.id_sampul_event')
-        ->get();
+            ->select('event_wisatas.*', 'sampul_event.nama_sampul')
+            ->join('sampul_event', 'sampul_event.id', '=', 'event_wisatas.id_sampul_event')
+            ->get();
         return view('admin.kelolaevent', compact('eventwisata'));
     }
 
@@ -113,7 +114,7 @@ class eventController extends Controller
             $request,
             [
                 'nama_sampul' => 'required',
-                
+
             ]
         );
         $update = SampulEvent::find($id);

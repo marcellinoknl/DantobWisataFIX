@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Berita_Wisata;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,8 @@ class beritaController extends Controller
 {
     public function indexAction()
     {
-        return view('user-page.blog.berita');
+        $berita_wisata = DB::table('berita_wisata')->get();
+        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata]);
     }
 
     public function kelolaindexAction()
@@ -35,7 +37,7 @@ class beritaController extends Controller
             $objek->file_foto = $file;
         }
 
-        $objek->save(); 
+        $objek->save();
         return redirect('kelolaberita');
     }
 
@@ -52,7 +54,7 @@ class beritaController extends Controller
             [
                 'judul_berita' => 'required',
                 'isi_berita' => 'required',
-                 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
             ]
         );
         $update =  Berita_Wisata::find($id_berita);

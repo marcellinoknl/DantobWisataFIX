@@ -18,7 +18,7 @@
             Atraksi
         </h1>
         <p class="caption" style=" color:black;">
-            Beberapa Fasilitas yang dapat membantu anda selama mengunjungi Danau Toba
+            Beberapa Atraksi yang mungkin bisa kamu kunjungi selama berwisata di Danau Toba
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
