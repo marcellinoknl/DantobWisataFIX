@@ -35,21 +35,31 @@
                                         <label class="col-sm-3 col-form-label">Judul Event</label>
                                         <div class="col-sm-9">
 
-                                            <input type="text" required="required" id="judulevent" name="judul_event" class="form-control">
+                                            <input type="text"  id="judulevent" name="judul_event" class="form-control @error('judul_event') is-invalid @enderror">
+                                            @error('judul_event')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
 
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Kategori</label>
                                         <div class="col-sm-9">
-                                            <select required="required" id="id_sampul_event" name="id_sampul_event"
-                                                class="form-control">
-                                                <option selected>Pilih Kategori</option>
+                                            <select id="id_sampul_event" name="id_sampul_event"
+                                                class="form-control form-control @error('id_sampul_event') is-invalid @enderror">
+                                                <option selected disabled>Pilih Kategori</option>
                                                 @foreach ($sampul as $sampuls)
                                                     <option value="{{ $sampuls->id }}">
                                                         {{ $sampuls->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('id_sampul_event')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
 
                                         </div>
                                     </div>
@@ -59,17 +69,27 @@
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                             <div class="custom-file">
 
-                                                <input type="file" class="custom-file-input" id="gambarevent" onchange="previewImage()" name="file_foto">
+                                                <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror" id="gambarevent" onchange="previewImage()" name="file_foto">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
+                                            @error('file_foto')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Deskripsi Event</label>
                                     </div>
                                     <div class="mb-3 row">
-                                   <textarea type="text" required="required" id="deskripsievent" name="deskripsi_event" cols="200px" rows="20"></textarea>
+                                    <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror" id="deskripsievent" name="deskripsi_event" height="300px" cols="200px" rows="20"></textarea>
+                                   @error('deskripsi_event')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
 
                                     </div>
                                     <br><br>

@@ -27,7 +27,19 @@ class beritaController extends Controller
 
 
     public function store(Request $request)
-    {
+    {   
+        $this->validate(
+            $request,
+            [
+                'judul_berita' => 'required',
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif',
+                'isi_berita' => 'required' 
+                
+                
+                                          
+                
+            ]
+        );
         $objek = new Berita_Wisata();
         $objek->judul_berita = $request->judul_berita;
         $objek->isi_berita = $request->isi_berita;
@@ -54,7 +66,7 @@ class beritaController extends Controller
             [
                 'judul_berita' => 'required',
                 'isi_berita' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+              
             ]
         );
         $update =  Berita_Wisata::find($id_berita);

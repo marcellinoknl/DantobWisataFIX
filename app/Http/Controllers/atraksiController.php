@@ -72,7 +72,7 @@ class atraksiController extends Controller
             $request,
             [
                 'judul' => 'required',
-                'id_sampul_atraksi' => 'required',                
+                'nama_sampul' => 'required',                
                 'deskripsi' => 'required'
                                           
                 
@@ -115,6 +115,17 @@ class atraksiController extends Controller
 
     public function storesampul(Request $request)
     {
+        $this->validate(
+            $request,
+            [
+                
+                'nama_sampul' => 'required', 
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                
+                                          
+                
+            ]
+        );
         $sampul = new SampulAtraksi();
         $sampul->nama_sampul = $request->nama_sampul;
         if ($request->hasFile('file_foto')) {
@@ -139,7 +150,7 @@ class atraksiController extends Controller
             $request,
             [
                 'nama_sampul' => 'required',
-                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                
             ]
         );
         $update = SampulAtraksi::find($id);

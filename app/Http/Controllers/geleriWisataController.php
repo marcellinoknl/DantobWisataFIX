@@ -26,7 +26,15 @@ class geleriWisataController extends Controller
 
 
     public function store(Request $request)
-    {
+    {   $this->validate(
+        $request,
+        [
+            'judul' => 'required',
+            'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                                      
+            
+        ]
+    );  
         $objek = new GaleriWisata();
         $objek->id_galeri = $request->id_galeri;
         $objek->judul = $request->judul;
@@ -47,7 +55,16 @@ class geleriWisataController extends Controller
     }
 
     public function update(request $request, $galeri_id)
-    {
+    {   
+        $this->validate(
+            $request,
+            [
+                'judul' => 'required',
+               
+                                          
+                
+            ]
+        );  
         $update = GaleriWisata::find($galeri_id);
         $file = $update->file_foto;
         if ($request->hasFile('file_foto')) {
