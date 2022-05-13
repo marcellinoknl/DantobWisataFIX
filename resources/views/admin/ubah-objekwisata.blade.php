@@ -47,7 +47,7 @@
                                             <div class="col-sm-9">
                                                     
                                                 <select   id="id_obj_wisata_kabupaten" name="nama_kabupaten" class="form-control @error('nama_kabupaten') is-invalid @enderror"  >
-                                                    <option value="">Pilih Kabupaten</option>
+                                                    <option selected disabled value=""="">Pilih Kabupaten</option>
                                                     @foreach($kabupaten as $kab)
                                                     <option value="{{$kab->id_obj_wisata_kabupaten}}">{{$kab->nama_kab}}</option>
                                                     @endforeach
@@ -64,7 +64,7 @@
                                             <div class="col-sm-9">
                                                     
                                                 <select   id="id_kat_wisata" name="nama_kategori" class="form-control @error('nama_kategori') is-invalid @enderror"  >
-                                                    <option value="">Pilih Kategori</option>
+                                                    <option selected disabled value="">Pilih Kategori</option>
                                                     @foreach($kategori as $kat)
                                                     <option value="{{$kat->id_kategori}}">{{$kat->nama_kategori}}</option>
                                                     @endforeach
@@ -85,6 +85,7 @@
                                                     <input type="file" class="custom-file-input" id="gambarwisata" onchange="previewImage()"name="file_foto"  value="{{$update->file_foto}}">
                                                     <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                                   </div>
+                                                  
                                             </div>
                                         </div>  
                                         <div class="mb-3 row">

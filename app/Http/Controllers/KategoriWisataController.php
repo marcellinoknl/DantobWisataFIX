@@ -30,7 +30,16 @@ class KategoriWisataController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
+        $this->validate(
+            $request,
+            [
+                'nama_kategori' => 'required'
+                
+            ]
+        );
+    
         $kategori = new Kategori_Wisata();
         $kategori->nama_kategori = $request->nama_kategori;
         $kategori->save();
@@ -69,6 +78,15 @@ class KategoriWisataController extends Controller
      */
     public function update(Request $request, $id_kategori)
     {
+        $this->validate(
+            $request,
+            [
+              
+                'nama_kategori' => 'required'
+               
+            ]
+        );
+    
         $update = Kategori_Wisata::find($id_kategori);
         
         $update->nama_kategori = $request->nama_kategori;
