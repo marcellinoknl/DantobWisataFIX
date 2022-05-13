@@ -47,9 +47,10 @@
 
                                             <select id="id_sampul_atraksi" name="nama_sampul"
                                                 class="form-control @error('nama_sampul') is-invalid @enderror">
-                                                <option value="">Pilih Kategori</option>
+                                                {{-- <option value="">Pilih Kategori</option> --}}
                                                 @foreach ($kategori as $kategories)
-                                                    <option value="{{ $kategories->id }}">
+                                                    <option value="{{ $kategories->id }}"
+                                                        {{ $kategories->id == $update->id ? 'selected' : '' }}>
                                                         {{ $kategories->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
