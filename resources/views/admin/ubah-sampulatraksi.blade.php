@@ -34,7 +34,12 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Sampul  </label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="required" id="namasampul" name="nama_sampul" class="form-control"value="{{$update->nama_sampul}}">
+                                            <input type="text"id="namasampul" name="nama_sampul" class="form-control  @error('nama_sampul') is-invalid @enderror" value="{{$update->nama_sampul}}">
+                                            @error('nama_sampul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">

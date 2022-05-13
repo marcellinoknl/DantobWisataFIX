@@ -35,19 +35,31 @@
                                         <label class="col-sm-3 col-form-label">Judul Event </label>
                                         <div class="col-sm-9">
 
-                                            <input type="text" required="required" id="judulevent" name="judul_event" class="form-control" value="{{$update->judul_event}}">
+                                            <input type="text"  id="judulevent" name="judul_event" class="form-control  @error('judul_event') is-invalid @enderror" value="{{$update->judul_event}}">
+                                            @error('judul_event')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-9">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Kategori</label>
+                                        <div class="col-sm-9">
 
-                                            <select required="required" id="id_sampul_event" name="id_sampul_event"
-                                                class="form-control">
-                                                <option selected>Pilih Kategori</option>
-                                                @foreach ($sampul as $sampuls)
-                                                    <option value="{{ $sampuls->id }}">
-                                                        {{ $sampuls->nama_sampul }}</option>
+                                            <select  id="id_sampul_event" name="nama_sampul"
+                                                class="form-control @error('nama_sampul') is-invalid @enderror">
+                                                <option selected disabled>Pilih Kategori</option>
+                                                @foreach ($kategori as $kategories)
+                                                    <option value="{{ $kategories->id }}">
+                                                        {{ $kategories->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('nama_sampul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
 
                                         </div>
                                     </div>
@@ -70,8 +82,12 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea type="text" required="required" id="deskripsi_event" name="deskripsi_event" cols="200px" rows="20">{{$update->deskripsi_event}}</textarea>
-
+                                        <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror required="required" id="deskripsi_event" name="deskripsi_event" cols="200px" rows="20">{{$update->deskripsi_event}}</textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaevent'"><i class="ti-close"></i> Batal</button>

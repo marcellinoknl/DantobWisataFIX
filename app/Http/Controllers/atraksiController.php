@@ -33,10 +33,21 @@ class atraksiController extends Controller
 
 
     public function store(Request $request)
-    {
+    {   
+        $this->validate(
+            $request,
+            [
+                'judul' => 'required',
+                'nama_sampul' => 'required', 
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif',
+                'deskripsi' => 'required'
+                                          
+                
+            ]
+        );
         $objek = new Atraksi_Wisata();
         $objek->judul = $request->judul;
-        $objek->id_sampul_atraksi = $request->id_sampul_atraksi;
+        $objek->id_sampul_atraksi = $request->nama_sampul;
         $objek->deskripsi = $request->deskripsi;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
@@ -56,7 +67,17 @@ class atraksiController extends Controller
     }
 
     public function update(request $request, $atraksi_id)
-    {
+    {   
+        $this->validate(
+            $request,
+            [
+                'judul' => 'required',
+                'nama_sampul' => 'required',                
+                'deskripsi' => 'required'
+                                          
+                
+            ]
+        );
         $update = Atraksi_Wisata::find($atraksi_id);
         $file = $update->file_foto;
         if ($request->hasFile('file_foto')) {
@@ -94,6 +115,17 @@ class atraksiController extends Controller
 
     public function storesampul(Request $request)
     {
+        $this->validate(
+            $request,
+            [
+                
+                'nama_sampul' => 'required', 
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                
+                                          
+                
+            ]
+        );
         $sampul = new SampulAtraksi();
         $sampul->nama_sampul = $request->nama_sampul;
         if ($request->hasFile('file_foto')) {
@@ -118,7 +150,7 @@ class atraksiController extends Controller
             $request,
             [
                 'nama_sampul' => 'required',
-                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                
             ]
         );
         $update = SampulAtraksi::find($id);

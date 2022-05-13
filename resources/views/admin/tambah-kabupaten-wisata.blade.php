@@ -34,7 +34,12 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Kabupaten</label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="required" id="nama_kab" name="nama_kab" class="form-control">
+                                            <input type="text" id="nama_kab" name="nama_kab"class="form-control @error('nama_kab') is-invalid @enderror">
+                                            @error('nama_kab')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -42,18 +47,17 @@
                                         <div class="col-sm-9">
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="gambarwisata" onchange="previewImage()" name="file_foto">
+                                                <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror"id="gambarwisata" onchange="previewImage()" name="file_foto">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
+                                            @error('file_foto')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
-                                    <!-- <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Deskripsi Wisata</label>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <textarea type="text" required="required" id="deskripsiwisata" name="deskripsi" height="300px" class="form-control"></textarea>
-                                    </div> -->
-                                    <br><br>
+                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolakab'"><i class="ti-close"></i> Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
                                 </form>

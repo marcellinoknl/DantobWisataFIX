@@ -34,7 +34,12 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Judul Berita</label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="required" id="beritawisata" name="judul_berita" class="form-control">
+                                            <input type="text"  id="beritawisata" name="judul_berita" class="form-control @error('judul_berita') is-invalid @enderror">
+                                            @error('judul_berita')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -42,9 +47,14 @@
                                         <div class="col-sm-9">
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="gambarwisata" onchange="previewImage()" name="file_foto">
+                                                <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror" id="gambarwisata" onchange="previewImage()" name="file_foto">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
+                                            @error('file_foto')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -52,7 +62,12 @@
                                     </div>
                                     <div class="mb-3 row">
                                     <!-- <textarea required="required" id="deskripsiwisata" name="deskripsi" cols="200px" rows="20" ></textarea> -->
-                                        <textarea type="text" required="required" id="isi_berita" name="isi_berita"cols="200px" rows="20" ></textarea>
+                                        <textarea class="form-control @error('isi_berita') is-invalid @enderror" id="isi_berita" name="isi_berita"cols="200px" rows="20" ></textarea>
+                                        @error('isi_berita')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaberita'"><i class="ti-close"></i> Batal</button>

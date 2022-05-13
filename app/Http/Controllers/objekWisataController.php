@@ -98,8 +98,8 @@ class objekWisataController extends Controller
                 'deskripsi' => 'required',
                 'nama_kategori' => 'required',
                 'deskripsi' => 'required',
-                'nama_kabupaten' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'nama_kabupaten' => 'required'
+               
             ]
         );
         $update = Objek_Wisata::find($id_obj_wisata);

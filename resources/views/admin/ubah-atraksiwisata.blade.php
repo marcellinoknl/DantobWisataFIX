@@ -39,6 +39,11 @@
                                             <input type="text" id="judulatrkasi" name="judul"
                                                 class="form-control @error('judul') is-invalid @enderror"
                                                 value="{{ $update->judul }}">
+                                            @error('judul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -47,14 +52,16 @@
 
                                             <select id="id_sampul_atraksi" name="nama_sampul"
                                                 class="form-control @error('nama_sampul') is-invalid @enderror">
+
                                                 {{-- <option value="">Pilih Kategori</option> --}}
+
                                                 @foreach ($kategori as $kategories)
                                                     <option value="{{ $kategories->id }}"
                                                         {{ $kategories->id == $update->id ? 'selected' : '' }}>
                                                         {{ $kategories->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
-                                            @error('nama_kabupaten')
+                                            @error('nama_sampul')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -74,7 +81,9 @@
                                                     value="{{ $update->file_foto }}">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -82,8 +91,14 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea type="text" required="required" id="deskripsiatraksi" name="deskripsi" cols="200px"
+                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" type="text" id="deskripsiatraksi"
+                                            name="deskripsi" cols="200px"
                                             rows="20">{{ $update->deskripsi }}</textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
 
                                     </div>
                                     <br><br>
