@@ -16,7 +16,7 @@ class CreateObjekWisataTable extends Migration
         Schema::create('objek_wisata', function (Blueprint $table) {
             $table->increments('id_obj_wisata');
             $table->string('nama_wisata');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->string('file_foto');
             $table->integer('id_obj_wisata_kabupaten')->unsigned();
             $table->foreign('id_obj_wisata_kabupaten')->references('id_obj_wisata_kabupaten')->on('objwisatakabupaten')->onDelete('cascade'); 

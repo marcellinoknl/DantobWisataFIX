@@ -60,16 +60,16 @@
                                                                         <tr>
                                                                             <td class="text-center"><?php echo $number++; ?> </td>
                                                                             <td class="text-center">{{$objekwisatas->nama_wisata}}</td>
-                                                                            <td class="text-center">{{$objekwisatas->deskripsi}}</td>
+                                                                            <td class="text-center">{!!$objekwisatas->deskripsi!!}</td>
                                                                             <td class="text-center">{{$objekwisatas->nama_kab}}</td>
                                                                             <td class="text-center">{{$objekwisatas->nama_kategori}}</td>
                                                                             
                                                                             {{-- <td class="text-center">{{$objekwisatas->nama_kategori}}</td> --}}
                                                                             <td class="text-center"><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
-                                                                            <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
-                                                                                <button class="btn btn-danger"data-toggle="modal"data-target="#myModal{{ $objekwisatas->id_obj_wisata }}"><span class="ti-trash style="color:black;">Hapus</span></button>
+                                                                            <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
+                                                                                <button class="btn btn-danger"data-toggle="modal"data-target="#myModal{{ $objekwisatas->id_obj_wisata }}"><span class="ti-trash" style="color:black;"></span></button>
                                                                                 </td>
                                                             </div>
                                                             </tr>
