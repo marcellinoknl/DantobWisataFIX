@@ -23,6 +23,23 @@ class atraksiController extends Controller
         return view('admin.kelolaatraksi', compact('atraksi'));
     }
 
+    public function indexAction2($id)
+    {
+        $sampul_atraksi = SampulAtraksi::find($id);
+        $atrkasi_wisata = DB::table('atraksi_wisata')
+            ->where('id_sampul_atraksi', '=', $id)
+            ->get();
+        return view('user-page.blog.detail1_atraksi_wisata', ['atrkasi_wisata' => $atrkasi_wisata, 'sampul_atraksi' => $sampul_atraksi]);
+    }
+    
+    public function indexAction3($atraksi_id)
+    {
+
+        $atraksi_wisata_detail = Atraksi_Wisata::find($atraksi_id);
+        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail]);
+    }
+
+
     public function tambah()
     {
         $sampul = SampulAtraksi::all();

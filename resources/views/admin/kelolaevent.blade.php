@@ -44,8 +44,8 @@
                                                                     <thead>
                                                                         <tr>
                                                                             <th class="text-center" width="10%">No</th>
-                                                                            <th class="text-center" width="10%">Kategori</th>
-                                                                            <th class="text-center" width="15%">Judul Event</th>
+                                                                            <th class="text-center" width="10%">Judul Event</th>
+                                                                            <th class="text-center" width="15%">Kategori</th>
                                                                             <th class="text-center" width="25%">Deskripsi Event</th>
                                                                             <th class="text-center" width="20%">Gambar</th>
                                                                             <th class="text-center" width="20%">Aksi</th>
