@@ -48,7 +48,7 @@
                                         <div class="col-sm-9">
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input  @error('file_foto') is-invalid @enderror"" id="gambarwisata" onchange="previewImage()" name="file_foto">
+                                                <input type="file" class="custom-file-input  @error('file_foto') is-invalid @enderror" id="gambarwisata" onchange="previewImage()" name="file_foto">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
                                             @error('file_foto')

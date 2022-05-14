@@ -71,7 +71,7 @@
                                                                                             Ubah</span></button>
                                                                                     <button class="btn btn-danger"
                                                                                         data-toggle="modal"
-                                                                                        data-target="#myModal"><span
+                                                                                        data-target="#myModal{{ $kat->id_kategori }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
                                                                                             Hapus</span></button>
@@ -79,13 +79,23 @@
                                                             </div>
                                                             </tr>
                                                             {{-- modal pop up hapus --}}
-                                                            <div class="modal fade" id="myModal" role="dialog"
-                                                                style="position: absolute; top: 0; left: 0;">
-                                                                <div class="modal-dialog">
+                                                            <div class="modal fade"
+                                                                id="myModal{{ $kat->id_kategori }}"
+                                                                role="dialog">
+                                                                <div class="modal-dialog" style="
+                                                                   position: absolute;
+                                                                    top: auto;
+                                                                    right: 0;
+                                                                    bottom:6cm;
+                                                                    box-align: centered;
+                                                                    left: 0;
+                                                                    z-index: 10040;
+                                                                    overflow: auto;
+                                                                    overflow-y: auto;">
                                                                     <!-- Modal content-->
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h4 class="modal-title">Hapus Kategori
+                                                                            <h4 class="modal-title">Hapus Kategori Wisata
                                                                             </h4>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal"><i
@@ -93,6 +103,7 @@
                                                                         </div>
                                                                         <div class="modal-body">
                                                                             <p>Apakah Anda yakin ingin menghapus
+                                                                                Wisata
                                                                                 <b>{{ $kat->nama_kategori }}</b> ?
                                                                             </p>
                                                                         </div>
@@ -100,8 +111,13 @@
                                                                             <button type="button"
                                                                                 class="btn btn-secondary"
                                                                                 data-dismiss="modal">Batal</button>
-                                                                            <button type="button" class="btn btn-danger"
-                                                                                onclick="window.location.href='/kategoriwisata/hapus/{{ $kat->id_kategori }}'">Hapus</button>
+                                                                            <button class="btn btn-danger"
+                                                                                onclick="window.location.href='/kategoriwisata/hapus/{{ $kat->id_kategori }}'"
+                                                                                data-toggle="modal"
+                                                                                data-target="#myModal"><span
+                                                                                    class="ti-trash"
+                                                                                    style="color:black;">
+                                                                                    Hapus</span></button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -112,11 +128,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- /# card -->
                                             </div>
-                                            <!-- /# column -->
+                                        </section>
                                     </div>
+                                </div>
+                                <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
 
-
-                                    <!-- /# row -->
-                                    @include('admin.templateadmin.footer')
+                    <!-- /# row -->
+                    @include('admin.templateadmin.footer')
