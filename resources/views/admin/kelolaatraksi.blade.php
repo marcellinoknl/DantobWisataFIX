@@ -89,15 +89,60 @@
                                                                                             class="ti-pencil-alt"
                                                                                             style="color:black;">
                                                                                             Ubah</span></button>
-                                                                                    <button class="btn btn-danger"><span
+                                                                                            <button class="btn btn-danger"
+                                                                                        data-toggle="modal"
+                                                                                        data-target="#myModal{{$atraksiwisatas->atraksi_id}}"><span
                                                                                             class="ti-trash"
-                                                                                            style="color:black;"
-                                                                                            onclick="window.location.href='/atraksiwisata/hapus/{{ $atraksiwisatas->atraksi_id }}'">
+                                                                                            style="color:black;">
                                                                                             Hapus</span></button>
                                                                                     <!-- <button class="btn btn-danger"href='deleteatraksi/{atraksi_id}/{{ $atraksiwisatas->atraksi_id }}'"><span class="ti-trash"style="color:black;"> Hapus</span></button> -->
+                                                                                    </td>
                                                             </div>
-                                                            </td>
                                                             </tr>
+                                                            {{-- modal pop up hapus --}}
+                                                            <div class="modal fade"
+                                                                id="myModal{{ $atraksiwisatas->atraksi_id }}"
+                                                                role="dialog">
+                                                                <div class="modal-dialog" style="
+                                                                   position: absolute;
+                                                                    top: auto;
+                                                                    right: 0;
+                                                                    bottom:6cm;
+                                                                    box-align: centered;
+                                                                    left: 0;
+                                                                    z-index: 10040;
+                                                                    overflow: auto;
+                                                                    overflow-y: auto;">
+                                                                    <!-- Modal content-->
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 class="modal-title">Hapus Atraksi Wisata
+                                                                            </h4>
+                                                                            <button type="button" class="close"
+                                                                                data-dismiss="modal"><i
+                                                                                    class="ti-close"></i></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <p>Apakah Anda yakin ingin menghapus
+                                                                                Atraksi Wisata
+                                                                                <b>{{ $atraksiwisatas->judul }}</b> ?
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">Batal</button>
+                                                                            <button class="btn btn-danger"
+                                                                                onclick="window.location.href='/atraksiwisata/hapus/{{ $atraksiwisatas->atraksi_id  }}'"
+                                                                                data-toggle="modal"
+                                                                                data-target="#myModal"><span
+                                                                                    class="ti-trash"
+                                                                                    style="color:black;">
+                                                                                    Hapus</span></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             @endforeach
                                                             </tbody>
                                                             </table>
@@ -112,5 +157,6 @@
                         </div>
                         <!-- /# column -->
                     </div>
+
                     <!-- /# row -->
                     @include('admin.templateadmin.footer')

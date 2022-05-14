@@ -79,10 +79,10 @@
 
                                             <select required="required" id="id_sampul_fasilitas" name="nama_sampul"
                                                 class="form-control @error('nama_sampul') is-invalid @enderror">
-                                                <option selected disabled>Pilih Kategori</option>
+                                                <!-- <option selected disabled>Pilih Kategori</option> -->
                                                 @foreach ($sampul_fasilitas as $sampul)
-                                                    <option value="{{ $sampul->id }}">{{ $sampul->nama_sampul }}
-                                                    </option>
+                                                    <option value="{{ $sampul->id }}"@if( $sampul->id == $update->id_fasilitas)  selected @endif>
+                                                        {{ $sampul->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
                                             @error('nama_sampul')
@@ -108,7 +108,7 @@
 
                                     <br><br>
                                     <button type="button" class="btn btn-danger"
-                                        onclick="window.location.href='/editproduk'"><i class="ti-close"></i>
+                                        onclick="window.location.href='/daftar-fasilitas'"><i class="ti-close"></i>
                                         Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i>
                                         Ubah</button>
@@ -125,7 +125,7 @@
 
         <script>
             function previewImage() {
-                const image = document.querySelector('#gambarwisata')
+                const image = document.querySelector('#gbr')
                 const imgPreview = document.querySelector('.img-preview')
 
                 imgPreview.style.display = 'block';
@@ -138,8 +138,4 @@
                 }
             }
         </script>
-<<<<<<< HEAD
         @include('admin.templateadmin.footer')
-=======
-        @include('admin.templateadmin.footer')
->>>>>>> 8be5d157acb481cd5c6dcc4e9c7ecbc66e0dc677
