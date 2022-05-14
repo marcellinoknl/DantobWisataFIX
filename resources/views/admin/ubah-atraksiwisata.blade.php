@@ -39,7 +39,7 @@
                                             <input type="text" id="judulatrkasi" name="judul"
                                                 class="form-control @error('judul') is-invalid @enderror"
                                                 value="{{ $update->judul }}">
-                                                @error('judul')
+                                            @error('judul')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -52,9 +52,11 @@
 
                                             <select id="id_sampul_atraksi" name="nama_sampul"
                                                 class="form-control @error('nama_sampul') is-invalid @enderror">
-                                                <option selected disabled value="">Pilih Kategori</option>
+
+                                                {{-- <option value="">Pilih Kategori</option> --}}
+
                                                 @foreach ($kategori as $kategories)
-                                                    <option value="{{ $kategories->id }}">
+                                                    <option value="{{ $kategories->id }}" @if( $kategories->id == $update->atraksi_id)  selected @endif>
                                                         {{ $kategories->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
@@ -78,9 +80,9 @@
                                                     value="{{ $update->file_foto }}">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                                
+
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -88,9 +90,10 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" type="text"  id="deskripsiatraksi" name="deskripsi" cols="200px"
+                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" type="text" id="deskripsiatraksi"
+                                            name="deskripsi" cols="200px"
                                             rows="20">{{ $update->deskripsi }}</textarea>
-                                            @error('deskripsi')
+                                        @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>

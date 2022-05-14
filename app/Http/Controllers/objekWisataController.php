@@ -31,11 +31,18 @@ class objekWisataController extends Controller
 
     public function indexAction2($id_obj_wisata_kabupaten)
     {
-        $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
+        $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
         $objek_wisata = DB::table('objek_wisata')
             ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
             ->get();
-        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten]);
+        return view('user-page.blog.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten]);
+    }
+
+    public function indexAction3($id_obj_wisata)
+    {
+
+        $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
+        return view('user-page.blog.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail]);
     }
 
     public function tambah()

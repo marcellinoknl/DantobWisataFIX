@@ -1,11 +1,12 @@
 @include('template/header')
 
-<div class="hero-wrap  " style="background-image: url({{ asset('images/bgpa.jpeg') }}); width: 100%; height:75%;">
+<div class="hero-wrap  "
+    style="background-image: url({{ asset('images/objekwisata/' . $objwisatakabupaten->file_foto) }}); width: 100%; height:75%;">
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate">
-                <h1 class="mb-4" style="text-align: center;">DESTINASI WISATA</h1>
+                <h1 class="mb-4" style="text-align: center;">{{ $objwisatakabupaten->nama_kab }}</h1>
             </div>
         </div>
     </div>
@@ -28,14 +29,14 @@
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Kabupaten yang Ingin Kamu Tinjau!
             </h4>
             <div class="row g-2 g-md-4">
-                @foreach ($objwisatakabupaten as $objekwisatas)
+                @foreach ($objek_wisata as $objek_wisatas)
                     <div class="col-6 col-md-3 py-4">
                         <div class="mycard">
-                            <a href="{{ url('/objek-wisata/detail1/' . $objekwisatas->id_obj_wisata_kabupaten) }}">
-                                <img src="{{ url('images/objekwisata/' . $objekwisatas->file_foto) }}" alt=""
+                            <a href="{{ url('/objek-wisata/detail2/' . $objek_wisatas->id_obj_wisata) }}">
+                                <img src="{{ url('images/objekwisata/' . $objek_wisatas->file_foto) }}" alt=""
                                     class="mycard-image">
                             </a>
-                            <h3 class="mycard-title">{{ $objekwisatas->nama_kab }}</h3>
+                            <h3 class="mycard-title">{{ $objek_wisatas->nama_wisata }}</h3>
                         </div>
                     </div>
                 @endforeach

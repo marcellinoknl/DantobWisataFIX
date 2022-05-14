@@ -1,10 +1,11 @@
 @include('template/header')
 
-<div class="hero-wrap  " style="background-image: url(images/bgpa.jpeg); width: 100%; height:75%;">
+<div class="hero-wrap  "
+    style="background-image:url({{ asset('images/objekwisata/' . $objek_wisata_detail->file_foto) }}); width: 100%; height:75%;">
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-            
+
         </div>
     </div>
 </div>
@@ -12,28 +13,21 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        {{-- @if($objwisatakabupaten->nama_kab === $nama_kab) --}}
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;"> SAMOSIR</h1>
-        {{-- @endif --}}
-        <p class="caption" style=" color:black;">Memiliki Budaya dan Warisan yang unik menjadikan Danau Toba
-            sebagai destinasi yang harus di kunjungi.
-            Berbagai macam wisata yang menyatu dengan budaya yang ada membuat kamu tidak akan melukapan keindahan Danau
-            Toba.
-		</p>
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{ $objek_wisata_detail->nama_wisata }}</h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
-            <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Destinasi yang Ingin Kamu Tinjau!</h4>
+            <p class="caption" style=" color:black;">
+                {{ $objek_wisata_detail->deskripsi }}
+            </p>
+
+            <div class="col-md-4 center">
+                <img src="{{ url('images/objekwisata/' . $objek_wisata_detail->file_foto) }}"
+                    style="width:20cm; height:20cm; " alt="">
+            </div>
             <div class="row g-2 g-md-4">
-                @foreach ($objek_wisata as $objek_wisatas)
-                    <div class="col-6 col-md-3 py-4">
-                        <div class="mycard">
-                            <img src="{{ url('images/objekwisata/' . $objek_wisatas->file_foto) }}" alt=""
-                                class="mycard-image">
-                            <h3 class="mycard-title">{{ $objek_wisatas->nama_wisata }}</h3>
-                        </div>
-                    </div>
-                @endforeach
+
             </div>
         </div>
     </div>
@@ -50,14 +44,14 @@
 	</div> --}}
 
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/animsition/js/animsition.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/animsition/js/animsition.min.js') }}"></script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/bootstrap/js/popper.js')}}"></script>
-<script src="{{asset('template2/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/bootstrap/js/popper.js') }}"></script>
+<script src="{{ asset('template2/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/select2/select2.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/select2/select2.min.js') }}"></script>
 <script>
     $(".js-select2").each(function() {
         $(this).select2({
@@ -67,18 +61,18 @@
     })
 </script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/daterangepicker/moment.min.js')}}"></script>
-<script src="{{asset('template2/vendor/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{ asset('template2/vendor/daterangepicker/moment.min.js') }}"></script>
+<script src="{{ asset('template2/vendor/daterangepicker/daterangepicker.js') }}"></script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/slick/slick.min.js')}}"></script>
-<script src="{{asset('assets/js/slick-custom.js')}}"></script>
+<script src="{{ asset('template2/vendor/slick/slick.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick-custom.js') }}"></script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/parallax100/parallax100.js')}}"></script>
+<script src="{{ asset('template2/vendor/parallax100/parallax100.js') }}"></script>
 <script>
     $('.parallax100').parallax100();
 </script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/MagnificPopup/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
 <script>
     $('.gallery-lb').each(function() { // the containers for all your galleries
         $(this).magnificPopup({
@@ -92,9 +86,9 @@
     });
 </script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/isotope/isotope.pkgd.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/isotope/isotope.pkgd.min.js') }}"></script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/sweetalert/sweetalert.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/sweetalert/sweetalert.min.js') }}"></script>
 <script>
     $('.js-addwish-b2, .js-addwish-detail').on('click', function(e) {
         e.preventDefault();
@@ -131,7 +125,7 @@
     });
 </script>
 <!--===============================================================================================-->
-<script src="{{asset('template2/vendor/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+<script src="{{ asset('template2/vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script>
     $('.js-pscroll').each(function() {
         $(this).css('position', 'relative');
@@ -148,6 +142,6 @@
     });
 </script>
 <!--===============================================================================================-->
-<script src="{{asset('assets/js/main.js')}}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
 
 @include('template/footer')

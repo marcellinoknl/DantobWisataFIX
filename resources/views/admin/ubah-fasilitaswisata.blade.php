@@ -138,4 +138,8 @@
                 }
             }
         </script>
+<<<<<<< HEAD
         @include('admin.templateadmin.footer')
+=======
+        @include('admin.templateadmin.footer')
+>>>>>>> 8be5d157acb481cd5c6dcc4e9c7ecbc66e0dc677
