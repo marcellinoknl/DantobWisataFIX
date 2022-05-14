@@ -84,6 +84,7 @@ class fasilitasController extends Controller
 
     public function updatesampul(request $request, $id)
     {
+
         $this->validate(
             $request,
             [
@@ -111,9 +112,8 @@ class fasilitasController extends Controller
             [
                 'nama_fasilitas' => 'required',
                 'lokasi' => 'required',
-                'id_sampul_fasilitas' => 'required',
-                'deskripsi' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'nama_sampul' => 'required',
+                'deskripsi' => 'required'
             ]
         );
         $update = Fasilitas::find($id_fasilitas);
@@ -126,7 +126,7 @@ class fasilitasController extends Controller
         $update->nama_fasilitas = $request->nama_fasilitas;
         $update->file_foto = $file;
         $update->lokasi = $request->lokasi;
-        $update->id_sampul_fasilitas = $request->id_sampul_fasilitas;
+        $update->id_sampul_fasilitas = $request->nama_sampul;
         $update->deskripsi = $request->deskripsi;
 
         $update->save();
