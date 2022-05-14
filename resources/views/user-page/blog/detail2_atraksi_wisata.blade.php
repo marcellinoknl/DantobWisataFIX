@@ -1,13 +1,11 @@
 @include('template/header')
 
 <div class="hero-wrap  "
-    style="background-image: url({{ asset('images/objekwisata/' . $objwisatakabupaten->file_foto) }}); width: 100%; height:75%;">
+    style="background-image:url({{ asset('images/Atraksi/' . $atraksi_wisata_detail->file_foto) }}); width: 100%; height:75%;">
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-            <div class="col-md-12 ftco-animate">
-                <h1 class="mb-4" style="text-align: center;">{{ $objwisatakabupaten->nama_kab }}</h1>
-            </div>
+
         </div>
     </div>
 </div>
@@ -15,31 +13,21 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Budaya dan Warisan
-            Unik di Danau
-            Toba</h1>
-        <p class="caption" style=" color:black;">Memiliki Budaya dan Warisan yang unik menjadikan Danau Toba
-            sebagai destinasi yang harus di kunjungi.
-            Berbagai macam wisata yang menyatu dengan budaya yang ada membuat kamu tidak akan melukapan keindahan Danau
-            Toba.
-        </p>
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{ $atraksi_wisata_detail->judul }}</h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
-            <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Kabupaten yang Ingin Kamu Tinjau!
-            </h4>
+            <p class="caption" style=" color:black;">
+                {{ $atraksi_wisata_detail->deskripsi }}
+            </p>
+
+            <div class="col-md-4 center">
+                <img src="{{ url('images/Atraksi/' . $atraksi_wisata_detail->file_foto) }}"
+                    style="width:20cm; height:20cm; " alt="">
+            </div>
             <div class="row g-2 g-md-4">
-                @foreach ($objek_wisata as $objek_wisatas)
-                    <div class="col-6 col-md-3 py-4">
-                        <div class="mycard">
-                            <a href="{{ url('/objek-wisata/detail2/' . $objek_wisatas->id_obj_wisata) }}">
-                                <img src="{{ url('images/objekwisata/' . $objek_wisatas->file_foto) }}" alt=""
-                                    class="mycard-image">
-                            </a>
-                            <h3 class="mycard-title">{{ $objek_wisatas->nama_wisata }}</h3>
-                        </div>
-                    </div>
-                @endforeach
+
             </div>
         </div>
     </div>

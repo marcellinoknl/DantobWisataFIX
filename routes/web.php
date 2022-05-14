@@ -15,6 +15,7 @@ use App\Http\Controllers\accountController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,10 +46,12 @@ Route::get('/objek-wisata/detail2/{id}', [objekWisataController::class, 'indexAc
 //blog
 //atraksiController
 Route::get('/atraksi', [atraksiController::class, 'indexAction']);
-
+Route::get('/atraksi-wisata/detail1/{id}', [atraksiController::class, 'indexAction2']);
+Route::get('/atraksi-wisata/detail2/{id}', [atraksiController::class, 'indexAction3']);
 //event controller
 Route::get('/eventwisata', [eventController::class, 'indexAction']);
-
+Route::get('/event-wisata/detail1/{id}', [eventController::class, 'indexAction2']);
+Route::get('/event-wisata/detail2/{id}', [eventController::class, 'indexAction3']);
 //berita
 Route::get('/beritawisata', [beritaController::class, 'indexAction']);
 
