@@ -16,7 +16,7 @@ class CreateEventWisatasTable extends Migration
         Schema::create('event_wisatas', function (Blueprint $table) {
             $table->id('id_event');
             $table->string('judul_event');
-            $table->string('deskripsi_event');
+            $table->text('deskripsi_event');
             $table->string('file_foto');
             $table->integer('id_sampul_event')->unsigned();
             $table->foreign('id_sampul_event')->references('id')->on('sampul_event')->onDelete('cascade');
