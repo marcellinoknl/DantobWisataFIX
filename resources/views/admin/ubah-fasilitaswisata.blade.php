@@ -97,7 +97,7 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi</label>
                                     </div>
                                     <div class="mb-3 row">
-                                        <textarea type="text" id="deskripsi" name="deskripsi" height="300px" cols="200px" rows="20"
+                                        <textarea type="text" id="editor" name="deskripsi" height="300px" cols="200px" rows="20"
                                             class="form-control @error('deskripsi') is-invalid @enderror">{{ $update->deskripsi }}</textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">

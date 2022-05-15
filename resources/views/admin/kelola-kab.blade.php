@@ -74,17 +74,18 @@
                                                                                     </center>
                                                                                 </td>
                                                                                 <td>
+                                                                                    <center>
                                                                                     <button class="btn btn-warning"
                                                                                         onclick="window.location.href='/ubah-kab/{{ $kabupatens->id_obj_wisata_kabupaten }}'"><span
                                                                                             class="ti-pencil-alt"
                                                                                             style="color:black;">
-                                                                                            Ubah</span></button>
+                                                                                            </span></button>
                                                                                     <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{ $kabupatens->id_obj_wisata_kabupaten }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button></center>
                                                             </div>
                                                             </td>
                                                             </tr>

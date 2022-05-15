@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" type="text" id="deskripsiatraksi"
+                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" type="text" id="editor"
                                             name="deskripsi" cols="200px"
                                             rows="20">{{ $update->deskripsi }}</textarea>
                                         @error('deskripsi')

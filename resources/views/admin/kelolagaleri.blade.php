@@ -58,13 +58,14 @@
                                                                             <td class="text-center">{{$galeriwisatas->judul}}</td>
                                                                             <td class="text-center"><img src="{{'images/galeriwisata/'.$galeriwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"/></td>
                                                                             <td>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-galeri-wisata/{{$galeriwisatas->id_galeri}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
+                                                                            <center> 
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-galeri-wisata/{{$galeriwisatas->id_galeri}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
                                                                                 <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{ $galeriwisatas->id_galeri }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button></center> 
                                                                             </td>
                                                                             
                                                             </div>

@@ -64,17 +64,18 @@
                                                                                     {{ $kat->nama_kategori }}
                                                                                 </td>
                                                                                 <td>
+                                                                                    <center>
                                                                                     <button class="btn btn-warning"
                                                                                         onclick="window.location.href='/ubah-kat/{{ $kat->id_kategori }}'"><span
                                                                                             class="ti-pencil-alt"
                                                                                             style="color:black;">
-                                                                                            Ubah</span></button>
+                                                                                            </span></button>
                                                                                     <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{ $kat->id_kategori }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button></center>
                                                                                 </td>
                                                             </div>
                                                             </tr>

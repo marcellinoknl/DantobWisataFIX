@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea type="text" id="isi_berita" name="isi_berita"  cols="200px" rows="20"class="form-control @error('isi_berita') is-invalid @enderror">{{$update->isi_berita}}</textarea>
+                                        <textarea type="text" id="editor" name="isi_berita"  cols="200px" rows="20"class="form-control @error('isi_berita') is-invalid @enderror">{{$update->isi_berita}}</textarea>
                                         @error('isi_berita')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

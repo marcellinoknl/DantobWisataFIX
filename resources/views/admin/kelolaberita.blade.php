@@ -59,14 +59,15 @@
                                                                             <td class="text-center">{{$beritawisatas->isi_berita}}</td>
                                                                             <td class="text-center"><img src="{{'images/berita/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
-                                                                                 <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-berita-wisata/{{$beritawisatas->id_berita}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
+                                                                            <center> 
+                                                                                 <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-berita-wisata/{{$beritawisatas->id_berita}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
                                                                                 <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{ $beritawisatas->id_berita}}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button></center> 
                                                             </div>
                                                             </td>
                                                             </tr>

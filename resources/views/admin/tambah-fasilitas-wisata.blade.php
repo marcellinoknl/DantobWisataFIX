@@ -96,7 +96,7 @@
                                         </div>
                                         <div class ="mb-3 row">
 
-                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="deskripsiatraksi" name="deskripsi" height="300px" cols="200px" rows="20"></textarea>
+                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="editor" name="deskripsi" height="300px" cols="200px" rows="20"></textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

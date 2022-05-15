@@ -57,14 +57,15 @@
                                                                             <td class="text-center"><?php echo $number++; ?></td>
                                                                             <td class="text-center">{{$sampuls->nama_sampul}}</td>
                                                                             <td class="text-center"><img  src="{{'images/Atraksi/'.$sampuls->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
-                                                                            <td class="text-center">                                                                                
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-sampulatraksi/{{$sampuls->id}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
+                                                                            <td class="text-center">   
+                                                                            <center>                                                                              
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-sampulatraksi/{{$sampuls->id}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
                                                                                 <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{ $sampuls->id }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button></center> 
                                                                             </td>
                                                                             </div>
                                                             </tr>

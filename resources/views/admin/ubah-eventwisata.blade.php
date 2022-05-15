@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="mb-3 row">
 
-                                        <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror required="required" id="deskripsi_event" name="deskripsi_event" cols="200px" rows="20">{{$update->deskripsi_event}}</textarea>
+                                        <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror required="required" id="editor" name="deskripsi_event" cols="200px" rows="20">{{$update->deskripsi_event}}</textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

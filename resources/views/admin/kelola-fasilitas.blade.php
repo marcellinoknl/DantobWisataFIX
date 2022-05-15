@@ -43,13 +43,13 @@
                                                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center" width="15%">Nomor</th>
+                                                                            <th class="text-center" width="5%">Nomor</th>
                                                                             <th class="text-center" width="15%">Nama Fasilitas</th>
-                                                                            <th class="text-center" width="30%">Deskripsi Fasilitas</th>
-                                                                            <th class="text-center" width="20%">Lokasi</th>
-                                                                            <th class="text-center" width="20%">Kategori</th>
-                                                                            <th class="text-center" width="20%">Gambar</th>
-                                                                            <th class="text-center" width="25%">Aksi</th>
+                                                                            <th class="text-center" width="20%">Deskripsi Fasilitas</th>
+                                                                            <th class="text-center" width="15%">Lokasi</th>
+                                                                            <th class="text-center" width="10%">Kategori</th>
+                                                                            <th class="text-center" width="15%">Gambar</th>
+                                                                            <th class="text-center" width="20%">Aksi</th>
                                                                         </tr>
                                                                         <?php $number = 1; ?>
                                                                     </thead>
@@ -64,14 +64,14 @@
                                                                             <td class="text-center">{{$fasilitas->nama_sampul}}</td>
                                                                             <td class="text-center"><img src="{{'images/fasilitas/'.$fasilitas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
                                                                             <td>
-                                                                            <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-fasilitas-wisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-pencil-alt" style="color:black;"> Ubah</span></button>
+                                                                            <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-fasilitas-wisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
                                                                                 <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{ $fasilitas->id_fasilitas  }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button>
                                                             </div>
                                                             </td>
                                                             </tr>

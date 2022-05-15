@@ -45,13 +45,13 @@
                                                                     class="table table-striped table-bordered">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center" width="10%">Nomor
+                                                                            <th class="text-center" width="8%">Nomor
                                                                             </th>
                                                                             <th class="text-center" width="15%">Judul
                                                                                 Atraksi</th>
                                                                             <th class="text-center" width="15%">
                                                                                 Kategori</th>
-                                                                            <th class="text-center" width="30%">
+                                                                            <th class="text-center" width="20%">
                                                                                 Deskripsi Atraksi</th>
                                                                             <th class="text-center" width="20%">Foto
                                                                                 Atraksi</th>
@@ -79,22 +79,23 @@
                                                                                         style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" />
                                                                                 </td>
                                                                                 <td>
+                                                                                <center> 
                                                                                     <button class="btn btn-info"
                                                                                         onclick="window.location.href='/'"><span
                                                                                             class="ti-eye"
                                                                                             style="color:black;">
-                                                                                            Lihat</span></button>
+                                                                                            </span></button>
                                                                                     <button class="btn btn-warning"
                                                                                         onclick="window.location.href='/ubah-atraksi-wisata/{{ $atraksiwisatas->atraksi_id }}'"><span
                                                                                             class="ti-pencil-alt"
                                                                                             style="color:black;">
-                                                                                            Ubah</span></button>
+                                                                                            </span></button>
                                                                                             <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{$atraksiwisatas->atraksi_id}}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button></center> 
                                                                                     <!-- <button class="btn btn-danger"href='deleteatraksi/{atraksi_id}/{{ $atraksiwisatas->atraksi_id }}'"><span class="ti-trash"style="color:black;"> Hapus</span></button> -->
                                                                                     </td>
                                                             </div>

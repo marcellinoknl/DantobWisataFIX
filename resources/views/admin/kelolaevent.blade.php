@@ -65,15 +65,15 @@
                                                                                 </td>
                                                                             <td class="text-center">{{$eventwisatas->deskripsi_event}}</td>
                                                                             <td class="text-center"><img src="{{'images/eventwisata/'.$eventwisatas->file_foto }}"style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
-                                                                            <td>
-                                                                                 <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"> Lihat</span></button>
-                                                                                <button class="btn btn-warning"><span class="ti-pencil-alt" style="color:black;" onclick="window.location.href='/ubah-event-wisata/{{$eventwisatas->id_event}}'"> Ubah</span></button>
+                                                                            <td><center> 
+                                                                                 <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>
+                                                                                <button class="btn btn-warning"><span class="ti-pencil-alt" style="color:black;" onclick="window.location.href='/ubah-event-wisata/{{$eventwisatas->id_event}}'"></span></button>
                                                                                 <button class="btn btn-danger"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal{{$eventwisatas->id_event}}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
-                                                                                            Hapus</span></button>
+                                                                                            </span></button></center> 
                                                                             </td>
                                                                             </tr>
                                                                             {{-- modal pop up hapus --}}

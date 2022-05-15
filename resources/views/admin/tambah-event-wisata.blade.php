@@ -84,7 +84,7 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi Event</label>
                                     </div>
                                     <div class="mb-3 row">
-                                    <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror" id="deskripsievent" name="deskripsi_event" height="300px" cols="200px" rows="20"></textarea>
+                                    <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror" id="editor" name="deskripsi_event" height="300px" cols="200px" rows="20"></textarea>
                                    @error('deskripsi_event')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
