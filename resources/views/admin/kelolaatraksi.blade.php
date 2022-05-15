@@ -74,10 +74,13 @@
                                                                                 <td class="text-center">
                                                                                     {{ $atraksiwisatas->deskripsi }}
                                                                                 </td>
-                                                                                <td class="text-center"><img
-                                                                                        src="{{ 'images/Atraksi/' . $atraksiwisatas->file_foto }}"
-                                                                                        style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" />
-                                                                                </td>
+                                                                                <td>
+                                                                            <img
+                                                                                            src="{{ 'images/Atraksi/' . $atraksiwisatas->file_foto }}"
+                                                                                            style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"
+                                                                                            alt="" data-toggle="modal"
+                                                                                            data-target="#myModalgambar{{ $atraksiwisatas->atraksi_id  }}" /></td>
+                                                                                
                                                                                 <td>
                                                                                 <center> 
                                                                                     <button class="btn btn-info"
@@ -100,6 +103,17 @@
                                                                                     </td>
                                                             </div>
                                                             </tr>
+                                                            <div id="myModalgambar{{ $atraksiwisatas->atraksi_id  }}"
+                                                                class="modal fade" tabindex="-1" role="dialog">
+                                                                <div class="modal-dialog modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body">
+                                                                            <img src="{{ url('images/Atraksi/'.$atraksiwisatas->file_foto) }}"
+                                                                                class="img-fluid">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             {{-- modal pop up hapus --}}
                                                             <div class="modal fade"
                                                                 id="myModal{{ $atraksiwisatas->atraksi_id }}"

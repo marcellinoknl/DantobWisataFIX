@@ -65,7 +65,13 @@
                                                                             <td class="text-center">{{$objekwisatas->nama_kategori}}</td>
                                                                             
                                                                             {{-- <td class="text-center">{{$objekwisatas->nama_kategori}}</td> --}}
-                                                                            <td class="text-center"><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td>
+                                                                            <td>
+                                                                            <img
+                                                                                            src="{{ 'images/objekwisata/' . $objekwisatas->file_foto }}"
+                                                                                            style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"
+                                                                                            alt="" data-toggle="modal"
+                                                                                            data-target="#myModalgambar{{ $objekwisatas->id_obj_wisata  }}" /></td>
+                                                                            <!-- <td class="text-center"><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td> -->
                                                                             <td>
                                                                             <center> 
                                                                             <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>
@@ -74,6 +80,18 @@
                                                                                 </td>
                                                             </div>
                                                             </tr>
+                                                            <!-- gedein gambar -->
+                                                            <div id="myModalgambar{{ $objekwisatas->id_obj_wisata  }}"
+                                                                class="modal fade" tabindex="-1" role="dialog">
+                                                                <div class="modal-dialog modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body">
+                                                                            <img src="{{ url('images/objekwisata/'.$objekwisatas->file_foto) }}"
+                                                                                class="img-fluid">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             {{-- modal pop up hapus --}}
                                                             <div class="modal fade"
                                                                 id="myModal{{$objekwisatas->id_obj_wisata}}"
