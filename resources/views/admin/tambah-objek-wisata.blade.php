@@ -107,16 +107,7 @@
                                     <div class="mb-3 row" >
                                         <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" id="editor" cols="200px" rows="100px" ></textarea>
                                        
-                                        <script>
-                                            ClassicEditor
-                                                    .create( document.querySelector( '#editor' ) )
-                                                    .then( editor => {
-                                                            console.log( editor );
-                                                    } )
-                                                    .catch( error => {
-                                                            console.error( error );
-                                                    } );
-                                    </script>
+
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
