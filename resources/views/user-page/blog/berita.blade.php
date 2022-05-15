@@ -22,24 +22,29 @@
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
-        <div class="container p-md-2 p-2">
+        <div class="container p-md-12 p-2">
 
-            <div class="row g-5 g-md-7">
+             <div class="row g-2 g-md-4">
                 <div class="card-group">
                     @foreach ($berita_wisata as $beritas)
+              
                         <div class="card" style="width: 300px">
                             <img class="card-img-top" src="{{ url('images/berita/' . $beritas->file_foto) }}"
-                                alt="Card image cap">
+                                alt="Card image cap" style="height: 200px ;">
                             <div class="card-body">
                                 <h5 class="card-title bold" style=" color:black; text-weight:bold;">
                                     {{ $beritas->judul_berita }}</h5>
-                                <p class="card-text text-justify"> {{ $beritas->isi_berita }}
+                                <p class="card-text text-justify"> {!!$beritas->isi_berita!!}
                                 </p>
                             </div>
                             <div class=" card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
+                                <small class="text-muted"><i class="fa fa-pencil-square" aria-hidden="true"></i> <?php
+									$date=date_create($beritas->updated_at);
+									echo date_format($date,"d M Y");
+									?></small>
                             </div>
                         </div>
+                   
                     @endforeach
                 </div>
             </div>
@@ -157,5 +162,6 @@
 </script>
 <!--===============================================================================================-->
 <script src="assets/js/main.js"></script>
+
 
 @include('template/footer')
