@@ -104,9 +104,19 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Deskripsi Wisata</label>
                                     </div>
-                                    <div class="mb-3 row">
-                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="deskripsiwisata" name="deskripsi"
-                                            cols="200px" rows="20"></textarea>
+                                    <div class="mb-3 row" >
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" id="editor" cols="200px" rows="100px" ></textarea>
+                                       
+                                        <script>
+                                            ClassicEditor
+                                                    .create( document.querySelector( '#editor' ) )
+                                                    .then( editor => {
+                                                            console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                            console.error( error );
+                                                    } );
+                                    </script>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -145,4 +155,7 @@
                 }
             }
         </script>
+
+
+
         @include('admin.templateadmin.footer')
