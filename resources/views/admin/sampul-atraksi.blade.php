@@ -85,7 +85,7 @@
                                                                     <!-- Modal content-->
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h4 class="modal-title">Hapus Kategori Sampul Atraksi Wisata
+                                                                            <h4 class="modal-title">Hapus  Sampul Atraksi Wisata
                                                                             </h4>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal"><i
