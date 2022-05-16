@@ -56,7 +56,7 @@
                                                 <!-- {{-- <option value="">Pilih Kategori</option> --}} -->
 
                                                 @foreach ($kategori as $kategories)
-                                                    <option value="{{ $kategories->id }}" @if( $kategories->id == $update->atraksi_id)  selected @endif>
+                                                    <option value="{{ $kategories->id }}" @if( $kategories->id == $update->id_sampul_atraksi)  selected @endif>
                                                         {{ $kategories->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
