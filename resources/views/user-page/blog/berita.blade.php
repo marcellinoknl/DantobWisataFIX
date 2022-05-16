@@ -22,21 +22,25 @@
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
-        <div class="container p-md-12 p-2">
+        <div class="container p-md-2 p-2">
 
              <div class="row g-2 g-md-4">
-                <div class="card-group">
+            
                     @foreach ($berita_wisata as $beritas)
-              
-                        <div class="card" style="width: 300px">
+                    <div class="col-6 col-md-4 py-4">
+                        <div class="card" style="width: 300px; border-radius: 5%;">
                             <img class="card-img-top" src="{{ url('images/berita/' . $beritas->file_foto) }}"
-                                alt="Card image cap" style="height: 200px ;">
-                            <div class="card-body">
+                                alt="Card image cap" style="height: 200px ; border-radius: 15px 15px 0px 0px; ">
+                            <div class="card-body" style="height: 200px ;  ">
+                                <?php   
+                                $isi_berita = substr($beritas->isi_berita,0,100);
+                                ?>
                                 <h5 class="card-title bold" style=" color:black; text-weight:bold;">
                                     {{ $beritas->judul_berita }}</h5>
-                                <p class="card-text text-justify"> {!!$beritas->isi_berita!!}
+                                <p class="card-text text-justify"> {!! $isi_berita!!} 
                                 </p>
                             </div>
+
                             <div class=" card-footer">
                                 <small class="text-muted"><i class="fa fa-pencil-square" aria-hidden="true"></i> <?php
 									$date=date_create($beritas->updated_at);
@@ -44,9 +48,9 @@
 									?></small>
                             </div>
                         </div>
-                   
+                    </div>
                     @endforeach
-                </div>
+              
             </div>
         </div>
     </div>

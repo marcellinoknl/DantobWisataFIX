@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 
 class User extends Seeder
@@ -17,8 +17,17 @@ class User extends Seeder
             [
                 'name'=>'AdminDantob',
                 'email'=>'wisatadantob@gmail.com',
-                'password'=>'admin123',
+                'password'=>Hash::make('admin123'),
                 'role'=>'2'
+
+
+                
+            ],
+            [
+                'name'=>'Marcellino',
+                'email'=>'marcellinoknl@gmail.com',
+                'password'=>Hash::make('marcel123'),
+                'role'=>'1'
 
 
                 
