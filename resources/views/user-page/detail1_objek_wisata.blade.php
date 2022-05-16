@@ -26,12 +26,12 @@
             <div class="row g-2 g-md-4">
                 @foreach ($objek_wisata as $objek_wisatas)
                     <div class="col-6 col-md-3 py-4">
-                        <div class="mycard">
+                        <div class="mycard-detail">
                             <a href="{{ url('/objek-wisata/detail2/' . $objek_wisatas->id_obj_wisata) }}">
                                 <img src="{{ url('images/objekwisata/' . $objek_wisatas->file_foto) }}" alt=""
                                     class="mycard-image">
                             </a>
-                            <h3 class="mycard-title">{{ $objek_wisatas->nama_wisata }}</h3>
+                            <h3 class="mycard-title" >{{ $objek_wisatas->nama_wisata }}</h3>
                         </div>
                     </div>
                 @endforeach

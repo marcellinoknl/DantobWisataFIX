@@ -29,16 +29,22 @@
                     @foreach ($berita_wisata as $beritas)
                     <div class="col-6 col-md-4 py-4">
                         <div class="card" style="width: 300px; border-radius: 5%;">
+                            <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}">
                             <img class="card-img-top" src="{{ url('images/berita/' . $beritas->file_foto) }}"
                                 alt="Card image cap" style="height: 200px ; border-radius: 15px 15px 0px 0px; ">
+                            </a>
                             <div class="card-body" style="height: 200px ;  ">
-                                <?php   
-                                $isi_berita = substr($beritas->isi_berita,0,100);
-                                ?>
-                                <h5 class="card-title bold" style=" color:black; text-weight:bold;">
-                                    {{ $beritas->judul_berita }}</h5>
-                                <p class="card-text text-justify"> {!! $isi_berita!!} 
-                                </p>
+                                
+                                    <?php   
+                                    $isi_berita = substr($beritas->isi_berita,0,100);
+                                    ?>
+                                    <h5 style=" color:black; text-weight:bold;">
+                                        {{ $beritas->judul_berita }}</h5>
+                                        <p class="caption" style=" color:black; text-align: justify"> {!! $isi_berita!!} 
+                                    </p>
+                                    <p class="caption" style=" color:black; text-align: justify"><a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}">Baca Selengkapnya</a>
+                                    </p>
+                                
                             </div>
 
                             <div class=" card-footer">

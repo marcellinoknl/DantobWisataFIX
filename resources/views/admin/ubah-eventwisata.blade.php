@@ -51,7 +51,7 @@
                                                 class="form-control @error('nama_sampul') is-invalid @enderror">
                                                 <!-- <option selected disabled>Pilih Kategori</option> -->
                                                 @foreach ($kategori as $kategories)
-                                                    <option value="{{ $kategories->id }}"@if( $kategories->id == $update->event_id)  selected @endif>
+                                                    <option value="{{ $kategories->id }}"@if( $kategories->id == $update->id_sampul_event)  selected @endif>
                                                         {{ $kategories->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
