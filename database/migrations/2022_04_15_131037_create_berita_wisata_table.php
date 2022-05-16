@@ -18,6 +18,8 @@ class CreateBeritaWisataTable extends Migration
             $table->string('judul_berita');
             $table->longtext('isi_berita');
             $table->string('file_foto');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade'); 
             $table->timestamps();
         });
     }

@@ -29,9 +29,9 @@
                         <div class="mycard-detail">
                             <a href="{{ url('/objek-wisata/detail2/' . $objek_wisatas->id_obj_wisata) }}">
                                 <img src="{{ url('images/objekwisata/' . $objek_wisatas->file_foto) }}" alt=""
-                                    class="mycard-image">
+                                    class="mycard-image-detail">
                             </a>
-                            <h3 class="mycard-title" >{{ $objek_wisatas->nama_wisata }}</h3>
+                            <h3 class="mycard-title-detail" >{{ $objek_wisatas->nama_wisata }}</h3>
                         </div>
                     </div>
                 @endforeach

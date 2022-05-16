@@ -51,10 +51,10 @@
                             </div>
 
                             <div class=" card-footer">
-                                <small class="text-muted"><i class="fa fa-pencil-square" aria-hidden="true"></i> <?php
+                                <small class="text-muted"><i class="fa fa-user" aria-hidden="true"></i> {{$beritas->name}} &nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i> <?php
 									$date=date_create($beritas->updated_at);
 									echo date_format($date,"d M Y");
-									?></small>
+									?> </small>
                             </div>
                         </div>
                     </div>
