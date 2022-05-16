@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(KabupatenSeeder::class);
         $this->call(SampulFasilitas::class);
         $this->call(KategoriWisata::class);
-
+        $this->call(SampulEvent::class);
+        $this->call(KelolaEvent::class);
+        $this->call(KelolaWisata::class);
         
     }
 }
