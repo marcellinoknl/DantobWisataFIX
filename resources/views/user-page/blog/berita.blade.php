@@ -38,12 +38,15 @@
                                     <?php   
                                     $isi_berita = substr($beritas->isi_berita,0,100);
                                     ?>
-                                    <h5 style=" color:black; text-weight:bold;">
-                                        {{ $beritas->judul_berita }}</h5>
+                                    
+                                   <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
+                                    onMouseOut="this.style='color:black'" style="color:black;">
+                                        {{ $beritas->judul_berita }}</a>
                                         <p class="caption" style=" color:black; text-align: justify"> {!! $isi_berita!!} 
                                     </p>
-                                    <p class="caption" style=" color:black; text-align: justify"><a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}">Baca Selengkapnya</a>
-                                    </p>
+                                    <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
+                                        onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a>
+                                    
                                 
                             </div>
 
