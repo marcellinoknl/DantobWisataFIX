@@ -46,17 +46,23 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Gambar</label>
+                                        <label class="col-sm-3 col-form-label">Kategori</label>
                                         <div class="col-sm-9">
-                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt=""
-                                                src="{{ url('images/fasilitas/' . $update->file_foto) }}">
 
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="gambarwisata"
-                                                    onchange="previewImage()" name="file_foto"
-                                                    value="{{ $update->file_foto }}">
-                                                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                            </div>
+                                            <select required="required" id="id_sampul_fasilitas" name="nama_sampul"
+                                                class="form-control @error('nama_sampul') is-invalid @enderror">
+                                                <!-- <option selected disabled>Pilih Kategori</option> -->
+                                                @foreach ($sampul_fasilitas as $sampul)
+                                                    <option value="{{ $sampul->id }}"@if( $sampul->id == $update->id_sampul_fasilitas)  selected @endif>
+                                                        {{ $sampul->nama_sampul }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('nama_sampul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -73,26 +79,22 @@
                                             @enderror
                                         </div>
                                     </div>
+                                   
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Kategori</label>
+                                        <label class="col-sm-3 col-form-label">Gambar</label>
                                         <div class="col-sm-9">
+                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt=""
+                                                src="{{ url('images/fasilitas/' . $update->file_foto) }}">
 
-                                            <select required="required" id="id_sampul_fasilitas" name="nama_sampul"
-                                                class="form-control @error('nama_sampul') is-invalid @enderror">
-                                                <!-- <option selected disabled>Pilih Kategori</option> -->
-                                                @foreach ($sampul_fasilitas as $sampul)
-                                                    <option value="{{ $sampul->id }}"@if( $sampul->id == $update->id_fasilitas)  selected @endif>
-                                                        {{ $sampul->nama_sampul }}</option>
-                                                @endforeach
-                                            </select>
-                                            @error('nama_sampul')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="gambarwisata"
+                                                    onchange="previewImage()" name="file_foto"
+                                                    value="{{ $update->file_foto }}">
+                                                <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                                            </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Deskripsi</label>
                                     </div>

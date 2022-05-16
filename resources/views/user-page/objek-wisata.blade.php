@@ -35,7 +35,9 @@
                                 <img src="{{ url('images/objekwisata/' . $objekwisatas->file_foto) }}" alt=""
                                     class="mycard-image">
                             </a>
+                         
                             <h3 class="mycard-title">{{ $objekwisatas->nama_kab }}</h3>
+      
                         </div>
                     </div>
                 @endforeach

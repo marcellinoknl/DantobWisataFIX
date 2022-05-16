@@ -9,6 +9,17 @@
     position: relative;
     overflow: hidden;
 }
+.mycard-detail{
+    width:280px;
+    height:300px;
+    background-color:#333;
+    border-radius: 10px;
+    outline-offset: -8px;
+    box-shadow: 3px 3px 10px
+    rgba(0,0,0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
 .mycard-lebar{
     width:250px;
     height:200px;
@@ -63,8 +74,8 @@
 
 .mycard-title{
     position: absolute;
-    right: -50px;
-    left: -50px;
+    right: -30px;
+    left: -30px;
     text-align: center;
     color: #ffffff;
     bottom:15px;

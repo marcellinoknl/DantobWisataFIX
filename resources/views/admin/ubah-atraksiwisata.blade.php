@@ -56,7 +56,7 @@
                                                 <!-- {{-- <option value="">Pilih Kategori</option> --}} -->
 
                                                 @foreach ($kategori as $kategories)
-                                                    <option value="{{ $kategories->id }}" @if( $kategories->id == $update->id_sampul_atraksi)  selected @endif>
+                                                    <option value="{{ $kategories->id }}" @if( $kategories->id == $update->id_sampul_atraksi)  selected  @endif>
                                                         {{ $kategories->nama_sampul }}</option>
                                                 @endforeach
                                             </select>
@@ -119,16 +119,11 @@
 
         <script>
             function previewImage() {
-
                 const image = document.querySelector('#gambaratraksi')
-
                 const imgPreview = document.querySelector('.img-preview')
-
                 imgPreview.style.display = 'block';
-
                 const oFReader = new FileReader();
                 oFReader.readAsDataURL(image.files[0])
-
                 oFReader.onload = function(oFREvent) {
                     imgPreview.src = oFREvent.target.result;
                 }
