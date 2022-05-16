@@ -228,7 +228,7 @@
                         </div>
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">John
+                                <span class="user-avatar">{{ Auth::user()->name }}
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
@@ -265,10 +265,17 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                              
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
                                                     <i class="ti-power-off"></i>
-                                                    <span>Logout</span>
-                                                </a>
+                                                    <span>Logout</span>   </a> 
+                                                </button>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                               
                                             </li>
                                         </ul>
                                     </div>
