@@ -32,6 +32,15 @@ class User extends Seeder
 
                 
             ],
+            [
+                'name'=>'SamuelS',
+                'email'=>'samuelsimanjuntak195@gmail.com',
+                'password'=>Hash::make('samuel123'),
+                'role'=>'1'
+
+
+                
+            ],
         ]);
     }
 }

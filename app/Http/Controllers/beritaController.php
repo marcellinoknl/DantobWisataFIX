@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Berita_Wisata;
 use Illuminate\Http\Request;
+use Auth;
 
 class beritaController extends Controller
 {
     public function indexAction()
     {
-        $berita_wisata = DB::table('berita_wisata')->get();
+        $berita_wisata = DB::table('berita_wisata')
+        ->select('berita_wisata.*','users.name')
+        ->join('users', 'berita_wisata.id_user', '=', 'users.id')
+        ->get(); 
         return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata]);
     }
 
@@ -19,6 +23,13 @@ class beritaController extends Controller
         $kelolaberita = Berita_Wisata::all();
         return view('admin.kelolaberita', compact('kelolaberita'));
     }
+
+    public function indexAction2($id_berita)
+    {
+        $berita_wisata_detail = Berita_Wisata::find($id_berita);
+        return view('user-page.blog.detail_berita', ['berita_wisata_detail' => $berita_wisata_detail]);
+    }
+
     public function tambah()
     {
         return view('admin.tambah-berita-wisata');
@@ -43,6 +54,7 @@ class beritaController extends Controller
         $objek = new Berita_Wisata();
         $objek->judul_berita = $request->judul_berita;
         $objek->isi_berita = $request->isi_berita;
+        $objek->id_user = Auth::user()->id;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
             $request->file('file_foto')->move('images/berita', $file);

@@ -58,7 +58,7 @@
                                     <tr>
                                        <td class="text-center"><?php echo $number++; ?></td>
                                        <td class="text-center">{{$fasilitas->nama_fasilitas}}</td>
-                                       <td class="text-center">{{$fasilitas->deskripsi}}</td>
+                                       <td class="text-center">{!! $fasilitas->deskripsi !!}</td>
                                        <td class="text-center">{{$fasilitas->lokasi}}</td>
                                        <td class="text-center">{{$fasilitas->nama_sampul}}</td>
                                        <td class="text-center"><img  src="{{'images/fasilitas/'.$fasilitas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"

@@ -14,6 +14,23 @@ class fasilitasController extends Controller
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
         return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas]);
     }
+
+    public function indexAction2($id)
+    {
+        $sampul_fasilitas = SampulFasilitas::find($id);
+        $fasilitias_wisata = DB::table('fasilitas_wisata')
+            ->where('id_sampul_fasilitas', '=', $id)
+            ->get();
+        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas]);
+    }
+
+    public function indexAction3($id_fasilitas)
+    {
+
+        $fasilitas_wisata_detail = Fasilitas::find($id_fasilitas);
+        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail]);
+    }
+
     public function kelolaindexActionSampul()
     {
         $sampulfasilitas = SampulFasilitas::all();

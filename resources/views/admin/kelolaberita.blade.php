@@ -55,8 +55,11 @@
                                     <tr>
                                        <td class="text-center"><?php echo $number++; ?></td>
                                        <td class="text-center">{{$beritawisatas->judul_berita}}</td>
-                                       <td class="text-center">{{$beritawisatas->isi_berita}}</td>
-                                       <td class="text-center"><img  src="{{'images/eventwisata/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"data-target="#myModalgambar{{$beritawisatas->id_berita }}"/></td>
+
+                                       <td class="text-center">{!!$beritawisatas->isi_berita !!}</td>
+                                       <td class="text-center"><img  src="{{'images/berita/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"data-target="#myModalgambar{{$beritawisatas->id_berita }}"/></td>
+                                       
+
                                        <td>
                                           <center> 
                                              <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>

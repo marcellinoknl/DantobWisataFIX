@@ -60,7 +60,7 @@
                                     <td class="text-center">
                                        {{ $eventwisatas->nama_sampul }}
                                     </td>
-                                    <td class="text-center">{{$eventwisatas->deskripsi_event}}</td>
+                                    <td class="text-center">{!! $eventwisatas->deskripsi_event !!}</td>
                                     <td class="text-center"><img  src="{{'images/eventwisata/'.$eventwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"data-target="#myModalgambar{{$eventwisatas->id_event }}"/></td>
                                     <td>
                                        <center> 

@@ -29,23 +29,32 @@
                     @foreach ($berita_wisata as $beritas)
                     <div class="col-6 col-md-4 py-4">
                         <div class="card" style="width: 300px; border-radius: 5%;">
+                            <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}">
                             <img class="card-img-top" src="{{ url('images/berita/' . $beritas->file_foto) }}"
                                 alt="Card image cap" style="height: 200px ; border-radius: 15px 15px 0px 0px; ">
+                            </a>
                             <div class="card-body" style="height: 200px ;  ">
-                                <?php   
-                                $isi_berita = substr($beritas->isi_berita,0,100);
-                                ?>
-                                <h5 class="card-title bold" style=" color:black; text-weight:bold;">
-                                    {{ $beritas->judul_berita }}</h5>
-                                <p class="card-text text-justify"> {!! $isi_berita!!} 
-                                </p>
+                                
+                                    <?php   
+                                    $isi_berita = substr($beritas->isi_berita,0,100);
+                                    ?>
+                                    
+                                   <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
+                                    onMouseOut="this.style='color:black'" style="color:black;">
+                                        {{ $beritas->judul_berita }}</a>
+                                        <p class="caption" style=" color:black; text-align: justify"> {!! $isi_berita!!} 
+                                    </p>
+                                    <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
+                                        onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a>
+                                    
+                                
                             </div>
 
                             <div class=" card-footer">
-                                <small class="text-muted"><i class="fa fa-pencil-square" aria-hidden="true"></i> <?php
+                                <small class="text-muted"><i class="fa fa-user" aria-hidden="true"></i> {{$beritas->name}} &nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i> <?php
 									$date=date_create($beritas->updated_at);
 									echo date_format($date,"d M Y");
-									?></small>
+									?> </small>
                             </div>
                         </div>
                     </div>

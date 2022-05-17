@@ -72,7 +72,7 @@
                                                                                     {{ $atraksiwisatas->nama_sampul }}
                                                                                 </td>
                                                                                 <td class="text-center">
-                                                                                    {{ $atraksiwisatas->deskripsi }}
+                                                                                    {!! $atraksiwisatas->deskripsi !!}
                                                                                 </td>
                                                                                 <td>
                                                                             <img
