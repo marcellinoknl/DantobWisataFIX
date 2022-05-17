@@ -23,6 +23,23 @@ class atraksiController extends Controller
         return view('admin.kelolaatraksi', compact('atraksi'));
     }
 
+    public function indexAction2($id)
+    {
+        $sampul_atraksi = SampulAtraksi::find($id);
+        $atrkasi_wisata = DB::table('atraksi_wisata')
+            ->where('id_sampul_atraksi', '=', $id)
+            ->get();
+        return view('user-page.blog.detail1_atraksi_wisata', ['atrkasi_wisata' => $atrkasi_wisata, 'sampul_atraksi' => $sampul_atraksi]);
+    }
+    
+    public function indexAction3($atraksi_id)
+    {
+
+        $atraksi_wisata_detail = Atraksi_Wisata::find($atraksi_id);
+        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail]);
+    }
+
+
     public function tambah()
     {
         $sampul = SampulAtraksi::all();
@@ -33,10 +50,21 @@ class atraksiController extends Controller
 
 
     public function store(Request $request)
-    {
+    {   
+        $this->validate(
+            $request,
+            [
+                'judul' => 'required',
+                'nama_sampul' => 'required', 
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif',
+                'deskripsi' => 'required'
+                                          
+                
+            ]
+        );
         $objek = new Atraksi_Wisata();
         $objek->judul = $request->judul;
-        $objek->id_sampul_atraksi = $request->id_sampul_atraksi;
+        $objek->id_sampul_atraksi = $request->nama_sampul;
         $objek->deskripsi = $request->deskripsi;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
@@ -56,7 +84,17 @@ class atraksiController extends Controller
     }
 
     public function update(request $request, $atraksi_id)
-    {
+    {   
+        $this->validate(
+            $request,
+            [
+                'judul' => 'required',
+                'nama_sampul' => 'required',                
+                'deskripsi' => 'required'
+                                          
+                
+            ]
+        );
         $update = Atraksi_Wisata::find($atraksi_id);
         $file = $update->file_foto;
         if ($request->hasFile('file_foto')) {
@@ -94,6 +132,17 @@ class atraksiController extends Controller
 
     public function storesampul(Request $request)
     {
+        $this->validate(
+            $request,
+            [
+                
+                'nama_sampul' => 'required', 
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                
+                                          
+                
+            ]
+        );
         $sampul = new SampulAtraksi();
         $sampul->nama_sampul = $request->nama_sampul;
         if ($request->hasFile('file_foto')) {
@@ -118,7 +167,7 @@ class atraksiController extends Controller
             $request,
             [
                 'nama_sampul' => 'required',
-                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                
             ]
         );
         $update = SampulAtraksi::find($id);

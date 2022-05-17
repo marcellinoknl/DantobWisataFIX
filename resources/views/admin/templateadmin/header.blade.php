@@ -35,8 +35,7 @@
     <!-- Styles -->
     <link href="{{asset('assets/css/lib/themify-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/data-table/buttons.bootstrap.min.css')}}" rel="stylesheet" />
-
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
 </head>
 
@@ -229,7 +228,7 @@
                         </div>
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">John
+                                <span class="user-avatar">{{ Auth::user()->name }}
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
@@ -266,10 +265,17 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                              
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
                                                     <i class="ti-power-off"></i>
-                                                    <span>Logout</span>
-                                                </a>
+                                                    <span>Logout</span>   </a> 
+                                                </button>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                               
                                             </li>
                                         </ul>
                                     </div>

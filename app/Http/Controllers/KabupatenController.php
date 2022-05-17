@@ -22,6 +22,14 @@ class KabupatenController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate(
+            $request,
+            [
+               
+                'nama_kab' => 'required',
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+            ]
+        );
         $kabupaten = new Kabupaten();
         $kabupaten->nama_kab = $request->nama_kab;
         if ($request->hasFile('file_foto')) {
@@ -41,7 +49,16 @@ class KabupatenController extends Controller
     }
 
     public function update(request $request, $id_obj_wisata_kabupaten)
-    {
+    
+        {
+            $this->validate(
+                $request,
+                [
+                   
+                    'nama_kab' => 'required',
+                    'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                ]
+            );
         $update = Kabupaten::find($id_obj_wisata_kabupaten);
         $file = $update->file_foto;
         if ($request->hasFile('file_foto')) {

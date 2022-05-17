@@ -34,7 +34,12 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Sampul  </label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="required" id="namasampul" name="nama_sampul" class="form-control">
+                                            <input type="text"  id="namasampul" name="nama_sampul" class="form-control @error('nama_sampul') is-invalid @enderror">
+                                            @error('nama_sampul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -42,9 +47,14 @@
                                         <div class="col-sm-9">
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="file_foto" onchange="previewImage()" name="file_foto">
+                                                <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror" id="file_foto" onchange="previewImage()" name="file_foto">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
+                                            @error('file_foto')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <br><br>

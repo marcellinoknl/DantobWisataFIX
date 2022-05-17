@@ -34,11 +34,17 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Kategori</label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="required" id="nama_kategori" name="nama_kategori" class="form-control">
+                                            <input type="text"  id="nama_kategori" name="nama_kategori" class="form-control @error('nama_kategori') is-invalid @enderror">
+                                            @error('nama_kategori')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
                                         </div>
                                     </div>
+                                    
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/editproduk'"><i class="ti-close"></i> Batal</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolakat'"><i class="ti-close"></i> Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
                                 </form>
                             </div>
@@ -49,6 +55,7 @@
                 </div>
                 <!-- /# column -->
         </div>
+        
         <!-- /# row -->
 
         @include('admin.templateadmin.footer')

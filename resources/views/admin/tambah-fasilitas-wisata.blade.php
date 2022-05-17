@@ -35,28 +35,41 @@
                                             <label class="col-sm-3 col-form-label">Nama Fasilitas</label>
                                             <div class="col-sm-9">
 
-                                                <input type="text" required="required" id="nama_fasilitas" name="nama_fasilitas" class="form-control" >
-
+                                                <input type="text"  id="nama_fasilitas" name="nama_fasilitas" class="form-control @error('nama_fasilitas') is-invalid @enderror">
+                                                @error('nama_fasilitas')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Lokasi</label>
                                             <div class="col-sm-9">
 
-                                                <input type="text" required="required" id="lokasi" name="lokasi" class="form-control" >
-
+                                                <input type="text"  id="lokasi" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" >
+                                                @error('lokasi')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kategori</label>
                                             <div class="col-sm-9">
 
-                                                <select   required="required" id="id_sampul_fasilitas" name="id_sampul_fasilitas" class="form-control" >
-                                                    <option selected>Pilih Kategori</option>
+                                                <select    id="id_sampul_fasilitas" name="id_sampul_fasilitas" class="form-control @error('id_sampul_fasilitas') is-invalid @enderror" >
+                                                    <option selected disabled>Pilih Kategori</option>
                                                     @foreach($sampul_fasilitas as $sampul)
                                                     <option value="{{$sampul->id}}">{{$sampul->nama_sampul}}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('id_sampul_fasilitas')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
 
                                             </div>
                                         </div>
@@ -66,10 +79,16 @@
                                                 <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                                 <div class="custom-file">
 
-                                                    <input type="file" class="custom-file-input" id="gbr" onchange="previewImage()"name="file_foto">
+                                                    <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror" id="gbr" onchange="previewImage()"name="file_foto">
 
                                                     <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+
                                                   </div>
+                                                  @error('file_foto')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                             </div>
                                         </div>  
                                         <div class="mb-3 row">
@@ -77,7 +96,12 @@
                                         </div>
                                         <div class ="mb-3 row">
 
-                                            <textarea type="text" required="required" id="deskripsi" name="deskripsi" cols="200px" rows="20" ></textarea>
+                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="editor" name="deskripsi" height="300px" cols="200px" rows="20"></textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
 
                                         </div>
                                         <br><br>    

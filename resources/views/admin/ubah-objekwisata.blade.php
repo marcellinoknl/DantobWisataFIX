@@ -47,9 +47,9 @@
                                             <div class="col-sm-9">
                                                     
                                                 <select   id="id_obj_wisata_kabupaten" name="nama_kabupaten" class="form-control @error('nama_kabupaten') is-invalid @enderror"  >
-                                                    <option value="">Pilih Kabupaten</option>
+                                                    <!-- <option value="">Pilih Kabupaten</option> -->
                                                     @foreach($kabupaten as $kab)
-                                                    <option value="{{$kab->id_obj_wisata_kabupaten}}">{{$kab->nama_kab}}</option>
+                                                    <option value="{{$kab->id_obj_wisata_kabupaten}}" @if( $kab->nama_kab == $update->id_obj_wisata) selected @endif>{{$kab->nama_kab}}</option>
                                                     @endforeach
                                                 </select>
                                                 @error('nama_kabupaten')
@@ -64,9 +64,9 @@
                                             <div class="col-sm-9">
                                                     
                                                 <select   id="id_kat_wisata" name="nama_kategori" class="form-control @error('nama_kategori') is-invalid @enderror"  >
-                                                    <option value="">Pilih Kategori</option>
+                                                    <!-- <option value="">Pilih Kategori</option> -->
                                                     @foreach($kategori as $kat)
-                                                    <option value="{{$kat->id_kategori}}">{{$kat->nama_kategori}}</option>
+                                                    <option value="{{$kat->id_kategori}}"@if( $kat->nama_kategori == $update->id_kategori)  selected @endif>{{$kat->nama_kategori}}</option>
                                                     @endforeach
                                                 </select>
                                                 @error('nama_kategori')
@@ -91,7 +91,8 @@
                                             <label class="col-sm-3 col-form-label">Deskripsi Wisata</label>
                                         </div>
                                         <div class ="mb-3 row">
-                                            <textarea type="text"  id="deskripsiwisata" name="deskripsi" cols="200px" rows="20"class="form-control @error('deskripsi') is-invalid @enderror">{{$update->deskripsi}}</textarea>
+                                            <textarea type="text"  id="editor" name="deskripsi" cols="200px" rows="20"class="form-control @error('deskripsi') is-invalid @enderror">{{$update->deskripsi}}</textarea>
+                                           
                                             @error('deskripsi')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

@@ -18,7 +18,7 @@
             Atraksi
         </h1>
         <p class="caption" style=" color:black;">
-            Beberapa Fasilitas yang dapat membantu anda selama mengunjungi Danau Toba
+            Beberapa Atraksi yang mungkin bisa kamu kunjungi selama berwisata di Danau Toba
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
@@ -29,8 +29,10 @@
                     <div class="row g-2 g-md-3">
                         <div class="col-6 col-md-4 py-4 px-4">
                             <div class="mycard-lebar">
+                                <a href="{{ url('/atraksi-wisata/detail1/' . $sampuls->id) }}">
                                 <img src="{{ url('images/Atraksi/' . $sampuls->file_foto) }}" alt=""
                                     class="mycard-image-lebar">
+                                </a>
                                 <h3 class="mycard-title-lebar">{{ $sampuls->nama_sampul }}</h3>
                             </div>
                         </div>
