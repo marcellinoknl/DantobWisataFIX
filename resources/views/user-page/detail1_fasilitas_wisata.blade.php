@@ -27,27 +27,30 @@
             <div class="row g-2 g-md-4">
                 @foreach ($fasilitias_wisata as $fasilitias_wisatas)
                     <div class="col-12 col-md-12 py-4">
-                        <article class="postcard light red">
-                            <a class="postcard__img_link" href="">
+                        <article class="postcard light green">
+                            <a class="postcard__img_link" href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
                                 <img class="postcard__img" src="{{ url('images/objekwisata/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" />
                             </a>
                             
                             <div class="postcard__text t-dark">
                                 <div class="col-md-1"></div>
-                                <h1 class="postcard__title yellow"><a href="#">{{$fasilitias_wisatas->nama_fasilitas}}</a></h1>
+                                <h1 class="postcard__title yellow"><a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">{{$fasilitias_wisatas->nama_fasilitas}}</a></h1>
                                 <div class="postcard__subtitle small">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
                                     <?php
 									$date=date_create($fasilitias_wisatas->updated_at);
-									echo date_format($date,"d M Y"); ?>
+									echo date_format($date,"d M Y"); ?> &nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i> {{$fasilitias_wisatas->name}}
+
+                                    <?php   
+                                    $deskripsi = substr($fasilitias_wisatas->deskripsi,0,250);
+                                    ?>                              
                                 </div>
                                 <div class="postcard__bar"></div>
-                                <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+                                <div class="postcard__preview-txt">{!! $deskripsi !!}...<a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}" onMouseOver="this.style='text-decoration:underline'"
+                                    onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a></div>
                                 <ul class="postcard__tagbox">
-                                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
-                                    <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-                                    <li class="tag__item play yellow">
-                                        <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-                                    </li>
+                                    <li class="tag__item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$fasilitias_wisatas->lokasi}}</li>
+                                    <li class="tag__item"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$sampul_fasilitas->nama_sampul}}</li>
                                 </ul>
                             </div>
                         </article>
