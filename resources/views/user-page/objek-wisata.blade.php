@@ -27,6 +27,18 @@
         <div class="container p-md-2 p-2">
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Kabupaten yang Ingin Kamu Tinjau!
             </h4>
+            @if(empty($objwisatakabupaten) || count($objwisatakabupaten) == 0)
+            <br><br>
+            <div class="row justify-content-md-center">
+            <div class="col-12 col-md-8 py-4">
+             <div class="card">
+                 <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
+                   Kabupaten Wisata Belum Ditambahkan
+                 </div>
+               </div>
+            </div>
+            </div>
+            @else
             <div class="row g-2 g-md-4">
                 @foreach ($objwisatakabupaten as $objekwisatas)
                 <div class="col-6 col-md-3 py-4">
@@ -42,6 +54,7 @@
                     </div>
                 @endforeach
             </div>
+            @endif
         </div>
     </div>
 </div>

@@ -23,6 +23,18 @@
         <div class="container p-md-2 p-2">
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Atraksi Wisata di {{$sampul_atraksi->nama_sampul}} yang Ingin Kamu Tinjau!
             </h4>
+            @if(empty($atrkasi_wisata) || count($atrkasi_wisata) == 0)
+            <br><br>
+            <div class="row justify-content-md-center">
+            <div class="col-12 col-md-8 py-4">
+             <div class="card">
+                 <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
+                Atraksi Wisata Belum Ditambahkan
+                 </div>
+               </div>
+            </div>
+            </div>
+             @else
             <div class="row g-2 g-md-4">
                 @foreach ($atrkasi_wisata as $atrkasi_wisatas)
                     <div class="col-6 col-md-3 py-4">
@@ -36,6 +48,7 @@
                     </div>
                 @endforeach
             </div>
+            @endif
         </div>
     </div>
 </div>
