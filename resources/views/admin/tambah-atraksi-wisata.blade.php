@@ -37,7 +37,7 @@
                                         <div class="col-sm-9">
 
                                             <input type="text"  id="judulatraksi" name="judul"
-                                                class="form-control @error('judul') is-invalid @enderror">
+                                                class="form-control @error('judul') is-invalid @enderror" value="{{old('judul')}}">
                                                 @error('judul')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

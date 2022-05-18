@@ -31,7 +31,7 @@
                             <section id="main-content">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <a href="{{ url('/tambah-pengalaman') }}" <button class="btn btn-success"><span
+                                        <a href="{{ url('/tambah-pengalaman-wisata') }}" <button class="btn btn-success"><span
                                                 class="ti-plus" style="color:black;"> Tambah Pengalaman
                                                 Wisata</span></button>
                                         </a>
@@ -47,8 +47,7 @@
                                                                         <tr>
                                                                             <th class="text-center" width="20%">Tanggal 
                                                                             </th>
-                                                                            <th class="text-center" width="25%">Judul
-                                                                                Kategori</th>
+                                                                            <th class="text-center" width="25%">Judul</th>
                                                                             <th class="text-center" width="25%">Penulis
                                                                             </th>
                                                                             <th class="text-center" width="30%">Aksi
@@ -57,7 +56,7 @@
                                                                         <?php $number = 1; ?>
                                                                     </thead>
                                                                     <tbody>
-                                                                        @foreach ($kategori as $kat)
+                                                                   {{-- @foreach ($kategori as $kat)
                                                                             <tr>
                                                                                 <td class="text-center">
                                                                                     <?php echo $number++; ?>
@@ -82,7 +81,7 @@
                                                             </div>
                                                             </tr>
                                                             {{-- modal pop up hapus --}}
-                                                            <div class="modal fade"
+                                                            {{-- <div class="modal fade"
                                                                 id="myModal{{ $kat->id_kategori }}"
                                                                 role="dialog">
                                                                 <div class="modal-dialog" style="
@@ -94,7 +93,7 @@
                                                                     left: 0;
                                                                     z-index: 10040;
                                                                     overflow: auto;
-                                                                    overflow-y: auto;">
+                                                                    overflow-y: auto;"> 
                                                                     <!-- Modal content-->
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
@@ -125,7 +124,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            @endforeach
+                                                            @endforeach  --}}
                                                             </tbody>
                                                             </table>
                                                         </div>
