@@ -40,10 +40,14 @@
                                     ?>
                                     
                                    <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
-                                    onMouseOut="this.style='color:black'" style="color:black;">
-                                        {{ $beritas->judul_berita }}</a>
-                                        <p class="caption" style=" color:black; text-align: justify"> {!! $isi_berita!!} 
-                                    </p>
+                                    onMouseOut="this.style='color:black'" style="color:black; ">
+                                    <div class="title" style="text-weight:bold;">
+                                        {{ $beritas->judul_berita }}
+                                    </div>
+                                </a>
+                                <hr class="mt-2 mb-3" style="border:solid 0.5px" />
+                                        <div class="caption" style=" color:black; text-align: justify;"> {!! $isi_berita!!} 
+                                    </div>
                                     <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
                                         onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a>
                                 

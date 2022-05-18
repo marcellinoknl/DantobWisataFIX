@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\GaleriWisata;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class geleriWisataController extends Controller
 {
     public function indexAction()
     {
-        return view('user-page.galeri-wisata');
+        $galeriwisata = DB::table('galeri_wisata')->get(); 
+        return view('user-page.galeri-wisata', ['galeriwisata' => $galeriwisata]);
+        
     }
     public function kelolaindexAction()
     {

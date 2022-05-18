@@ -1,4 +1,4 @@
-@include('admin.templateadmin.header')
+"@include('admin.templateadmin.header')
 <div class="content-wrap">
     <div class="main">
         <div class="container-fluid">
@@ -34,7 +34,7 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Judul</label>
                                         <div class="col-sm-9">
-                                            <input type="text" id="judul" name="judul" class="form-control @error('judul') is-invalid @enderror value="{{$update->judul}}">
+                                            <input type="text" id="judul" name="judul" class="form-control @error('judul') is-invalid @enderror "value="{{$update->judul}}">
                                             @error('judul')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

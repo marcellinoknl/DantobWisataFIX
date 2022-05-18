@@ -20,16 +20,151 @@
                 <h1 class="mb-4">Kunjugi Tempat Favorit Anda</h1>
                 <p class="caps">Kepingan Surga Toba</p>
             </div>
-            <a href="https://www.youtube.com/watch?v=ojw2VEkh42E"
-                class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
-                <span class="fa fa-play"></span>
-            </a>
+
         </div>
     </div>
 </div>
 
 
+<section class="ftco-section services-section">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate d-flex align-items-center">
+                <div>
+                    @foreach ($objekwisatas as $objekwisatass )
+                    <img src="{{ url('images/objekwisata/' . $objekwisatass->file_foto) }}" alt="" height="300px" cols="200px" rows="20">
+                    @endforeach
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 d-flex align-self-stretch ftco-animate">
+
+                        <div class="w-100">
+                            <h2 class="mb-4"style="font-weight: bold">Pariwisata Danau Toba</h2>
+                            <p style="color: black">Danau Toba terletak di Sumatera Utara, Indonesia. Danau Toba terbentuk dari letusan gunung api Toba yang sangat dahsyat yang terjadi sekitar 74.000 tahun yang lalu.
+                                 Dengan luas lebih dari 1.145 kilometer persegi dan kedalaman 450 meter.</p>
+                            <p style="color: black">Ingin tahu lebih tentang danau Toba? <br>
+                                Yuk jelajahi website ini.
+                            </p>
+                            <p><a href="#" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Banner -->
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center pb-4">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Tour Destination</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 ftco-animate">
+                <div class="project-wrap">
+
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="project-wrap">
+                    <a href="#" class="img" style="background-image: url(images/destination-2.jpg);">
+                        <span class="price">$550/person</span>
+                    </a>
+                    <div class="text p-4">
+                        <span class="days">10 Days Tour</span>
+                        <h3><a href="#">Banaue Rice Terraces</a></h3>
+                        <p class="location"><span class="fa fa-map-marker"></span> Banaue, Ifugao, Philippines
+                        </p>
+                        <ul>
+                            <li><span class="flaticon-shower"></span>2</li>
+                            <li><span class="flaticon-king-size"></span>3</li>
+                            <li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="project-wrap">
+                    <a href="#" class="img" style="background-image: url(images/destination-3.jpg);">
+                        <span class="price">$550/person</span>
+                    </a>
+                    <div class="text p-4">
+                        <span class="days">7 Days Tour</span>
+                        <h3><a href="#">Banaue Rice Terraces</a></h3>
+                        <p class="location"><span class="fa fa-map-marker"></span> Banaue, Ifugao, Philippines
+                        </p>
+                        <ul>
+                            <li><span class="flaticon-shower"></span>2</li>
+                            <li><span class="flaticon-king-size"></span>3</li>
+                            <li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 ftco-animate">
+                <div class="project-wrap">
+                    <a href="#" class="img" style="background-image: url(images/destination-4.jpg);">
+                        <span class="price">$550/person</span>
+                    </a>
+                    <div class="text p-4">
+                        <span class="days">8 Days Tour</span>
+                        <h3><a href="#">Banaue Rice Terraces</a></h3>
+                        <p class="location"><span class="fa fa-map-marker"></span> Banaue, Ifugao, Philippines
+                        </p>
+                        <ul>
+                            <li><span class="flaticon-shower"></span>2</li>
+                            <li><span class="flaticon-king-size"></span>3</li>
+                            <li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="project-wrap">
+                    <a href="#" class="img" style="background-image: url(images/destination-5.jpg);">
+                        <span class="price">$550/person</span>
+                    </a>
+                    <div class="text p-4">
+                        <span class="days">10 Days Tour</span>
+                        <h3><a href="#">Banaue Rice Terraces</a></h3>
+                        <p class="location"><span class="fa fa-map-marker"></span> Banaue, Ifugao, Philippines
+                        </p>
+                        <ul>
+                            <li><span class="flaticon-shower"></span>2</li>
+                            <li><span class="flaticon-king-size"></span>3</li>
+                            <li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="project-wrap">
+                    <a href="#" class="img" style="background-image: url(images/bgpa.jpeg);">
+                        <span class="price">$550/person</span>
+                    </a>
+                    <div class="text p-4">
+                        <span class="days">7 Days Tour</span>
+                        <h3><a href="#">Banaue Rice Terraces</a></h3>
+                        <p class="location"><span class="fa fa-map-marker"></span> Banaue, Ifugao, Philippines
+                        </p>
+                        <ul>
+                            <li><span class="flaticon-shower"></span>2</li>
+                            <li><span class="flaticon-king-size"></span>3</li>
+                            <li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="ftco-section services-section">
     <div class="container">
         <div class="row d-flex">
@@ -119,7 +254,6 @@
                 </div>
             </div>
 </section>
-
 
 <section class="ftco-section services-section">
     <div class="container">
