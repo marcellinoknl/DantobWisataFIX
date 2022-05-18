@@ -34,7 +34,7 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Sampul  </label>
                                         <div class="col-sm-9">
-                                            <input type="text" id="namasampul" name="nama_sampul" class="form-control @error('nama_sampul') is-invalid @enderror">
+                                            <input type="text" id="namasampul" name="nama_sampul" class="form-control @error('nama_sampul') is-invalid @enderror"value="{{old('nama_sampul')}}">
                                             @error('nama_sampul')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

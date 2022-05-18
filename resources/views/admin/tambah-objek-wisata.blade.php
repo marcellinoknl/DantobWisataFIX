@@ -35,8 +35,9 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Nama Wisata</label>
                                         <div class="col-sm-9">
-                                            <input type="text" id="namawisata" name="nama_wisata"
-                                                class="form-control @error('nama_wisata') is-invalid @enderror">
+                                            <input type="text"   id="namawisata" name="nama_wisata"
+                                                class="form-control @error('nama_wisata') is-invalid @enderror" value="{{old('nama_wisata')}}" >
+
                                             @error('nama_wisata')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -52,8 +53,10 @@
                                                 class="form-control @error('nama_kabupaten') is-invalid @enderror">
                                                 <option selected disabled>Pilih Kabupaten</option>
                                                 @foreach ($kabupaten as $kabupaten)
-                                                    <option value="{{ $kabupaten->id_obj_wisata_kabupaten }}">
-                                                        {{ $kabupaten->nama_kab }}</option>
+                                                    <!-- <option value="{{ $kabupaten->id_obj_wisata_kabupaten }}">
+                                                        {{ $kabupaten->nama_kab }}</option> -->
+                                                        <option value="{{  $kabupaten->id_obj_wisata_kabupaten }}"{{old('nama_kab')== $kabupaten->id_obj_wisata_kabupaten ? 'selected': null }}>
+                                                        {{$kabupaten->nama_kab }}</option>
                                                 @endforeach
                                             </select>
                                             @error('nama_kabupaten')
@@ -71,9 +74,11 @@
                                                 class="form-control @error('nama_kategori') is-invalid @enderror">
                                                 <option selected disabled>Pilih Kategori</option>
                                                 @foreach ($kategori as $kat)
-                                                    <option value="{{ $kat->id_kategori }}">
+                                                    <!-- <option value="{{ $kat->id_kategori }}">
                                                         {{ $kat->nama_kategori }}
-                                                    </option>
+                                                    </option> -->
+                                                    <option value="{{ $kat->id_kategori}}"{{old('nama_katgori')== $kat->id_kategori ? 'selected': null }}>
+                                                        {{ $kat->nama_kategori }}</option>
                                                 @endforeach
                                             </select>
                                             @error('nama_kategori')

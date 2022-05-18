@@ -62,7 +62,9 @@
                                                 <select    id="id_sampul_fasilitas" name="id_sampul_fasilitas" class="form-control @error('id_sampul_fasilitas') is-invalid @enderror" >
                                                     <option selected disabled>Pilih Kategori</option>
                                                     @foreach($sampul_fasilitas as $sampul)
-                                                    <option value="{{$sampul->id}}">{{$sampul->nama_sampul}}</option>
+                                                    <!-- <option value="{{$sampul->id}}">{{$sampul->nama_sampul}}</option> -->
+                                                    <option value="{{ $sampul->id }}"{{old('nama_sampul')== $sampul->id ? 'selected': null }}>
+                                                        {{ $sampul->nama_sampul }}</option>
                                                     @endforeach
                                                 </select>
                                                 @error('id_sampul_fasilitas')

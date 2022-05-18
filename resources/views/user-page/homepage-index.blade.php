@@ -47,7 +47,7 @@
                             <p style="color: black">Ingin tahu lebih tentang danau Toba? <br>
                                 Yuk jelajahi website ini.
                             </p>
-                            <p><a href="#" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>
+                            <p><a href="{{ url('/objek-wisata') }}" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>
                         </div>
 
                 </div>

@@ -16,12 +16,12 @@
                 <div class="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
                     <h2 class="ftco-heading-2">Infromasi Wisata</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="py-2 d-block"style="color:black">Destinasi Wisata</a></li>
-                        <li><a href="#" class="py-2 d-block"style="color:black">Atraksi Wisata</a></li>
-                        <li><a href="#" class="py-2 d-block"style="color:black">Event Wisata</a></li>
-                        <li><a href="#" class="py-2 d-block"style="color:black">Fasilitas Wisata</a></li>
+                        <li><a href="{{ url('/objek-wisata') }}" class="py-2 d-block"style="color:black">Destinasi Wisata</a></li>
+                        <li><a href="{{ url('/atraksi') }}" class="py-2 d-block"style="color:black">Atraksi Wisata</a></li>
+                        <li><a href="{{ url('/eventwisata') }}" class="py-2 d-block"style="color:black">Event Wisata</a></li>
+                        <li><a href="{{ url('/fasilitaswisata') }}" class="py-2 d-block"style="color:black">Fasilitas Wisata</a></li>
                         <li><a href="#" class="py-2 d-block"style="color:black">Galeri Wisata</a></li>
-                        <li><a href="#" class="py-2 d-block"style="color:black">Berita Wisata</a></li>
+                        <li><a href="{{ url('/beritawisata') }}" class="py-2 d-block"style="color:black">Berita Wisata</a></li>
                     </ul>
                 </div>
             </div>

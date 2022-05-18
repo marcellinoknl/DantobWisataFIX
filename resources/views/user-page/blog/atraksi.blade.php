@@ -37,7 +37,7 @@
             @else
             <div class="row g-5 g-md-7">
                 @foreach ($sampul_atraksi as $sampuls)
-                    <div class="row g-2 g-md-3">
+                    <div class="row g-2 g-md-3 ">
                         <div class="col-6 col-md-4 py-4 px-4">
                             <div class="mycard-lebar">
                                 <a href="{{ url('/atraksi-wisata/detail1/' . $sampuls->id) }}">

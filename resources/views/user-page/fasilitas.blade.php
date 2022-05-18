@@ -37,18 +37,17 @@
              @else
             <div class="row g-2 g-md-4">
                 @foreach ($sampul_fasilitas as $sampuls)
-             
-                <div class="col-md-3">
-
-                <div class="profile-card-2" >
-                    <a href="{{ url('/fasilitas-wisata/detail1/' . $sampuls->id) }}">
-                    <img src="{{ url('images/fasilitas/' . $sampuls->file_foto) }}" class="img img-responsive">
-                    </a>
-                    <div class="profile-name">{{ $sampuls->nama_sampul }}</div>
-                   
+                <div class="row g-2 g-md-3 ">
+                    <div class="col-6 col-md-4 py-4 px-4">
+                        <div class="mycard-lebar">
+                            <a href="{{ url('/fasilitas-wisata/detail1/' . $sampuls->id) }}">
+                            <img src="{{ url('images/fasilitas/' . $sampuls->file_foto) }}" alt=""
+                                class="mycard-image-lebar">
+                            </a>
+                            <h3 class="mycard-title-lebar">{{ $sampuls->nama_sampul }}</h3>
+                        </div>
+                    </div>
                 </div>
-                </div>
-
                 @endforeach
             </div>
             @endif
