@@ -19,7 +19,7 @@
         <br>
         <div class="container p-md-2 p-2">
             <p class="caption" style=" color:black;">
-                {{ $atraksi_wisata_detail->deskripsi }}
+                {!!$atraksi_wisata_detail->deskripsi !!}
             </p>
 
             <div class="col-md-4 center">
