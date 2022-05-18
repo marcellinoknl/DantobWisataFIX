@@ -20,5 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(User::class);
         $this->call(KelolaWisata::class);
         $this->call(KelolaFasilitas::class);
+        $this->call(SampulEvent::class);
+        $this->call(KelolaEvent::class);
+        $this->call(SampulAtraksi::class);
+        $this->call(KelolaBerita::class);
+        $this->call(KelolaAtraksi::class);
     }
 }

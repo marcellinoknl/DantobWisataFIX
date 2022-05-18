@@ -906,7 +906,7 @@ class KelolaWisata extends Seeder
                 8. Kaldera hill
                 9. Nomadic caravan park
                 10. Camping ground',
-                'file_foto' => 'Caldera.jpg',
+                'file_foto' => 'TheCaldera.jpg',
                 'id_obj_wisata_kabupaten' => '2',
                 'id_kat_wisata' => '3'
             ],
@@ -963,6 +963,63 @@ class KelolaWisata extends Seeder
                 Aek sipangolu terletak di Desa Simangulampe, Kecamatan Baktiraja, Kabupaten Humbang Hasundutan,  30-45 menit dari kota doloksanggul apabila anda menggunakan kendaraan pribadi. ',
                 'file_foto' => 'AekSipangolu.jpg',
                 'id_obj_wisata_kabupaten' => '5',
+                'id_kat_wisata' => '2'
+            ],  
+            [
+                'id_obj_wisata' => '64',
+                'nama_wisata' => 'Wisata Tomok',
+                'deskripsi' => '
+                Advontura.com – Kampung tomok adalah sebuah perkampungan budaya yang awalnya merupakan kawasan yang tempat tinggal para Raja. Di Kampung Tomok terdapat rumah panggung tradisional yang ditopang oleh tiang kayu besar yang dibangun oleh Raja Sidabutar. Ada dua macam rumah ada sesuai fungsinya. Rumah ada yang besar bernama Rumah Bolon, merupakan rumah ada khusus para raja beserta keluarganya. Sedangkan rumah berukuran lebih kecil bernama Siamporik, merupakan kediaman para bangsawan atau orang-orang kaya. Di depan rumah ada Bolon inilah terdapat patung Sigale-gale. Sigale-gale merupakan nama sebuah boneka kayu yang bisa digerakkan untuk menari. 
+                Seiring berjalannya waktu, kompleks perumahan tradisional itu berubah menjadi museum kebudayaan. Selain rumah bersejarah, anda juga bisa mengunjungi pemakaman Raja Batak. Uniknya, peti mati yang digunakan berasal dari batu dengan ukiran kepala manusia di ujungnya dan tidak ditanamkan di dalam tanah melainkan ada di permukaan. Di Kampung Tomok pengunjung juga bisa menyaksikan pertunjukan Sigale-gale, sebuah boneka kayu yang penuh misteri dan seni tari Tor-tor. 
+                Aksesibilitas
+                Dari Medan, wisata ini membutuhkan sekitar 4-5 jam perjalanan untuk sampai di Pelabuhan Wisata parapat, dan memerlukan waktu satu jam lagi untuk menyeberang dari Ajibata ke Tomok.
+                Fasilitas
+                1.	Terdapat toko penjual pernak pernik dan makanan khas kampung Tomok di sepanjang jalan menuju wisata ini.
+                2.	Tiket masuk untuk menonton tarian Sigale-gale dengan harga Rp10.000/orang.',
+                'file_foto' => 'WisataTomok.jpg',
+                'id_obj_wisata_kabupaten' => '1',
+                'id_kat_wisata' => '2'
+            ],   
+            [
+                'id_obj_wisata' => '65',
+                'nama_wisata' => 'Sumur Eluh Berru Tinambunen',
+                'deskripsi' => '
+                tempatwisataseru.com – Sumur ini sebenarnya sebuah kolam atau sungai yang dikelilingi oleh batu karang yang menjulang tinggi yang membentuk seperti pelindung yang membuatnya terlihat seperti sebuah sumur. Suasana di tempat ini damai dan sunyi, jadi sangat cocok buat kamu yang ini bermain air sepuasnya dan ingin mengjhilangkan penat dan beban pikiran.
+                Aksesibilitas
+                Desa Rumerah, Kecamatan Sitellu Tali Urang Julu, Kabupaten Pakpak Bharat. ',
+                'file_foto' => 'SumurEluh.jpg',
+                'id_obj_wisata_kabupaten' => '6',
+                'id_kat_wisata' => '1'
+            ],   
+            [
+                'id_obj_wisata' => '66',
+                'nama_wisata' => 'Air Terjun Lae Mbilulu',
+                'deskripsi' => '
+                Merdeka.com - Air Terjun Lae Mbilulu memiliki ketinggian sekitar 40 meter. Air terjun ini dijuluki `air terjun kembar` lantaran aliran airnya yang terbagi menjadi dua bagian, seakan-akan ada dua air terjun. Tepat di bawah air terjun, terdapat kolam alami yang cukup lebar dengan kedalaman sekitar 6 meter. Wisatawan bisa bermain air di kolam tersebut, namun harus berhati-hati karena airnya yang cukup dalam. Air di air terjun ini juga jernih, jadi wisatawan tak perlu khawatir jika ingin bermain air di area kolam alami itu. Area sekitar air terjun pun masih terjaga kebersihannya. Selain pemandangan air terjun yang unik, wisatawan juga akan disuguhkan dengan panorama alam di sekitar air terjun yang cantik. Suasana alami sangat terasa kental apalagi di sekitar air terjun banyak ditumbuhi pepohonan besar dan rindang yang tampak sangat asri. Air terjun ini letaknya diapit sebuah lembah kecil yang bebatuan. Kondisi alam sekitarnya pun masih sangat terawat. Gemercik aliran air terjun akan semakin membuat pikiran menjadi lebih tenang dan fresh.
+                Aksesibilitas 
+                Air terjun ini berada di Prongil Julu, Kecamatan Tinada, Kabupaten Pakpak Bharat. Lokasinya cukup tersembunyi dan alami.Wisatawan yang hendak mengunjungi air terjun ini memang harus bersabar, lantaran medan menuju air terjun yang belum sepenuhnya teraspal mulus. Membutuhkan perjalanan kira kira 30 menit dari Ibukota Kabupaten Pakpak Bharat yaitu Salak.',
+                'file_foto' => 'AirTerjunLaeMbilulu.jpg',
+                'id_obj_wisata_kabupaten' => '6',
+                'id_kat_wisata' => '1'
+            ],    
+            [
+                'id_obj_wisata' => '67',
+                'nama_wisata' => 'Rafting Lae Kombih',
+                'deskripsi' => 'SERAMBINEWS.COM -  Paparan sungai yang sulit dan menantang menjadi daya Tarik tersendiri sungai ini untuk menjadi wisata arung jeram tidak hanya arusnya saja yang mendukung kita juga akan disuguhkan pemandangan hutan cagar alam di sepanjang sungai. Disini ada 4 unit perahu karet yang disewakan dimana tiap perahu berkapasitas 8 orang yang dipungut Rp150.000/orang setiap bermain. Selain arung jeram disini juga menyediakan paket rafting bagi pengunjung, seperti kayaking, liveaboard diving dan river tubing. Untuk paket ini disewakan dengan harga Rp10.000/jam untuk peralatan seta guide rescuenya. 
+                Aksesibilitas
+                Kira kira akan membutuhkan waktu 2 jam dengan mobil untuk menuju ke sungai Lae Kombih. Sesampai nya disana anda juga masih harus berjalan turun kurang lebih 10 menit untuk sampai di sungai tersebut.',
+                'file_foto' => 'RaftingLaeKombih.jpg',
+                'id_obj_wisata_kabupaten' => '6',
+                'id_kat_wisata' => '3'
+            ],   
+            [
+                'id_obj_wisata' => '68',
+                'nama_wisata' => 'Mejan Penanggalen',
+                'deskripsi' => 'tobaria.com -  Mejan merupakan peninggalan purbakala yang ditemukan di Pakpak Bharat, berupa patung-patung yang diukir dari batu. Patung-patung ini berbentuk orang yang mengendarai binatang seperti, gajah, kuda, atau harimau.Mejan adalah suatu simbol kebanggaan dan kemasyuran masyarakat Pakpak, karena diyakini patung-patung tersebut mengandung unsur mistik tersendiri. Selain mengandung nilai budaya yang tinggi, mejan ini juga merupakan lambang kebesaran marga Pakpak atau masyarakat Pakpak.Secara khusus masyarakat Pakpak memaknai mejan sebagai simbol kepahlawanan. Pemahat yang membuat mejan ini adalah para pertaki dan mereka inilah pemilik mejan sekaligus pande tukang.
+                Aksesibilitas
+                Mejan Penanggalen Kab Pakpak Bharat terletak di provinsi Sumatera Utara, Indonesia. Tepatnya di Desa Penanggalen Mbinanga Boang kecamatan Salak Kabupaten Pakpak Bharat. Anda membutuhkan waktu kurang lebih 15 menit untuk sampai ke wilayah tersebut dengan mengendarai mobil.',
+                'file_foto' => 'MejanPenanggalen.jpg',
+                'id_obj_wisata_kabupaten' => '6',
                 'id_kat_wisata' => '2'
             ],   
         ]);

@@ -13,22 +13,18 @@ class SampulEvent extends Seeder
                 'nama_sampul' => 'Budaya',
                 'file_foto' => 'budaya.jpg'
             ],
-            // [               
-            //     'deskripsi_event' => 'music',
-            //     'file_foto' => 'musik.jpg',
-            //     'judul_event' => 'Music'
-            // ],
-            // [                
-            //     'deskripsi_event' => 'sport',
-            //     'file_foto' => 'sport.jpg',
-            //     'judul_event' => 'Sport'
-            // ],
-            // [                
-            //     'deskripsi_event' => 'festival',
-            //     'file_foto' => 'festival.jpg',
-            //     'judul_event' => 'Festival'
-            // ]
-            
+            [                
+                'nama_sampul' => 'Musik',
+                'file_foto' => 'musik.jpg'
+            ],
+            [                
+                'nama_sampul' => 'Sport',
+                'file_foto' => 'sport.jpg'
+            ],
+            [                
+                'nama_sampul' => 'Festival',
+                'file_foto' => 'festival.jpg'
+            ],
         ]);
     }
 }

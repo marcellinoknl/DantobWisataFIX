@@ -30,7 +30,7 @@
                         <div class="col-6 col-md-4 py-4 px-4">
                             <div class="mycard-lebar">
                                 <a href="{{ url('/event-wisata/detail1/' . $sampuls->id) }}">
-                                <img src="{{ url('images/Atraksi/' . $sampuls->file_foto) }}" alt=""
+                                <img src="{{ url('images/eventwisata/' . $sampuls->file_foto) }}" alt=""
                                     class="mycard-image-lebar">
                                 </a>
                                 <h3 class="mycard-title-lebar">{{ $sampuls->nama_sampul }}</h3>

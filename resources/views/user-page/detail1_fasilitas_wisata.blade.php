@@ -29,7 +29,7 @@
                     <div class="col-12 col-md-12 py-4">
                         <article class="postcard light red">
                             <a class="postcard__img_link" href="">
-                                <img class="postcard__img" src="{{ url('images/objekwisata/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" />
+                                <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" />
                             </a>
                             
                             <div class="postcard__text t-dark">

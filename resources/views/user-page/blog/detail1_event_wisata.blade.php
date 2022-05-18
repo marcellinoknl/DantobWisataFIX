@@ -1,7 +1,7 @@
 @include('template/header')
 
 <div class="hero-wrap  "
-    style="background-image: url({{ asset('images/Atraksi/' . $sampul_event->file_foto) }}); width: 100%; height:75%;">
+    style="background-image: url({{ asset('images/eventwisata/' . $sampul_event->file_foto) }}); width: 100%; height:75%;">
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
