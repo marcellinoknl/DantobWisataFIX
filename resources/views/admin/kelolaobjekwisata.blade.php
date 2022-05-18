@@ -15,8 +15,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Table-Export</li>
+                                <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Objek Wisata</li>
                             </ol>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                                                             <!-- <td class="text-center"><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td> -->
                                                                             <td>
                                                                             <center> 
-                                                                            <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>
+                                                                            <button class="btn btn-info" onclick="window.location.href='/lihat-objekwisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-eye" style="color:black;"></span></button>
                                                                                 <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
                                                                                 <button class="btn btn-danger"data-toggle="modal"data-target="#myModal{{ $objekwisatas->id_obj_wisata }}"><span class="ti-trash" style="color:black;"></span></button></center> 
                                                                                 </td>

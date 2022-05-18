@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 
 class PengalamanController extends Controller
 {
-    // public function indexAction()
-    // {
-    //     $pengalaman = DB::table('pengalaman_wisata')->get();
-    //     return view('user-page.objek-wisata', ['pengalaman' => $pengalaman]);
-    // }
+    public function indexAction()
+    {
+        $pengalaman = DB::table('pengalaman_wisata')->get();
+        return view('user-page.pengalaman', ['pengalaman' => $pengalaman]);
+    }
+    public function indexActiontambahpengalaman()
+    {
+        $pengalamanplus = DB::table('pengalaman_wisata')->get();
+        return view('user-page.tambah-pengalaman', ['pengalamanplus' => $pengalamanplus]);
+    }
 
     public function kelolaindexAction()
     {
@@ -49,12 +54,12 @@ class PengalamanController extends Controller
     //     return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail]);
     // }
 
-    public function tambah()
-    {
-        $kabupaten = Kabupaten::all();
-        $kategori = Kategori_Wisata::all();
-        return view('admin.tambah-objek-wisata', compact('kabupaten', 'kategori'));
-    }
+    // public function tambah()
+    // {
+    //     $kabupaten = Kabupaten::all();
+    //     $kategori = Kategori_Wisata::all();
+    //     return view('admin.tambah-objek-wisata', compact('kabupaten', 'kategori'));
+    // }
 
 
 

@@ -29,6 +29,12 @@ class objekWisataController extends Controller
         return view('admin.kelolaobjekwisata', compact('objekwisata'));
     }
 
+    public function kelolaindexActionView($id_obj_wisata)
+    {
+        $view = Objek_Wisata::find($id_obj_wisata);
+        return view('admin.kelola-objek-wisata-view', compact('view'));
+    }
+
     public function indexAction2($id_obj_wisata_kabupaten)
     {
         $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);

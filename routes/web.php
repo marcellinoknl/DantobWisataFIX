@@ -56,6 +56,9 @@ Route::get('/fasilitas-wisata/detail2/{id}', [fasilitasController::class, 'index
 //galeri wisata
 Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 
+//pengalaman wisata
+Route::get('/pengalaman-wisata', [PengalamanController::class, 'indexAction']);
+Route::get('/tambah-pengalamanwisata', [PengalamanController::class, 'indexActiontambahpengalaman'])->middleware('auth');
 
 
 //--AUTHOR SIDE--
@@ -74,6 +77,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/ubah-objek-wisata/{id}', [objekWisataController::class, 'update'])->name('objekwisata.ubah');
     Route::post('/tambah-objek-wisata/store', [objekWisataController::class, 'store'])->name('formobjekwisata.store');
     Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
+    Route::get('/lihat-objekwisata/{id}', [objekWisataController::class, 'kelolaindexActionView']);
 
     //kelolaberita
     Route::get('/kelolaberita', [beritaController::class, 'kelolaindexAction']);
