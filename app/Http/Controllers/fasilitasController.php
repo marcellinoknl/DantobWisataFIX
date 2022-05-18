@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Models\Fasilitas;
 use App\Models\SampulFasilitas;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +11,7 @@ class fasilitasController extends Controller
 {
     public function indexAction()
     {
-        $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
+        $sampul_fasilitas = DB::table('sampul_fasilitas')->get(); 
         return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas]);
     }
 
@@ -19,6 +19,8 @@ class fasilitasController extends Controller
     {
         $sampul_fasilitas = SampulFasilitas::find($id);
         $fasilitias_wisata = DB::table('fasilitas_wisata')
+        ->select('fasilitas_wisata.*','users.name')
+        ->join('users', 'fasilitas_wisata.id_user', '=', 'users.id')
             ->where('id_sampul_fasilitas', '=', $id)
             ->get();
         return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas]);
@@ -26,9 +28,14 @@ class fasilitasController extends Controller
 
     public function indexAction3($id_fasilitas)
     {
-
+     
         $fasilitas_wisata_detail = Fasilitas::find($id_fasilitas);
-        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail]);
+        $fasilitias_wisata_detail_user = DB::table('fasilitas_wisata')
+        ->select('users.name','users.id')
+        ->join('users', 'fasilitas_wisata.id_user', '=', 'users.id')
+        ->where('fasilitas_wisata.id_fasilitas','=',$id_fasilitas)
+        ->get();
+        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user]);
     }
 
     public function kelolaindexActionSampul()
@@ -98,6 +105,7 @@ class fasilitasController extends Controller
 
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
         $fasilitas->deskripsi = $request->deskripsi;
+        $fasilitas->id_user = Auth::user()->id;
         $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas;
         $fasilitas->lokasi = $request->lokasi;
         if ($request->hasFile('file_foto')) {

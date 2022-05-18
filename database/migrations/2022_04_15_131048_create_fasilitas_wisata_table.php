@@ -21,6 +21,8 @@ class CreateFasilitasWisataTable extends Migration
             $table->string('file_foto');
             $table->integer('id_sampul_fasilitas')->unsigned();
             $table->foreign('id_sampul_fasilitas')->references('id')->on('sampul_fasilitas')->onDelete('cascade'); 
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade'); 
             $table->timestamps();
         });
     }

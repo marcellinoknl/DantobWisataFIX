@@ -23,7 +23,18 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
-
+            @if(empty($sampul_atraksi) || count($sampul_atraksi) == 0)
+           <br><br>
+           <div class="row justify-content-md-center">
+           <div class="col-12 col-md-8 py-4">
+            <div class="card">
+                <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
+                  Kategori Atraksi Belum Ditambahkan
+                </div>
+              </div>
+           </div>
+           </div>
+            @else
             <div class="row g-5 g-md-7">
                 @foreach ($sampul_atraksi as $sampuls)
                     <div class="row g-2 g-md-3">
@@ -39,6 +50,7 @@
                     </div>
                 @endforeach
             </div>
+            @endif
         </div>
     </div>
 </div>

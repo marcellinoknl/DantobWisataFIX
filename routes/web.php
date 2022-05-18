@@ -28,10 +28,6 @@ use App\Http\Controllers\accountController;
 */
 
 
-
-
-
-
 // --USER SIDE--
 //Home Page
 Route::get('/', [homepageController::class, 'indexAction']);

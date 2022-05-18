@@ -28,7 +28,7 @@
             
                     @foreach ($berita_wisata as $beritas)
                     <div class="col-6 col-md-4 py-4">
-                        <div class="card" style="width: 300px; border-radius: 5%;">
+                        <div class="card" style="width: 350px; height:600px; border-radius: 5%;">
                             <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}">
                             <img class="card-img-top" src="{{ url('images/berita/' . $beritas->file_foto) }}"
                                 alt="Card image cap" style="height: 200px ; border-radius: 15px 15px 0px 0px; ">
@@ -40,13 +40,16 @@
                                     ?>
                                     
                                    <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
-                                    onMouseOut="this.style='color:black'" style="color:black;">
-                                        {{ $beritas->judul_berita }}</a>
-                                        <p class="caption" style=" color:black; text-align: justify"> {!! $isi_berita!!} 
-                                    </p>
+                                    onMouseOut="this.style='color:black'" style="color:black; ">
+                                    <div class="title" style="text-weight:bold;">
+                                        {{ $beritas->judul_berita }}
+                                    </div>
+                                </a>
+                                <hr class="mt-2 mb-3" style="border:solid 0.5px" />
+                                        <div class="caption" style=" color:black; text-align: justify;"> {!! $isi_berita!!} 
+                                    </div>
                                     <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
                                         onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a>
-                                    
                                 
                             </div>
 

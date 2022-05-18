@@ -4,10 +4,15 @@ namespace App\Http\Controllers\adminController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class adminIndexController extends Controller
 {
     public function indexAction() {
-        return view('admin.admin-index');
+        $users = DB::table('users')->count();
+        $objek = DB::table('objek_wisata')->count();
+        $atraksi = DB::table('atraksi_wisata')->count();
+        $fasilitas = DB::table('fasilitas_wisata')->count();
+        return view('admin.admin-index', compact('users','atraksi','objek','fasilitas'));
     }
 }

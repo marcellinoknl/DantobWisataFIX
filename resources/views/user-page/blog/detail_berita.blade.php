@@ -21,7 +21,6 @@
             <p class="caption" style=" color:black;">
                 {!!$berita_wisata_detail->isi_berita !!}
             </p>
-
             <div class="col-md-4 center">
                 <img src="{{ url('images/berita/' . $berita_wisata_detail->file_foto) }}"
                     style="width:20cm; height:20cm; " alt="">

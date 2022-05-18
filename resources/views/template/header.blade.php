@@ -5,7 +5,7 @@
     <title>Wisata Kawasan Danau Toba</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" href="{{ asset('images/simanjarunjubg.jpg') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
 
@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card_fasil_detail.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js%22%3E"></script>
-    </script>
+    
 
 <!--============FASILITAS CARD================-->
 {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --}}
@@ -67,6 +67,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
+                    @guest
                     <li class="nav-item active "><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
                     <li class="nav-item"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
                             Wisata</a></li>
@@ -88,12 +89,36 @@
                             class="nav-link">Fasilitas</a></li>
                     <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
-                    @guest
+                    
+                    
                         @if (Route::has('login'))
                             <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link"><i
                                         class="fa fa-sign-in" aria-hidden="true"></i> Masuk</a></li>
                         @endif
                     @else
+                    <li class="nav-item active "><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
+                    <li class="nav-item"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
+                            Wisata</a></li>
+                    <div class="navbar-nav ml-auto dropdown show">
+                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <a href="/blog" class="nav-link">Katalog</a>
+                        </li>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a href="{{ url('/atraksi') }}"><button class="dropdown-item"
+                                    type="button">Atraksi</button></a>
+                            <a href="{{ url('/eventwisata') }}"><button class="dropdown-item"
+                                    type="button">Event</button></a>
+                            <a href="{{ url('/beritawisata') }}"><button class="dropdown-item"
+                                    type="button">Berita</button></a>
+                        </div>
+                    </div>
+                    <li class="nav-item"><a href="{{ url('/fasilitaswisata') }}"
+                            class="nav-link">Fasilitas</a></li>
+                    <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
+                    </li>
+                    <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Pengalaman Wisata</a>
+                    </li>
                         <div class="navbar-nav ml-auto dropdown show">
                             <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">

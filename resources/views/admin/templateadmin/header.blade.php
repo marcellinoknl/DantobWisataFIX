@@ -54,9 +54,12 @@
                     <li class="label">Kelola Data Wisata</li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
+
                             <li><a href="{{url('/kelolakat')}}">Kelola Kategori Wisata</a></li>
                             <li><a href="{{url('/kelolakab')}}">Kelola Kabupaten</a></li>
+
                             <li><a href="{{url('/kelolaobjek')}}">Kelola Per-Objek Wisata</a></li>
+
                         </ul>
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
@@ -275,7 +278,7 @@
                                                 class="d-none">
                                                 @csrf
                                             </form>
-                                               g
+                                               
                                             </li>
                                         </ul>
                                     </div>
