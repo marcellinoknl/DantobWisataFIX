@@ -1,7 +1,7 @@
 @include('template/header')
 
 <div class="hero-wrap  "
-    style="background-image: url({{ asset('images/objekwisata/' . $sampul_fasilitas->file_foto) }}); width: 100%; height:75%;">
+    style="background-image: url({{ asset('images/fasilitas/' . $sampul_fasilitas->file_foto) }}); width: 100%; height:75%;">
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
@@ -40,7 +40,7 @@
                     <div class="col-12 col-md-12 py-4">
                         <article class="postcard light green">
                             <a class="postcard__img_link" href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
-                                <img class="postcard__img" src="{{ url('images/objekwisata/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" />
+                                <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" />
                             </a>
                             
                             <div class="postcard__text t-dark">
