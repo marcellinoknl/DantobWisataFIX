@@ -24,7 +24,7 @@
         <br>
         
         <div class="container p-md-2 p-2">
-            @if(empty($sampul_fasilitas) || count($sampul_fasilitas) == 0)
+            @if(empty($berita_wisata ) || count($berita_wisata ) == 0)
             <br><br>
             <div class="row justify-content-md-center">
             <div class="col-12 col-md-8 py-4">
