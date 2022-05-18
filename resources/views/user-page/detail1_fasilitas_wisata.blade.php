@@ -38,8 +38,8 @@
             <div class="row g-2 g-md-4">
                 @foreach ($fasilitias_wisata as $fasilitias_wisatas)
                     <div class="col-12 col-md-12 py-4">
-                        <article class="postcard light red">
-                            <a class="postcard__img_link" href="">
+                        <article class="postcard light green">
+                            <a class="postcard__img_link" href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
                                 <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" />
                             </a>
                             

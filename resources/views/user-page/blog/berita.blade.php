@@ -22,10 +22,21 @@
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
+        
         <div class="container p-md-2 p-2">
-
+            @if(empty($sampul_fasilitas) || count($sampul_fasilitas) == 0)
+            <br><br>
+            <div class="row justify-content-md-center">
+            <div class="col-12 col-md-8 py-4">
+             <div class="card">
+                 <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
+                Berita Wisata Belum Ditambahkan
+                 </div>
+               </div>
+            </div>
+            </div>
+             @else
              <div class="row g-2 g-md-4">
-            
                     @foreach ($berita_wisata as $beritas)
                     <div class="col-6 col-md-4 py-4">
                         <div class="card" style="width: 350px; height:600px; border-radius: 5%;">
@@ -62,8 +73,8 @@
                         </div>
                     </div>
                     @endforeach
-              
             </div>
+            @endif
         </div>
     </div>
 </div>
