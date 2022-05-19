@@ -46,7 +46,6 @@
                                                                             <tr>
                                                                                 <th class="text-center" width="10%">No</th>
                                                                                 <th class="text-center" width="10%">Nama Wisata</th>
-                                                                                <th class="text-center" width="20%">Deskripsi Wisata</th>
                                                                                 <th class="text-center" width="10%">Kabupaten</th>
                                                                                 <th class="text-center" width="10%">Kategori</th>
                                                                                 <th class="text-center" width="25%">Foto Wisata</th>
@@ -60,7 +59,6 @@
                                                                         <tr>
                                                                             <td class="text-center"><?php echo $number++; ?> </td>
                                                                             <td class="text-center">{{$objekwisatas->nama_wisata}}</td>
-                                                                            <td class="text-center">{!!$objekwisatas->deskripsi!!}</td>
                                                                             <td class="text-center">{{$objekwisatas->nama_kab}}</td>
                                                                             <td class="text-center">{{$objekwisatas->nama_kategori}}</td>
                                                                             
