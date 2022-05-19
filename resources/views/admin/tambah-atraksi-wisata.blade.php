@@ -37,7 +37,7 @@
                                         <div class="col-sm-9">
 
                                             <input type="text"  id="judulatraksi" name="judul"
-                                                class="form-control @error('judul') is-invalid @enderror">
+                                                class="form-control @error('judul') is-invalid @enderror" value="{{old('judul')}}">
                                                 @error('judul')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -54,7 +54,7 @@
                                                 class="form-control  @error('nama_sampul') is-invalid @enderror">
                                                 <option selected disabled>Pilih Kategori</option>
                                                 @foreach ($sampul as $sampuls)
-                                                    <option value="{{ $sampuls->id }}">
+                                                    <option value="{{ $sampuls->id }}"{{old('nama_sampul')== $sampuls->id ? 'selected': null }}>
                                                         {{ $sampuls->nama_sampul }}</option>
                                                 @endforeach
                                             </select>

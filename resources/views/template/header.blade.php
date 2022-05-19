@@ -89,6 +89,8 @@
                             class="nav-link">Fasilitas</a></li>
                     <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
+                    <li class="nav-item"><a href="{{ url('/pengalaman-wisata') }}" class="nav-link">Pengalaman Wisata</a>
+                    </li>
                     
                     
                         @if (Route::has('login'))
@@ -117,7 +119,7 @@
                             class="nav-link">Fasilitas</a></li>
                     <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
-                    <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Pengalaman Wisata</a>
+                    <li class="nav-item"><a href="{{ url('/pengalaman-wisata') }}" class="nav-link">Pengalaman Wisata</a>
                     </li>
                         <div class="navbar-nav ml-auto dropdown show">
                             <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"

@@ -1,62 +1,65 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\DB;
 use App\Models\Objek_Wisata;
-use App\Models\Kategori_Wisata;
-use App\Models\Kabupaten;
-
 use Illuminate\Http\Request;
 
-class objekWisataController extends Controller
+class PengalamanController extends Controller
 {
     public function indexAction()
     {
-        $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
-        return view('user-page.objek-wisata', ['objwisatakabupaten' => $objwisatakabupaten]);
+        $pengalaman = DB::table('pengalaman_wisata')->get();
+        return view('user-page.pengalaman', ['pengalaman' => $pengalaman]);
+    }
+    public function indexActiontambahpengalaman()
+    {
+        $pengalamanplus = DB::table('pengalaman_wisata')->get();
+        return view('user-page.tambah-pengalaman', ['pengalamanplus' => $pengalamanplus]);
     }
 
     public function kelolaindexAction()
     {
 
 
-        $objekwisata = DB::table('objek_wisata')
-            ->select('objek_wisata.*', 'objwisatakabupaten.nama_kab', 'kategori_wisata.nama_kategori')
-            ->join('objwisatakabupaten', 'objwisatakabupaten.id_obj_wisata_kabupaten', '=', 'objek_wisata.id_obj_wisata_kabupaten')
-            ->join('kategori_wisata', 'kategori_wisata.id_kategori', '=', 'objek_wisata.id_kat_wisata')
+        $pengalaman = DB::table('pengalaman_wisata')
+            ->select('pengalaman_wisata.*', 'users.name')
+            ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
             ->get();
-        return view('admin.kelolaobjekwisata', compact('objekwisata'));
+        return view('admin.kelola-pengalaman-wisata', compact('pengalaman'));
     }
 
-    public function kelolaindexActionView($id_obj_wisata)
+    public function kelolaindexAction2()
     {
-        $view = Objek_Wisata::find($id_obj_wisata);
-        return view('admin.kelola-objek-wisata-view', compact('view'));
-    }
-
-    public function indexAction2($id_obj_wisata_kabupaten)
-    {
-        $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
-        $objek_wisata = DB::table('objek_wisata')
-            ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
+        $persetujuan = DB::table('pengalaman_wisata')
+            ->select('pengalaman_wisata.*', 'users.name')
+            ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
             ->get();
-        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten]);
+        return view('admin.persetujuan-pengalaman-wisata', compact('persetujuan'));
     }
 
-    public function indexAction3($id_obj_wisata)
-    {
+    // public function indexAction2($id_obj_wisata_kabupaten)
+    // {
+    //     $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
+    //     $objek_wisata = DB::table('objek_wisata')
+    //         ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
+    //         ->get();
+    //     return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten]);
+    // }
 
-        $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
-        return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail]);
-    }
+    // public function indexAction3($id_obj_wisata)
+    // {
 
-    public function tambah()
-    {
-        $kabupaten = Kabupaten::all();
-        $kategori = Kategori_Wisata::all();
-        return view('admin.tambah-objek-wisata', compact('kabupaten', 'kategori'));
-    }
+    //     $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
+    //     return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail]);
+    // }
+
+    // public function tambah()
+    // {
+    //     $kabupaten = Kabupaten::all();
+    //     $kategori = Kategori_Wisata::all();
+    //     return view('admin.tambah-objek-wisata', compact('kabupaten', 'kategori'));
+    // }
 
 
 

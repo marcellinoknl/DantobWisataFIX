@@ -19,6 +19,6 @@ class AuthorRole
         if (auth()->user()->role == 1) {
             return $next($request);
         }
-        return redirect()->back()->with('error', "you don't have access to Admin");
+        return redirect()->back()->with('error', "Anda tidak memiliki Akses ke Halaman Admin");
     }
 }

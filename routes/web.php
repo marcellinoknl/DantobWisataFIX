@@ -12,9 +12,7 @@ use App\Http\Controllers\geleriWisataController;
 use App\Http\Controllers\KategoriWisataController;
 use App\Http\Controllers\adminController\adminIndexController;
 use App\Http\Controllers\accountController;
-
-
-
+use App\Http\Controllers\PengalamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +56,9 @@ Route::get('/fasilitas-wisata/detail2/{id}', [fasilitasController::class, 'index
 //galeri wisata
 Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 
+//pengalaman wisata
+Route::get('/pengalaman-wisata', [PengalamanController::class, 'indexAction']);
+Route::get('/tambah-pengalamanwisata', [PengalamanController::class, 'indexActiontambahpengalaman'])->middleware('auth');
 
 
 //--AUTHOR SIDE--
@@ -65,9 +66,10 @@ Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 
 
 Route::group(['middleware' => ['auth',  'admin']], function () {
-
-    //Index utama
     Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
+    Route::group(['admin' => 1], function () {
+    //Index utama
+
     //Kelola Objek Wisatawa
     Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
     Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
@@ -75,6 +77,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/ubah-objek-wisata/{id}', [objekWisataController::class, 'update'])->name('objekwisata.ubah');
     Route::post('/tambah-objek-wisata/store', [objekWisataController::class, 'store'])->name('formobjekwisata.store');
     Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
+    Route::get('/lihat-objekwisata/{id}', [objekWisataController::class, 'kelolaindexActionView']);
 
     //kelolaberita
     Route::get('/kelolaberita', [beritaController::class, 'kelolaindexAction']);
@@ -84,36 +87,40 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/tambah-berita-wisata/store', [beritaController::class, 'store'])->name('formberitawisata.store');
     Route::get('/berita/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
 
-    //kelola event
-    Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
-    Route::get('/tambah-event-wisata', [eventController::class, 'tambah']);
-    Route::get('/ubah-event-wisata/{id}', [eventController::class, 'edit']);
-    Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
-    Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
-    Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
 
-    Route::get('/sampul-event', [eventController::class, 'kelolaindexActionSampul']);
-    Route::get('/tambah-sampul-event', [eventController::class, 'tambahsampul']);
-    Route::get('/ubah-sampulevent/{id}', [eventController::class, 'editsampul']);
-    Route::post('/ubah-sampulevent/{id}', [eventController::class, 'updatesampul'])->name('formsampulevent.ubah');
-    Route::post('/tambah-sampul-event/store', [eventController::class, 'storesampul'])->name('formsampulevent.store');
-    Route::get('/sampul-event/hapus/{id}', [eventController::class, 'hapusSampul'])->name('sampulevent.hapus');
+        //kelola galeriwisata
+    Route::get('/kelolagaleri', [geleriWisataController::class, 'kelolaindexAction']);
+    Route::get('/tambah-galeri-wisata', [geleriWisataController::class, 'tambah']);
+    Route::get('/ubah-galeri-wisata/{id}', [geleriWisataController::class, 'edit']);
+    Route::post('/ubah-galeri-wisata/{id}', [geleriWisataController::class, 'update'])->name('galeriwisata.ubah');
+    Route::post('/tambah-galeri-wisata/store', [geleriWisataController::class, 'store'])->name('formgaleriwisata.store');
+    Route::get('/galeri/hapus/{id}', [geleriWisataController::class, 'hapus'])->name('galeriwisata.hapus');
 
-    //kelola atraksi
-    Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
-    Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);
-    Route::get('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'edit']);
-    Route::post('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'update'])->name('atraksiwisata.ubah');
-    Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
-    Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
+//fasilitas
+    Route::get('/daftar-fasilitas', [fasilitasController::class, 'kelolaindexActionDaftarFasilitas']);
+    Route::get('/tambah-fasilitas-wisata', [fasilitasController::class, 'tambahfasilitas']);
+    Route::get('/ubah-fasilitas-wisata/{id}', [fasilitasController::class, 'editfasilitas']);
+    Route::post('/ubah-fasilitas-wisata/{id}', [fasilitasController::class, 'update'])->name('fasilitaswisata.ubah');
+    Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
+    Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
 
-    Route::get('/sampul-atraksi', [atraksiController::class, 'kelolaindexActionSampul']);
-    Route::get('/tambah-sampul-atraksi', [atraksiController::class, 'tambahsampul']);
-    Route::get('/ubah-sampulatraksi/{id}', [atraksiController::class, 'editsampul']);
-    Route::post('/ubah-sampulatraksi/{id}', [atraksiController::class, 'updatesampul'])->name('formsampulatraksi.ubah');
-    Route::post('/tambah-sampul-atraksi/store', [atraksiController::class, 'storesampul'])->name('formsampulatraksi.store');
-    Route::get('/sampul-atraksi/hapus/{id}', [atraksiController::class, 'hapusSampul'])->name('sampulatraksi.hapus');
+            //kelola atraksi
+            Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
+            Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);
+            Route::get('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'edit']);
+            Route::post('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'update'])->name('atraksiwisata.ubah');
+            Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
+            Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
 
+                            //kelola event
+        Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
+        Route::get('/tambah-event-wisata', [eventController::class, 'tambah']);
+        Route::get('/ubah-event-wisata/{id}', [eventController::class, 'edit']);
+        Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
+        Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
+        Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
+
+    });
     Route::group(['admin' => 2], function () {
         //kelola kabupaten
         Route::get('/kelolakab', [KabupatenController::class, 'kelolaindexAction']);
@@ -155,38 +162,51 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
         Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
         Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
 
+        //kelola atraksi
+        Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
+        Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);
+        Route::get('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'edit']);
+        Route::post('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'update'])->name('atraksiwisata.ubah');
+        Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
+        Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
 
+        Route::get('/sampul-atraksi', [atraksiController::class, 'kelolaindexActionSampul']);
+        Route::get('/tambah-sampul-atraksi', [atraksiController::class, 'tambahsampul']);
+        Route::get('/ubah-sampulatraksi/{id}', [atraksiController::class, 'editsampul']);
+        Route::post('/ubah-sampulatraksi/{id}', [atraksiController::class, 'updatesampul'])->name('formsampulatraksi.ubah');
+        Route::post('/tambah-sampul-atraksi/store', [atraksiController::class, 'storesampul'])->name('formsampulatraksi.store');
+        Route::get('/sampul-atraksi/hapus/{id}', [atraksiController::class, 'hapusSampul'])->name('sampulatraksi.hapus');
 
-        // //Kelola Objek Wisatawa
-        // Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
-        // Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
-        // Route::get('/ubah-objek-wisata/{id}', [objekWisataController::class, 'edit']);
-        // Route::post('/ubah-objek-wisata/{id}', [objekWisataController::class, 'update'])->name('objekwisata.ubah');
-        // Route::post('/tambah-objek-wisata/store', [objekWisataController::class, 'store'])->name('formobjekwisata.store');
-        // Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
+         //kelola event
+        Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
+        Route::get('/tambah-event-wisata', [eventController::class, 'tambah']);
+        Route::get('/ubah-event-wisata/{id}', [eventController::class, 'edit']);
+        Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
+        Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
+        Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
 
-        //kelolaberita
-        // Route::get('/kelolaberita', [beritaController::class, 'kelolaindexAction']);
-        // Route::get('/tambah-berita-wisata', [beritaController::class, 'tambah']);
-        // Route::get('/ubah-berita-wisata/{id}', [beritaController::class, 'edit']);
-        // Route::post('/ubah-berita-wisata/{id}', [beritaController::class, 'update'])->name('beritawisata.ubah');
-        // Route::post('/tambah-berita-wisata/store', [beritaController::class, 'store'])->name('formberitawisata.store');
-        // Route::get('/berita/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
-        //kelola event
-        // Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
-        // Route::get('/tambah-event-wisata', [eventController::class, 'tambah']);
-        // Route::get('/ubah-event-wisata/{id}', [eventController::class, 'edit']);
-        // Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
-        // Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
-        // Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
+        Route::get('/sampul-event', [eventController::class, 'kelolaindexActionSampul']);
+        Route::get('/tambah-sampul-event', [eventController::class, 'tambahsampul']);
+        Route::get('/ubah-sampulevent/{id}', [eventController::class, 'editsampul']);
+        Route::post('/ubah-sampulevent/{id}', [eventController::class, 'updatesampul'])->name('formsampulevent.ubah');
+        Route::post('/tambah-sampul-event/store', [eventController::class, 'storesampul'])->name('formsampulevent.store');
+        Route::get('/sampul-event/hapus/{id}', [eventController::class, 'hapusSampul'])->name('sampulevent.hapus');
 
-        // //kelola atraksi
-        // Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
-        // Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);
-        // Route::get('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'edit']);
-        // Route::post('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'update'])->name('atraksiwisata.ubah');
-        // Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
-        // Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
+        //kelola pengalaman wisata
+         Route::get('/kelolapengalamanwisata', [PengalamanController::class, 'kelolaindexAction']);
+         Route::get('/tambah-pengalaman-wisata', [PengalamanController::class, 'tambah']);
+         Route::get('/ubah-pengalaman-wisata/{id}', [PengalamanController::class, 'edit']);
+         Route::post('/ubah-pengalaman-wisata/{id}', [PengalamanController::class, 'update'])->name('pengalamanwisata.ubah');
+         Route::post('/tambah-pengalaman-wisata/store', [PengalamanController::class, 'store'])->name('formpengalamanwisata.store');
+         Route::get('/pengalamanwisata/hapus/{id}', [PengalamanController::class, 'hapus'])->name('pengalamanwisata.hapus');
+       
+                 //Persetujuan pengalaman wisata
+         Route::get('/persetujuanpengalamanwisata', [PengalamanController::class, 'kelolaindexAction2']);
+         Route::get('/tambah-persetujuanpengalaman-wisata', [PengalamanController::class, 'tambah']);
+         Route::get('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'edit']);
+         Route::post('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'update'])->name('persetujuanpengalamanwisata.ubah');
+         Route::post('/tambah-persetujuanpengalaman-wisata/store', [PengalamanController::class, 'store'])->name('formpersetujuanpengalamanwisata.store');
+         Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapus'])->name('persetujuanpengalamanwisata.hapus');
     });
 });
 

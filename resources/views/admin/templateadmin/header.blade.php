@@ -81,6 +81,13 @@
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Per-Fasilitas</a></li>
                         </ul>
                     </li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i>Pengalaman Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="{{url('/kelolapengalamanwisata')}}">Kelola Pengalaman Wisata</a></li>
+                            <li><a href="{{url('/persetujuanpengalamanwisata')}}">Persetujuan Pengalaman</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{url('/kelolagaleri')}}"><i class="ti-layout-grid4-alt"></i> Kelola Akun User </a></li>
             </div>
         </div>
     </div>

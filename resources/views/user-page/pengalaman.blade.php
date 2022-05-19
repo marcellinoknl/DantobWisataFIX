@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate">
-                <h1 class="mb-4" style="text-align: center;">FASILITAS</h1>
+                <h1 class="mb-4" style="text-align: center;">CERITA WISATAWAN</h1>
             </div>
         </div>
     </div>
@@ -15,39 +15,62 @@
 
     <div class="container">
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
-            Fasilitas
+            PENGALAMAN WISATA
         </h1>
         <p class="caption" style=" color:black;">
-            Beberapa Fasilitas yang dapat membantu anda selama mengunjungi Danau Toba
+            Berikut Pengalaman Wisatawan Danau Toba:
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
+        <script>
+            function myAuthFunc() {
+              alert("Anda harus Login terlebih dahulu");
+             
+            }
+            </script>
         <div class="container p-md-2 p-2">
-            @if(empty($sampul_fasilitas) || count($sampul_fasilitas) == 0)
+            <div class="col-md-12"> 
+                @guest
+            <a href="{{url('/tambah-pengalamanwisata')}}"><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark" onclick="myAuthFunc()" >Tambahkan Pengalaman</button></a>
+                   @else
+            <a href="{{url('/tambah-pengalamanwisata')}}"><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Tambahkan Pengalaman</button></a>
+
+                @endguest
+            </div>
+
+
+            @if(empty($pengalaman) || count($pengalaman) == 0)
             <br><br>
             <div class="row justify-content-md-center">
             <div class="col-12 col-md-8 py-4">
              <div class="card">
                  <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
-                Kategori Fasilitas Belum Ditambahkan
+                Pengalaman Belum Ditambahkan
                  </div>
                </div>
             </div>
             </div>
              @else
+
             <div class="row g-2 g-md-4">
-                @foreach ($sampul_fasilitas as $sampuls)
-                <div class="row g-2 g-md-3 ">
-                    <div class="col-6 col-md-4 py-4 px-4">
-                        <div class="mycard-lebar">
-                            <a href="{{ url('/fasilitas-wisata/detail1/' . $sampuls->id) }}">
-                            <img src="{{ url('images/fasilitas/' . $sampuls->file_foto) }}" alt=""
-                                class="mycard-image-lebar">
-                            </a>
-                            <h3 class="mycard-title-lebar">{{ $sampuls->nama_sampul }}</h3>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($pengalaman as $pengalamans)
+             
+				<div class="col-6 col-md-4 py-4">
+				<div class="mycard-galeri">
+						<img src="{{ url('images/pengalamanwisata/' . $pengalamans->file_foto) }}" alt="{{ $pengalamans->judul }}" id="myImg{{ $pengalamans->id_pengalaman }}"
+							class="mycard-image-galeri">
+					<h3 class="mycard-title-galeri">{{ $pengalamans->judul }}</h3>
+
+				</div>
+			</div>
+
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+					<span class="close">&times;</span>
+					<img class="modal-content" id="img01">
+					<div id="caption"></div>
+				</div>
+
                 @endforeach
             </div>
             @endif
@@ -57,19 +80,29 @@
         
 
 
-
-
-
-
-
-{{-- <!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Lihat Selengkapnya
-				</a>
-			</div>
-	
-	</div> --}}
+			<!-- Javascript modal -->
+			<script>
+				// Get the modals
+				var modal = document.getElementById("myModal");
+				
+				// Get the image and insert it inside the modal - use its "alt" text as a caption
+				var img = document.getElementById("myImg");
+				var modalImg = document.getElementById("img01");
+				var captionText = document.getElementById("caption");
+				img.onclick = function(){
+				  modal.style.display = "block";
+				  modalImg.src = this.src;
+				  captionText.innerHTML = this.alt;
+				}
+				
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+				
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() { 
+				  modal.style.display = "none";
+				}
+				</script>
 
 <!--===============================================================================================-->
 <script src="template2/vendor/jquery/jquery-3.2.1.min.js"></script>

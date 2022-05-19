@@ -8,7 +8,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1>Hello, <span>Welcome Here</span></h1>
+                            <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
                         </div>
                     </div>
                 </div>
@@ -17,8 +17,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Home</li>
+                                <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
+
                             </ol>
                         </div>
                     </div>
