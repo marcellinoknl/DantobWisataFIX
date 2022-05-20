@@ -99,43 +99,46 @@
     </div>
 </section>
 
-<section class="ftco-section services-section">
+<section class="ftco-section">
     <div class="container">
-        <div class="row d-flex">
-            <div class="col-md-12 order-md-last heading-section pl-md-5 ftco-animate d-flex align-items-center">
-                <div class="w-100">
-                    <div class="col-md-12 heading-section text-center ftco-animate">
-                        <h2 class="mb-4">Destinasi Wisata</h2>
+        <div class="row justify-content-center pb-4">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Event</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="project-wrap">
+                    @if(empty($event) || count($event) == 0)
+                    <br><br>
+                    <div class="row justify-content-md-center">
+                    <div class="col-12 col-md-8 py-4">
+                     <div class="card">
+                         <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
+                           Event Wisata Belum Ditambahkan
+                         </div>
+                       </div>
                     </div>
-                    <div class="row d-flex">
-                        <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                            <!-- Block1 -->
-                            <div class="block1 wrap-pic-w">
-                                <img src="images/destination-1.jpg" alt="IMG-BANNER">
-
-                                <a href="product.html"
-                                    class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                                    <div class="block1-txt-child1 flex-col-l">
-                                        <span class="block1-name ltext-102 trans-04 p-b-8">
-                                            Berita
-                                        </span>
-
-                                        <span class="block1-info stext-102 trans-04">
-                                            Lake Toba's News
-                                        </span>
-                                    </div>
-
-                                    <div class="block1-txt-child2 p-b-4 trans-05">
-                                        <div class="block1-link stext-101 cl0 trans-09">
-                                            Tinjau Sekarang
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                     </div>
+                     @else
+                     <div class="row g-2 g-md-4">
+                         @foreach ($event as $events)
+                             <div class="col-6 col-md-3 py-4">
+                                 <div class="mycard-detail-home">
+                                     <a href="{{ url('/event-wisata/detail1/' . $events->id) }}">
+                                         <img src="{{ url('images/eventwisata/' . $events->file_foto) }}" alt=""
+                                             class="mycard-image-detail-home">
+                                     </a>
+                                     <h3 class="mycard-title-detail-home" >{{ $events->nama_sampul }}</h3>
+                                 </div>
+                             </div>
+                         @endforeach
+                     </div>
+                     @endif
                 </div>
             </div>
+        </div>
+    </div>
 </section>
 
 {{-- <section class="ftco-section services-section">

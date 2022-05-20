@@ -9,7 +9,8 @@ class homepageController extends Controller
     public function indexAction() {
         $objekwisata = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(1)->get();
         $objekwisataa = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(8)->get();
-        return view('user-page.homepage-index',compact('objekwisata','objekwisataa'));
+        $event = DB::table('sampul_event')->orderBy('created_at','desc')->limit(4)->get();
+        return view('user-page.homepage-index',compact('objekwisata','objekwisataa','event'));
     }
     
     // public function indexUserDestinasi(id_obj_wisata){
