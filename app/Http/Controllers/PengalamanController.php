@@ -28,8 +28,6 @@ class PengalamanController extends Controller
 
     public function kelolaindexAction()
     {
-
-
         $pengalaman = DB::table('pengalaman_wisata')
             ->select('pengalaman_wisata.*', 'users.name')
             ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
