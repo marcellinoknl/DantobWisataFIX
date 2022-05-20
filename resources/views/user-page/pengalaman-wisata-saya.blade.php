@@ -38,25 +38,15 @@
                         <th scope="col">Status</th>
                         <th scope="col">Aksi</th>
                       </tr>
+                      <?php $number =1 ?>
                     </thead>
                     <tbody>
+                        {{-- @foreach ( as ) --}}
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row">{{$number++}}</th>
+                        <td></td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                      {{-- @endforeach --}}
                     </tbody>
                   </table>
 
