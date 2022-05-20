@@ -103,6 +103,36 @@ class KelolaEvent extends Seeder
                'deskripsi_event' => 'Toba Caldera World Music Festival 2021 jadi pesta besar buat merayakan Geopark Kaldera Toba yang sudah ditetapkan menjadi bagian dari UNESCO Global Geopark (UGG). Untuk tema Toba Caldera World Music Festival 2021 yang dipilih adalah "Sound of The Earth" dan akan di selenggarakan pada tanggal 1 Oktober 2021 - 3 Oktober 2022. Lewat event yang dikemas secara menarik ini diharapkan masyarakat luas bisa lebih kenal sama Danau Toba sekaligus dapat edukasi soal budaya dan seni melalui musik yang disajikan. Pada Festival kali ini ada musisi dari empat negara yang dijadwalkan tampil secara daring. Sedangkan, enam musisi nasional yang berasal dari beberapa provinsi di Indonesia akan hadir ke lokasi perhelatan. Toba Caldera World Music Festival juga turut melibatkan pegiat budaya, seni, dan musisi lokal dari Kawasan Danau Toba.',
                'file_foto' => 'TheCaldera.png'
             ],
+            [ 
+               'id_sampul_event' => '1',
+               'judul_event' => 'Soposurung Art Festival',               
+               'deskripsi_event' => 'Soposurung Art Festival sebagai bagian dari Calender of Event Pariwisata Danau Toba merupakan kegiatan yang dikemas dalam bentuk event festival seni dan budaya masyarakat setempat. Event ini menampilkan berbagai seni tari maupun seni suara dan budaya yang berkembang di masyarakat yang ada di Soposurung. Meskipun Festival ini masih belum dikenal oleh masyarakat luas, namun diharapkan melalui kegiatan yang konsisten seperti ini dapat menjadi bagian dari pesona indonesia yang hadir di bumi pertiwi sebagai warisan budaya yang utuh dan lestari.
+               Pelaksana : Kominfo Kadis Kominfo
+               Tanggal : Apr - 17 - 2021
+               Jam : 9.00 am
+               Biaya : Gratis',
+               'file_foto' => 'Soposurung.jpg'
+            ],
+            [ 
+               'id_sampul_event' => '1',
+               'judul_event' => 'Pesta Tugu, Momentum Awal Event-Event Nasional Di Dairi Pasca Pandemi',               
+               'deskripsi_event' => 'SILAHISABUNGAN – Bupati Dairi, Dr Eddy Keleng Ate Berutu menghadiri Pesta Partangiangan & Budaya Luhutan Bolon Parsadaan Turpuk Pomparan Silahisabungan Bolahan Amak Dabariba Raja atau yang lebih dikenal dengan ‘Pesta Tugu’ yang dilaksanakan selama 2 hari yakni, 13 dan 14 November 2021 bertempat di Lokasi Tugu Silahisabungan, Kecamatan Silahisabungan.
+               Dalam acara itu Bupati Eddy Berutu bersama Ketua TP PKK Kabupaten Dairi didampingi oleh Kapolres Dairi dan Dandim 06/02 Dairi yang pada kesempatan yang sama menerima Cinderamata dari Raja Raja Turpuk Pomparan Raja Silahisabungan.',
+               'file_foto' => 'PestaTugu.jpg'
+            ],
+            [ 
+               'id_sampul_event' => '1',
+               'judul_event' => 'Pagelaran Seni Budaya',               
+               'deskripsi_event' => 'Pagelaran Seni Budaya ini dilaksanakan sebagai bentuk kepedulian Pemerintah Kabupaten Humbang Hasundutan dalam rangka pelestarian dan pengembangan seni budaya di Kabupaten Humbang Hasundutan. Kegiatan ini juga sebagai wadah untuk menampung minat dan bakat para pegiat seni serta masyarakat dalam bidang seni budaya. Selanjutnya, kegiatan ini juga sekaligus sebagai atraksi pariwisata untuk menarik minat masyarakat berkunjung ke Kabupaten Humbang Hasundutan. Kegiatan ini dilaksanakan secara periodik, setiap minggu ataupun setiap bulan di lokasi wisata.',
+               'file_foto' => 'Sipinsur.jpg'
+            ],
+            [ 
+               'id_sampul_event' => '1',
+               'judul_event' => 'Wabup Humbahas Buka Pagelaran Seni dan Budaya di Sipinsur',               
+               'deskripsi_event' => 'Wakil Bupati Humbang Hasundutan Dr. (Can) Oloan Paniaran Nababan, SH., MH membuka acara Launching Pagelaran Seni dan Budaya Kabupaten Humbang Hasundutan yang diselenggarakan di Objek Wisata Sipinsur Kecamatan Paranginan. Senin (11/4).Dalam sambutannya Oloan mengatakan berbagai potensi pariwisata yang dimiliki oleh Kabupaten Humbang Hasundutan harus diarahkan pengembangannya agar dapat memberikan manfaat yang signifikan terhadap pembangunan ekonomi daerah dan masyarakat, pelestarian lingkungan alam dan budaya serta peningkatan daya saing daerah.',
+               'file_foto' => 'Wabub.jpg'
+            ],
+
         ]);
     }
 }
