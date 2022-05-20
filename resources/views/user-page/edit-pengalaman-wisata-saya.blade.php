@@ -22,19 +22,19 @@
         <br>
         
         <div class="container p-md-2 p-2">
-            <form action="{{route('pengalamansaya.ubah', $update->id_pengalaman)}}" method="post" id="contact-form" enctype="multipart/form-data" value="{{$update->judul}}">	
+            <form action="{{route('pengalamansaya.ubah', $updates->id_pengalaman)}}" method="post" id="contact-form" enctype="multipart/form-data">	
                 {{ csrf_field() }}
                 <div class="form-group">
                   <label for="inputAddress">Judul Pengalaman Wisata</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul" name="judul">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul" name="judul" value="{{$updates->judul}}">
                 </div>
                 <div class="form-group">
                     <label for="inputAddress">Foto Pengalaman Wisata</label>
-                    <input type="file" class="form-control" id="inputAddress" name="file_foto" value="{{$update->file_foto}}">
+                    <input type="file" class="form-control" id="inputAddress" name="file_foto" value="">{{$updates->file_foto}}
                   </div>
                   <div class="form-group">
                     <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
-                    <textarea name="deskripsi" cols="30" rows="10" id="editor" height="300px" value="{{$update->deskripsi}}"></textarea>
+                    <textarea name="deskripsi" cols="30" rows="10" id="editor" height="300px" value="">{{$updates->deskripsi}}</textarea>
                     <script>
                         ClassicEditor
                                 .create( document.querySelector( '#editor' ) )

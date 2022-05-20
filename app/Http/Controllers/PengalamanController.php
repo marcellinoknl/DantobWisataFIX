@@ -30,10 +30,9 @@ class PengalamanController extends Controller
     }
 
 
-    public function editPengalamanSaya($id_pengalaman)
-    {
-        $update = PengalamanWisata::find($id_pengalaman);
-        return view('user-page.edit-pengalaman-wisata-saya', compact('update'));
+    public function editPengalamanSaya($id_pengalaman){
+        $updates = PengalamanWisata::find($id_pengalaman);
+        return view('user-page/edit-pengalaman-wisata-saya', compact('updates'));
     }
 
     public function updatePengalamanSaya(request $request, $id_pengalaman)
@@ -61,7 +60,7 @@ class PengalamanController extends Controller
         $update->deskripsi = $request->deskripsi;
         $update->save();
 
-        return redirect('');
+        return redirect('/pengalamanwisata-saya');
     }
 
 //---------------------------------------//
