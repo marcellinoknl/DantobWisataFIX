@@ -24,7 +24,7 @@ class SampulAtraksi extends Seeder
             ],
             [
                 'nama_sampul' => 'Kuliner',
-                'file_foto' => 'Kuliner.jpg'
+                'file_foto' => 'Kuliner.jpeg'
             ],
             [
                 'nama_sampul' => 'Flora dan Fauna',
