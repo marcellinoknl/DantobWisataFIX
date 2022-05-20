@@ -143,4 +143,18 @@ class PengalamanController extends Controller
         }
         return redirect()->back();
     }
+
+    public function TambahPengalaman(Request $request){
+            $TambahPengalaman = new PengalamanWisata();
+            $TambahPengalaman->id_user = Auth::user()->id;
+            $TambahPengalaman->judul = $request->judul;
+            $TambahPengalaman->deskripsi = $request->deskripsi;
+            if ($request->hasFile('file_foto')){
+                $file= $request->file('file_foto')->getClientOriginalName();
+                $request->file('file_foto')->move('images/Pengalaman',$file);
+                $TambahPengalaman->file_foto = $file;
+            }
+            $TambahPengalaman->save();
+            return redirect('/pengalamanwisata-saya');
+    }
 }

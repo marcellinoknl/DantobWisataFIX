@@ -51,7 +51,7 @@
                   </table>
 
 
-                @foreach ($pengalamansaya as $pengalamansaya)
+                @foreach ($pengalamansaya as $pengalamans)
              
 				<div class="col-6 col-md-4 py-4">
 				<div class="mycard-galeri">
