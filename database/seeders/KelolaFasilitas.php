@@ -194,7 +194,7 @@ class KelolaFasilitas extends Seeder
             [ 
                'id_fasilitas' => '19',
                'nama_fasilitas' => 'Angkasa Cafe & Resto',               
-               'deskripsi' => 'Salah satu cafe yang nyaman, ada karaoke, live musik dengan aneka menu masakan yang cocok dan enak. Saya suka *Angkasa Avocado* Kami sering pilih ini untuk tempat arisan atau meeting bersama komunitas saya
+               'deskripsi' => 'Salah satu cafe yang nyaman, ada karaoke, live musik dengan aneka menu masakan yang cocok dan enak. Saya suka Angkasa Avocado Kami sering pilih ini untuk tempat arisan atau meeting bersama komunitas saya
                salah satu tempat nongkrong yang populer di kota Tarutung. Tersedia menu makanan western dan Nusantara, serta tersedia kopi dan minuman alkohol. Tempat parkir luas dan ada tempat cuci kendaraan. Pada malam hari anda dapat berkaraoke disini. Harga makanan dan minumannya standart Resto.',
                'lokasi' => 'Jalan Mayjend J. Samosir No 1, Kelurahan Hutatoruan X, Kecamatan Tarutung, Kabupaten Tapanuli Utara, Sumatera Utara',
                'file_foto' => 'AngkasaKafeResto.png',
