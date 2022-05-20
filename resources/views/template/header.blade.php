@@ -119,8 +119,19 @@
                             class="nav-link">Fasilitas</a></li>
                     <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
-                    <li class="nav-item"><a href="{{ url('/pengalaman-wisata') }}" class="nav-link">Pengalaman Wisata</a>
-                    </li>
+
+                    <div class="navbar-nav ml-auto dropdown show">
+                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <a href="/blog" class="nav-link">Artikel</a>
+                        </li>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a href="{{ url('/pengalaman-wisata') }}"><button class="dropdown-item"
+                                    type="button">Pengalaman Wisata</button></a>
+                            <a href="{{ url('/pengalamanwisata-saya') }}"><button class="dropdown-item"
+                                    type="button">Pengalaman Wisata Saya</button></a>
+                        </div>
+                    </div>
                         <div class="navbar-nav ml-auto dropdown show">
                             <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">

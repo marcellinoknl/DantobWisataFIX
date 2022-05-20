@@ -20,6 +20,12 @@ class PengalamanController extends Controller
         return view('user-page.tambah-pengalaman', ['pengalamanplus' => $pengalamanplus]);
     }
 
+    public function indexActionpengalamansaya()
+    {
+        $pengalamansaya = DB::table('pengalaman_wisata')->get();
+        return view('user-page.pengalaman-wisata-saya', ['pengalamansaya' => $pengalamansaya]);
+    }
+
     public function kelolaindexAction()
     {
 
