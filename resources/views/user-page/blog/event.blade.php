@@ -1,6 +1,6 @@
 @include('template/header')
 
-<div class="hero-wrap  " style="background-image: url(images/bgpa.jpeg); width: 100%; height:100%;">
+<div class="hero-wrap  " style="background-image: url(images/eventbg.jpg); width: 100%; height:100%;">
     <div class="overlay" style="width:100%;height: 100%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">

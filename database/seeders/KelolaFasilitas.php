@@ -14,7 +14,6 @@ class KelolaFasilitas extends Seeder
     public function run()
     {
         \App\Models\Fasilitas::insert([
-            
             ]);
         }
     }
