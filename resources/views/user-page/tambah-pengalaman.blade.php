@@ -22,32 +22,20 @@
         <br>
         
         <div class="container p-md-2 p-2">
-            <form>
+            <form action="" >
                 <div class="form-group">
                   <label for="inputAddress">Judul Pengalaman Wisata</label>
                   <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul">
                 </div>
-                  <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                  </div>
-                </div>
                 <div class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
+                    <label for="inputAddress">Foto Pengalaman Wisata</label>
+                    <input type="file" class="form-control" id="inputAddress" placeholder="Masukkan Pengalaman Anda">
                   </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                  <div class="form-group">
+                    <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                  </div>
+                <button type="submit" class="btn btn-primary">Tambah</button>
               </form>
         </div>
         </div>
