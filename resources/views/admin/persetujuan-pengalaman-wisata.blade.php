@@ -53,13 +53,16 @@
                                                                         <?php $number = 1; ?>
                                                                     </thead>
                                                                     <tbody>
-                                                                   {{-- @foreach ($kategori as $kat)
+                                                                   {{-- @foreach ($pengalaman as $pengalaman)
                                                                             <tr>
                                                                                 <td class="text-center">
-                                                                                    <?php echo $number++; ?>
+                                                                                <?php echo date_format($date,"d M Y");?>
                                                                                 </td>
                                                                                 <td class="text-center">
-                                                                                    {{ $kat->nama_kategori }}
+                                                                                    {{$pengalaman->judul }}
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    {{$pengalaman->penulis}}
                                                                                 </td>
                                                                                 <td>
                                                                                     <center>

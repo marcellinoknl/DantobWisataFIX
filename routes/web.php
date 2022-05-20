@@ -59,6 +59,9 @@ Route::get('/galeriwisata', [geleriWisataController::class, 'indexAction']);
 //pengalaman wisata
 Route::get('/pengalaman-wisata', [PengalamanController::class, 'indexAction']);
 Route::get('/tambah-pengalamanwisata', [PengalamanController::class, 'indexActiontambahpengalaman'])->middleware('auth');
+Route::post('/tambahpengalamanwisata', [PengalamanController::class, 'TambahPengalaman'])->middleware('auth')->name('TambahPengalaman');
+Route::get('/pengalamanwisata-saya', [PengalamanController::class, 'indexActionpengalamansaya'])->middleware('auth');
+
 
 
 //--AUTHOR SIDE--
