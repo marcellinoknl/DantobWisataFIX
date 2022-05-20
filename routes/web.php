@@ -61,6 +61,8 @@ Route::get('/pengalaman-wisata', [PengalamanController::class, 'indexAction']);
 Route::get('/tambah-pengalamanwisata', [PengalamanController::class, 'indexActiontambahpengalaman'])->middleware('auth');
 Route::post('/tambahpengalamanwisata', [PengalamanController::class, 'TambahPengalaman'])->middleware('auth')->name('TambahPengalaman');
 Route::get('/pengalamanwisata-saya', [PengalamanController::class, 'indexActionpengalamansaya'])->middleware('auth');
+Route::get('/ubah-pengalamansaya/{id}', [PengalamanController::class, 'editPengalamanSaya']);
+Route::post('/edit-pengalamanwisata-saya/{id}', [PengalamanController::class, 'updatePengalamanSaya'])->name('pengalamansaya.ubah')->middleware('auth');
 
 
 
