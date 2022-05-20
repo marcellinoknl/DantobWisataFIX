@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Objek_Wisata;
+use App\Models\PengalamanWisata;
 use Illuminate\Http\Request;
+use Auth;
 
 class PengalamanController extends Controller
 {
@@ -17,11 +19,53 @@ class PengalamanController extends Controller
         $pengalamanplus = DB::table('pengalaman_wisata')->get();
         return view('user-page.tambah-pengalaman', ['pengalamanplus' => $pengalamanplus]);
     }
+//pengalaman saya
 
+    public function indexActionpengalamansaya()
+    {
+        $pengalamansaya = DB::table('pengalaman_wisata')
+        ->where('id_user', '=',Auth::user()->id)
+        ->get();
+        return view('user-page.pengalaman-wisata-saya', ['pengalamansaya' => $pengalamansaya]);
+    }
+
+
+    public function editPengalamanSaya($id_pengalaman){
+        $updates = PengalamanWisata::find($id_pengalaman);
+        return view('user-page/edit-pengalaman-wisata-saya', compact('updates'));
+    }
+
+    public function updatePengalamanSaya(request $request, $id_pengalaman)
+    {
+        // $this->validate(
+        //     $request,
+        //     [
+        //         'judul' => 'required',
+        //         'deskripsi' => 'required',
+        //         'nama_kategori' => 'required',
+        //         'deskripsi' => 'required',
+        //         'nama_kabupaten' => 'required'
+               
+        //     ]
+        // );
+        $update = PengalamanWisata::find($id_pengalaman);
+        $file = $update->file_foto;
+        if ($request->hasFile('file_foto')) {
+            $file = $request->file('file_foto')->getClientOriginalName();
+            $request->file('file_foto')->move('images/objekwisata', $file);
+            $update->file_foto = $file;
+        }
+        $update->judul = $request->judul;
+        $update->file_foto = $file;
+        $update->deskripsi = $request->deskripsi;
+        $update->save();
+
+        return redirect('/pengalamanwisata-saya');
+    }
+
+//---------------------------------------//
     public function kelolaindexAction()
     {
-
-
         $pengalaman = DB::table('pengalaman_wisata')
             ->select('pengalaman_wisata.*', 'users.name')
             ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
@@ -33,61 +77,47 @@ class PengalamanController extends Controller
     {
         $persetujuan = DB::table('pengalaman_wisata')
             ->select('pengalaman_wisata.*', 'users.name')
-            ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
+            ->join ('users', 'users.id', '=', 'pengalaman_wisata.id_user')
+            ->where ('pengalaman_wisata.status','=','pending')
             ->get();
         return view('admin.persetujuan-pengalaman-wisata', compact('persetujuan'));
     }
 
-    // public function indexAction2($id_obj_wisata_kabupaten)
-    // {
-    //     $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
-    //     $objek_wisata = DB::table('objek_wisata')
-    //         ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
-    //         ->get();
-    //     return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten]);
-    // }
 
-    // public function indexAction3($id_obj_wisata)
-    // {
 
-    //     $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
-    //     return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail]);
-    // }
-
-    // public function tambah()
-    // {
-    //     $kabupaten = Kabupaten::all();
-    //     $kategori = Kategori_Wisata::all();
-    //     return view('admin.tambah-objek-wisata', compact('kabupaten', 'kategori'));
-    // }
+    public function tambah()
+    {
+        $pengalaman = PengalamanWisata::all();
+        // $kategori = Kategori_Wisata::all();
+        return view('admin.tambah-pengalaman-wisata', compact('pengalaman'));
+    }
 
 
 
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
-                'nama_wisata' => 'required',
-                'deskripsi' => 'required',
-                'nama_kategori' => 'required',
-                'nama_kabupaten' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
-            ]
-        );
-        $objek = new Objek_Wisata();
-        $objek->nama_wisata = $request->nama_wisata;
-        $objek->deskripsi = $request->deskripsi;
-        $objek->id_obj_wisata_kabupaten = $request->nama_kabupaten;
-        $objek->id_kat_wisata = $request->nama_kategori;
+        // $this->validate(
+        //     $request,
+        //     [
+        //         'nama_wisata' => 'required',
+        //         'deskripsi' => 'required',
+        //         'nama_kategori' => 'required',
+        //         'nama_kabupaten' => 'required',
+        //         'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+        //     ]
+        // );
+        $pengalaman = new PengalamanWisata();
+        $pengalaman->judul = $request->judul;
+        $pengalaman->deskripsi = $request->deskripsi;
+        $pengalaman->id_user = Auth::user()->id;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
-            $request->file('file_foto')->move('images/objekwisata', $file);
-            $objek->file_foto = $file;
+            $request->file('file_foto')->move('images/pengalaman', $file);
+            $pengalaman->file_foto = $file;
         }
 
-        $objek->save();
-        return redirect('kelolaobjek');
+        $pengalaman->save();
+        return redirect('kelolapengalamanwisata');
     }
 
     public function edit($id_obj_wisata)
@@ -134,5 +164,19 @@ class PengalamanController extends Controller
         if ($hapus->delete()) {
         }
         return redirect()->back();
+    }
+
+    public function TambahPengalaman(Request $request){
+            $TambahPengalaman = new PengalamanWisata();
+            $TambahPengalaman->id_user = Auth::user()->id;
+            $TambahPengalaman->judul = $request->judul;
+            $TambahPengalaman->deskripsi = $request->deskripsi;
+            if ($request->hasFile('file_foto')){
+                $file= $request->file('file_foto')->getClientOriginalName();
+                $request->file('file_foto')->move('images/Pengalaman',$file);
+                $TambahPengalaman->file_foto = $file;
+            }
+            $TambahPengalaman->save();
+            return redirect('/pengalamanwisata-saya');
     }
 }

@@ -74,6 +74,106 @@ class KelolaAtraksi extends Seeder
                 'file_foto' => 'FaunaGajahSumatera.jpg',
                 'id_sampul_atraksi' => '4',
             ],
+            [
+                'judul' => 'Kopi Sidikalang',
+                'deskripsi' => 'Merdeka.com - Sumatera terkenal sebagai salah satu daerah penghasil kopi terbaik di Indonesia. Bagi para penikmat kopi, pasti sudah tidak asing lagi dengan jenis kopi terbaik yang dihasilkan di daerah ini. Salah satunya adalah Kopi Sidikalang. Kopi ini dihasilkan di daerah Sidikalang, Kabupaten Dairi, Sumatera Utara.
+                Daerah Sidikalang memang dikenal sebagai penghasil biji kopi robusta terbaik yang memiliki kadar kafein tinggi, yaitu mencapai 70-80%. Berada di kawasan Bukit Barisan, dengan kombinasi kawasan yang sejuk dan dingin serta tanah yang subur, membuat Sidikalang mampu menghasilkan salah satu kopi terbaik di nusantara.                
+                Tingkat keasaman yang dihasilkan Kopi Sidikalang ini terbilang rendah jika dibandingkan dengan kopi jenis lain. Sehingga cocok dikonsumsi untuk pecinta kopi yang memiliki masalah lambung. Selain itu, cita rasa pahit khas cokelat yang dihasilkan membuat sensasi kenikmatan tersendiri dibandingkan dengan kopi lain.',
+                'file_foto' => 'KopiSidikalang.jpg',
+                'id_sampul_atraksi' => '3',
+            ],
+            [
+                'judul' => 'Lappet',
+                'deskripsi' => 'seringjalan.com - Jika Anda mengenal makanan bernama Awug, mungkin Anda tidak asing dengan makanan khas Sidikalang ini. Makanan yang masuk ke dalam kategori jajanan pasar ini dikenal dengan nama Lappet atau Lapet. Kue Lapet ini merupakan makanan khas kebanggaan dari masyarakat Sumatera Utara. Makanan Khas Sidikalang Kabupaten Dairi  ini diolah menggunakan bahan beras yang disajikan di dalam daun pisang berbentuk kerucut. Makanan ini terasa sangat gurih untuk dengan tambahan gula merah dan parutan kelapa.',
+                'file_foto' => 'Lappet.png',
+                'id_sampul_atraksi' => '3',
+            ],
+            [
+                'judul' => 'Dekke Naniura',
+                'deskripsi' => 'seringjalan.com - Dekke Naniura memiliki nilai keunikan tersendiri dibandingkan hidangan lainnya. Bagaimana tidak, dahulu kuliner ini hanya disajikan untuk raja-raja Batak maupun disuguhkan hanya ketika ada upacara adat. Namun sekarang, kamu bisa menemukan kuliner yang satu ini di berbagai tempat makan terkenal di Tarutung. Selain itu, yang menjadikan Dekke Naniura semakin spesial adalah cara memasaknya. Bahannya tidak dibakar melainkan disajikan dalam kondisi masih mentah. Sebelum menyajikan dekke naniura, ikan akan terlebih dahulu direndam di  perasan jeruk limau dan larutan asam. Masyarakat yang tinggal di Tarutung percaya bahwa melalui cara inilah bakteri yang membahayakan kesehatan akan mati. Cara ini juga mampu menghilangkan bau amis pada ikan. Setelah itu, ikan akan langsung dilumuri bumbu halus dengan rasa sangat lezat.',
+                'file_foto' => 'DekkeNaniura.png',
+                'id_sampul_atraksi' => '3',
+            ],
+            [
+                'judul' => 'Dali ni Horbo',
+                'deskripsi' => 'seringjalan.com - Makanan khas Tarutung yang ketiga adalah Dali Ni Horbo. Untuk cara memasaknya sebenarnya sama yakni dengan menggunakan bumbu arsik yang ditambahkan ikan. Dengan cara pengolahan yang tradisional dan sederhana susu horbo ini dapat di konsumsi sebagai lauk pauk atau bahkan di makan langsung. Namun perbedaannya yakni dali ni horbo tidak menjadikan ikan sebagai bahan utama. Bahannya berasal dari susuk kerbau yang sebelumnya dipadatkan. Tidak sedikit masyarakat di Tarutung atau Tapanuli Utara menamai hidangan ini sebagai kejunya orang Batak. Hal ini karena proses pemadatan susu kerbau tersebut hampir sama ketika kamu hendak membuat keju.',
+                'file_foto' => 'DaliniHorbo.png',
+                'id_sampul_atraksi' => '3',
+            ],
+            [
+                'judul' => 'Manuk Napinadar',
+                'deskripsi' => 'Manuk napinadar atau ayam napinadar merupakkan Kuliner khas Batak, biasanya disajikan saat momen tertentu saja. Manuk napinadar makanan khas Batak yang Dulu biasa dijadikan hidangan untuk raja. Kuliner satu ini terbilang unik. Pertama daging ayam direbus lebih dulu dengan bumbu khas. Kemudian setelah matang, dibakar, setelah itu diberi bumbu bahan utamanya seperti andaliman (merica Batak), bawang putih dan kemiri yang sudah dibakar. Menariknya, masakan ini memakai darah ayam. Sehingga kuahnya kental, dan terasa lebih gurih. Namun bagi Anda yang muslim, bisa menggantinya dengan parutan kelapa. Rasanya sama gurihnya. Manuk napinadar dapat Disajikan dengan nasi putih hangat, lalapan, dan yang menariknya lagi, disantap bersama kuah bekas air rebusan daging ayam, disajikan bukan di mangkuk, melainkan gelas.',
+                'file_foto' => 'ManukNapinadar.png',
+                'id_sampul_atraksi' => '3',
+            ],
+            [
+                'judul' => 'Tenun Tarutung',
+                'deskripsi' => 'Tarutung menjadi wilayah di Sumatera Utara yang dikenal karena ulosnya. Hampir sebagian besar masyarakat di sini mengandalkan hasil tenun ulos dan songket untuk membantu perekonomian mereka. Di Tarutung, Tapanuli Utara, para penenun kain ulos adalah kaum wanita. Usai bekerja di ladang sebagai petani, para wanita lantas pulang lalu mulai menenun di sebuah "ruang kerja" yang tak terlalu besar di rumah mereka. Di dalam "ruang kerja” itu terdapat alat tenun tradisional dan alat pintal benang beraneka warna. Para wanita di Tarutung sudah belajar memintal sejak masih sangat kecil. Diawali dengan membantu penenun yang sudah mahir, gadis-gadis ini kemudian belajar keahlian menenun tahap demi tahap, mulai dari mengikat, menata benang hingga menenun dengan motif yang berbeda-beda. Umumnya, ulos memiliki warna hitam, merah dan putih dengan sentuhan benang emas atau perak.                ',
+                'file_foto' => 'Tenun.jpg',
+                'id_sampul_atraksi' => '2',
+            ],
+            [
+                'judul' => 'Tari Tor-tor',
+                'deskripsi' => 'Tari Tortor termasuk salah satu tarian tua yang ada di Indonesia. Konon, tarian ini sudah ada sejak zaman purba dahulu. Namun pendapat yang menyebut Tari Tortor sudah ada sejak zaman purba masih diragukan sejumlah pakar mengingat tidak banyak bukti yang menguatkannya. Sebaliknya, para pakar tersebut memperkirakan tarian ini sudah ada sekitar abad ke-13 Masehi. Pada awal kemunculannya, Tari Tortor bukan suatu tarian, melainkan sebagai pelengkap gondang atau uning-uningan yang berdasarkan falsafah adat.',
+                'file_foto' => 'Tortor.jpg',
+                'id_sampul_atraksi' => '2',
+            ],
+            [
+                'judul' => 'Kerajinan Ukiran di Simanindo',
+                'deskripsi' => 'Masyarakat Samosir sudah dikenal dengan budaya mengukirnya, Kayu adalah bahan yang banyak digunakan untuk mengukir. Ukiran kayu biasanya diperlukan sebagai alat untuk keperluan adat istiadat atau dimanfaatkan  untuk kegiatan ritual. Namun pada saat ini produk ukiran kayu tersebut sudah dikenal sebagai barang dagangan (souvenir) untuk para turis. Pengukir kayu di Samosir terpusat di Kecamatan Simanindo dan tersebar di hampir semua desa/dusun-dusun. Jenis ukiran yang khas di Kabupaten Samosir antara lain berbentuk ukiran tunggal panaluan yang dikerjakan di Desa Siallagan, ukiran ruma-ruma yang dikerjakan di Desa sigarantung, dan ukiran alat musik hasapi yang dikerjakan di Desa Tomok.',
+                'file_foto' => 'KerajinanUkiran.jpg',
+                'id_sampul_atraksi' => '2',
+            ],
+            [
+                'judul' => 'Gorga Motif Pahat',
+                'deskripsi' => 'Gorga motif pahat sebuah kerajinan dari Kabupaten Simalungun, Sumatera Utara ini memiliki ciri khas yang unik dan antik, sebuah kerajinan seni pahat yang menjadi hiasan maupun bagian eksterior dan interior rumah adat Batak. Seni pahatan tiga dimensi khas Simalungun ini dibuat dengan alat pahat untuk melubangi serta mengukir bahan yang sifatnya keras. Gorga merupakan kesenian dari tanah Batak.',
+                'file_foto' => 'GorgaSimalungun.jpg',
+                'id_sampul_atraksi' => '2',
+            ],
+            [
+                'judul' => 'Kerajinan bambu dan kayu',
+                'deskripsi' => 'Pakpak Bharat dikenal banyak menghasilkan kreasi kerajinan tangan. Salah satunya yang paling terkenal adalah kerajinan tangan yang dibuat dari kayu dan bamboo. Bentuk kerajinannya sendiri ada berbagai macam, seperti patung ataupun piala. Pastinya akan sangat menarik jika bisa membawa kerajinan ini sebagai buah tangan atau oleh-oleh',
+                'file_foto' => 'KerajinanBambu.jpg',
+                'id_sampul_atraksi' => '2',
+            ],
+            [
+                'judul' => 'Jambur',
+                'deskripsi' => 'Dalam suku Karo, begitu banyak seni bangunan yang dihasilkan. Bukan semata rumah adat tetapi juga banyak lain. Pada dasarnya fungsi dari bangunan lain itu, tidak jauh beda dengan fungsi rumah adat si waluh jabu tersebut. Jambur adalah salah satu contoh seni bangunan yang terletak dikaro.Bangunan agak luas beratap ijuk, yang digunakan sebagai tempat musyawarah keluarga atau ke kerabat atas dasar Dalinken Si Telu. Dan dewasa ini sudah digunakan untuk pesta karo, baik suka cita/ perkawinan dan sebagainya atau duka cita.',
+                'file_foto' => 'jambur.jpg',
+                'id_sampul_atraksi' => '2',
+            ],
+            [
+                'judul' => 'Suku Batak Toba',
+                'deskripsi' => 'Wilayah yang mayoritas orang Batak Toba, berada di provinsi Sumatra Utara meliputi Kabupaten Toba, Kabupaten Samosir, Kabupaten Humbang Hasundutan, Kabupaten Tapanuli Utara. 
+                Bahasa Batak Toba adalah Bahasa Utama yang digunakan oleh penduduk dengan suku  Batak Toba, selain dari Bahasa Indonesia yang merupakan bahasa resmi Indonesia.
+                Rumah Adat Batak Toba disebut Rumah Bolon, yang memiliki bangunan empat persegi panjang yang kadang-kadang ditempati oleh 50 keluarga. Memasuki Rumah Bolon ini harus menaiki tangga yang terletak di tengah-tengah rumah, dengan jumlah anak tangga yang ganjil. Bila orang hendak masuk rumah tersebut, harus menundukkan kepala agar tidak terbentur pada balok yang melintang. Rumah Adat Batak Toba Sumatra Utara, Hal ini diartikan tamu harus menghormati si pemilik rumah.',
+                'file_foto' => 'SukuBatak.jpg',
+                'id_sampul_atraksi' => '1',
+            ],
+            [
+                'judul' => 'Suku Batak Pakpak',
+                'deskripsi' => 'Suku Batak Pakpak, tersebar di beberapa kabupaten, yakni di: Kabupaten Dairi, Kabupaten Pakpak Bharat, Kabupaten Humbang Hasundutan.
+                Bahasa Batak pakpakadalah Bahasa Utama yang digunakan oleh penduduk dengan suku  Batak Batak Pakpak, selain dari Bahasa Indonesia yang merupakan bahasa resmi Indonesia.
+                Rumah Adat Pakpak bernama Jerro. Bentuk rumah adat Pakpak sama saja dengan rumah adat lainnya di Sumatera Utara yang umumnya menggunakan tangga dan juga tiang. Rumah Pakpak memiliki bentuk yang khas dan terbuat dari kayu serta atap dari bahan ijuk.',
+                'file_foto' => 'SukuPakpak.jpg',
+                'id_sampul_atraksi' => '1',
+            ],
+            [
+                'judul' => 'Suku Batak Karo',
+                'deskripsi' => 'Batak Karo adalah suku bangsa atau kelompok etnik yang mendiami wilayah Kabupaten Karo, Sebagian Kabupaten Dairi, sebagian Kabupaten Simalungun
+                Bahasa Karo merupakan bahasa Austronesia dan digolongkan dalam Rumpun Bahasa Batak Utara[6] yang utamanya dituturkan oleh masyarakat Karo. Aksara yang digunakan oleh Suku Karo adalah Aksara Karo yang merupakan varian dari Aksara Batak. Aksara ini adalah aksara kuno yang dipergunakan oleh masyarakat Karo, akan tetapi pada saat ini penggunaannya sangat terbatas bahkan hampir tidak pernah digunakan lagi
+                Rumah Karo biasanya disebut sebagai rumah adat Siwaluh Jabu. Siwaluh Jabu sendiri memiliki arti atau makna sebuah rumah yang dihuni oleh delapan keluarga. Setiap keluarga memiliki perannya masing-masing di dalam rumah. Rumah Karo biasanya disebut sebagai rumah adat Siwaluh Jabu. Siwaluh Jabu sendiri memiliki arti atau makna sebuah rumah yang dihuni oleh delapan keluarga. Setiap keluarga memiliki perannya masing-masing di dalam rumah.',
+                'file_foto' => 'SukuKaro.jpg',
+                'id_sampul_atraksi' => '1',
+            ],
+            [
+                'judul' => 'Suku Batak Simalungun',
+                'deskripsi' => 'Simalungun adalah salah satu suku yang berada di provinsi Sumatra Utara, Indonesia, yang menetap di Kabupaten Simalungun dan sekitarnya.
+                Suku Simalungun menggunakan Bahasa Simalungun (bahasa simalungun: hata/sahap Simalungun) sebagai bahasa Ibu. Derasnya pengaruh dari suku-suku di sekitarnya mengakibatkan beberapa bagian Suku Simalungun menggunakan bahasa Melayu, Karo, Batak, dan sebagainya.
+                Rumah Adat Batak Simalungun disebut Rumah Bolon, yang memiliki bangunan empat persegi panjang yang kadang-kadang ditempati oleh 50 keluarga. Memasuki Rumah Bolon ini harus menaiki tangga yang terletak di tengah-tengah rumah, dengan jumlah anak tangga yang ganjil. Bila orang hendak masuk rumah tersebut, harus menundukkan kepala agar tidak terbentur pada balok yang melintang. Ini diartikan tamu harus menghormati si pemilik rumah.',
+                'file_foto' => 'SukuSimalungun.jpg',
+                'id_sampul_atraksi' => '1',
+            ],
         ]);
     }
 }

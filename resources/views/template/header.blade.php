@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card_fasil_detail.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js%22%3E"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
     
 
 <!--============FASILITAS CARD================-->
@@ -119,8 +120,19 @@
                             class="nav-link">Fasilitas</a></li>
                     <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
-                    <li class="nav-item"><a href="{{ url('/pengalaman-wisata') }}" class="nav-link">Pengalaman Wisata</a>
-                    </li>
+
+                    <div class="navbar-nav ml-auto dropdown show">
+                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <a href="/blog" class="nav-link">Artikel</a>
+                        </li>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a href="{{ url('/pengalaman-wisata') }}"><button class="dropdown-item"
+                                    type="button">Pengalaman Wisata</button></a>
+                            <a href="{{ url('/pengalamanwisata-saya') }}"><button class="dropdown-item"
+                                    type="button">Pengalaman Wisata Saya</button></a>
+                        </div>
+                    </div>
                         <div class="navbar-nav ml-auto dropdown show">
                             <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">

@@ -30,10 +30,9 @@
                         <div class="card">
                             <section id="main-content">
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <a href="{{ url('/tambah-pengalaman-wisata') }}" <button class="btn btn-success"><span
-                                                class="ti-plus" style="color:black;"> Tambah Pengalaman
-                                                Wisata</span></button>
+                                <div class="col-lg-12">
+                                <a href="{{ url('/tambah-pengalaman-wisata')}}">
+                                <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Pengalaman Wisata</span></button>
                                         </a>
                                         <section id="main-content">
                                             <div class="row">

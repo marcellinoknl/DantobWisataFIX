@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate">
-                <h1 class="mb-4" style="text-align: center;">BUAT PENGALAMAN WISATA ANDA</h1>
+                <h1 class="mb-4" style="text-align: center;">EDIT PENGALAMAN WISATA ANDA</h1>
             </div>
         </div>
     </div>
@@ -15,26 +15,26 @@
 
     <div class="container">
         <h1 class="title text-center" style="font-weight: bold ; font-size: 50px; color:black; ">
-           TAMBAH PENGALAMAN WISATA
+           EDIT PENGALAMAN WISATA
         </h1>
 
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         
         <div class="container p-md-2 p-2">
-            <form action="{{route('TambahPengalaman')}}" method="post" id="contact-form" enctype="multipart/form-data">	
+            <form action="{{route('pengalamansaya.ubah', $updates->id_pengalaman)}}" method="post" id="contact-form" enctype="multipart/form-data">	
                 {{ csrf_field() }}
                 <div class="form-group">
                   <label for="inputAddress">Judul Pengalaman Wisata</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul" name="judul">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul" name="judul" value="{{$updates->judul}}">
                 </div>
                 <div class="form-group">
                     <label for="inputAddress">Foto Pengalaman Wisata</label>
-                    <input type="file" class="form-control" id="inputAddress" name="file_foto">
+                    <input type="file" class="form-control" id="inputAddress" name="file_foto" value="">{{$updates->file_foto}}
                   </div>
                   <div class="form-group">
                     <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
-                    <textarea name="deskripsi" cols="30" rows="10" id="editor" height="300px"></textarea>
+                    <textarea name="deskripsi" cols="30" rows="10" id="editor" height="300px" value="">{{$updates->deskripsi}}</textarea>
                     <script>
                         ClassicEditor
                                 .create( document.querySelector( '#editor' ) )

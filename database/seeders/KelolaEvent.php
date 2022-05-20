@@ -79,6 +79,30 @@ class KelolaEvent extends Seeder
                 'deskripsi_event' => 'Di Pulau Samosir yang terletak di tengah Danau Toba juga berlangsung festival atau karnaval Sigale-gale. Di Festival ini kita akan melihat semacam sebuah pawai boneka/patung manusia khas Batak yang dibawa berkeliling desa oleh para pria. Boneka dan patung manusia inilah yang menjadi Sigale-gale atau seorang Mangale terutama patung yang berukuran besar/raksasa. Dalam pawai itu menceritakan kisah hidup atau perjalanan Sigale-gale hingga menjadi patung yang bisa bergerak dan menari mengikuti irama gondang. Pawai dan Pentas seni Sigale-gale atau Mangale ini ternyata menarik perhatian perhatian wisatawan, baik lokal maupun mancanegara. Apalagi ternyata festival ini juga diramaikan dengan penampilan atau pertunjukan seni khas Batak lainnya seperti Gorga (seni ukir), Gondang (seni musik), Topeng Batak, Permainan Pantun, Tandok (seni membuat wadah dari anyaman) dan Ulos (seni kain tradisional) dan pertunjukan olahraga seperti paralayang dan perahu dayung.',
                 'file_foto' => 'CarnavalSigale-gale.jpg'
              ],
+             [ 
+               'id_sampul_event' => '2',
+               'judul_event' => 'Samosir Jazz Culture 2022',               
+               'deskripsi_event' => '
+               Samosir Jazz Culture (SJC) 2022 akan hadir bagi para penggemar musik jaz sembari menikmati panorama Danau Toba. Event musik Ini adalah cara lain yang seru untuk menikmati alunan musik dan menikmati yang memukau. Samosir Jazz Culture 2022 berlangsung di Samosir, Sumatera Utara ini menyusung kampanye Ecofriendly dan Sustainabiity.  Penyelenggara mengimbau penggunaan *tumbler* untuk isi ulang minum dengan kotak “ecogreen” UMKM setempat. Selain melantunkan lagu-lagu Batak yang diaransemen ke dalam genre musik jaz juga menampilkan produk-produk UMKM Samosir yang tiada duanya. Samosir Jazz Culture 2022 digelar pada Sabtu, 30 April 2022 di Open Stage Tuktuk, Kabupaten Samosir, Sumatera Utara.
+               Berikut beberapa musisi yang akan ikut serta dalam meramaikan Samosir Jazz Culture, yaitu:
+               - Alogo
+               - Hamitabo
+               - Jajabi feat Sandro
+               - Kress#Dim
+               - Mikha & The New Wine
+               - Siou
+               - Tondi Harmoni
+               Para pengunjung yang akan datang harus menyiapkan tiket yang dapat dibeli dengan 2 tipe kelas. Berikut list harga tiket dan compliment yang akan di dapatkan ketika membeli tiket :
+               - Fest: Rp50.000 (*entrance fee*)
+               - VIP: Rp200.000 (*get 1 free coffee orginal Samosir + Aqua, snackbox, sofa*)',
+               'file_foto' => 'SamosirJazz.png'
+            ],
+            [ 
+               'id_sampul_event' => '2',
+               'judul_event' => 'Toba Caldera World Music Festival 2021',               
+               'deskripsi_event' => 'Toba Caldera World Music Festival 2021 jadi pesta besar buat merayakan Geopark Kaldera Toba yang sudah ditetapkan menjadi bagian dari UNESCO Global Geopark (UGG). Untuk tema Toba Caldera World Music Festival 2021 yang dipilih adalah "Sound of The Earth" dan akan di selenggarakan pada tanggal 1 Oktober 2021 - 3 Oktober 2022. Lewat event yang dikemas secara menarik ini diharapkan masyarakat luas bisa lebih kenal sama Danau Toba sekaligus dapat edukasi soal budaya dan seni melalui musik yang disajikan. Pada Festival kali ini ada musisi dari empat negara yang dijadwalkan tampil secara daring. Sedangkan, enam musisi nasional yang berasal dari beberapa provinsi di Indonesia akan hadir ke lokasi perhelatan. Toba Caldera World Music Festival juga turut melibatkan pegiat budaya, seni, dan musisi lokal dari Kawasan Danau Toba.',
+               'file_foto' => 'TheCaldera.png'
+            ],
         ]);
     }
 }

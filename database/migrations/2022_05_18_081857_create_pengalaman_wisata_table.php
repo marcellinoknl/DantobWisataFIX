@@ -18,6 +18,7 @@ class CreatePengalamanWisataTable extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('file_foto');
+            $table->string('status')->default('pending');
             $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade'); 
             $table->timestamps();
