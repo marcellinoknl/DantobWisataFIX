@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate">
-                <h1 class="mb-4" style="text-align: center;">PENGALAMAN WISATA SAYA</h1>
+                <h1 class="mb-4" style="text-align: center;">EDIT PENGALAMAN WISATA ANDA</h1>
             </div>
         </div>
     </div>
@@ -14,54 +14,40 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
-            PENGALAMAN WISATA SAYA
+        <h1 class="title text-center" style="font-weight: bold ; font-size: 50px; color:black; ">
+           EDIT PENGALAMAN WISATA
         </h1>
+
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
-        <script>
-            function myAuthFunc() {
-              alert("Anda harus Login terlebih dahulu");
-             
-            }
-            </script>
+        
         <div class="container p-md-2 p-2">
-
-            <div class="row g-2 g-md-4">
-
-                <table class="table">
-                    <thead>
-                     
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Aksi</th>
-                      </tr>
-                      <?php $number =1 ?>
-                    </thead>
-                    <tbody>
-                        @foreach ($pengalamansaya as $pengalamans)
-                      <tr>
-                        <th scope="row">{{$number++}}</th>
-                        <td>{{$pengalamans->judul}}</td>
-                        <td>{{$pengalamans->status}}</td>
-                        <td><button class="btn btn-warning" onclick="window.location.href='/ubah-pengalamansaya/{{$pengalamans->id_pengalaman}}'"> Edit </button> </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-
-
-				<!-- The Modal -->
-				<div id="myModal" class="modal">
-					<span class="close">&times;</span>
-					<img class="modal-content" id="img01">
-					<div id="caption"></div>
-				</div>
-
-
-            </div>
+            <form action="{{route('pengalamansaya.ubah', $updates->id_pengalaman)}}" method="post" id="contact-form" enctype="multipart/form-data">	
+                {{ csrf_field() }}
+                <div class="form-group">
+                  <label for="inputAddress">Judul Pengalaman Wisata</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul" name="judul" value="{{$updates->judul}}">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Foto Pengalaman Wisata</label>
+                    <input type="file" class="form-control" id="inputAddress" name="file_foto" value="">{{$updates->file_foto}}
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
+                    <textarea name="deskripsi" cols="30" rows="10" id="editor" height="300px" value="">{{$updates->deskripsi}}</textarea>
+                    <script>
+                        ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                    </script>
+                  </div>
+                <button type="submit" class="btn btn-primary">Tambah</button>
+              </form>
         </div>
         </div>
             </div>

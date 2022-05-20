@@ -9,5 +9,5 @@ class PengalamanWisata extends Model
 {
     use HasFactory;
     protected $table = 'pengalaman_wisata';
-    protected $primaryKey = 'id_obj_wisata';
+    protected $primaryKey = 'id_pengalaman';
 }

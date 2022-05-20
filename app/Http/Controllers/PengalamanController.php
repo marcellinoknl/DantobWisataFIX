@@ -19,17 +19,53 @@ class PengalamanController extends Controller
         $pengalamanplus = DB::table('pengalaman_wisata')->get();
         return view('user-page.tambah-pengalaman', ['pengalamanplus' => $pengalamanplus]);
     }
+//pengalaman saya
 
     public function indexActionpengalamansaya()
     {
-        $pengalamansaya = DB::table('pengalaman_wisata')->get();
+        $pengalamansaya = DB::table('pengalaman_wisata')
+        ->where('id_user', '=',Auth::user()->id)
+        ->get();
         return view('user-page.pengalaman-wisata-saya', ['pengalamansaya' => $pengalamansaya]);
     }
 
+
+    public function editPengalamanSaya($id_pengalaman){
+        $updates = PengalamanWisata::find($id_pengalaman);
+        return view('user-page/edit-pengalaman-wisata-saya', compact('updates'));
+    }
+
+    public function updatePengalamanSaya(request $request, $id_pengalaman)
+    {
+        // $this->validate(
+        //     $request,
+        //     [
+        //         'judul' => 'required',
+        //         'deskripsi' => 'required',
+        //         'nama_kategori' => 'required',
+        //         'deskripsi' => 'required',
+        //         'nama_kabupaten' => 'required'
+               
+        //     ]
+        // );
+        $update = PengalamanWisata::find($id_pengalaman);
+        $file = $update->file_foto;
+        if ($request->hasFile('file_foto')) {
+            $file = $request->file('file_foto')->getClientOriginalName();
+            $request->file('file_foto')->move('images/objekwisata', $file);
+            $update->file_foto = $file;
+        }
+        $update->judul = $request->judul;
+        $update->file_foto = $file;
+        $update->deskripsi = $request->deskripsi;
+        $update->save();
+
+        return redirect('/pengalamanwisata-saya');
+    }
+
+//---------------------------------------//
     public function kelolaindexAction()
     {
-
-
         $pengalaman = DB::table('pengalaman_wisata')
             ->select('pengalaman_wisata.*', 'users.name')
             ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
@@ -47,21 +83,7 @@ class PengalamanController extends Controller
         return view('admin.persetujuan-pengalaman-wisata', compact('persetujuan'));
     }
 
-    // public function indexAction2($id_obj_wisata_kabupaten)
-    // {
-    //     $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
-    //     $objek_wisata = DB::table('objek_wisata')
-    //         ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
-    //         ->get();
-    //     return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten]);
-    // }
 
-    // public function indexAction3($id_obj_wisata)
-    // {
-
-    //     $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
-    //     return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail]);
-    // }
 
     public function tambah()
     {

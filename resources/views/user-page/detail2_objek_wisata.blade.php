@@ -10,11 +10,13 @@
     </div>
 </div>
 <!-- Product -->
+<br>
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
-            {{ $objek_wisata_detail->nama_wisata }}</h1>
+            {{ $objek_wisata_detail->nama_wisata }}
+        </h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">

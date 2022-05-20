@@ -89,7 +89,7 @@
 	}
 	</style>
 
-<div class="hero-wrap  " style="background-image: url(images/bgpa.jpeg); width: 100%; height:100%;">
+<div class="hero-wrap  " style="background-image: url(images/galeribg.jpg); width: 100%; height:100%;">
     <div class="overlay" style="width:100%;height: 100%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
@@ -104,11 +104,9 @@
 
     <div class="container">
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
-            Galeri
+            Galeri Wisata
         </h1>
-        <p class="caption" style=" color:black;">
-            Berikut Galeri Danau Toba:
-        </p>
+
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">

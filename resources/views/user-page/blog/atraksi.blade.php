@@ -1,6 +1,6 @@
 @include('template/header')
 
-<div class="hero-wrap  " style="background-image: url(images/bgpa.jpeg); width: 100%; height:100%;">
+<div class="hero-wrap  " style="background-image: url(images/atraksibg.jpg); width: 100%; height:100%;">
     <div class="overlay" style="width:100%;height: 100%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
@@ -18,7 +18,7 @@
             Atraksi
         </h1>
         <p class="caption" style=" color:black;">
-            Beberapa Atraksi yang mungkin bisa kamu kunjungi selama berwisata di Danau Toba
+            Beberapa daya tarik yang mungkin bisa kamu dapati selama berkunjungi di Danau Toba
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>

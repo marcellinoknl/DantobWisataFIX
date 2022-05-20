@@ -20,31 +20,31 @@ class KabupatenSeeder extends Seeder
             ],
             [
                 'nama_kab' => 'Toba',
-                'file_foto' => 'Toba.jpg'
+                'file_foto' => 'Tobabg.jpg'
             ],
             [
                 'nama_kab' => 'Dairi',
-                'file_foto' => 'dairi.jpg'
+                'file_foto' => 'dairibg.jpg'
             ],
             [
                 'nama_kab' => 'Simalungun',
-                'file_foto' => 'Simalungun.jpg'
+                'file_foto' => 'Simalungunbg.jpg'
             ],
             [
                 'nama_kab' => 'Humbang Hasundutan',
-                'file_foto' => 'Humbang.jpg'
+                'file_foto' => 'Humbangbg.jpg'
             ],
             [
                 'nama_kab' => 'Pakpak Bharat',
-                'file_foto' => 'pakpak.jpg'
+                'file_foto' => 'pakpakbg.jpg'
             ],
             [
                 'nama_kab' => 'Tapanuli Utara',
-                'file_foto' => 'taput.jpg'
+                'file_foto' => 'taputbg.jpg'
             ],
             [
                 'nama_kab' => 'Karo',
-                'file_foto' => 'karo.jpg'
+                'file_foto' => 'karobg.jpg'
             ]
             
         ]);
