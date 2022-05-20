@@ -25,7 +25,7 @@
             <form>
                 <div class="form-group">
                   <label for="inputAddress">Judul Pengalaman Wisata</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Pengalaman Anda">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul">
                 </div>
                   <div class="form-group col-md-4">
                     <label for="inputState">State</label>
