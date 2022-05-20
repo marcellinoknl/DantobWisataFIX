@@ -122,6 +122,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
         Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
         Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
         Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
+        Route::get('/lihat-eventwisata/{id}', [eventController::class, 'kelolaindexActionView']);
 
     });
     Route::group(['admin' => 2], function () {
