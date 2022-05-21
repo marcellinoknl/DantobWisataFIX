@@ -11,7 +11,9 @@ class PengalamanController extends Controller
 {
     public function indexAction()
     {
-        $pengalaman = DB::table('pengalaman_wisata')->get();
+        $pengalaman = DB::table('pengalaman_wisata')
+        ->where('status','=',"approve")
+        ->get();
         return view('user-page.pengalaman', ['pengalaman' => $pengalaman]);
     }
     public function indexActiontambahpengalaman()
