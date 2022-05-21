@@ -85,6 +85,19 @@ class PengalamanController extends Controller
         return view('admin.persetujuan-pengalaman-wisata', compact('persetujuan'));
     }
 
+    public function editpersetujuan($id_pengalaman){
+            $updates = PengalamanWisata::find($id_pengalaman);
+            return view('admin/edit-persetujuan', compact('updates'));
+    }
+
+    
+    public function hapuspersetujuan($id_pengalaman){
+        $hapus = PengalamanWisata::find($id_pengalaman);
+        if ($hapus->delete()) {
+        }
+        return redirect()->back();
+    }
+
 
 
     public function tambah()
@@ -181,4 +194,9 @@ class PengalamanController extends Controller
             $TambahPengalaman->save();
             return redirect('/pengalamanwisata-saya');
     }
+
+    // public function editpengalaman($id_pengalaman){
+    //     $edit = pengalaman_wisata::find($id_pengalaman);
+    //     return view()
+    // }
 }
