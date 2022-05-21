@@ -56,7 +56,10 @@
                                                                    @foreach ($persetujuan  as $pengalaman)
                                                                             <tr>
                                                                                 <td class="text-center">
-                                                                                
+                                                                                    <?php
+                                                                                    $date=date_create($pengalaman->updated_at);
+                                                                                    echo date_format($date,"d M Y");
+                                                                                    ?>
                                                                                 </td>
                                                                                 <td class="text-center">
                                                                                     {{$pengalaman->judul }}

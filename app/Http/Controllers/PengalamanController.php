@@ -86,11 +86,36 @@ class PengalamanController extends Controller
     }
 
     public function editpersetujuan($id_pengalaman){
-            $updates = PengalamanWisata::find($id_pengalaman);
-            return view('admin/edit-persetujuan', compact('updates'));
+            $update = PengalamanWisata::find($id_pengalaman);
+            return view('admin/edit-persetujuan', compact('update'));
     }
 
     
+    public function updatepersetujuan(request $request, $id_pengalaman)
+    {
+        $this->validate(
+            $request,
+            [
+                'judul' => 'required',
+                'deskripsi' => 'required',
+               
+            ]
+        );
+        $update = PengalamanWisata::find($id_pengalaman);
+        $file = $update->file_foto;
+        if ($request->hasFile('file_foto')) {
+            $file = $request->file('file_foto')->getClientOriginalName();
+            $request->file('file_foto')->move('images/pengalaman', $file);
+            $update->file_foto = $file;
+        }
+        $update->judul = $request->judul;
+        $update->file_foto = $file;
+        $update->deskripsi = $request->deskripsi;
+        $update->save();
+
+        return redirect('/persetujuanpengalamanwisata');
+    }
+
     public function hapuspersetujuan($id_pengalaman){
         $hapus = PengalamanWisata::find($id_pengalaman);
         if ($hapus->delete()) {
@@ -143,35 +168,6 @@ class PengalamanController extends Controller
         return view('admin.ubah-objekwisata', compact('update', 'kabupaten', 'kategori'));
     }
 
-    public function update(request $request, $id_obj_wisata)
-    {
-        $this->validate(
-            $request,
-            [
-                'nama_wisata' => 'required',
-                'deskripsi' => 'required',
-                'nama_kategori' => 'required',
-                'deskripsi' => 'required',
-                'nama_kabupaten' => 'required'
-               
-            ]
-        );
-        $update = Objek_Wisata::find($id_obj_wisata);
-        $file = $update->file_foto;
-        if ($request->hasFile('file_foto')) {
-            $file = $request->file('file_foto')->getClientOriginalName();
-            $request->file('file_foto')->move('images/objekwisata', $file);
-            $update->file_foto = $file;
-        }
-        $update->nama_wisata = $request->nama_wisata;
-        $update->file_foto = $file;
-        $update->deskripsi = $request->deskripsi;
-        $update->id_kat_wisata = $request->nama_kategori;
-        $update->id_obj_wisata_kabupaten = $request->nama_kabupaten;
-        $update->save();
-
-        return redirect('/kelolaobjek');
-    }
 
     public function hapus($id_obj_wisata)
     {
