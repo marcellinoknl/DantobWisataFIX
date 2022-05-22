@@ -140,6 +140,8 @@
                             </li>
 
                             <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="{{ url('#') }}"><button class="dropdown-item"
+                                    type="button">Profil</button></a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();"><button
                                         class="dropdown-item" type="button">{{ __('Logout') }}</button></a>
