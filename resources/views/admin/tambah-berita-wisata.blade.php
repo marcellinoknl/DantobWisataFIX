@@ -61,6 +61,7 @@
                                         <label class="col-sm-3 col-form-label">Isi Berita</label>
                                     </div>
                                     <div class="mb-3 row">
+                                    <div class="col-md-12">
                                     <!-- <textarea required="required" id="deskripsiwisata" name="deskripsi" cols="200px" rows="20" ></textarea> -->
                                         <textarea class="form-control @error('isi_berita') is-invalid @enderror" id="editor" name="isi_berita"cols="200px" rows="20" value="{{old('isi_berita')}}"></textarea>
                                         @error('isi_berita')
@@ -68,6 +69,7 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                    </div>
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaberita'"><i class="ti-close"></i> Batal</button>

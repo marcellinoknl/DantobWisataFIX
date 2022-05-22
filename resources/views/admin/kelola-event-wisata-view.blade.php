@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1>DETAIL Event WISATA</h1>
+                            <h1>DETAIL EVENT WISATA</h1>
                         </div>
                     </div>
                 </div>
@@ -40,64 +40,9 @@
                                                         <h1>{{$view->judul_event}}</h1></div>
                                                         <p class="text-muted text-justify">{!!$view->deskripsi_event!!}</p>
                                                     </div>
+                                                    <center>
                                                     <div class="col-lg-6">
-                                                        <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$view->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
-                                                        <button class="btn btn-danger"data-toggle="modal"data-target="#myModal{{ $view->id_obj_wisata }}"><span class="ti-trash" style="color:black;"></span></button></center> 
-                                                    </div>
-
-                                                                                                                {{-- modal pop up hapus --}}
-                                                                                                                <div class="modal fade"
-                                                                                                                id="myModal{{$view->id_obj_wisata}}"
-                                                                                                                role="dialog">
-                                                                                                                <div class="modal-dialog" style="
-                                                                                                                   position: absolute;
-                                                                                                                    top: auto;
-                                                                                                                    right: 0;
-                                                                                                                    bottom:6cm;
-                                                                                                                    box-align: centered;
-                                                                                                                    left: 0;
-                                                                                                                    z-index: 10040;
-                                                                                                                    overflow: auto;
-                                                                                                                    overflow-y: auto;">
-                                                                                                                    <!-- Modal content-->
-                                                                                                                    <div class="modal-content">
-                                                                                                                        <div class="modal-header">
-                                                                                                                            <h4 class="modal-title">Hapus Objek Wisata
-                                                                                                                            </h4>
-                                                                                                                            <button type="button" class="close"
-                                                                                                                                data-dismiss="modal"><i
-                                                                                                                                    class="ti-close"></i></button>
-                                                                                                                        </div>
-                                                                                                                        <div class="modal-body">
-                                                                                                                            <p>Apakah Anda yakin ingin menghapus
-                                                                                                                                Wisata
-                                                                                                                                <b>{{ $view->nama_wisata }}</b> ?
-                                                                                                                            </p>
-                                                                                                                        </div>
-                                                                                                                        <div class="modal-footer">
-                                                                                                                            <button type="button"
-                                                                                                                                class="btn btn-secondary"
-                                                                                                                                data-dismiss="modal">Batal</button>
-                                                                                                                            <button class="btn btn-danger"
-                                                                                                                                onclick="window.location.href='/objekwisata/hapus/{{$view->id_obj_wisata}}'"
-                                                                                                                                data-toggle="modal"
-                                                                                                                                data-target="#myModal"><span
-                                                                                                                                    class="ti-trash"
-                                                                                                                                    style="color:black;">
-                                                                                                                                    Hapus</span></button>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
-                                <!-- /# card -->
-                        </div>
-                        <!-- /# column -->
-                    </div>
-
-                    <!-- /# row -->
+                                                        <button class="btn btn-warning" onclick="window.location.href='/ubah-event-wisata/{{$view->id_event}}'"><span class="ti-pencil-alt" style="color:black;">&nbspEdit</span></button>
+                                                        </div>  
+                                                        <center>                                                                                                                                  <!-- /# row -->
                     @include('admin.templateadmin.footer')
