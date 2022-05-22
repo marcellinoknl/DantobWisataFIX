@@ -33,7 +33,12 @@ class eventController extends Controller
             ->get();
         return view('user-page.blog.detail1_event_wisata', ['event_wisata' => $event_wisata, 'sampul_event' => $sampul_event]);
     }
-    
+    public function kelolaindexActionView($id_event)
+    {
+        $view = EventWisata::find($id_event);
+        return view('admin.kelola-event-wisata-view', compact('view'));
+    }
+
     public function indexAction3($id_event)
     {
 

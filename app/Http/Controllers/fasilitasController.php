@@ -37,6 +37,11 @@ class fasilitasController extends Controller
         ->get();
         return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user]);
     }
+    public function kelolaindexActionView($id_fasilitas)
+    {
+        $view = Fasilitas::find($id_fasilitas);
+        return view('admin.kelola-fasilitas-wisata-view', compact('view'));
+    }
 
     public function kelolaindexActionSampul()
     {

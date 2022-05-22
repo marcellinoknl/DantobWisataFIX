@@ -23,6 +23,12 @@ class beritaController extends Controller
         $kelolaberita = Berita_Wisata::all();
         return view('admin.kelolaberita', compact('kelolaberita'));
     }
+    public function kelolaindexActionView($id_berita)
+    {
+        $view = Berita_Wisata::find($id_berita);
+        return view('admin.kelola-berita-wisata-view', compact('view'));
+    }
+
 
     public function indexAction2($id_berita)
     {

@@ -110,6 +110,7 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi Wisata</label>
                                     </div>
                                     <div class="mb-3 row" >
+                                    <div class="col-md-12" >
                                         <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" id="editor" cols="200px" rows="100px" ></textarea>
                                        
 
@@ -117,6 +118,7 @@
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
+</div>
                                         @enderror
                                     </div>
                                     <br><br>

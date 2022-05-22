@@ -60,7 +60,7 @@
                                         <label class="col-sm-3 col-form-label">Isi Berita</label>
                                     </div>
                                     <div class="mb-3 row">
-
+                                    <div class="col-md-12">
                                         <textarea type="text" id="editor" name="isi_berita"  cols="200px" rows="20"class="form-control @error('isi_berita') is-invalid @enderror">{{$update->isi_berita}}</textarea>
                                         @error('isi_berita')
                                                 <div class="invalid-feedback">
@@ -68,6 +68,7 @@
                                                 </div>
                                                 @enderror
                                     </div>
+                                </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaberita'"><i class="ti-close"></i> Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>

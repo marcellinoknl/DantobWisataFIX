@@ -91,6 +91,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/ubah-berita-wisata/{id}', [beritaController::class, 'update'])->name('beritawisata.ubah');
     Route::post('/tambah-berita-wisata/store', [beritaController::class, 'store'])->name('formberitawisata.store');
     Route::get('/berita/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
+    Route::get('/lihat-beritawisata/{id}', [beritaController::class, 'kelolaindexActionView']);
 
 
         //kelola galeriwisata
@@ -108,6 +109,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/ubah-fasilitas-wisata/{id}', [fasilitasController::class, 'update'])->name('fasilitaswisata.ubah');
     Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
     Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
+    Route::get('/lihat-fasilitaswisata/{id}', [fasilitasController::class, 'kelolaindexActionView']);
 
             //kelola atraksi
             Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
@@ -116,6 +118,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
             Route::post('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'update'])->name('atraksiwisata.ubah');
             Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
             Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
+            Route::get('/lihat-atraksiwisata/{id}', [atraksiController::class, 'kelolaindexActionView']);
 
                             //kelola event
         Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
@@ -124,6 +127,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
         Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
         Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
         Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
+        Route::get('/lihat-eventwisata/{id}', [eventController::class, 'kelolaindexActionView']);
 
     });
     Route::group(['admin' => 2], function () {

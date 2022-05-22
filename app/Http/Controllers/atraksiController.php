@@ -31,6 +31,11 @@ class atraksiController extends Controller
             ->get();
         return view('user-page.blog.detail1_atraksi_wisata', ['atrkasi_wisata' => $atrkasi_wisata, 'sampul_atraksi' => $sampul_atraksi]);
     }
+    public function kelolaindexActionView($id_atraksi)
+    {
+        $view = Atraksi_Wisata::find($id_atraksi);
+        return view('admin.kelola-atraksi-wisata-view', compact('view'));
+    }
     
     public function indexAction3($atraksi_id)
     {

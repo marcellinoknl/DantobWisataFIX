@@ -81,13 +81,14 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi Event</label>
                                     </div>
                                     <div class="mb-3 row">
-
+                                    <div class="col-md-12">
                                         <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror required="required" id="editor" name="deskripsi_event" cols="200px" rows="20">{{$update->deskripsi_event}}</textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                    </div>
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaevent'"><i class="ti-close"></i> Batal</button>

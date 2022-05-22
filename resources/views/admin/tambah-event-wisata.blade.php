@@ -84,6 +84,7 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi Event</label>
                                     </div>
                                     <div class="mb-3 row">
+                                    <div class="col-md-12">
                                     <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror" id="editor" name="deskripsi_event" height="300px" cols="200px" rows="20"></textarea>
                                    @error('deskripsi_event')
                                             <div class="invalid-feedback">
@@ -91,6 +92,7 @@
                                             </div>
                                         @enderror
 
+                                    </div>
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaevent'"><i class="ti-close"></i> Batal</button>
