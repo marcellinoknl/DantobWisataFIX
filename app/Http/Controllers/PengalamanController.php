@@ -45,8 +45,8 @@ class PengalamanController extends Controller
             $request,
             [
                 'judul' => 'required',
-                'deskripsi' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'deskripsi' => 'required'
+                
                
             ]
         );
