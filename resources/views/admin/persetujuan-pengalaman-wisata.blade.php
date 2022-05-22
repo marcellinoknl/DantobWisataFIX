@@ -69,6 +69,7 @@
                                                                                 </td>
                                                                                 <td>
                                                                                     <center>
+                                                                                        <button class="btn btn-info" onclick="window.location.href='/lihat-persetujuan/{{$pengalaman->id_pengalaman}}'"><span class="ti-eye" style="color:black;"></span></button>
                                                                                     <button class="btn btn-warning"
                                                                                         onclick="window.location.href='/ubah-persetujuanpengalaman-wisata/{{ $pengalaman->id_pengalaman }}'"><span
                                                                                             class="ti-pencil-alt"

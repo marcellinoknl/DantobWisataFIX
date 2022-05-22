@@ -26,15 +26,31 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                   <label for="inputAddress">Judul Pengalaman Wisata</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Judul" name="judul">
+                  <input type="text" class="form-control @error('judul') is-invalid @enderror" id="inputAddress" placeholder="Masukkan Judul" name="judul">
+                  @error('judul')
+                  <div class="invalid-feedback">
+                      {{ $message }}
+                  </div>
+              @enderror
+
                 </div>
                 <div class="form-group">
                     <label for="inputAddress">Foto Pengalaman Wisata</label>
-                    <input type="file" class="form-control" id="inputAddress" name="file_foto">
-                  </div>
+                    <input type="file" class="form-control  @error('file_foto') is-invalid @enderror" id="inputAddress" name="file_foto">
+                    @error('file_foto')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror  
+                </div>
                   <div class="form-group">
                     <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
-                    <textarea name="deskripsi" cols="30" rows="10" id="editor" height="300px"></textarea>
+                    <textarea class="form-control  @error('deskripsi') is-invalid @enderror" id="inputAddress" name="deskripsi" cols="30" rows="10" id="editor" height="300px"></textarea>
+                    @error('deskripsi')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
                     <script>
                         ClassicEditor
                                 .create( document.querySelector( '#editor' ) )

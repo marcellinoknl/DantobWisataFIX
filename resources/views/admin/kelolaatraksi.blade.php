@@ -15,8 +15,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Table-Export</li>
+                                <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Atraksi</li>
                             </ol>
                         </div>
                     </div>

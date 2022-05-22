@@ -41,13 +41,16 @@
                       <?php $number =1 ?>
                     </thead>
                     <tbody>
+                       
                         @foreach ($pengalamansaya as $pengalamans)
+                        @if($pengalamans->status == "pending")
                       <tr>
                         <th scope="row">{{$number++}}</th>
                         <td>{{$pengalamans->judul}}</td>
                         <td>{{$pengalamans->status}}</td>
                         <td><button class="btn btn-warning" onclick="window.location.href='/ubah-pengalamansaya/{{$pengalamans->id_pengalaman}}'"> Edit </button> </td>
                       </tr>
+                      @endif
                       @endforeach
                     </tbody>
                   </table>

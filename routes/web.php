@@ -210,8 +210,10 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
          Route::get('/tambah-persetujuanpengalaman-wisata', [PengalamanController::class, 'tambah']);
          Route::get('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'editpersetujuan']);
          Route::post('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'updatepersetujuan'])->name('persetujuanpengalamanwisata.ubah');
+         Route::post('/approved-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'approve'])->name('persetujuanpengalamanwisata.approved');
          Route::post('/tambah-persetujuanpengalaman-wisata/store', [PengalamanController::class, 'storepersetujuan'])->name('formpersetujuanpengalamanwisata.store');
-         Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapuspersetujuan'])->name('persetujuanpengalamanwisata.hapus');
+        //  Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapuspersetujuan'])->name('persetujuanpengalamanwisata.hapus');
+         Route::get('/lihat-persetujuan/{id}', [PengalamanController::class, 'kelolaindexActionView']);
     });
 });
 
@@ -219,10 +221,5 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
