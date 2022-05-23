@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> TAMBAH BERITA WISATA </h1>
+                            <h1> UBAH PENGALAMAN WISATA </h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Berita Wisata</li>
+                                <li class="breadcrumb-item active">Ubah Pengalaman Wisata</li>
                             </ol>
                         </div>
                     </div>
@@ -29,13 +29,14 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('formberitawisata.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('pengalamanwisata.ubah', $update->id_pengalaman) }}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Judul Berita</label>
+                                        <label class="col-sm-3 col-form-label">Judul Pengalaman</label>
                                         <div class="col-sm-9">
-                                            <input type="text"  id="beritawisata" name="judul_berita" class="form-control @error('judul_berita') is-invalid @enderror">
-                                            @error('judul_berita')
+
+                                            <input type="text"  id="judul" name="judul" class="form-control  @error('judul') is-invalid @enderror" value="{{$update->judul}}">
+                                            @error('judul')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -43,37 +44,38 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Gambar </label>
+                                        <label class="col-sm-3 col-form-label">Gambar</label>
                                         <div class="col-sm-9">
-                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
+                                            <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/pengalaman/'.$update->file_foto)}}">
+
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror" id="gambarwisata" onchange="previewImage()" name="file_foto">
+
+                                                <input type="file" class="custom-file-input" id="gambarevent" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
+
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                            </div>
-                                            @error('file_foto')
+                                                @error('file_foto')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Isi Berita</label>
+                                        <label class="col-sm-3 col-form-label">Deskripsi Pengalaman</label>
                                     </div>
                                     <div class="mb-3 row">
-                                    <div class="col-md-12">
-                                    <!-- <textarea required="required" id="deskripsiwisata" name="deskripsi" cols="200px" rows="20" ></textarea> -->
-                                        <textarea class="form-control @error('isi_berita') is-invalid @enderror" id="editor" name="isi_berita"cols="200px" rows="20" value="{{old('isi_berita')}}"></textarea>
-                                        @error('isi_berita')
+
+                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="editor" name="deskripsi" cols="200px" rows="20">{{$update->deskripsi}}</textarea>
+                                        @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
-                                    </div>
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolaberita'"><i class="ti-close"></i> Batal</button>
-                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Tambah</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolapengalamanwisata'"><i class="ti-close"></i> Batal</button>
+                                    <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>
                         </div>
@@ -87,7 +89,9 @@
 
         <script>
             function previewImage() {
-                const image = document.querySelector('#gambarwisata')
+
+                const image = document.querySelector('#gambarevent')
+
                 const imgPreview = document.querySelector('.img-preview')
 
                 imgPreview.style.display = 'block';

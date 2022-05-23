@@ -53,27 +53,31 @@
                                                                         <?php $number = 1; ?>
                                                                     </thead>
                                                                     <tbody>
-                                                                   {{-- @foreach ($pengalaman as $pengalaman)
+                                                                   @foreach ($persetujuan  as $pengalaman)
                                                                             <tr>
                                                                                 <td class="text-center">
-                                                                                <?php echo date_format($date,"d M Y");?>
+                                                                                    <?php
+                                                                                    $date=date_create($pengalaman->updated_at);
+                                                                                    echo date_format($date,"d M Y");
+                                                                                    ?>
                                                                                 </td>
                                                                                 <td class="text-center">
                                                                                     {{$pengalaman->judul }}
                                                                                 </td>
                                                                                 <td class="text-center">
-                                                                                    {{$pengalaman->penulis}}
+                                                                                    {{$pengalaman->name}}
                                                                                 </td>
                                                                                 <td>
                                                                                     <center>
+                                                                                        <button class="btn btn-info" onclick="window.location.href='/lihat-persetujuan/{{$pengalaman->id_pengalaman}}'"><span class="ti-eye" style="color:black;"></span></button>
                                                                                     <button class="btn btn-warning"
-                                                                                        onclick="window.location.href='/ubah-kat/{{ $kat->id_kategori }}'"><span
+                                                                                        onclick="window.location.href='/ubah-persetujuanpengalaman-wisata/{{ $pengalaman->id_pengalaman }}'"><span
                                                                                             class="ti-pencil-alt"
                                                                                             style="color:black;">
                                                                                             </span></button>
                                                                                     <button class="btn btn-danger"
                                                                                         data-toggle="modal"
-                                                                                        data-target="#myModal{{ $kat->id_kategori }}"><span
+                                                                                        data-target="#myModal{{ $pengalaman->id_pengalaman }}"><span
                                                                                             class="ti-trash"
                                                                                             style="color:black;">
                                                                                             </span></button></center>
@@ -81,8 +85,8 @@
                                                             </div>
                                                             </tr>
                                                             {{-- modal pop up hapus --}}
-                                                            {{-- <div class="modal fade"
-                                                                id="myModal{{ $kat->id_kategori }}"
+                                                             <div class="modal fade"
+                                                                id="myModal{{ $pengalaman->id_pengalaman }}"
                                                                 role="dialog">
                                                                 <div class="modal-dialog" style="
                                                                    position: absolute;
@@ -106,7 +110,7 @@
                                                                         <div class="modal-body">
                                                                             <p>Apakah Anda yakin ingin menghapus
                                                                                 Wisata
-                                                                                <b>{{ $kat->nama_kategori }}</b> ?
+                                                                                <b>{{ $pengalaman->judul }}</b> ?
                                                                             </p>
                                                                         </div>
                                                                         <div class="modal-footer">
@@ -114,7 +118,7 @@
                                                                                 class="btn btn-secondary"
                                                                                 data-dismiss="modal">Batal</button>
                                                                             <button class="btn btn-danger"
-                                                                                onclick="window.location.href='/kategoriwisata/hapus/{{ $kat->id_kategori }}'"
+                                                                                onclick="window.location.href='/persetujuanpengalaman-wisata/hapus/{{ $pengalaman->id_pengalaman }}'"
                                                                                 data-toggle="modal"
                                                                                 data-target="#myModal"><span
                                                                                     class="ti-trash"
@@ -124,7 +128,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            @endforeach  --}}
+                                                            @endforeach
                                                             </tbody>
                                                             </table>
                                                         </div>

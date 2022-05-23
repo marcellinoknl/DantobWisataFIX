@@ -52,25 +52,43 @@
             </div>
              @else
 
-            <div class="row g-2 g-md-4">
+            <div class="row g-2 g-md-4 py-4">
                 @foreach ($pengalaman as $pengalamans)
-             
-				<div class="col-6 col-md-4 py-4">
-				<div class="mycard-galeri">
-						<img src="{{ url('images/pengalamanwisata/' . $pengalamans->file_foto) }}" alt="{{ $pengalamans->judul }}" id="myImg{{ $pengalamans->id_pengalaman }}"
-							class="mycard-image-galeri">
-					<h3 class="mycard-title-galeri">{{ $pengalamans->judul }}</h3>
+         
+                <div class="col-6 col-md-4 py-5">
+                    <div class="card" style="width: 350px; height:600px; border-radius: 5%;">
+                        <a href="{{ url('/pengalaman-wisata/detail/' . $pengalamans->id_pengalaman) }}">
+                        <img class="card-img-top" src="{{ url('images/pengalaman/' . $pengalamans->file_foto) }}"
+                            alt="Card image cap" style="height: 200px ; border-radius: 15px 15px 0px 0px; ">
+                        </a>
+                        <div class="card-body" style="height: 200px ;  ">
+                            
+                                <?php   
+                                $deskripsi = substr($pengalamans->deskripsi,0,100);
+                                ?>
+                                
+                               <a href="{{ url('/beita-wisata/detail/' . $pengalamans->id_pengalaman) }}" onMouseOver="this.style='text-decoration:underline'"
+                                onMouseOut="this.style='color:black'" style="color:black; ">
+                                <div class="title" style="text-weight:bold;">
+                                    {{ $pengalamans->judul }}
+                                </div>
+                            </a>
+                            <hr class="mt-2 mb-3" style="border:solid 0.5px" />
+                                    <div class="caption" style=" color:black; text-align: justify;"> {!! $deskripsi!!} 
+                                </div>
+                                <a href="{{ url('/beita-wisata/detail/' . $pengalamans->id_pengalaman) }}" onMouseOver="this.style='text-decoration:underline'"
+                                    onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a>
+                            
+                        </div>
 
-				</div>
-			</div>
-
-				<!-- The Modal -->
-				<div id="myModal" class="modal">
-					<span class="close">&times;</span>
-					<img class="modal-content" id="img01">
-					<div id="caption"></div>
-				</div>
-
+                        <div class=" card-footer">
+                            <small class="text-muted"><i class="fa fa-user" aria-hidden="true"></i>  &nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i> <?php
+                                $date=date_create($pengalamans->updated_at);
+                                echo date_format($date,"d M Y");
+                                ?> </small>
+                        </div>
+                    </div>
+                </div>
                 @endforeach
             </div>
             @endif

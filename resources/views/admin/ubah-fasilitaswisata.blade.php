@@ -99,6 +99,7 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi</label>
                                     </div>
                                     <div class="mb-3 row">
+                                    <div class="col-md-12">
                                         <textarea type="text" id="editor" name="deskripsi" height="300px" cols="200px" rows="20"
                                             class="form-control @error('deskripsi') is-invalid @enderror">{{ $update->deskripsi }}</textarea>
                                         @error('deskripsi')
@@ -107,7 +108,7 @@
                                             </div>
                                         @enderror
                                     </div>
-
+                                </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger"
                                         onclick="window.location.href='/daftar-fasilitas'"><i class="ti-close"></i>

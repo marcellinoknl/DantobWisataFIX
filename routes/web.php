@@ -91,6 +91,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/ubah-berita-wisata/{id}', [beritaController::class, 'update'])->name('beritawisata.ubah');
     Route::post('/tambah-berita-wisata/store', [beritaController::class, 'store'])->name('formberitawisata.store');
     Route::get('/berita/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
+    Route::get('/lihat-beritawisata/{id}', [beritaController::class, 'kelolaindexActionView']);
 
 
         //kelola galeriwisata
@@ -108,6 +109,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::post('/ubah-fasilitas-wisata/{id}', [fasilitasController::class, 'update'])->name('fasilitaswisata.ubah');
     Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
     Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
+    Route::get('/lihat-fasilitaswisata/{id}', [fasilitasController::class, 'kelolaindexActionView']);
 
             //kelola atraksi
             Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
@@ -116,6 +118,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
             Route::post('/ubah-atraksi-wisata/{id}', [atraksiController::class, 'update'])->name('atraksiwisata.ubah');
             Route::post('/tambah-atraksi-wisata/store', [atraksiController::class, 'store'])->name('formatraksiwisata.store');
             Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
+            Route::get('/lihat-atraksiwisata/{id}', [atraksiController::class, 'kelolaindexActionView']);
 
                             //kelola event
         Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
@@ -124,6 +127,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
         Route::post('/ubah-event-wisata/{id}', [eventController::class, 'update'])->name('eventwisata.ubah');
         Route::post('/tambah-event-wisata/store', [eventController::class, 'store'])->name('formeventwisata.store');
         Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
+        Route::get('/lihat-eventwisata/{id}', [eventController::class, 'kelolaindexActionView']);
 
     });
     Route::group(['admin' => 2], function () {
@@ -200,18 +204,20 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
         //kelola pengalaman wisata
          Route::get('/kelolapengalamanwisata', [PengalamanController::class, 'kelolaindexAction']);
          Route::get('/tambah-pengalaman-wisata', [PengalamanController::class, 'tambah']);
-         Route::get('/ubah-pengalaman-wisata/{id}', [PengalamanController::class, 'edit']);
+         Route::get('/ubah-pengalaman-wisata/{id}', [PengalamanController::class, 'editpengalaman']);
          Route::post('/ubah-pengalaman-wisata/{id}', [PengalamanController::class, 'update'])->name('pengalamanwisata.ubah');
          Route::post('/tambah-pengalaman-wisata/store', [PengalamanController::class, 'store'])->name('formpengalamanwisata.store');
          Route::get('/pengalamanwisata/hapus/{id}', [PengalamanController::class, 'hapus'])->name('pengalamanwisata.hapus');
        
-                 //Persetujuan pengalaman wisata
+        //Persetujuan pengalaman wisata
          Route::get('/persetujuanpengalamanwisata', [PengalamanController::class, 'kelolaindexAction2']);
          Route::get('/tambah-persetujuanpengalaman-wisata', [PengalamanController::class, 'tambah']);
-         Route::get('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'edit']);
-         Route::post('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'update'])->name('persetujuanpengalamanwisata.ubah');
-         Route::post('/tambah-persetujuanpengalaman-wisata/store', [PengalamanController::class, 'store'])->name('formpersetujuanpengalamanwisata.store');
-         Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapus'])->name('persetujuanpengalamanwisata.hapus');
+         Route::get('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'editpersetujuan']);
+         Route::post('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'updatepersetujuan'])->name('persetujuanpengalamanwisata.ubah');
+         Route::post('/approved-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'approve'])->name('persetujuanpengalamanwisata.approved');
+         Route::post('/tambah-persetujuanpengalaman-wisata/store', [PengalamanController::class, 'storepersetujuan'])->name('formpersetujuanpengalamanwisata.store');
+        //  Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapuspersetujuan'])->name('persetujuanpengalamanwisata.hapus');
+         Route::get('/lihat-persetujuan/{id}', [PengalamanController::class, 'kelolaindexActionView']);
     });
 });
 
@@ -219,10 +225,5 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

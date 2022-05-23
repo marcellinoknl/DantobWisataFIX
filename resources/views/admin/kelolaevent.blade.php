@@ -44,11 +44,11 @@
                               <thead>
                                  <tr>
                                     <th class="text-center" width="10%">No</th>
-                                    <th class="text-center" width="15%">Judul Event</th>
-                                    <th class="text-center" width="10%">Kategori</th>
-                                    <th class="text-center" width="25%">Deskripsi Event</th>
+                                    <th class="text-center" width="25%">Judul Event</th>
+                                    <th class="text-center" width="15%">Kategori</th>
+                                    <!-- <th class="text-center" width="25%">Deskripsi Event</th> -->
                                     <th class="text-center" width="20%">Gambar</th>
-                                    <th class="text-center" width="20%">Aksi</th>
+                                    <th class="text-center" width="25%">Aksi</th>
                                  </tr>
                                  <?php $number = 1; ?>
                               </thead>
@@ -60,11 +60,11 @@
                                     <td class="text-center">
                                        {{ $eventwisatas->nama_sampul }}
                                     </td>
-                                    <td class="text-center">{!! $eventwisatas->deskripsi_event !!}</td>
+                                    <!-- <td class="text-center">{!! $eventwisatas->deskripsi_event !!}</td> -->
                                     <td class="text-center"><img  src="{{'images/eventwisata/'.$eventwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"data-target="#myModalgambar{{$eventwisatas->id_event }}"/></td>
                                     <td>
                                        <center> 
-                                          <button class="btn btn-info" onclick="window.location.href='/'"><span class="ti-eye" style="color:black;"></span></button>
+                                       <button class="btn btn-info" onclick="window.location.href='/lihat-eventwisata/{{$eventwisatas->id_event}}'"><span class="ti-eye" style="color:black;"></span></button>
                                           <button class="btn btn-warning"><span class="ti-pencil-alt" style="color:black;" onclick="window.location.href='/ubah-event-wisata/{{$eventwisatas->id_event}}'"></span></button>
                                           <button class="btn btn-danger"
                                              data-toggle="modal"

@@ -15,8 +15,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Table-Export</li>
+                                <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Atraksi</li>
                             </ol>
                         </div>
                     </div>
@@ -51,8 +51,8 @@
                                                                                 Atraksi</th>
                                                                             <th class="text-center" width="15%">
                                                                                 Kategori</th>
-                                                                            <th class="text-center" width="20%">
-                                                                                Deskripsi Atraksi</th>
+                                                                            <!-- <th class="text-center" width="20%">
+                                                                                Deskripsi Atraksi</th> -->
                                                                             <th class="text-center" width="20%">Foto
                                                                                 Atraksi</th>
                                                                             <th class="text-center" width="25%">Aksi
@@ -71,9 +71,9 @@
                                                                                 <td class="text-center">
                                                                                     {{ $atraksiwisatas->nama_sampul }}
                                                                                 </td>
-                                                                                <td class="text-center">
+                                                                                <!-- <td class="text-center">
                                                                                     {!! $atraksiwisatas->deskripsi !!}
-                                                                                </td>
+                                                                                </td> -->
                                                                                 <td>
                                                                             <img
                                                                                             src="{{ 'images/Atraksi/' . $atraksiwisatas->file_foto }}"
@@ -84,7 +84,7 @@
                                                                                 <td>
                                                                                 <center> 
                                                                                     <button class="btn btn-info"
-                                                                                        onclick="window.location.href='/'"><span
+                                                                                        onclick="window.location.href='/lihat-atraksiwisata/{{$atraksiwisatas->atraksi_id}}'"><span
                                                                                             class="ti-eye"
                                                                                             style="color:black;">
                                                                                             </span></button>

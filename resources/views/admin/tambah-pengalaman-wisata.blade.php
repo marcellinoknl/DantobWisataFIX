@@ -44,7 +44,7 @@
                                         </div>
                                     </div>
                                       <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Gambar Atraksi Wisata</label>
+                                        <label class="col-sm-3 col-form-label">Gambar Pengalaman Wisata</label>
                                         <div class="col-sm-9">
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
                                             <div class="custom-file">
@@ -53,25 +53,30 @@
                                                     onchange="previewImage()" name="file_foto">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-
-                                            </div>
-                                            @error('file_foto')
+                                                @error('file_foto')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Deskripsi</label>
                                     </div>
                                     <div class="mb-3 row">
+
+                                    <div class="col-md-12">
+
                                         <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="editor" name="deskripsi" height="300px" cols="200px" rows="20"></textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
+
+                                    </div>
 
                                     </div>
                                     <br><br>

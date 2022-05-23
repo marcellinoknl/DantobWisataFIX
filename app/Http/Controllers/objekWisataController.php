@@ -20,7 +20,6 @@ class objekWisataController extends Controller
     public function kelolaindexAction()
     {
 
-
         $objekwisata = DB::table('objek_wisata')
             ->select('objek_wisata.*', 'objwisatakabupaten.nama_kab', 'kategori_wisata.nama_kategori')
             ->join('objwisatakabupaten', 'objwisatakabupaten.id_obj_wisata_kabupaten', '=', 'objek_wisata.id_obj_wisata_kabupaten')

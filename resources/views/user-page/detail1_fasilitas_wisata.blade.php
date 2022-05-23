@@ -53,16 +53,15 @@
 									echo date_format($date,"d M Y"); ?> &nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i> {{$fasilitias_wisatas->name}}
 
                                     <?php   
-                                    $deskripsi = substr($fasilitias_wisatas->deskripsi,0,250);
+                                    $deskripsi = substr($fasilitias_wisatas->deskripsi,0,50);
                                     ?>                              
                                 </div>
                                 <div class="postcard__bar"></div>
-                                <div class="postcard__preview-txt">{!! $deskripsi !!}...<a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}" onMouseOver="this.style='text-decoration:underline'"
-                                    onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a></div>
-                                <ul class="postcard__tagbox">
+
+                          
                                     <li class="tag__item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$fasilitias_wisatas->lokasi}}</li>
                                     <li class="tag__item"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$sampul_fasilitas->nama_sampul}}</li>
-                                </ul>
+                           
                             </div>
                         </article>
                     </div>
