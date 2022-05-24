@@ -35,7 +35,7 @@
     <!-- Styles -->
     <link href="{{asset('assets/css/lib/themify-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/data-table/buttons.bootstrap.min.css')}}" rel="stylesheet" />
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script> --}}
 
 </head>
 

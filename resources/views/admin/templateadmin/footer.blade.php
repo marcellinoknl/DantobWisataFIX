@@ -50,6 +50,8 @@
     <script src="{{asset('assets/js/lib/data-table/buttons.html5.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/buttons.print.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/datatables-init.js')}}"></script>
+    <script src="{{asset('assets/js/ckeditor/ckeditor.js')}}"></script>
+    
 
     <script>
         ClassicEditor

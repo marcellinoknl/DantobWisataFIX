@@ -101,8 +101,8 @@
                                     </div>
                                     <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <textarea type="text" id="editor" name="deskripsi" height="300px" cols="200px" rows="20"
-                                            class="form-control @error('deskripsi') is-invalid @enderror">{{ $update->deskripsi }}</textarea>
+                                        <textarea type="text" id="ckedtor" name="deskripsi" height="300px" cols="200px" rows="20"
+                                            class="form-control @error('deskripsi') is-invalid @enderror ckeditor">{{ $update->deskripsi }}</textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

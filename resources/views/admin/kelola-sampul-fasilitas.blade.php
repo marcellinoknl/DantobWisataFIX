@@ -32,7 +32,7 @@
    <div class="row">
       <div class="col-lg-12">
          <a href="{{ url('/tambah-sampul-fasilitas')}}">
-         <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Sampul Fasilitas</span></button>
+            <button class="btn btn-success"style="color:black; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Sampul Fasilitas </button>
          </a>
          <section id="main-content">
             <div class="row">
