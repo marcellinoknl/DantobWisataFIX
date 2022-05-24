@@ -33,7 +33,7 @@
                                  
         </div>
         <div class="container p-md-2 p-2">
-            <p class="caption" style=" color:black;">
+            <p class="caption text-justify" style=" color:black;">
                 {!! $fasilitas_wisata_detail->deskripsi !!}
             </p>
 
