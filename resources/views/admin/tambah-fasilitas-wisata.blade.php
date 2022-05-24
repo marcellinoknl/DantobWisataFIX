@@ -95,7 +95,7 @@
                                             </div>
                                         </div>  
                                         <div class="mb-3 row">
-                                            <div class="col-md-12">
+                                         
                                             <label class="col-sm-3 col-form-label">Deskripsi Fasilitas</label>
                                         </div>
                                         <div class ="mb-3 row">

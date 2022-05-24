@@ -39,30 +39,17 @@
 <script src="{{asset('assets/js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
 <!-- scripit init-->
 <script src="{{asset('assets/js/dashboard2.js')}}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+    
+<script src="{{asset('assets/js/ckeditor/ckeditor.js')}}"></script>
 
-    <!-- scripit init-->
-    <script src="{{asset('assets/js/lib/data-table/datatables.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/buttons.flash.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/jszip.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/pdfmake.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/vfs_fonts.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/buttons.html5.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/buttons.print.min.js')}}"></script>
-    <script src="{{asset('assets/js/lib/data-table/datatables-init.js')}}"></script>
-    <script src="{{asset('assets/js/ckeditor/ckeditor.js')}}"></script>
+    <!-- Data table-->
+<script src="{{asset('tabelfolder/js/table.js')}}"></script>
     
 
-    <script>
-        ClassicEditor
-                .create( document.querySelector( '#editor' ) )
-                .then( editor => {
-                        console.log( editor );
-                } )
-                .catch( error => {
-                        console.error( error );
-                } );
-</script>
 
 </body>
 

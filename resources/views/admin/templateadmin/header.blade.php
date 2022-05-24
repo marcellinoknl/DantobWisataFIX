@@ -18,8 +18,7 @@
     <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
     <!-- Styles -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/styledelet.css') }}">
-     <link rel="stylesheet" href="{{ asset('css/reset.css') }}"> -->
+
      <link href="{{asset('assets/css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/chartist/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/font-awesome.min.css')}}" rel="stylesheet">
@@ -31,11 +30,16 @@
     <link href="{{asset('assets/css/lib/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/helper.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
     <!-- Styles -->
     <link href="{{asset('assets/css/lib/themify-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/lib/data-table/buttons.bootstrap.min.css')}}" rel="stylesheet" />
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script> --}}
+
+    <!-- Data Table -->
+    <link rel="stylesheet" type="text/css" href="{{asset('tabelfolder/css/table.css')}}">
+    <link rel="shortcut icon" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
 
 </head>
 
