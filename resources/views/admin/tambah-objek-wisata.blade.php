@@ -99,6 +99,7 @@
                                                     id="gambarwisata" onchange="previewImage()" name="file_foto">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
                                             </div>
+                                            
                                             @error('file_foto')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

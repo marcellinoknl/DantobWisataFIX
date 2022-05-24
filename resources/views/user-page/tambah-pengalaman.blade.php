@@ -45,7 +45,7 @@
                 </div>
                   <div class="form-group">
                     <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
-                    <textarea class="form-control  @error('deskripsi') is-invalid @enderror" id="inputAddress" name="deskripsi"  cols="30" rows="10" id="editor" height="300px"></textarea>
+                    <textarea class="form-control  @error('deskripsi') is-invalid @enderror" id="editor" name="deskripsi"  cols="30" rows="10" id="editor" height="300px"></textarea>
                     @error('deskripsi')
                     <div class="invalid-feedback">
                         {{ $message }}
