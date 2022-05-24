@@ -18,9 +18,6 @@ class CreateFasilitasWisataTable extends Migration
             $table->string('nama_fasilitas');
             $table->text('deskripsi');
             $table->text('lokasi'); 
-            $table->string('nama_pemilik');
-            $table->string('kontak');
-            $table->string('jenis_fasilitas');
             $table->string('file_foto');
             $table->integer('id_sampul_fasilitas')->unsigned();
             $table->foreign('id_sampul_fasilitas')->references('id')->on('sampul_fasilitas')->onDelete('cascade'); 

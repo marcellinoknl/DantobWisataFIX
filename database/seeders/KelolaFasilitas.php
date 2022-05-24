@@ -22,10 +22,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Gereja, Lumban Dolok, Haume Bange, Balige, Kab. Toba, Sumatera Utara.',
                 'file_foto' => 'hkbpBalige.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '2',
@@ -34,10 +31,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Saribu Dolok, Kec. Pematang Raya, Kab. Simalungun, Sumatera Utara.',
                 'file_foto' => 'MasjidAwal.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '3',
@@ -46,10 +40,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Rura tanjung, Kec. Pakkat, Kab. Humbang Hasundutan, Sumatera Utara.',
                 'file_foto' => 'hkbpSihorbo.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '4',
@@ -58,10 +49,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Bukit Dolok, Siatas Barita, Kab. Tapanuli Utara, Sumatera Utara.',
                 'file_foto' => 'SalibKasih.jpeg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '5',
@@ -70,10 +58,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Hutatoruan V, Tarutung, Kab. Tapanuli Utara, Sumatera Utara',
                 'file_foto' => 'hkbpDame.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '6',
@@ -82,10 +67,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Raja Johannes Hutabarat, Hutatoruan V, Tarutung, Kab. Tapanuli Utara, Sumatera Utara.',
                 'file_foto' => 'hkbpPearaja.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '7',
@@ -94,10 +76,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Siti Aminah Samosir, Desa Tambun Sukkean, Kec. Onan Runggu, Kab. Samosir.',
                 'file_foto' => 'MasjidNurulIslam.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '8',
@@ -106,10 +85,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Gereja, Pasar Pangururan, Pangururan, Kab. Samosir, Sumatera utara.',
                 'file_foto' => 'hkbpPangururan.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '9',
@@ -118,10 +94,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Lumban Silintong, Kec. Balige, Kab. Toba, Sumatera Utara',
                 'file_foto' => 'hkbpLumbanSilintong.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '10',
@@ -130,10 +103,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Desa Sitinjo, Kec. Sitinjo, Kab. Dairi, Sumatera Utara.',
                 'file_foto' => 'TamanWisataIman.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '11',
@@ -142,10 +112,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Salak II, Kec. Salak, Kab. Pakpak Bharat, Sumatera Utara.',
                 'file_foto' => 'gkppd.jpg',
                 'id_sampul_fasilitas' => '4',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '12',
@@ -162,10 +129,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Parsoburan Tengah, Kec. Habinsaran, Toba, Sumatera Utara 22383',
                 'file_foto' => 'GunawanHomestay.jpeg',
                 'id_sampul_fasilitas' => '1',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '13',
@@ -176,10 +140,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Taman eden 100 Lumbanrang, Ps. Lumban Julu, Kec. Lumban Julu, Toba, Sumatera Utara 22386',
                 'file_foto' => 'TamanEden.png',
                 'id_sampul_fasilitas' => '1',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '14',
@@ -189,10 +150,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Desa Sibisia, Kecamatan Ajibata, Kabupaten Toba (dulu Toba Samosir).',
                 'file_foto' => 'Caldera.jpg',
                 'id_sampul_fasilitas' => '1',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '15',
@@ -202,10 +160,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Lkr. Tuktuk No.Kelurahan, Tuktuk Siadong, Simanindo, Kabupaten Samosir, Sumatera Utara.',
                 'file_foto' => 'BagusHomestay.png',
                 'id_sampul_fasilitas' => '1',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '16',
@@ -215,10 +170,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Lkr. Tuktuk, Tuktuk Siadong, Simanindo, Kabupaten Samosir, Sumatera Utara.',
                 'file_foto' => 'LeokapHomestay.png',
                 'id_sampul_fasilitas' => '1',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                 'id_fasilitas' => '17',
@@ -228,10 +180,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Lkr. Tuktuk, Tuktuk Siadong, Simanindo, Kabupaten Samosir, Sumatera Utara',
                 'file_foto' => 'HorasFamilyHome.png',
                 'id_sampul_fasilitas' => '1',
-                'id_user' => '1',
-                'nama_pemilik'=>'Marcellino',
-                'kontak'=>'082166861855',
-                'jenis_fasilitas'=>'Hotel Bintang 5'
+                'id_user' => '1'
              ],
              [ 
                'id_fasilitas' => '18',
@@ -240,10 +189,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Terletak di siarangarang, Partali Julu, Tarutung,Kab. Tapanuli Utara. Terpaut 5,3 kilometer dari ibukota kabupaten dan dapat ditempun dengan waktu perjalanan 13 menit.',
                'file_foto' => 'BerylFarmResto.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '19',
@@ -253,10 +199,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jalan Mayjend J. Samosir No 1, Kelurahan Hutatoruan X, Kecamatan Tarutung, Kabupaten Tapanuli Utara, Sumatera Utara',
                'file_foto' => 'AngkasaKafeResto.png',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '20',
@@ -266,10 +209,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Lkr. Tuktuk, Tuktuk Siadong, Kec. Simanindo, Kab. Samosir.',
                'file_foto' => 'JennysRestaurant.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '21',
@@ -278,10 +218,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Tuktuk Siadong, Kec. Simanindo, Kab. Samosir.',
                'file_foto' => 'MarubaRestaurant.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '22',
@@ -290,10 +227,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Sisingamangaraja No. 167, Kota Sidikalang, Kabupaten Dairi',
                'file_foto' => 'RMGarudaSidikalang.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '23',
@@ -303,10 +237,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Ahmad Yani simpang salak depan kantor pengadilan, Batang Beruh, Sidikalang, Kabupaten Dairi',
                'file_foto' => 'RumahMakanKhasBatak.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '24',
@@ -315,10 +246,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Tipang, Kec. Bakti Raja, Kabupaten Humbang Hasundutan, Sumatera Utara',
                'file_foto' => 'RestoApung.jpeg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '25',
@@ -327,10 +255,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Parulohan, Lintong Nihuta, Kabupaten Humbang Hasundutan',
                'file_foto' => 'SipinsurResto.png',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '26',
@@ -340,10 +265,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jalan Lae Une Salak, Sumatra Utara',
                'file_foto' => 'RestoranNelayan.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '27',
@@ -352,10 +274,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jalan Napasengkut no.12, Salak, Pakpak Bharat',
                'file_foto' => 'RMMuslimMaduNtedoh.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '28',
@@ -364,10 +283,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Parapat, Dolok Tomuan, Kec. Dolok Panribuan, Kab. Simalungun, Sumatera Utara.',
                'file_foto' => 'WaroenkPinusDamasus.jpeg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '29',
@@ -377,10 +293,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Narumonda Bawah No.115, Kec. Siantar Timur, Kota Pematang Siantar, Sumatera Utara.',
                'file_foto' => 'RumahMakanSilindung.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '30',
@@ -389,10 +302,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Siborong Borong – Parapat, Sangkar Nihuta, Balige, Kabupaten Toba Samosir, Sumatera Utara',
                'file_foto' => 'PizzaAndaliman.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '31',
@@ -401,10 +311,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'l. Sibolahotang, Sibola Hotangsas, Kabupaten Toba Samosir, Sumatera Utara',
                'file_foto' => 'tobatio.jpg',
                'id_sampul_fasilitas' => '3',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '32',
@@ -414,10 +321,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Bandara Silangit, Kabupaten Tapanuli Utara, Sumatera Utara, Indonesia.',
                'file_foto' => 'ttc.jpg',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '33',
@@ -427,10 +331,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Terminal Lubuk Pakam, Jl. Lintas Sumatra, Tj. Garbus Satu, Kec. Lubuk Pakam, Kabupaten Deli Serdang, Sumatera Utara 20551',
                'file_foto' => 'Damri.jpg',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '34',
@@ -440,10 +341,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Justin Sirait No.5, Pardamean Ajibata, Kec. Ajibata, Toba, Sumatera Utara',
                'file_foto' => 'TobaTrans.jpg',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '35',
@@ -452,10 +350,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'JL. Justin Sirait, Pardamean Ajibata, Ajibata, Simalungun',
                'file_foto' => 'PelabuhanAjibata.jpg',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '36',
@@ -464,10 +359,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Tiga Raja, Kec. Girsang Sipangan Bolon, Kabupaten Simalungun, Sumatera Utara',
                'file_foto' => 'PelabuhanTigaraja.jpg',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '37',
@@ -477,10 +369,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Simanindo, Kabupaten Samosir, Sumatera Utara',
                'file_foto' => 'PelabuhanTomok.png',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '38',
@@ -490,10 +379,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jalan Silangit, Silando Muara, Silando, Kec. Siborongborong, Kabupaten Tapanuli Utara, Sumatera Utara',
                'file_foto' => 'Silangit.jpg',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '39',
@@ -502,10 +388,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Pardamean Sibisa, Kec. Ajibata, Toba, Sumatera Utara',
                'file_foto' => 'Sibisa.jpg',
                'id_sampul_fasilitas' => '2',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '40',
@@ -515,10 +398,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Sisingamangaraja No.80, Batang Beruh, Kec. Sidikalang, Kabupaten Dairi, Sumatera Utara.',
                'file_foto' => 'TheSastaHotel.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '41',
@@ -527,10 +407,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Nusantara No.5, Kota Sidikalang, Sidikalang, Kabupaten Dairi, Sumatera Utara, Indonesia',
                'file_foto' => 'HotelAngkasaRaya.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '42',
@@ -539,10 +416,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Mpu Bada Desa Salak, Kecamatan Salak, Kabupaten Pakpak Bharat, Sumatera Utara, 22271, Indonesia',
                'file_foto' => 'WarisHotel.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '43',
@@ -551,10 +425,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Kecupak, Desa Kecupak II, Kecamatan Pergetteng-getteng Sengkut, Kabupaten Pakpak Bharat, 22272, Sumatera Utara, Indonesia',
                'file_foto' => 'HotelImpana.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '44',
@@ -564,10 +435,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jalan Sutomo, Kompleks Griya Hapoltakan, Kec. Pematang Raya, Kab. Simalungun, Raya, Simalungun, Sumatera Utara, Indonesia.',
                'file_foto' => 'SimalungunCity.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '45',
@@ -577,10 +445,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Togu Domu Nauli, Kec. Dolok Pardamean, Kabupaten Simalungun, Sumatera Utara',
                'file_foto' => 'MyNasha.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '46',
@@ -590,10 +455,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jalan Raya Bakkara Sosorgonting, Pasaribu, Dolok sanggul, Humbang Hasundutan Regency, North Sumatra.',
                'file_foto' => 'MartinAnugrah.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '47',
@@ -603,10 +465,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Pakkat - Dolok Sanggul No.km 8, Sosor Tambok, Dolok sanggul,Humbang Hasundutan',
                'file_foto' => 'TuanNagani.png',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '48',
@@ -616,10 +475,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jl. Sadar/Sipahutar No. 33, Dusun Parhasioran, Desa Lobusiregar II, Siborongborong, Tapanuli Utara, Siborongborong, Tapanuli Utara, Sumatera Utara, Indonesia.',
                'file_foto' => 'PiltikHomestay.jpg',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                'id_fasilitas' => '49',
@@ -629,10 +485,7 @@ class KelolaFasilitas extends Seeder
                'lokasi' => 'Jalan Raya Balige-Tarutung No.77 Silangit Siborong-borong, Muara, Tapanuli Utara, Sumatera Utara, Indonesia.',
                'file_foto' => 'NoahHotel.jpg',
                'id_sampul_fasilitas' => '1',
-               'id_user' => '1',
-               'nama_pemilik'=>'Marcellino',
-               'kontak'=>'082166861855',
-               'jenis_fasilitas'=>'Hotel Bintang 5'
+               'id_user' => '1'
             ],
             [ 
                 'id_fasilitas' => '50',
@@ -642,10 +495,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Peceren No.168, Berastagi, Kab. Karo, North Sumatra, Indonesia.',
                 'file_foto' => 'GrandMutiara.png',
                 'id_sampul_fasilitas' => '1',
-		        'id_user' => '1',
-              'nama_pemilik'=>'Marcellino',
-              'kontak'=>'082166861855',
-              'jenis_fasilitas'=>'Hotel Bintang 5'
+		        'id_user' => '1' 
              ],
              [ 
                 'id_fasilitas' => '51',
@@ -655,10 +505,7 @@ class KelolaFasilitas extends Seeder
                 'lokasi' => 'Jl. Mumpin Tua No.99 (Arah Vihara Dharma Shanti), Desa Sempa Jaya, Berastagi - Karo.',
                 'file_foto' => 'HotelKalang.png',
                 'id_sampul_fasilitas' => '1',
-		        'id_user' => '1',
-              'nama_pemilik'=>'Marcellino',
-              'kontak'=>'082166861855',
-              'jenis_fasilitas'=>'Hotel Bintang 5'
+		        'id_user' => '1'
              ],
             ]);
         }
