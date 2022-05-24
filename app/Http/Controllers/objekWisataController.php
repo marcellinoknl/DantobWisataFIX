@@ -68,7 +68,7 @@ class objekWisataController extends Controller
                 'deskripsi' => 'required',
                 'nama_kategori' => 'required',
                 'nama_kabupaten' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
             ]
         );
         $objek = new Objek_Wisata();
@@ -103,6 +103,7 @@ class objekWisataController extends Controller
                 'deskripsi' => 'required',
                 'nama_kategori' => 'required',
                 'deskripsi' => 'required',
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200',
                 'nama_kabupaten' => 'required'
                
             ]

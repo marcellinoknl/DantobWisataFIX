@@ -27,7 +27,8 @@ class KabupatenController extends Controller
             [
                
                 'nama_kab' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+                
             ]
         );
         $kabupaten = new Kabupaten();
@@ -56,7 +57,7 @@ class KabupatenController extends Controller
                 [
                    
                     'nama_kab' => 'required',
-                    'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                    'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
                 ]
             );
         $update = Kabupaten::find($id_obj_wisata_kabupaten);

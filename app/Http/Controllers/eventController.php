@@ -59,7 +59,7 @@ class eventController extends Controller
         [
             'judul_event' => 'required',
             'id_sampul_event' => 'required', 
-            'file_foto' => 'required|mimes:jpeg,jpg,png,gif',
+            'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200',
             'deskripsi_event' => 'required'
                                       
             
@@ -92,7 +92,8 @@ class eventController extends Controller
         $request,
         [
             'judul_event' => 'required',
-            'nama_sampul' => 'required',            
+            'nama_sampul' => 'required', 
+            'file_foto' => 'max:5000' ,'dimensions:max_width=1200',          
             'deskripsi_event' => 'required'
                                       
             
@@ -138,7 +139,7 @@ class eventController extends Controller
         [
             
             'nama_sampul' => 'required', 
-            'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+            'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
             
                                       
             
@@ -168,6 +169,7 @@ class eventController extends Controller
             $request,
             [
                 'sampul_event' => 'required',
+                'file_foto' =>'max:5000' ,'dimensions:max_width=1200'
 
             ]
         );

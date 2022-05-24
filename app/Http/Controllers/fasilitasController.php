@@ -67,7 +67,7 @@ class fasilitasController extends Controller
         [
             
             'nama_sampul' => 'required', 
-            'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+            'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
             
                                       
             
@@ -99,7 +99,7 @@ class fasilitasController extends Controller
             'nama_fasilitas'=>'required',
             'lokasi'=>'required',
             'id_sampul_fasilitas' => 'required', 
-            'file_foto' => 'required|mimes:jpeg,jpg,png,gif',
+            'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200',
             'deskripsi' => 'required'
                                       
             
@@ -141,7 +141,8 @@ class fasilitasController extends Controller
         $this->validate(
             $request,
             [
-                'nama_sampul' => 'required'
+                'nama_sampul' => 'required',
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200'
             ]
         );
         $update = SampulFasilitas::find($id);
@@ -165,6 +166,7 @@ class fasilitasController extends Controller
             [
                 'nama_fasilitas' => 'required',
                 'lokasi' => 'required',
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200',
                 'nama_sampul' => 'required',
                 'deskripsi' => 'required'
             ]

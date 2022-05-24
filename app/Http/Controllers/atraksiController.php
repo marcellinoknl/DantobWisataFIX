@@ -61,8 +61,9 @@ class atraksiController extends Controller
             [
                 'judul' => 'required',
                 'nama_sampul' => 'required', 
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif',
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200',
                 'deskripsi' => 'required'
+                
                                           
                 
             ]
@@ -94,7 +95,8 @@ class atraksiController extends Controller
             $request,
             [
                 'judul' => 'required',
-                'nama_sampul' => 'required',                
+                'nama_sampul' => 'required', 
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200',           
                 'deskripsi' => 'required'
                                           
                 
@@ -142,7 +144,7 @@ class atraksiController extends Controller
             [
                 
                 'nama_sampul' => 'required', 
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
                 
                                           
                 

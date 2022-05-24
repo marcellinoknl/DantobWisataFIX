@@ -80,6 +80,7 @@
                                                     value="{{ $update->file_foto }}">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                                                <br/><label style="color:red">Maks. Ukuran: 5MB <br/> Maks. Lebar: 1200 Pixel</label>
 
                                             </div>
 

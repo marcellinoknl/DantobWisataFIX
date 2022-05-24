@@ -49,7 +49,7 @@ class beritaController extends Controller
             $request,
             [
                 'judul_berita' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif',
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200',
                 'isi_berita' => 'required' 
                 
                 
@@ -83,7 +83,8 @@ class beritaController extends Controller
             $request,
             [
                 'judul_berita' => 'required',
-                'isi_berita' => 'required',
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200',
+                'isi_berita' => 'required'
               
             ]
         );

@@ -98,6 +98,7 @@
                                                     class="custom-file-input @error('file_foto') is-invalid @enderror"
                                                     id="gambarwisata" onchange="previewImage()" name="file_foto">
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                                                <br/><label style="color:red">Maks. Ukuran: 5MB <br/> Maks. Lebar: 1200 Pixel</label>
                                             </div>
                                             
                                             @error('file_foto')

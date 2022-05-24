@@ -84,6 +84,7 @@
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="gambarwisata" onchange="previewImage()"name="file_foto"  value="{{$update->file_foto}}">
                                                     <label class="custom-file-label" for="customFile">Pilih Gambar</label>
+                                                    <br/><label style="color:red">Maks. Ukuran: 5MB <br/> Maks. Lebar: 1200 Pixel</label>
                                                   </div>
                                             </div>
                                         </div>  
