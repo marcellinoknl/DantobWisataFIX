@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1>KELOLA OBJEK WISATA</h1>
+                            <h1>KELOLA AKUN USER</h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Objek Wisata</li>
+                                <li class="breadcrumb-item active">Kelola Akun User</li>
                             </ol>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                             <section id="main-content">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <a href="{{ url('/tambah-objek-wisata')}}">
-                                            <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Objek Wisata</span></button>
+                                        <a href="{{ url('/tambahuser')}}">
+                                            <button class="btn btn-success"style="color:black; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Akun User</button>
                                         </a>
                                         <section id="main-content">
                                             <div class="row">
@@ -45,54 +45,31 @@
                                                                         <thead>
                                                                             <tr>
                                                                                 <th class="text-center" width="10%">No</th>
-                                                                                <th class="text-center" width="10%">Nama Wisata</th>
-                                                                                <th class="text-center" width="10%">Kabupaten</th>
-                                                                                <th class="text-center" width="10%">Kategori</th>
-                                                                                <th class="text-center" width="25%">Foto Wisata</th>
-                                                                                <th class="text-center" width="15%">Aksi</th>
+                                                                                <th class="text-center" width="25%">Nama</th>
+                                                                                <th class="text-center" width="25%">Email</th>
+                                                                                <th class="text-center" width="40%">Aksi</th>
                                                                             </tr>
                                                                             <?php $number = 1; ?>
                                                                         </thead>
 
                                                                     <tbody>
-                                                                        @foreach($objekwisata as $objekwisatas)
+                                                                        @foreach($userset as $usersets)
                                                                         <tr>
                                                                             <td class="text-center"><?php echo $number++; ?> </td>
-                                                                            <td class="text-center">{{$objekwisatas->nama_wisata}}</td>
-                                                                            <td class="text-center">{{$objekwisatas->nama_kab}}</td>
-                                                                            <td class="text-center">{{$objekwisatas->nama_kategori}}</td>
-                                                                            
-                                                                            {{-- <td class="text-center">{{$objekwisatas->nama_kategori}}</td> --}}
-                                                                            <td>
-                                                                            <img
-                                                                                            src="{{ 'images/objekwisata/' . $objekwisatas->file_foto }}"
-                                                                                            style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"
-                                                                                            alt="" data-toggle="modal"
-                                                                                            data-target="#myModalgambar{{ $objekwisatas->id_obj_wisata  }}" /></td>
-                                                                            <!-- <td class="text-center"><img src="{{'images/objekwisata/'.$objekwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" /></td> -->
+                                                                            <td class="text-center">{{$usersets->name}}</td>
+                                                                            <td class="text-center">{{$usersets->email}}</td>
+
                                                                             <td>
                                                                             <center> 
-                                                                            <button class="btn btn-info" onclick="window.location.href='/lihat-objekwisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-eye" style="color:black;"></span></button>
-                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubah-objek-wisata/{{$objekwisatas->id_obj_wisata}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
-                                                                                <button class="btn btn-danger"data-toggle="modal"data-target="#myModal{{ $objekwisatas->id_obj_wisata }}"><span class="ti-trash" style="color:black;"></span></button></center> 
+                                                                                <button class="btn btn-warning" onclick="window.location.href='/ubahuser/{{$usersets->id}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
+                                                                                <button class="btn btn-danger"data-toggle="modal"data-target="#myModal{{ $usersets->id }}"><span class="ti-trash" style="color:black;"></span></button></center> 
                                                                                 </td>
                                                             </div>
                                                             </tr>
-                                                            <!-- gedein gambar -->
-                                                            <div id="myModalgambar{{ $objekwisatas->id_obj_wisata  }}"
-                                                                class="modal fade" tabindex="-1" role="dialog">
-                                                                <div class="modal-dialog modal-dialog-centered">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-body">
-                                                                            <img src="{{ url('images/objekwisata/'.$objekwisatas->file_foto) }}"
-                                                                                class="img-fluid">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+
                                                             {{-- modal pop up hapus --}}
                                                             <div class="modal fade"
-                                                                id="myModal{{$objekwisatas->id_obj_wisata}}"
+                                                                id="myModal{{$usersets->id}}"
                                                                 role="dialog">
                                                                 <div class="modal-dialog" style="
                                                                    position: absolute;
@@ -107,7 +84,7 @@
                                                                     <!-- Modal content-->
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h4 class="modal-title">Hapus Objek Wisata
+                                                                            <h4 class="modal-title">Hapus Akun
                                                                             </h4>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal"><i
@@ -115,8 +92,8 @@
                                                                         </div>
                                                                         <div class="modal-body">
                                                                             <p>Apakah Anda yakin ingin menghapus
-                                                                                Wisata
-                                                                                <b>{{ $objekwisatas->nama_wisata }}</b> ?
+                                                                                Akun dari
+                                                                                <b>{{ $usersets->name }}</b> ?
                                                                             </p>
                                                                         </div>
                                                                         <div class="modal-footer">
@@ -124,7 +101,7 @@
                                                                                 class="btn btn-secondary"
                                                                                 data-dismiss="modal">Batal</button>
                                                                             <button class="btn btn-danger"
-                                                                                onclick="window.location.href='/objekwisata/hapus/{{$objekwisatas->id_obj_wisata}}'"
+                                                                                onclick="window.location.href='/userwisata/hapus/{{$usersets->id}}'"
                                                                                 data-toggle="modal"
                                                                                 data-target="#myModal"><span
                                                                                     class="ti-trash"

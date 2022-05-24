@@ -50,11 +50,11 @@ class LoginController extends Controller
 
         if (auth()->attempt(array('email' => $input['email'], 'password' =>
         $input['password']))) {
-            if (auth()->user()->role == 1) {
+            if (auth()->user()->role == 3) {
                 return redirect('/admin-wisata')->with('success', "Berhasil login!");
             } else if (auth()->user()->role == 2) {
                 return redirect('/admin-wisata')->with('success', "Berhasil login!");
-            } else if (auth()->user()->role == 0) {
+            } else if (auth()->user()->role == 1) {
                 return redirect('/')->with('success', "Berhasil login!");
             }
         } else {

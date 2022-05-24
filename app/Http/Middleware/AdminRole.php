@@ -16,9 +16,9 @@ class AdminRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role == 2) {
+        if (auth()->user()->role == 3) {
             return $next($request);
-        } elseif (auth()->user()->role == 1) {
+        } elseif (auth()->user()->role == 2) {
             return $next($request);
         }
         return redirect()->back()->with('error', "Anda tidak memiliki Akses ke Halaman Admin");

@@ -16,7 +16,7 @@ class pengunjung
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role == 0) {
+        if (auth()->user()->role == 1) {
             return $next($request);
         }
         return redirect()->back()->with('error', "Anda harus login terlebih dahulu");

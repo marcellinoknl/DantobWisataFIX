@@ -87,7 +87,7 @@
                             <li><a href="{{url('/persetujuanpengalamanwisata')}}">Persetujuan Pengalaman</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{url('/kelolagaleri')}}"><i class="ti-layout-grid4-alt"></i> Kelola Akun User </a></li>
+                    <li><a href="{{url('/kelolauser')}}"><i class="ti-layout-grid4-alt"></i> Kelola Akun User </a></li>
             </div>
         </div>
     </div>

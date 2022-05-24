@@ -18,7 +18,7 @@ class User extends Seeder
                 'name'=>'AdminDantob',
                 'email'=>'wisatadantob@gmail.com',
                 'password'=>Hash::make('admin123'),
-                'role'=>'2'
+                'role'=> 3
 
 
                 
@@ -27,7 +27,7 @@ class User extends Seeder
                 'name'=>'Marcellino',
                 'email'=>'marcellinoknl@gmail.com',
                 'password'=>Hash::make('marcel123'),
-                'role'=>'1'
+                'role'=>2
 
 
                 
@@ -36,7 +36,7 @@ class User extends Seeder
                 'name'=>'SamuelS',
                 'email'=>'samuelsimanjuntak195@gmail.com',
                 'password'=>Hash::make('samuel123'),
-                'role'=>'1'
+                'role'=>2
 
 
                 

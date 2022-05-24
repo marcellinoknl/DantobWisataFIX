@@ -11,7 +11,7 @@ use App\Http\Controllers\fasilitasController;
 use App\Http\Controllers\geleriWisataController;
 use App\Http\Controllers\KategoriWisataController;
 use App\Http\Controllers\adminController\adminIndexController;
-use App\Http\Controllers\accountController;
+use App\Http\Controllers\AkunController;
 use App\Http\Controllers\PengalamanController;
 
 /*
@@ -71,7 +71,7 @@ Route::get('/pengalaman-wisata/detail/{id}', [PengalamanController::class, 'inde
 
 Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
-    Route::group(['admin' => 1], function () {
+    Route::group(['admin' => 2], function () {
     //Index utama
 
     //Kelola Objek Wisatawa
@@ -129,7 +129,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::get('/lihat-eventwisata/{id}', [eventController::class, 'kelolaindexActionView']);
 
     });
-    Route::group(['admin' => 2], function () {
+    Route::group(['admin' =>3], function () {
         //kelola kabupaten
         Route::get('/kelolakab', [KabupatenController::class, 'kelolaindexAction']);
         Route::get('/tambah-kab', [KabupatenController::class, 'tambah']);
@@ -217,6 +217,14 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
          Route::post('/tambah-persetujuanpengalaman-wisata/store', [PengalamanController::class, 'storepersetujuan'])->name('formpersetujuanpengalamanwisata.store');
          Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapuspersetujuan'])->name('persetujuanpengalamanwisata.hapus');
          Route::get('/lihat-persetujuan/{id}', [PengalamanController::class, 'kelolaindexActionView']);
+
+         //Kelola akun user
+         Route::get('/kelolauser', [AkunController::class, 'index']);
+         Route::get('/tambahuser', [AkunController::class, 'tambah']);
+         Route::get('/ubahuser/{id}', [AkunController::class, 'edit']);
+         Route::post('/ubahuser-wisata/{id}', [AkunController::class, 'update'])->name('user.ubah');
+         Route::post('/tambahuser/store', [AkunController::class, 'store'])->name('formuser.store');
+         Route::get('/userwisata/hapus/{id}', [AkunController::class, 'hapus'])->name('user.hapus');
     });
 });
 

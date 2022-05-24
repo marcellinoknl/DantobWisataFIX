@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use App\Models\UserModel;
+use App\Models\Roles;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AkunController extends Controller
@@ -13,7 +17,8 @@ class AkunController extends Controller
      */
     public function index()
     {
-        //
+        $userset = UserModel::all();
+        return view('admin.kelolauser', compact('userset'));
     }
 
     /**
@@ -21,9 +26,12 @@ class AkunController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function tambah()
     {
-        //
+        $akunplus = Roles::all();
+
+
+        return view('admin.tambahuser', compact('akunplus'));
     }
 
     /**
@@ -33,30 +41,34 @@ class AkunController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $this->validate(
+            $request,
+            [
+                'name' => 'required',
+                'email' => 'required|email|unique:users', 
+                'role' => 'required', 
+                'password' => 'min:8|required_with:password_confirmation|same:password_confirmation',
+                'password_confirmation' => 'min:8'
+                                          
+                
+            ]
+        );
+        $userplus = new UserModel();
+        $userplus->name = $request->name;
+        $userplus->email = $request->email;
+        $userplus->role = $request->role;
+        $userplus->password =  Hash::make($request->password);
+
+        $userplus->save();
+        return redirect('kelolauser');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $update = UserModel::find($id);
+        $akunplus = Roles::all();
+        return view('admin.ubahuser', compact('update','akunplus'));
     }
 
     /**
@@ -67,8 +79,25 @@ class AkunController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $this->validate(
+            $request,
+            [
+                'name' => 'required',
+                'role' => 'required', 
+                'password' => 'min:8|required_with:password_confirmation|same:password_confirmation',
+                'password_confirmation' => 'min:8'
+                                          
+                
+            ]
+        );
+        $update = UserModel::find($id);
+        $update->name = $request->name;
+        $update->role = $request->role;
+        $update->password =  Hash::make($request->password);
+        $update->save();
+
+        return redirect('kelolauser');
     }
 
     /**
@@ -77,8 +106,11 @@ class AkunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function hapus($id)
     {
-        //
+        $hapus = User::find($id);
+        if ($hapus->delete()) {
+        }
+        return redirect()->back();
     }
 }
