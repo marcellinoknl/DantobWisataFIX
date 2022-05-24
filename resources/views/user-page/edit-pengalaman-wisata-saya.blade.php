@@ -37,6 +37,7 @@
                     <label for="inputAddress">Foto Pengalaman Wisata</label>
                     <input type="file" class="form-control" id="inputAddress" name="file_foto" value="">{{$updates->file_foto}}
                     </div>
+                    <label style="color:red">Maks. Ukuran: 5MB <br/> Maks. Lebar: 1200 Pixel</label>
                   <div class="form-group">
                     <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
                     <textarea name="deskripsi"class="form-control @error('deskripsi') is-invalid @enderror" cols="30" rows="10" id="editor" height="300px" value="">{{$updates->deskripsi}}</textarea>

@@ -54,7 +54,8 @@ class PengalamanController extends Controller
             $request,
             [
                 'judul' => 'required',
-                'deskripsi' => 'required'
+                'deskripsi' => 'required',
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200'
                 
                
             ]
@@ -116,7 +117,7 @@ class PengalamanController extends Controller
             [
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200'
                
             ]
         );
@@ -143,7 +144,7 @@ class PengalamanController extends Controller
             [
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'max:5000' ,'dimensions:max_width=1200'
                
             ]
         );
@@ -201,7 +202,7 @@ class PengalamanController extends Controller
             [
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
             ]
         );
         $pengalaman = new PengalamanWisata();
@@ -224,7 +225,7 @@ class PengalamanController extends Controller
             [
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
                
             ]
         );

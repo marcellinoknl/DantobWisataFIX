@@ -27,13 +27,12 @@
                 <div class="form-group">
                   <label for="inputAddress">Judul Pengalaman Wisata</label>
                   <input type="text" class="form-control @error('judul') is-invalid @enderror" id="inputAddress" placeholder="Masukkan Judul" name="judul"value="{{old('judul')}}">
-                  @error('judul')
+                                    @error('judul')
                   <div class="invalid-feedback">
                       {{ $message }}
                   </div>
               @enderror
-
-                </div>
+               </div>
                 <div class="form-group">
                     <label for="inputAddress">Foto Pengalaman Wisata</label>
                     <input type="file" class="form-control  @error('file_foto') is-invalid @enderror" id="inputAddress" name="file_foto">
@@ -41,7 +40,8 @@
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-                @enderror  
+                @enderror 
+                <label style="color:red">Maks. Ukuran: 5MB <br/> Maks. Lebar: 1200 Pixel</label> 
                 </div>
                   <div class="form-group">
                     <label for="inputAddress">Deskripsi Pengalaman Wisata</label>
