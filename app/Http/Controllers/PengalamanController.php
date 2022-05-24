@@ -134,7 +134,7 @@ class PengalamanController extends Controller
             [
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
                
             ]
         );
@@ -169,7 +169,12 @@ class PengalamanController extends Controller
         }
         return redirect()->back();
     }
-
+    public function hapus($id_pengalaman){
+        $hapus = PengalamanWisata::find($id_pengalaman);
+        if ($hapus->delete()) {
+        }
+        return redirect()->back();
+    }
 
     public function tambah()
     {

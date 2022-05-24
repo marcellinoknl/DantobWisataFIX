@@ -68,8 +68,6 @@ Route::post('/edit-pengalamanwisata-saya/{id}', [PengalamanController::class, 'u
 
 //--AUTHOR SIDE--
 
-
-
 Route::group(['middleware' => ['auth',  'admin']], function () {
     Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
     Route::group(['admin' => 1], function () {
@@ -216,7 +214,7 @@ Route::group(['middleware' => ['auth',  'admin']], function () {
          Route::post('/ubah-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'updatepersetujuan'])->name('persetujuanpengalamanwisata.ubah');
          Route::post('/approved-persetujuanpengalaman-wisata/{id}', [PengalamanController::class, 'approve'])->name('persetujuanpengalamanwisata.approved');
          Route::post('/tambah-persetujuanpengalaman-wisata/store', [PengalamanController::class, 'storepersetujuan'])->name('formpersetujuanpengalamanwisata.store');
-        //  Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapuspersetujuan'])->name('persetujuanpengalamanwisata.hapus');
+         Route::get('/persetujuanpengalaman-wisata/hapus/{id}', [PengalamanController::class, 'hapuspersetujuan'])->name('persetujuanpengalamanwisata.hapus');
          Route::get('/lihat-persetujuan/{id}', [PengalamanController::class, 'kelolaindexActionView']);
     });
 });

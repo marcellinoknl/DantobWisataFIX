@@ -53,11 +53,7 @@
                                                 <input type="file" class="custom-file-input" id="gambarevent" onchange="previewImage()" name="file_foto" value="{{$update->file_foto}}">
 
                                                 <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                                @error('file_foto')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
+
                                             </div>
                                         </div>
                                     </div>
