@@ -62,13 +62,14 @@
                                         <label class="col-sm-3 col-form-label">Deskripsi Pengalaman</label>
                                     </div>
                                     <div class="mb-3 row">
-
+                                        <div class="col-md-12">
                                         <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="editor" name="deskripsi" cols="200px" rows="20">{{$update->deskripsi}}</textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                        </div>
                                     </div>
                                     <br><br>
                                     <button type="button" class="btn btn-danger" onclick="window.location.href='/kelolapengalamanwisata'"><i class="ti-close"></i> Batal</button>
