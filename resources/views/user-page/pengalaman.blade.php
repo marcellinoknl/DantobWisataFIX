@@ -17,9 +17,18 @@
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
             PENGALAMAN WISATA
         </h1>
+        <div class="col-md-12" style="float: right;"> 
+            @guest
+        <a href="{{url('/tambah-pengalamanwisata')}}"><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark" onclick="myAuthFunc()" >Tambahkan Pengalaman</button></a>
+               @else
+        <a href="{{url('/tambah-pengalamanwisata')}}"><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Tambahkan Pengalaman</button></a>
+
+            @endguest
+        </div>
         <p class="caption" style=" color:black;">
             Berikut Pengalaman Wisatawan Danau Toba:
         </p>
+
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <script>
@@ -29,15 +38,6 @@
             }
             </script>
         <div class="container p-md-2 p-2">
-            <div class="col-md-12"> 
-                @guest
-            <a href="{{url('/tambah-pengalamanwisata')}}"><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark" onclick="myAuthFunc()" >Tambahkan Pengalaman</button></a>
-                   @else
-            <a href="{{url('/tambah-pengalamanwisata')}}"><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Tambahkan Pengalaman</button></a>
-
-                @endguest
-            </div>
-
 
             @if(empty($pengalaman) || count($pengalaman) == 0)
             <br><br>
@@ -76,13 +76,16 @@
                             <hr class="mt-2 mb-3" style="border:solid 0.5px" />
                                     <div class="caption" style=" color:black; text-align: justify;"> {!! $deskripsi!!} 
                                 </div>
-                                <a href="{{ url('/beita-wisata/detail/' . $pengalamans->id_pengalaman) }}" onMouseOver="this.style='text-decoration:underline'"
+                                <a href="{{ url('/pengalaman-wisata/detail/' . $pengalamans->id_pengalaman) }}" onMouseOver="this.style='text-decoration:underline'"
                                     onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a>
                             
                         </div>
 
                         <div class=" card-footer">
-                            <small class="text-muted"><i class="fa fa-user" aria-hidden="true"></i>  &nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i> <?php
+                            <small class="text-muted">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                {{ $pengalamans->name }}
+                            &nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i> <?php
                                 $date=date_create($pengalamans->updated_at);
                                 echo date_format($date,"d M Y");
                                 ?> </small>

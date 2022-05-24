@@ -38,27 +38,19 @@
             <div class="row g-2 g-md-4">
                 @foreach ($fasilitias_wisata as $fasilitias_wisatas)
                     <div class="col-12 col-md-12 py-4">
-                        <article class="postcard light green">
+                        <article class="postcard light red">
                             <a class="postcard__img_link" href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
-                                <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" />
+                                <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" width="200px" height="250px" />
                             </a>
                             
                             <div class="postcard__text t-dark">
                                 <div class="col-md-1"></div>
-                                <h1 class="postcard__title yellow"><a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">{{$fasilitias_wisatas->nama_fasilitas}}</a></h1>
-                                <div class="postcard__subtitle small">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    <?php
-									$date=date_create($fasilitias_wisatas->updated_at);
-									echo date_format($date,"d M Y"); ?> &nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i> {{$fasilitias_wisatas->name}}
-
-                                    <?php   
-                                    $deskripsi = substr($fasilitias_wisatas->deskripsi,0,50);
-                                    ?>                              
-                                </div>
+                                <h1 class="postcard__title red"><a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">{{$fasilitias_wisatas->nama_fasilitas}}</a></h1>
+                                <?php   
+                                $deskripsi = substr($fasilitias_wisatas->deskripsi,0,50);
+                                ?> 
                                 <div class="postcard__bar"></div>
 
-                          
                                     <li class="tag__item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$fasilitias_wisatas->lokasi}}</li>
                                     <li class="tag__item"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$sampul_fasilitas->nama_sampul}}</li>
                            

@@ -19,14 +19,14 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="postcard__subtitle small">
-            <i class="fa fa-calendar" aria-hidden="true"></i>
+            {{-- <i class="fa fa-calendar" aria-hidden="true"></i>
             <?php
             $date=date_create($fasilitas_wisata_detail->updated_at);
             echo date_format($date,"d M Y"); ?> &nbsp;&nbsp;
 
             @foreach ($fasilitias_wisata_detail_user as $fasilitias_wisata_detail_users )
             <i class="fa fa-user" aria-hidden="true"></i> {{$fasilitias_wisata_detail_users->name}}      
-            @endforeach
+            @endforeach --}}
 
             &nbsp;&nbsp;
             <i class="fa fa-map-marker" aria-hidden="true"></i> {{ $fasilitas_wisata_detail->lokasi }}

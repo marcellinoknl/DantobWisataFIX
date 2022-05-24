@@ -12,11 +12,20 @@ class PengalamanController extends Controller
     public function indexAction()
     {
         $pengalaman = DB::table('pengalaman_wisata')
+        ->select('pengalaman_wisata.*', 'users.name')
+        ->join ('users', 'users.id', '=', 'pengalaman_wisata.id_user')
         ->where('status','=',"approved")
         ->get();
         
         return view('user-page.pengalaman', ['pengalaman' => $pengalaman]);
     }
+
+    public function indexAction2($id_pengalaman)
+    {
+        $pengalaman_wisata_detail = PengalamanWisata::find($id_pengalaman);
+        return view('user-page.detail-pengalaman-wisata', ['pengalaman_wisata_detail' => $pengalaman_wisata_detail]);
+    }
+
     public function indexActiontambahpengalaman()
     {
         $pengalamanplus = DB::table('pengalaman_wisata')->get();

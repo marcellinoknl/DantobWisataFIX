@@ -1,7 +1,7 @@
 @include('template/header')
 
 <div class="hero-wrap  "
-    style="background-image:url({{ asset('images/berita/' . $berita_wisata_detail->file_foto) }}); width: 100%; height:75%;">
+    style="background-image:url({{ asset('images/pengalaman/' . $pengalaman_wisata_detail->file_foto) }}); width: 100%; height:75%;">
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
@@ -14,12 +14,12 @@
 
     <div class="container">
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
-            {{ $berita_wisata_detail->judul_berita }}</h1>
+            {{ $pengalaman_wisata_detail->judul }}</h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
             <p class="caption" style=" color:black;">
-                {!!$berita_wisata_detail->isi_berita !!}
+                {!!$pengalaman_wisata_detail->deskripsi !!}
             </p>
 
             <div class="row g-2 g-md-4">
@@ -30,14 +30,6 @@
 </div>
 
 
-{{-- <!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Lihat Selengkapnya
-				</a>
-			</div>
-	
-	</div> --}}
 
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
