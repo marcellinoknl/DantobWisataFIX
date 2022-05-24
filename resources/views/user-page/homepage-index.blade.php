@@ -42,9 +42,9 @@
 
                         <div class="w-100">
                             <h1 class="mb-4"style="font-weight: bold">Pariwisata Danau Toba</h1>
-                            <p style="color: black">Danau Toba terletak di Sumatera Utara, Indonesia. Danau Toba terbentuk dari letusan gunung api Toba yang sangat dahsyat yang terjadi sekitar 74.000 tahun yang lalu.
-                                 Dengan luas lebih dari 1.145 kilometer persegi dan kedalaman 450 meter.</p>
-                            <p style="color: black">Ingin tahu lebih tentang danau Toba? <br>
+                            <p style="color: black"class="caption text-justify">Danau Toba terletak di Sumatera Utara, Indonesia. Danau Toba terbentuk dari letusan gunung api Toba yang sangat dahsyat yang terjadi sekitar 74.000 tahun yang lalu.
+                                 Dengan luas lebih dari 1.145 kilometer persegi dan kedalaman 450 meter.
+                                Ingin tahu lebih tentang danau Toba? 
                                 Yuk jelajahi website ini.
                             </p>
                             <p><a href="{{ url('/objek-wisata') }}" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>

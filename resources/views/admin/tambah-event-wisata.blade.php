@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="mb-3 row">
                                     <div class="col-md-12">
-                                    <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror" id="editor" name="deskripsi_event" height="300px" cols="200px" rows="20"></textarea>
+                                    <textarea class=" form-control @error('deskripsi_event') is-invalid @enderror ckeditor" id="ckedtor" name="deskripsi_event" height="300px" cols="200px" rows="20"></textarea>
                                    @error('deskripsi_event')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

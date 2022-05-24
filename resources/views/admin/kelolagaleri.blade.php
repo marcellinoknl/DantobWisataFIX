@@ -31,7 +31,8 @@
       <section id="main-content">
       <div class="row">
          <div class="col-lg-12">
-            <a href="{{ url('/tambah-galeri-wisata')}}" <button class="btn btn-success"><span class="ti-plus" style="color:black;"> Tambah Galeri Wisata</span></button>
+            <a href="{{ url('/tambah-galeri-wisata')}}"> 
+               <button class="btn btn-success"style="color:black; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Galeri Wisata</button>
             </a>
             <section id="main-content">
                <div class="row">

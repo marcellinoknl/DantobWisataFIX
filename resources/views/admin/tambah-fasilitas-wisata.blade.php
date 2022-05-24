@@ -100,7 +100,7 @@
                                         </div>
                                         <div class ="mb-3 row">
                                         <div class="col-md-12">
-                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror" id="editor" name="deskripsi" height="300px" cols="200px" rows="20"></textarea>
+                                        <textarea class=" form-control @error('deskripsi') is-invalid @enderror ckeditor" id="ckedtor" name="deskripsi" height="300px" cols="200px" rows="20"></textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
