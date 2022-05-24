@@ -75,7 +75,7 @@
                     <div class="navbar-nav ml-auto dropdown show">
                         <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <a href="/blog" class="nav-link">Katalog</a>
+                            <a href="/blog" class="nav-link">Eksplorasi</a>
                         </li>
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                             <a href="{{ url('/atraksi') }}"><button class="dropdown-item"
@@ -105,7 +105,7 @@
                     <div class="navbar-nav ml-auto dropdown show">
                         <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <a href="/blog" class="nav-link">Katalog</a>
+                            <a href="/blog" class="nav-link">Eksplorasi</a>
                         </li>
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                             <a href="{{ url('/atraksi') }}"><button class="dropdown-item"
@@ -139,12 +139,20 @@
                                 <a href="/blog" class="nav-link">{{ Auth::user()->name }}</a>
                             </li>
 
+
                             <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="{{ url('#') }}"><button class="dropdown-item"
-                                    type="button">Profil</button></a>
+                                @if ( auth()->user()->role !=1)
+                                <a class="dropdown-item" href="{{ url('/admin-wisata') }}"><button class="dropdown-item"
+                                    type="button">Admin</button></a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();"><button
+                   class="dropdown-item" type="button">{{ __('Logout') }}</button></a>
+                                @else
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();"><button
-                                        class="dropdown-item" type="button">{{ __('Logout') }}</button></a>
+                                document.getElementById('logout-form').submit();"><button
+               class="dropdown-item" type="button">{{ __('Logout') }}</button></a>
+                                @endif
+                                
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     class="d-none">
                                     @csrf

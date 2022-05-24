@@ -108,7 +108,7 @@ class KelolaWisata extends Seeder
             ],          
             [
                 'id_obj_wisata' => '7',
-                'nama_wisata' => 'Air Terjun Sampuran Efrata',
+                'nama_wisata' => 'Air Terjun Sampuran Efrata    ',
                 'deskripsi' => '
                 Air Terjun Sampuran Efrata ini merupakan permata tersembunyi di balik perbukitan yang membentang di sekitar Danau Toba. Tempat ini sering digunakan menjadi lokasi berkemah karena keindahan alamnya. Wisata ini terletak di Sosor Dolok, Harian, Kec. Harian, Kab. Samosir, Sumatera Utara. Pengunjung dapat merasakan kesegaran pancuran air terjun sambil berenang maupun bersantai memandangi ke elokan tebing di sekitar air terjun. 
                 Air terjun tersebut turun melalui tebing-tebing yang terjal dan curan dengan debit air yang sangat deras, sehingga memenuhi sungai yang mengalir dibawahnya. Tebing-tebing tersebut memiliki tinggi yang mencapai 26 meter dengan kontur yang bertingkat-tingkat dan di dominasi oleh bebatuan cadas berwarna hitam. Menurut visitsamosir.com, Menuju ke destinasi air terjun, di sepanjang perjalanan pengunjung akan disuguhkan pemandangan luar biasa indah. Di kanan dan kiri pengunjung disuguhi pemandangan tebing pegunungan dengan barisan hutan pinus. Tak lama setelahnya hamparan danau Toba dengan barisan gunung dan bukit tampak dari kejauhan.

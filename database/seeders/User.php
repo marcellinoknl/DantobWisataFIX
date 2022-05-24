@@ -40,6 +40,14 @@ class User extends Seeder
 
 
                 
+            ],            [
+                'name'=>'Caldera',
+                'email'=>'caldera@gmail.com',
+                'password'=>Hash::make('caldera123'),
+                'role'=>1
+
+
+                
             ],
         ]);
     }

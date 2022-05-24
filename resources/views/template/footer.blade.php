@@ -6,9 +6,9 @@
                     <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Pariwisata<span>Danau Toba</span></a>
                     <p></p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft" >
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                        <li class="ftco-animate" ><a href="#" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
+                        <li class="ftco-animate"><a href="#"style="background-color:#3b5998 "><span class="fa fa-facebook" ></span></a></li>
+                        <li class="ftco-animate"><a href="#"style="background-color:#3f729b "><span class="fa fa-instagram" ></span></a></li>
                     </ul>
                 </div>
             </div>
