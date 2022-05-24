@@ -203,9 +203,9 @@ class KelolaFasilitas extends Seeder
             ],
             [ 
                'id_fasilitas' => '20',
-               'nama_fasilitas' => 'Jenny’s Restaurant',               
-               'deskripsi' => 'Jenny’s Restaurant memiliki lokasi yang sangat strategis karena sangat dekat dengan Danau Toba. Oleh sebab itu, setelah melalui petualangan asyik di Danau Toba, sangat tepat jika Anda memilih ke Jenny’s Restaurant untuk mengisi kekosongan perut.
-               Jika dilihat dari luar, bangunan Jenny’s Restaurant tampak biasa saja dengan plang nama restoran yang terbuat dari kayu. Namun, ketika Anda memasuki bagian dalam ruangannya, Anda akan terpesona melihat bangunan yang didominasi oleh kayu. Anda juga akan disambut hangat oleh pemilik restoran yang bernama, Jenny. Menu yang wajib Anda coba adalah ikan bakar ala Jenny’s Restaurant. Menu ikan bakar menjadi yang paling difavoritkan karena rasanya yang memang sangat enak. Selain ikan bakar, Jenny’s Restaurant juga menyediakan berbagai menu lainnya, mulai dari masakan Nusantara hingga mancanegara. Harga yang dibanderol pun relatif terjangkau.',
+               'nama_fasilitas' => 'Jennys Restaurant',               
+               'deskripsi' => 'Jennys Restaurant memiliki lokasi yang sangat strategis karena sangat dekat dengan Danau Toba. Oleh sebab itu, setelah melalui petualangan asyik di Danau Toba, sangat tepat jika Anda memilih ke Jenny’s Restaurant untuk mengisi kekosongan perut.
+               Jika dilihat dari luar, bangunan Jennys Restaurant tampak biasa saja dengan plang nama restoran yang terbuat dari kayu. Namun, ketika Anda memasuki bagian dalam ruangannya, Anda akan terpesona melihat bangunan yang didominasi oleh kayu. Anda juga akan disambut hangat oleh pemilik restoran yang bernama, Jenny. Menu yang wajib Anda coba adalah ikan bakar ala Jenny’s Restaurant. Menu ikan bakar menjadi yang paling difavoritkan karena rasanya yang memang sangat enak. Selain ikan bakar, Jenny’s Restaurant juga menyediakan berbagai menu lainnya, mulai dari masakan Nusantara hingga mancanegara. Harga yang dibanderol pun relatif terjangkau.',
                'lokasi' => 'Jl. Lkr. Tuktuk, Tuktuk Siadong, Kec. Simanindo, Kab. Samosir.',
                'file_foto' => 'JennysRestaurant.jpg',
                'id_sampul_fasilitas' => '3',
