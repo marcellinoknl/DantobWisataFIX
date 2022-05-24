@@ -107,7 +107,7 @@ class PengalamanController extends Controller
             [
                 'judul' => 'required',
                 'deskripsi' => 'required',
-                'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
+                // 'file_foto' => 'required|mimes:jpeg,jpg,png,gif'
                
             ]
         );
