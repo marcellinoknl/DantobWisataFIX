@@ -14,7 +14,8 @@ class objekWisataController extends Controller
     public function indexAction()
     {
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
-        return view('user-page.objek-wisata', ['objwisatakabupaten' => $objwisatakabupaten]);
+
+        return view('user-page.objek-wisata', compact('objwisatakabupaten'));
     }
 
     public function kelolaindexAction()
@@ -38,9 +39,12 @@ class objekWisataController extends Controller
     {
         $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
         $objek_wisata = DB::table('objek_wisata')
+        ->select('objek_wisata.*', 'kategori_wisata.nama_kategori')
+        ->join('kategori_wisata', 'objek_wisata.id_kat_wisata', '=', 'kategori_wisata.id_kategori')
             ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
             ->get();
-        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten]);
+        $kategori = Kategori_Wisata::all();
+        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori]);
     }
 
     public function indexAction3($id_obj_wisata)

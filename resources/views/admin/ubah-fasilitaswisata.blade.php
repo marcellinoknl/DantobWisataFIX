@@ -66,6 +66,26 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Kabupaten</label>
+                                        <div class="col-sm-9">
+
+                                            <select required="required" id="id_obj_wisata_kabupaten" name="nama_kab"
+                                                class="form-control @error('nama_kab') is-invalid @enderror">
+                                                <!-- <option selected disabled>Pilih Kategori</option> -->
+                                                @foreach ($kabupaten as $kab)
+                                                    <option value="{{ $kab->id_obj_wisata_kabupaten }}"@if( $kab->id_obj_wisata_kabupaten == $update->id_obj_wisata_kabupaten)  selected @endif>
+                                                        {{ $kab->nama_kab }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('nama_sampul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Lokasi</label>
                                         <div class="col-sm-9">
 

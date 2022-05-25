@@ -51,8 +51,9 @@ class fasilitasController extends Controller
     public function kelolaindexActionDaftarFasilitas()
     {
         $fasilitas = DB::table('fasilitas_wisata')
-            ->select('fasilitas_wisata.*', 'sampul_fasilitas.nama_sampul')
+            ->select('fasilitas_wisata.*', 'sampul_fasilitas.nama_sampul','objwisatakabupaten.nama_kab')
             ->join('sampul_fasilitas', 'sampul_fasilitas.id', '=', 'fasilitas_wisata.id_sampul_fasilitas')
+            ->join('objwisatakabupaten', 'objwisatakabupaten.id_obj_wisata_kabupaten', '=', 'fasilitas_wisata.id_obj_wisata_kabupaten')
             ->get();
         return view('admin.kelola-fasilitas', compact('fasilitas'));
     }
@@ -88,7 +89,8 @@ class fasilitasController extends Controller
     public function tambahfasilitas()
     {
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
-        return view('admin.tambah-fasilitas-wisata', compact('sampul_fasilitas'));
+        $kabupaten = DB::table('objwisatakabupaten')->get();
+        return view('admin.tambah-fasilitas-wisata', compact('sampul_fasilitas','kabupaten'));
     }
 
     public function storefasilitas(Request $request)
@@ -99,6 +101,7 @@ class fasilitasController extends Controller
             'nama_fasilitas'=>'required',
             'lokasi'=>'required',
             'id_sampul_fasilitas' => 'required', 
+            'id_obj_wisata_kabupaten' => 'required', 
             'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200',
             'deskripsi' => 'required'
                                       
@@ -112,6 +115,7 @@ class fasilitasController extends Controller
         $fasilitas->deskripsi = $request->deskripsi;
         $fasilitas->id_user = Auth::user()->id;
         $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas;
+        $fasilitas->id_obj_wisata_kabupaten = $request->id_obj_wisata_kabupaten;
         $fasilitas->lokasi = $request->lokasi;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
@@ -127,7 +131,8 @@ class fasilitasController extends Controller
     {
         $update = Fasilitas::find($id_fasilitas);
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
-        return view('admin.ubah-fasilitaswisata', compact('update', 'sampul_fasilitas'));
+        $kabupaten = DB::table('objwisatakabupaten')->get();
+        return view('admin.ubah-fasilitaswisata', compact('update', 'sampul_fasilitas','kabupaten'));
     }
     public function editsampul($id)
     {
@@ -168,6 +173,7 @@ class fasilitasController extends Controller
                 'lokasi' => 'required',
                 'file_foto' => 'max:5000' ,'dimensions:max_width=1200',
                 'nama_sampul' => 'required',
+                'nama_kab' => 'required',
                 'deskripsi' => 'required'
             ]
         );
@@ -182,6 +188,7 @@ class fasilitasController extends Controller
         $update->file_foto = $file;
         $update->lokasi = $request->lokasi;
         $update->id_sampul_fasilitas = $request->nama_sampul;
+        $update->id_obj_wisata_kabupaten = $request->nama_kab;
         $update->deskripsi = $request->deskripsi;
 
         $update->save();

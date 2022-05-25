@@ -76,6 +76,26 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kabupaten</label>
+                                            <div class="col-sm-9">
+
+                                                <select    id="id_obj_wisata_kabupaten" name="id_obj_wisata_kabupaten" class="form-control @error('id_obj_wisata_kabupaten') is-invalid @enderror" >
+                                                    <option selected disabled>Pilih Kabupaten</option>
+                                                    @foreach($kabupaten as $kab)
+
+                                                    <option value="{{ $kab->id_obj_wisata_kabupaten }}"{{old('nama_kab')== $kab->id_obj_wisata_kabupaten ? 'selected': null }}>
+                                                        {{ $kab->nama_kab }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('id_sampul_fasilitas')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Gambar Fasilitas</label>
                                             <div class="col-sm-9">
                                                 <img class="img-preview img-fluid mb-3 col-sm-5" alt="">
