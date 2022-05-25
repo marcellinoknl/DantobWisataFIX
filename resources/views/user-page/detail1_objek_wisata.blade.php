@@ -22,20 +22,37 @@
 
         <br>
 
-        <div class="container p-md-2 p-2">
+        <div class="container p-md-2 ">
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Destinasi Wisata di {{$objwisatakabupaten->nama_kab}} yang Ingin Kamu Tinjau!
             </h4>
             <br>
             <p style="color:black; text-decoration: underline;">Filter Berdasarkan Kategori Wisata</p>
      
+            <div class="col-md-6">
             <select class="selectpicker" multiple data-live-search="true" style="border: 1px solid">
                 @foreach ($kategori as $kategories)
                 <option>{{$kategories->nama_kategori}}</option>
                 @endforeach
               </select>
+            </div>
               <br>
+              <form method="GET" action ="{{url('/objek-wisata/detail1/' . $objwisatakabupaten->id_obj_wisata_kabupaten)}}">
+              <div class="row">
+
+            <div class="col-2">
+                <input  type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
+            </div>
+                <div class="col-2">
+                <button type="submit" class="btn btn-primary">Cari</button> 
+
+                </div>
+              </div>
+              </form>
+       
+         
             @if(empty($objek_wisata) || count($objek_wisata) == 0)
            <br><br>
+
            <div class="row justify-content-md-center">
            <div class="col-12 col-md-8 py-4">
             <div class="card">
@@ -46,7 +63,9 @@
            </div>
            </div>
             @else
+
             <div class="row g-2 g-md-4">
+
                 @foreach ($objek_wisata as $objek_wisatas)
                     <div class="col-6 col-md-3 py-4">
                         <div class="mycard">
@@ -58,8 +77,10 @@
                         </div>
                     </div>
                 @endforeach
+                
             </div>
             @endif
+            {{$objek_wisata -> links()}}
         </div>
     </div>
 </div>

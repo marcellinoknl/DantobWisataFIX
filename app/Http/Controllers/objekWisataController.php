@@ -35,16 +35,19 @@ class objekWisataController extends Controller
         return view('admin.kelola-objek-wisata-view', compact('view'));
     }
 
-    public function indexAction2($id_obj_wisata_kabupaten)
+    public function indexAction2(Request $request,$id_obj_wisata_kabupaten)
     {
+        $keyword = $request->keyword;
         $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
         $objek_wisata = DB::table('objek_wisata')
         ->select('objek_wisata.*', 'kategori_wisata.nama_kategori')
         ->join('kategori_wisata', 'objek_wisata.id_kat_wisata', '=', 'kategori_wisata.id_kategori')
             ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
-            ->get();
+            ->where('nama_wisata','LIKE','%'.$keyword.'%')
+            ->paginate(12);
         $kategori = Kategori_Wisata::all();
-        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori]);
+        $objwisatakabupatenfilter = DB::table('objwisatakabupaten')->get();
+        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'keyword'=>$keyword]);
     }
 
     public function indexAction3($id_obj_wisata)

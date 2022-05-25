@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Models\Fasilitas;
 use App\Models\SampulFasilitas;
+use App\Models\Kabupaten;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,8 @@ class fasilitasController extends Controller
         ->join('users', 'fasilitas_wisata.id_user', '=', 'users.id')
             ->where('id_sampul_fasilitas', '=', $id)
             ->get();
-        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas]);
+            $kabupaten = Kabupaten::all();
+        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten]);
     }
 
     public function indexAction3($id_fasilitas)

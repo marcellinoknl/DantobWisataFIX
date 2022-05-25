@@ -24,10 +24,6 @@
                 {!! $objek_wisata_detail->deskripsi !!}
             </p>
 
-            <div class="col-md-4 center">
-                <img src="{{ url('images/objekwisata/' . $objek_wisata_detail->file_foto) }}"
-                    style="width:20cm; height:20cm; " alt="">
-            </div>
             <div class="row g-2 g-md-4">
 
             </div>

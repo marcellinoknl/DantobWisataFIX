@@ -81,4 +81,19 @@ class KabupatenController extends Controller
         }
         return redirect()->back();
     }
+
+    function categoryobjekwisata(){
+
+        $sub_categories = DB::table('objek_wisata')->first();
+        $main_category = DB::table('kategori_wisata')->get();
+        return view('user-page.detail1_objek_wisata', ['sub_categories' => $sub_categories, 'main_category' => $main_category]);
+    }
+
+    function get_causes_againts_categoryobjekwisata($id_kategori){
+        $data = DB::table('objek_wisata as obj')->selectRaw('(Select file_foto from kategori_wisata where id_kategori = obj.id_kat_wisata) 
+        as file_foto,(Select nama_wisata from kategori_wisata where id_kategori = obj.id_kat_wisata) as nama_wisata')
+        ->whereRaw('id_kategori IN ('.$id_kategori.')')->get();
+
+        echo json_encode($data);
+    }
 }

@@ -23,6 +23,16 @@
         <div class="container p-md-2 p-2">
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Fasilitas {{$sampul_fasilitas->nama_sampul}} yang Ingin Kamu Tinjau!
             </h4>
+            <br>
+            <p style="color:black; text-decoration: underline;">Filter Berdasarkan Kabupaten</p>
+     
+            <select class="selectpicker" multiple data-live-search="true" style="border: 1px solid">
+                @foreach ($kabupaten as $kategories)
+                <option>{{$kategories->nama_kab}}</option>
+                @endforeach
+              </select>
+              <br>
+            <br>
             @if(empty($fasilitias_wisata) || count($fasilitias_wisata) == 0)
             <br><br>
             <div class="row justify-content-md-center">
@@ -40,7 +50,7 @@
                     <div class="col-12 col-md-12 py-4">
                         <article class="postcard light red">
                             <a class="postcard__img_link" href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
-                                <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" width="200px" height="250px" />
+                                <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" width="200px" height="300px" />
                             </a>
                             
                             <div class="postcard__text t-dark">
