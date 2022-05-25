@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card_fasil_detail.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/searchstyle.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js%22%3E"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
     
@@ -78,11 +79,11 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     @guest
-                    <li class="nav-item active "><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
-                    <li class="nav-item"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
+                    <li class="nav-item {{Request::segment(1) === '' ? 'active' : null }}"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
+                    <li class="nav-item {{Request::segment(1) === 'objek-wisata' ? 'active' : null }}"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
                             Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
-                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        <li class="nav-item {{Request::segment(1) === 'atraksi'||Request::segment(1) === 'eventwisata'||Request::segment(1) === 'beritawisata' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Eksplorasi</a>
                         </li>
@@ -95,11 +96,11 @@
                                     type="button">Berita</button></a>
                         </div>
                     </div>
-                    <li class="nav-item"><a href="{{ url('/fasilitaswisata') }}"
+                    <li class="nav-item {{Request::segment(1) === 'fasilitaswisata' ? 'active' : null }}"><a href="{{ url('/fasilitaswisata') }}"
                             class="nav-link">Fasilitas</a></li>
-                    <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
+                    <li class="nav-item {{Request::segment(1) === 'galeriwisata' ? 'active' : null }}"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
-                    <li class="nav-item"><a href="{{ url('/pengalaman-wisata') }}" class="nav-link">Pengalaman Wisata</a>
+                    <li class="nav-item {{Request::segment(1) === 'pengalaman-wisata' ? 'active' : null }}"><a href="{{ url('/pengalaman-wisata') }}" class="nav-link">Pengalaman Wisata</a>
                     </li>
                     
                     
@@ -108,11 +109,11 @@
                                         class="fa fa-sign-in" aria-hidden="true"></i> Masuk</a></li>
                         @endif
                     @else
-                    <li class="nav-item active "><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
-                    <li class="nav-item"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
+                    <li class="nav-item "><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
+                    <li class="nav-item  {{Request::segment(1) === 'objek-wisata' ? 'active' : null }}"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
                             Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
-                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        <li class="nav-item {{Request::segment(1) === 'atraksi'||Request::segment(1) === 'eventwisata'||Request::segment(1) === 'beritawisata' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Eksplorasi</a>
                         </li>
@@ -125,13 +126,13 @@
                                     type="button">Berita</button></a>
                         </div>
                     </div>
-                    <li class="nav-item"><a href="{{ url('/fasilitaswisata') }}"
+                    <li class="nav-item {{Request::segment(1) === 'fasilitaswisata' ? 'active' : null }}"><a href="{{ url('/fasilitaswisata') }}"
                             class="nav-link">Fasilitas</a></li>
-                    <li class="nav-item"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
+                    <li class="nav-item {{Request::segment(1) === 'galeriwisata' ? 'active' : null }}"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
                     </li>
 
                     <div class="navbar-nav ml-auto dropdown show">
-                        <li class="nav-item" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        <li class="nav-item {{Request::segment(1) === 'pengalaman-wisata'||Request::segment(1) === 'pengalamanwisata-saya' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Artikel</a>
                         </li>

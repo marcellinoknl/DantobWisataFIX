@@ -23,33 +23,50 @@
         <br>
 
         <div class="container p-md-2 ">
+          <center>
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Destinasi Wisata di {{$objwisatakabupaten->nama_kab}} yang Ingin Kamu Tinjau!
             </h4>
+          </center>
             <br>
-            <p style="color:black; text-decoration: black;">Filter Berdasarkan Kategori Wisata</p>
-     
-            <div class="col-md-6">
-            <select class="selectpicker" multiple data-live-search="true" style="border: 1px solid">
-                @foreach ($kategori as $kategories)
-                <option>{{$kategories->nama_kategori}}</option>
-                @endforeach
-              </select>
-            </div>
-              <br>
-              <div class="d-flex justify-content-end">
-                <form method="GET" action ="{{url('/objek-wisata/detail1/' . $objwisatakabupaten->id_obj_wisata_kabupaten)}}">
-                <div class="row">
-    
-              <div class="col-md-8">
-                  <input placeholder="   Cari Objek Wisata"  class="form-check-input" type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
-              </div>
-                  <div class="col-md-4">
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button> 
-    
-                  </div>
-                </div>
+
+  <!-- SEARCH-->
+  <div class="row">
+    <div class="col-lg-12 card-margin">
+        <div class="card search-form">
+            <div class="card-body p-0">
+                <form id="search-form">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <select id="assigned-user-filter" class="form-control" id="exampleFormControlSelect1">
+                                      @foreach ($kategori as $kategories)
+                                      <option value="{{$kategories->nama_kategori}}">{{$kategories->nama_kategori}}</option>
+                                      @endforeach
+                                      <option value="Tampilkan Semua">Tampilkan Semua</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-8 col-md-6 col-sm-12 p-0">
+                                  <form method="GET" action ="{{url('/objek-wisata/detail1/' . $objwisatakabupaten->id_obj_wisata_kabupaten)}}">
+                                    <input type="text" placeholder="Cari..." class="form-control" id="search" name="keyword" value="{{$keyword}}">
+                                </div>
+                                <div class="col-lg-1 col-md-3 col-sm-12 p-0">
+                                    <button type="submit" class="btn btn-base">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- TEST -->
        
          
             @if(empty($objek_wisata) || count($objek_wisata) == 0)
@@ -65,11 +82,11 @@
            </div>
            </div>
             @else
-
+<br>
             <div class="row g-2 g-md-4">
 
                 @foreach ($objek_wisata as $objek_wisatas)
-                    <div class="col-6 col-md-3 py-4">
+                    <div class="col-6 col-md-3 py-4 task-list-row" data-assigned-user="{{$objek_wisatas->nama_kategori}}">
                         <div class="mycard">
                             <a href="{{ url('/objek-wisata/detail2/' . $objek_wisatas->id_obj_wisata) }}">
                                 <img src="{{ url('images/objekwisata/' . $objek_wisatas->file_foto) }}" alt=""
@@ -126,5 +143,21 @@
 
 <!--===============================================================================================-->
 <script src="{{ asset('assets/js/main.js') }}"></script>
+
+<script>
+    $('#assigned-user-filter').on('click', function() {
+      var assignedUser = this.value;
+  
+      if (assignedUser === 'Tampilkan Semua') {
+        $('.task-list-row').hide().filter(function() {
+          return $(this).data('assigned-user') != assignedUser;
+        }).show();
+      } else {
+        $('.task-list-row').hide().filter(function() {
+          return $(this).data('assigned-user') == assignedUser;
+        }).show();
+      }
+    });
+  </script>
 
 @include('template/footer')
