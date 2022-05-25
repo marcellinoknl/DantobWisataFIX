@@ -26,7 +26,7 @@
             <br>
             <p style="color:black; text-decoration:black;">Filter Berdasarkan Kabupaten</p>
      
-            <select id="assigned-user-filter"class="selectpicker" multiple data="true" style="border: 1px solid;">
+            <select id="assigned-user-filter"class="select-wrap"  style="border: 1px solid;">
                 @foreach ($kabupaten as $kategories)
                 <option value="{{$kategories->nama_kab}}">{{$kategories->nama_kab}}</option>
                 @endforeach
