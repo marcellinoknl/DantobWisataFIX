@@ -41,7 +41,7 @@
               <input  type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
           </div>
               <div class="col-2">
-              <button type="submit" class="btn btn-primary">Cari</button> 
+              <button type="submit" style=" margin-left :20px; " class="btn btn-primary">Cari</button> 
 
               </div>
             </div>
