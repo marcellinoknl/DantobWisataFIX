@@ -75,10 +75,10 @@
                             <!-- <img src="assets/images/logo.png" alt="" /> --><span>Danau Toba Admin</span>
                         </a></div>
                     <li class="label">Halaman Utama</li>
-                    <li><a href="{{url('/admin-wisata')}}"><i class="ti-home"></i> Dashboard </a></li>
+                    <li><a href="{{url('/admin-wisata')}}"><i class="ti-dashboard"></i> Dashboard </a></li>
 
                     <li class="label">Kelola Data Wisata</li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
 
                             <li><a href="{{url('/kelolakat')}}">Kelola Kategori Wisata</a></li>
@@ -88,33 +88,33 @@
 
                         </ul>
                     </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-direction-alt"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{url('/sampul-atraksi')}}">Kelola Sampul Atraksi</a></li>
                             <li><a href="{{url('/kelolaatraksi')}}">Kelola Atraksi Wisata</a></li>
                         </ul>
                     </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Event <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layers"></i> Kelola Event <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
                             <li><a href="{{url('/sampul-event')}}">Kelola Sampul Event</a></li>
                             <li><a href="{{url('/kelolaevent')}}">Kelola Event Wisata</a></li>
                         </ul>
-                    <li><a href="{{url('/kelolaberita')}}"><i class="ti-layout-grid4-alt"></i> Kelola Berita Wisata </a></li>
-                    <li><a href="{{url('/kelolagaleri')}}"><i class="ti-layout-grid4-alt"></i> Kelola Galeri Wisata </a></li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a href="{{url('/kelolaberita')}}"><i class="ti-announcement"></i> Kelola Berita Wisata </a></li>
+                    <li><a href="{{url('/kelolagaleri')}}"><i class="ti-gallery"></i> Kelola Galeri Wisata </a></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-settings"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{url('/sampul-fasilitas')}}">Kelola Sampul Fasilitas</a></li>
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Per-Fasilitas</a></li>
                         </ul>
                     </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i>Pengalaman Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-id-badge"></i>Pengalaman Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{url('/kelolapengalamanwisata')}}">Kelola Pengalaman Wisata</a></li>
                             <li><a href="{{url('/persetujuanpengalamanwisata')}}">Persetujuan Pengalaman</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{url('/kelolauser')}}"><i class="ti-layout-grid4-alt"></i> Kelola Akun User </a></li>
-                    <li><a href="{{url('/')}}"><i class="ti-layout-grid4-alt"></i> Halaman Pengunjung </a></li>
+                    <li><a href="{{url('/kelolauser')}}"><i class="ti-user"></i> Kelola Akun User </a></li>
+                    <li><a href="{{url('/')}}"><i class="ti-home"></i> Halaman Pengunjung </a></li>
             </div>
         </div>
     </div>
