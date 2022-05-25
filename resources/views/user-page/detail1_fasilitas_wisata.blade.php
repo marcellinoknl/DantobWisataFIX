@@ -24,30 +24,41 @@
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Fasilitas {{$sampul_fasilitas->nama_sampul}} yang Ingin Kamu Tinjau!
             </h4>
             <br>
-            <p style="color:black; text-decoration:black;">Filter Berdasarkan Kabupaten</p>
-     
-            <select id="assigned-user-filter"class="select-wrap"  style="border: 1px solid;">
-                @foreach ($kabupaten as $kategories)
-                <option value="{{$kategories->nama_kab}}">{{$kategories->nama_kab}}</option>
-                @endforeach
-                <option value="Tampilkan Semua">Tampilkan Semua</option>
-              </select>
-              <br>
-            <br>
-
-            <div class="d-flex justify-content-end">
-            <form method="GET" action ="{{url('/fasilitas-wisata/detail1/' . $sampul_fasilitas->id)}}">
-            <div class="row">
-
-          <div class="col-md-8">
-              <input placeholder="   Cari {{$sampul_fasilitas->nama_sampul}}"  class="form-check-input" type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
-          </div>
-              <div class="col-md-4">
-              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button> 
-              </div>
+  <div class="row">
+    <div class="col-lg-12 card-margin">
+        <div class="card search-form">
+            <div class="card-body p-0">
+                <form id="search-form">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <select id="assigned-user-filter" class="form-control" id="exampleFormControlSelect1">
+                                      @foreach ($kabupaten as $kategories)
+                                      <option value="{{$kategories->nama_kab}}">{{$kategories->nama_kab}}</option>
+                                      @endforeach
+                                      <option value="Tampilkan Semua">Tampilkan Semua</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-8 col-md-6 col-sm-12 p-0">
+                                  <form method="GET" action ="{{url('/fasilitas-wisata/detail1/' . $sampul_fasilitas->id)}}">
+                                    <input type="text" placeholder="Cari..." class="form-control" id="search" name="keyword" value="{{$keyword}}">
+                                </div>
+                                <div class="col-lg-1 col-md-3 col-sm-12 p-0">
+                                    <button type="submit" class="btn btn-base">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            </form>
         </div>
+    </div>
+</div>
+
         <br>
             @if(empty($fasilitias_wisata) || count($fasilitias_wisata) == 0)
             <br><br>
