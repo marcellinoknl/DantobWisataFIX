@@ -114,6 +114,7 @@
                         </ul>
                     </li>
                     <li><a href="{{url('/kelolauser')}}"><i class="ti-layout-grid4-alt"></i> Kelola Akun User </a></li>
+                    <li><a href="{{url('/')}}"><i class="ti-layout-grid4-alt"></i> Halaman Pengunjung </a></li>
             </div>
         </div>
     </div>
@@ -136,7 +137,7 @@
                                 <i class="ti-bell"></i>
                                 <div class="drop-down dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-content-heading">
-                                        <span class="text-left">Recent Notifications</span>
+                                        <span class="text-left">Notifikasi</span>
                                     </div>
                                     <div class="dropdown-content-body">
                                         <ul>
@@ -146,8 +147,8 @@
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">5 members joined today </div>
+                                                        <div class="notification-heading">Marcel</div>
+                                                        <div class="notification-text">user baru</div>
                                                     </div>
                                                 </a>
                                             </li>
@@ -157,8 +158,8 @@
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
-                                                        <div class="notification-heading">Mariam</div>
-                                                        <div class="notification-text">likes a photo of you</div>
+                                                        <div class="notification-heading">Samuel</div>
+                                                        <div class="notification-text">Notif baru</div>
                                                     </div>
                                                 </a>
                                             </li>
@@ -168,26 +169,15 @@
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34
                                                             PM</small>
-                                                        <div class="notification-heading">Tasnim</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
+                                                        <div class="notification-heading">Noel</div>
+                                                        <div class="notification-text">Pengalaman Baru
                                                             ...</div>
                                                     </div>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
-                                                        <div class="notification-text">Hi Teddy, Just wanted to let you
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
+
                                             <li class="text-center">
-                                                <a href="#" class="more-link">See All</a>
+                                                <a href="#" class="more-link">Lihat Selengkapnya</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -207,12 +197,7 @@
                                     </div>
                                     <div class="dropdown-content-body">
                                         <ul>
-                                            <li>
-                                                <a href="{{url('/kelolauser')}}">
-                                                    <i class="ti-user"></i>
-                                                    <span>Kelola Akun</span>
-                                                </a>
-                                            </li>
+
 
                                             <li>
                                               

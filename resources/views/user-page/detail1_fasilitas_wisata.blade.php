@@ -33,6 +33,19 @@
               </select>
               <br>
             <br>
+            <br>
+            <form method="GET" action ="{{url('/fasilitas-wisata/detail1/' . $sampul_fasilitas->id)}}">
+            <div class="row">
+
+          <div class="col-2">
+              <input  type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
+          </div>
+              <div class="col-2">
+              <button type="submit" class="btn btn-primary">Cari</button> 
+
+              </div>
+            </div>
+            </form>
             @if(empty($fasilitias_wisata) || count($fasilitias_wisata) == 0)
             <br><br>
             <div class="row justify-content-md-center">
@@ -62,13 +75,14 @@
                                 <div class="postcard__bar"></div>
 
                                     <li class="tag__item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$fasilitias_wisatas->lokasi}}</li>
-                                    <li class="tag__item"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$sampul_fasilitas->nama_sampul}}</li>
+                                    <li class="tag__item"><i class="fa fa-home" aria-hidden="true"></i> {{$fasilitias_wisatas->nama_kab}}</li>
                            
                             </div>
                         </article>
                     </div>
                 @endforeach
             </div>
+            {{$fasilitias_wisata->links()}}
             @endif
         </div>
     </div>

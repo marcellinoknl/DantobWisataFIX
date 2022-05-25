@@ -40,7 +40,7 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li><a href="#"style="color:black"style="color:black"><span class="icon fa fa-phone"></span><span class="text">+62 821-6686-1855</span></a></li>
-                            <li><a href="#"style="color:black"style="color:black"><span class="icon fa fa-paper-plane"></span><span
+                            <li><a href="#"style="color:black"style="color:black"><span class="icon fa fa-envelope"></span><span
                                         class="text">wisatadantob@gmail.com</span></a></li>
                         </ul>
                     </div>

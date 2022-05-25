@@ -81,58 +81,27 @@
 
                 <!-- /# row -->
                 <div class="row">
-                    <div class="col-lg-3">
-                        <div class="card p-0">
-                            <div class="stat-widget-three home-widget-three">
-                                <div class="stat-icon bg-facebook">
-                                    <i class="ti-facebook"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-digit">8,268</div>
-                                    <div class="stat-text">Likes</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card p-0">
-                            <div class="stat-widget-three home-widget-three">
-                                <div class="stat-icon bg-youtube">
-                                    <i class="ti-youtube"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-digit">12,545</div>
-                                    <div class="stat-text">Subscribes</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card p-0">
-                            <div class="stat-widget-three home-widget-three">
-                                <div class="stat-icon bg-twitter">
-                                    <i class="ti-twitter"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-digit">7,982</div>
-                                    <div class="stat-text">Tweets</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card p-0">
-                            <div class="stat-widget-three home-widget-three">
-                                <div class="stat-icon bg-danger">
-                                    <i class="ti-linkedin"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-digit">9,658</div>
-                                    <div class="stat-text">Followers</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
                 </div>
 
 

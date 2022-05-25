@@ -16,16 +16,20 @@ class fasilitasController extends Controller
         return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas]);
     }
 
-    public function indexAction2($id)
+    public function indexAction2(Request $request,$id)
     {
+        $keyword = $request->keyword;
         $sampul_fasilitas = SampulFasilitas::find($id);
         $fasilitias_wisata = DB::table('fasilitas_wisata')
-        ->select('fasilitas_wisata.*','users.name')
+        ->select('fasilitas_wisata.*','users.name','objwisatakabupaten.nama_kab')
         ->join('users', 'fasilitas_wisata.id_user', '=', 'users.id')
+        ->join('objwisatakabupaten', 'fasilitas_wisata.id_obj_wisata_kabupaten', '=', 'objwisatakabupaten.id_obj_wisata_kabupaten')
             ->where('id_sampul_fasilitas', '=', $id)
-            ->get();
+            ->where('nama_fasilitas','LIKE','%'.$keyword.'%')
+            ->paginate(6);
+
             $kabupaten = Kabupaten::all();
-        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten]);
+        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword]);
     }
 
     public function indexAction3($id_fasilitas)
