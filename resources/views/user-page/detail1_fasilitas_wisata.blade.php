@@ -81,8 +81,11 @@
                         </article>
                     </div>
                 @endforeach
+                <span>
+                    {{$fasilitias_wisata->links()}}
+                    </span>
             </div>
-            {{$fasilitias_wisata->links()}}
+         
             @endif
         </div>
     </div>
