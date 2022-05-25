@@ -46,10 +46,10 @@
                                        <th class="text-center" width="5%">Nomor</th>
                                        <th class="text-center" width="15%">Nama Fasilitas</th>
                                        <!-- <th class="text-center" width="20%">Deskripsi Fasilitas</th> -->
-                                       <th class="text-center" width="20%">Lokasi</th>
+                                       <th class="text-center" width="10%">Kabupaten</th>
                                        <th class="text-center" width="10%">Kategori</th>
                                        <th class="text-center" width="15%">Gambar</th>
-                                       <th class="text-center" width="20%">Aksi</th>
+                                       <th class="text-center" width="30%">Aksi</th>
                                     </tr>
                                     <?php $number = 1; ?>
                                  </thead>
@@ -59,11 +59,12 @@
                                        <td class="text-center"><?php echo $number++; ?></td>
                                        <td class="text-center">{{$fasilitas->nama_fasilitas}}</td>
                                        <!-- <td class="text-center">{!! $fasilitas->deskripsi !!}</td> -->
-                                       <td class="text-center">{{$fasilitas->lokasi}}</td>
+                                       <td class="text-center">{{$fasilitas->nama_kab}}</td>
                                        <td class="text-center">{{$fasilitas->nama_sampul}}</td>
                                        <td class="text-center"><img  src="{{'images/fasilitas/'.$fasilitas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"
                                           data-target="#myModalgambar{{  $fasilitas->id_fasilitas  }}"/></td>
                                        <td>
+                                          <center>
                                           <button class="btn btn-info" onclick="window.location.href='/lihat-fasilitaswisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-eye" style="color:black;"></span></button>
                                           <button class="btn btn-warning" onclick="window.location.href='/ubah-fasilitas-wisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
                                           <button class="btn btn-danger"
@@ -72,6 +73,7 @@
                                              class="ti-trash"
                                              style="color:black;">
                                           </span></button>
+                                       </center>
                            </div>
                            </td>
                            </tr>
