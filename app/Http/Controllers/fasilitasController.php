@@ -26,8 +26,9 @@ class fasilitasController extends Controller
         ->join('objwisatakabupaten', 'fasilitas_wisata.id_obj_wisata_kabupaten', '=', 'objwisatakabupaten.id_obj_wisata_kabupaten')
             ->where('id_sampul_fasilitas', '=', $id)
             ->where('nama_fasilitas','LIKE','%'.$keyword.'%')
-            ->paginate(6);
-
+            ->orderBy('id_fasilitas')
+            ->cursorPaginate(6);
+        
             $kabupaten = Kabupaten::all();
         return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword]);
     }

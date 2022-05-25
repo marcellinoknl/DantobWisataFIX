@@ -26,7 +26,7 @@
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Destinasi Wisata di {{$objwisatakabupaten->nama_kab}} yang Ingin Kamu Tinjau!
             </h4>
             <br>
-            <p style="color:black; text-decoration: underline;">Filter Berdasarkan Kategori Wisata</p>
+            <p style="color:black; text-decoration: black;">Filter Berdasarkan Kategori Wisata</p>
      
             <div class="col-md-6">
             <select class="selectpicker" multiple data-live-search="true" style="border: 1px solid">
@@ -36,18 +36,20 @@
               </select>
             </div>
               <br>
-              <form method="GET" action ="{{url('/objek-wisata/detail1/' . $objwisatakabupaten->id_obj_wisata_kabupaten)}}">
-              <div class="row">
-
-            <div class="col-2">
-                <input  type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
-            </div>
-                <div class="col-2">
-                <button type="submit" class="btn btn-primary">Cari</button> 
-
-                </div>
+              <div class="d-flex justify-content-end">
+                <form method="GET" action ="{{url('/objek-wisata/detail1/' . $objwisatakabupaten->id_obj_wisata_kabupaten)}}">
+                <div class="row">
+    
+              <div class="col-md-8">
+                  <input placeholder="   Cari Objek Wisata"  class="form-check-input" type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
               </div>
-              </form>
+                  <div class="col-md-4">
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button> 
+    
+                  </div>
+                </div>
+                </form>
+            </div>
        
          
             @if(empty($objek_wisata) || count($objek_wisata) == 0)
