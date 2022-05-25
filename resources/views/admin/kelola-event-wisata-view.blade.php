@@ -10,20 +10,19 @@
                         </div>
                     </div>
                 </div>
-                <!-- /# column -->
+                {{-- <!-- /# column -->
                 <div class="col-lg-4 p-l-0 title-margin-left">
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="{{url('/kelolaevent')}}">Kelola Event</a></li>
-                                <li class="breadcrumb-item active">Detail Atraksi Wisata</li>
+                                                               
                             </ol>
                         </div>
                     </div>
                 </div>
                 <!-- /# column -->
-            </div>
+            </div> --}}
             <!-- /# row -->
             <section id="main-content">
                 <div class="row">

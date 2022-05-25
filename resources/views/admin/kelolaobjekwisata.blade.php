@@ -27,8 +27,7 @@
             <section id="main-content">
                 <div class="row">
                     <div class="col-lg-12">
-                 
-                            <section id="main-content">
+                             <section id="main-content">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         

@@ -40,8 +40,7 @@
                                                     <div class="card">
                                                         <div class="bootstrap-data-table-panel">
                                                             <div class="table-responsive">
-                                                                <table id="bootstrap-data-table-export"
-                                                                    class="table table-striped table-bordered">
+                                                                <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                                     <thead>
                                                                         <tr>
                                                                             <th class="text-center" width="8%">Nomor
@@ -159,6 +158,22 @@
                                                             </div>
                                                             @endforeach
                                                             </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th class="text-center" width="8%">Nomor
+                                                                    </th>
+                                                                    <th class="text-center" width="15%">Judul
+                                                                        Atraksi</th>
+                                                                    <th class="text-center" width="15%">
+                                                                        Kategori</th>
+                                                                    <!-- <th class="text-center" width="20%">
+                                                                        Deskripsi Atraksi</th> -->
+                                                                    <th class="text-center" width="20%">Foto
+                                                                        Atraksi</th>
+                                                                    <th class="text-center" width="25%">Aksi
+                                                                    </th>
+                                                                </tr>
+                                                            </tfoot>
                                                             </table>
                                                         </div>
                                                     </div>

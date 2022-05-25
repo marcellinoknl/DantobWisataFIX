@@ -40,8 +40,7 @@
                                                     <div class="card">
                                                         <div class="bootstrap-data-table-panel">
                                                             <div class="table-responsive">
-                                                                <table id="bootstrap-data-table-export"
-                                                                    class="table table-striped table-bordered">
+                                                                <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                                     <thead>
                                                                         <tr>
                                                                             <th class="text-center" width="10%">No
@@ -124,6 +123,13 @@
                                                             </div>
                                                             @endforeach
                                                             </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th class="text-center" width="10%">No</th>
+                                                                    <th class="text-center" width="60%">Nama Kategori</th>
+                                                                    <th class="text-center" width="30%">Aksi</th>
+                                                                </tr>
+                                                            </tfoot>
                                                             </table>
                                                         </div>
                                                     </div>

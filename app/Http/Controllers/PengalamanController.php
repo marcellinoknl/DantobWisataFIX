@@ -81,6 +81,7 @@ class PengalamanController extends Controller
         $pengalaman = DB::table('pengalaman_wisata')
             ->select('pengalaman_wisata.*', 'users.name')
             ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
+           ->where('status','=',"approved")
             ->get();
         return view('admin.kelola-pengalaman-wisata', compact('pengalaman'));
     }

@@ -41,7 +41,7 @@
                   <div class="card">
                      <div class="bootstrap-data-table-panel">
                         <div class="table-responsive">
-                           <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                           <table id="example" class="table table-striped table-bordered" style="width:100%">
                               <thead>
                                  <tr>
                                     <th class="text-center" width="10%">No</th>
@@ -51,7 +51,7 @@
                                     <th class="text-center" width="20%">Gambar</th>
                                     <th class="text-center" width="25%">Aksi</th>
                                  </tr>
-                                 <?php $number = 1; ?>
+                                                                     <?php $number = 1; ?>
                               </thead>
                               <tbody>
                                  @foreach($eventwisata as $eventwisatas)
@@ -61,7 +61,7 @@
                                     <td class="text-center">
                                        {{ $eventwisatas->nama_sampul }}
                                     </td>
-                                    <!-- <td class="text-center">{!! $eventwisatas->deskripsi_event !!}</td> -->
+<!-- <td class="text-center">{!! $eventwisatas->deskripsi_event !!}</td> -->
                                     <td class="text-center"><img  src="{{'images/eventwisata/'.$eventwisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"data-target="#myModalgambar{{$eventwisatas->id_event }}"/></td>
                                     <td>
                                        <center> 
@@ -134,6 +134,16 @@
                                  </div>
                                  @endforeach
                               </tbody>
+                              <tfoot>
+                                 <tr>
+                                    <th class="text-center" width="10%">No</th>
+                                    <th class="text-center" width="25%">Judul Event</th>
+                                    <th class="text-center" width="15%">Kategori</th>
+                                    <!-- <th class="text-center" width="25%">Deskripsi Event</th> -->
+                                    <th class="text-center" width="20%">Gambar</th>
+                                    <th class="text-center" width="25%">Aksi</th>
+                                 </tr>
+                              </tfoot>
                            </table>
                         </div>
                      </div>

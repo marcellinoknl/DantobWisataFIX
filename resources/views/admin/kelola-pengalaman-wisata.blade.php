@@ -15,8 +15,8 @@
                     <div class="page-header">
                         <div class="page-title">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Pengalaman Wisata</li>
+                                {{-- <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Pengalaman Wisata</li> --}}
                             </ol>
                         </div>
                     </div>
@@ -37,14 +37,10 @@
                                         <section id="main-content">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="bootstrap-data-table-panel">
-                                                            <div class="table-responsive">
-                                                                <table id="bootstrap-data-table-export"
-                                                                    class="table table-striped table-bordered">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th class="text-center" width="20%">Tanggal 
+                                                    <div class="row">
+                                                        <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                            <thead>
+                                                                <tr>                                                                            <th class="text-center" width="20%">Tanggal 
                                                                             </th>
                                                                             <th class="text-center" width="25%">Judul</th>
                                                                             <th class="text-center" width="25%">Penulis
@@ -128,6 +124,14 @@
                                                             </div>
                                                             @endforeach
                                                             </tbody>
+                                                        {{-- </tfoot>
+                                                        <tr>
+                                                            <th class="text-center" width="20%">Tanggal </th>
+                                                            <th class="text-center" width="25%">Judul</th>
+                                                            <th class="text-center" width="25%">Penulis</th>                                                            
+                                                            <th class="text-center" width="30%">Aksi</th>                                                            
+                                                        </tr>
+                                                        </tfoot> --}}
                                                             </table>
                                                         </div>
                                                     </div>

@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Persetujuan Pengalaman Wisata</li>
+                                <li class="breadcrumb-item active">Persetujuan </li>
                             </ol>
                         </div>
                     </div>
@@ -38,8 +38,7 @@
                                                     <div class="card">
                                                         <div class="bootstrap-data-table-panel">
                                                             <div class="table-responsive">
-                                                                <table id="bootstrap-data-table-export"
-                                                                    class="table table-striped table-bordered">
+                                                                <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                                     <thead>
                                                                         <tr>
                                                                             <th class="text-center" width="20%">Tanggal 

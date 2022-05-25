@@ -40,7 +40,7 @@
                      <div class="card">
                         <div class="bootstrap-data-table-panel">
                            <div class="table-responsive">
-                              <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                              <table id="example" class="table table-striped table-bordered" style="width:100%">
                                  <thead>
                                     <tr>
                                        <th class="text-center" width="15%">Nomor</th>
@@ -133,6 +133,15 @@
                            </div>
                            @endforeach
                            </tbody>
+                           <tfoot>
+                              <tr>
+                                 <th class="text-center" width="15%">Nomor</th>
+                                 <th class="text-center" width="40%">Judul Berita</th>
+                                 <!-- <th class="text-center" width="30%">Isi Berita</th> -->
+                                 <th class="text-center" width="20%">Foto</th>
+                                 <th class="text-center" width="25%">Aksi</th>
+                              </tr>
+                           </tfoot>
                            </table>
                         </div>
                      </div>
