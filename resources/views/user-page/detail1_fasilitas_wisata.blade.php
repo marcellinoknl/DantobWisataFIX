@@ -24,28 +24,32 @@
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Fasilitas {{$sampul_fasilitas->nama_sampul}} yang Ingin Kamu Tinjau!
             </h4>
             <br>
-            <p style="color:black; text-decoration: underline;">Filter Berdasarkan Kabupaten</p>
+            <p style="color:black; text-decoration:black;">Filter Berdasarkan Kabupaten</p>
      
-            <select class="selectpicker" multiple data-live-search="true" style="border: 1px solid">
+            <select id="assigned-user-filter"class="selectpicker" multiple data="true" style="border: 1px solid;">
                 @foreach ($kabupaten as $kategories)
-                <option>{{$kategories->nama_kab}}</option>
+                <option value="{{$kategories->nama_kab}}">{{$kategories->nama_kab}}</option>
                 @endforeach
+                <option value="Tampilkan Semua">Tampilkan Semua</option>
               </select>
               <br>
             <br>
-            <br>
+
+            <div class="d-flex justify-content-end">
             <form method="GET" action ="{{url('/fasilitas-wisata/detail1/' . $sampul_fasilitas->id)}}">
             <div class="row">
 
-          <div class="col-2">
-              <input  type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
+          <div class="col-md-8">
+              <input placeholder="   Cari {{$sampul_fasilitas->nama_sampul}}"  class="form-check-input" type="text" name="keyword" style="border: 1px solid black; " value="{{$keyword}}">
           </div>
-              <div class="col-2">
-              <button type="submit" class="btn btn-primary">Cari</button> 
+              <div class="col-md-4">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button> 
 
               </div>
             </div>
             </form>
+        </div>
+        <br>
             @if(empty($fasilitias_wisata) || count($fasilitias_wisata) == 0)
             <br><br>
             <div class="row justify-content-md-center">
@@ -60,7 +64,7 @@
              @else
             <div class="row g-2 g-md-4">
                 @foreach ($fasilitias_wisata as $fasilitias_wisatas)
-                    <div class="col-12 col-md-12 py-4">
+                    <div class="col-12 col-md-12 py-4 task-list-row" data-assigned-user="{{$fasilitias_wisatas->nama_kab}}">
                         <article class="postcard light red">
                             <a class="postcard__img_link" href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
                                 <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" width="200px" height="300px" />
@@ -92,8 +96,6 @@
 </div>
 
 
-
-
 {{-- <!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
 				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
@@ -112,14 +114,7 @@
 <script src="{{ asset('template2/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/select2/select2.min.js') }}"></script>
-<script>
-    $(".js-select2").each(function() {
-        $(this).select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $(this).next('.dropDownSelect2')
-        });
-    })
-</script>
+
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/daterangepicker/moment.min.js') }}"></script>
 <script src="{{ asset('template2/vendor/daterangepicker/daterangepicker.js') }}"></script>
@@ -128,80 +123,35 @@
 <script src="{{ asset('assets/js/slick-custom.js') }}"></script>
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/parallax100/parallax100.js') }}"></script>
-<script>
-    $('.parallax100').parallax100();
-</script>
+
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
-<script>
-    $('.gallery-lb').each(function() { // the containers for all your galleries
-        $(this).magnificPopup({
-            delegate: 'a', // the selector for gallery item
-            type: 'image',
-            gallery: {
-                enabled: true
-            },
-            mainClass: 'mfp-fade'
-        });
-    });
-</script>
+
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/isotope/isotope.pkgd.min.js') }}"></script>
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/sweetalert/sweetalert.min.js') }}"></script>
-<script>
-    $('.js-addwish-b2, .js-addwish-detail').on('click', function(e) {
-        e.preventDefault();
-    });
 
-    $('.js-addwish-b2').each(function() {
-        var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-        $(this).on('click', function() {
-            swal(nameProduct, "is added to wishlist !", "success");
-
-            $(this).addClass('js-addedwish-b2');
-            $(this).off('click');
-        });
-    });
-
-    $('.js-addwish-detail').each(function() {
-        var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-        $(this).on('click', function() {
-            swal(nameProduct, "is added to wishlist !", "success");
-
-            $(this).addClass('js-addedwish-detail');
-            $(this).off('click');
-        });
-    });
-
-    /*---------------------------------------------*/
-
-    $('.js-addcart-detail').each(function() {
-        var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-        $(this).on('click', function() {
-            swal(nameProduct, "is added to cart !", "success");
-        });
-    });
-</script>
 <!--===============================================================================================-->
 <script src="{{ asset('template2/vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-<script>
-    $('.js-pscroll').each(function() {
-        $(this).css('position', 'relative');
-        $(this).css('overflow', 'hidden');
-        var ps = new PerfectScrollbar(this, {
-            wheelSpeed: 1,
-            scrollingThreshold: 1000,
-            wheelPropagation: false,
-        });
 
-        $(window).on('resize', function() {
-            ps.update();
-        })
-    });
-</script>
 <!--===============================================================================================-->
 <script src="{{ asset('assets/js/main.js') }}"></script>
+
+<script>
+    $('#assigned-user-filter').on('change', function() {
+      var assignedUser = this.value;
+  
+      if (assignedUser === 'Tampilkan Semua') {
+        $('.task-list-row').hide().filter(function() {
+          return $(this).data('assigned-user') != assignedUser;
+        }).show();
+      } else {
+        $('.task-list-row').hide().filter(function() {
+          return $(this).data('assigned-user') == assignedUser;
+        }).show();
+      }
+    });
+  </script>
 
 @include('template/footer')
