@@ -23,7 +23,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'hkbpBalige.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'2'
              ],
              [ 
                 'id_fasilitas' => '2',
@@ -33,7 +33,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'MasjidAwal.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'4'
              ],
              [ 
                 'id_fasilitas' => '3',
@@ -43,7 +43,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'hkbpSihorbo.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'5'
              ],
              [ 
                 'id_fasilitas' => '4',
@@ -53,7 +53,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'SalibKasih.jpeg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'7'
              ],
              [ 
                 'id_fasilitas' => '5',
@@ -63,7 +63,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'hkbpDame.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'7'
              ],
              [ 
                 'id_fasilitas' => '6',
@@ -73,7 +73,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'hkbpPearaja.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'7'
              ],
              [ 
                 'id_fasilitas' => '7',
@@ -103,7 +103,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'hkbpLumbanSilintong.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'2'
              ],
              [ 
                 'id_fasilitas' => '10',
@@ -113,7 +113,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'TamanWisataIman.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'3'
              ],
              [ 
                 'id_fasilitas' => '11',
@@ -123,7 +123,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'gkppd.jpg',
                 'id_sampul_fasilitas' => '4',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'6'
              ],
              [ 
                 'id_fasilitas' => '12',
@@ -141,7 +141,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'GunawanHomestay.jpeg',
                 'id_sampul_fasilitas' => '1',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'2'
              ],
              [ 
                 'id_fasilitas' => '13',
@@ -153,7 +153,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'TamanEden.png',
                 'id_sampul_fasilitas' => '1',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'2'
              ],
              [ 
                 'id_fasilitas' => '14',
@@ -164,7 +164,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'Caldera.jpg',
                 'id_sampul_fasilitas' => '1',
                 'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'2'
              ],
              [ 
                 'id_fasilitas' => '15',
@@ -207,7 +207,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'BerylFarmResto.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'7'
             ],
             [ 
                'id_fasilitas' => '19',
@@ -218,7 +218,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'AngkasaKafeResto.png',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'7'
             ],
             [ 
                'id_fasilitas' => '20',
@@ -249,7 +249,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'RMGarudaSidikalang.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'3'
             ],
             [ 
                'id_fasilitas' => '23',
@@ -260,7 +260,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'RumahMakanKhasBatak.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'3'
             ],
             [ 
                'id_fasilitas' => '24',
@@ -270,7 +270,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'RestoApung.jpeg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'5'
             ],
             [ 
                'id_fasilitas' => '25',
@@ -280,7 +280,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'SipinsurResto.png',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'5'
             ],
             [ 
                'id_fasilitas' => '26',
@@ -291,7 +291,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'RestoranNelayan.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'6'
             ],
             [ 
                'id_fasilitas' => '27',
@@ -301,7 +301,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'RMMuslimMaduNtedoh.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'6'
             ],
             [ 
                'id_fasilitas' => '28',
@@ -311,7 +311,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'WaroenkPinusDamasus.jpeg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'4'
             ],
             [ 
                'id_fasilitas' => '29',
@@ -322,7 +322,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'RumahMakanSilindung.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'4'
             ],
             [ 
                'id_fasilitas' => '30',
@@ -332,7 +332,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'PizzaAndaliman.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'2'
             ],
             [ 
                'id_fasilitas' => '31',
@@ -342,7 +342,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'tobatio.jpg',
                'id_sampul_fasilitas' => '3',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'2'
             ],
             [ 
                'id_fasilitas' => '32',
@@ -353,7 +353,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'ttc.jpg',
                'id_sampul_fasilitas' => '2',
                'id_user' => '1',
-                'id_obj_wisata_kabupaten'=>'1'
+                'id_obj_wisata_kabupaten'=>'7'
             ],
             [ 
                'id_fasilitas' => '33',
@@ -364,7 +364,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'Damri.jpg',
                'id_sampul_fasilitas' => '2',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'8'
             ],
             [ 
                'id_fasilitas' => '34',
@@ -375,7 +375,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'TobaTrans.jpg',
                'id_sampul_fasilitas' => '2',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'2'
             ],
             [ 
                'id_fasilitas' => '35',
@@ -385,7 +385,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'PelabuhanAjibata.jpg',
                'id_sampul_fasilitas' => '2',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'4'
             ],
             [ 
                'id_fasilitas' => '36',
@@ -395,7 +395,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'PelabuhanTigaraja.jpg',
                'id_sampul_fasilitas' => '2',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'4'
             ],
             [ 
                'id_fasilitas' => '37',
@@ -417,7 +417,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'Silangit.jpg',
                'id_sampul_fasilitas' => '2',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'7'
             ],
             [ 
                'id_fasilitas' => '39',
@@ -427,7 +427,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'Sibisa.jpg',
                'id_sampul_fasilitas' => '2',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'2'
             ],
             [ 
                'id_fasilitas' => '40',
@@ -438,7 +438,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'TheSastaHotel.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'3'
             ],
             [ 
                'id_fasilitas' => '41',
@@ -448,7 +448,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'HotelAngkasaRaya.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'3'
             ],
             [ 
                'id_fasilitas' => '42',
@@ -458,7 +458,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'WarisHotel.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'6'
             ],
             [ 
                'id_fasilitas' => '43',
@@ -468,7 +468,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'HotelImpana.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'6'
             ],
             [ 
                'id_fasilitas' => '44',
@@ -479,7 +479,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'SimalungunCity.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'4'
             ],
             [ 
                'id_fasilitas' => '45',
@@ -490,7 +490,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'MyNasha.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'4'
             ],
             [ 
                'id_fasilitas' => '46',
@@ -501,7 +501,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'MartinAnugrah.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'5'
             ],
             [ 
                'id_fasilitas' => '47',
@@ -512,7 +512,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'TuanNagani.png',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'5'
             ],
             [ 
                'id_fasilitas' => '48',
@@ -523,7 +523,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'PiltikHomestay.jpg',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'7'
             ],
             [ 
                'id_fasilitas' => '49',
@@ -534,7 +534,7 @@ class KelolaFasilitas extends Seeder
                'file_foto' => 'NoahHotel.jpg',
                'id_sampul_fasilitas' => '1',
                'id_user' => '1',
-               'id_obj_wisata_kabupaten'=>'1'
+               'id_obj_wisata_kabupaten'=>'7'
             ],
             [ 
                 'id_fasilitas' => '50',
@@ -545,7 +545,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'GrandMutiara.png',
                 'id_sampul_fasilitas' => '1',
 		        'id_user' => '1' ,
-              'id_obj_wisata_kabupaten'=>'1'
+              'id_obj_wisata_kabupaten'=>'8'
              ],
              [ 
                 'id_fasilitas' => '51',
@@ -556,7 +556,7 @@ class KelolaFasilitas extends Seeder
                 'file_foto' => 'HotelKalang.png',
                 'id_sampul_fasilitas' => '1',
 		        'id_user' => '1',
-              'id_obj_wisata_kabupaten'=>'1'
+              'id_obj_wisata_kabupaten'=>'8'
              ],
             ]);
         }
