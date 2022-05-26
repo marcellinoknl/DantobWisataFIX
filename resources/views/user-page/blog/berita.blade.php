@@ -22,7 +22,30 @@
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
-        
+        <div class="row">
+            <div class="col-lg-12 card-margin">
+                <div class="card search-form">
+                    <div class="card-body p-0">
+                        <form id="search-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-8 col-md-6 col-sm-12 p-0">
+                                            {{-- <form method="GET" action ="{{url('/beritawisata' . $berita_wisata->id_obj_wisata_kabupaten)}}"> --}}
+                                            <input type="text" placeholder="Cari..." class="form-control" id="search" name="keyword" value="{{$keyword}}">
+                                        </div>
+                                        <div class="col-lg-4 col-md-2 col-sm-12 p-0">
+                                            <button type="submit" class="btn btn-base">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                            </button>
+                                        {{-- </form> --}}
+                                        </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
         <div class="container p-md-2 p-2">
             @if(empty($berita_wisata) || count($berita_wisata) == 0)
             <br><br>
@@ -40,7 +63,7 @@
                     @foreach ($berita_wisata as $beritas)
                     <div class="col-6 col-md-4 py-4">
                         <div class="card" style="width: 350px; height:600px; border-radius: 5%;">
-                            <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}">
+                            <a href="{{ url('/berita-wisata/detail/' . $beritas->id_berita) }}">
                             <img class="card-img-top" src="{{ url('images/berita/' . $beritas->file_foto) }}"
                                 alt="Card image cap" style="height: 200px ; border-radius: 15px 15px 0px 0px; ">
                             </a>
@@ -50,16 +73,16 @@
                                     $isi_berita = substr($beritas->isi_berita,0,100);
                                     ?>
                                     
-                                   <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
+                                   <a href="{{ url('/berita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
                                     onMouseOut="this.style='color:black'" style="color:black; ">
                                     <div class="title" style="text-weight:bold;">
                                         {{ $beritas->judul_berita }}
                                     </div>
                                 </a>
                                 <hr class="mt-2 mb-3" style="border:solid 0.5px" />
-                                        <div class="caption" style=" color:black; text-align: justify;"> {!! $isi_berita!!} 
+                                        <div class="caption" style=" color:black; text-align: justify;"> {!! $isi_berita!!}... 
                                     </div>
-                                    <a href="{{ url('/beita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
+                                    <a href="{{ url('/berita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
                                         onMouseOut="this.style='color:rgb(40, 116, 196)'" style="color:rgb(40, 116, 196);">Baca Selengkapnya</a>
                                 
                             </div>
@@ -74,6 +97,7 @@
                     </div>
                     @endforeach
             </div>
+            {{$berita_wisata->links()}}
             @endif
         </div>
     </div>

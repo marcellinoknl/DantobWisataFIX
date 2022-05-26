@@ -1,11 +1,11 @@
 @include('template/header')
 
-<div class="hero-wrap  " style="background-image: url(images/bgpa.jpeg); width: 100%; height:100%;">
+<div class="hero-wrap  " style="background-image: url({{ asset('images/pengalaman/' . $pengalamansaya->file_foto) }}); height:100%;">
     <div class="overlay" style="width:100%;height: 100%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate">
-                <h1 class="mb-4" style="text-align: center;">EDIT PENGALAMAN WISATA ANDA</h1>
+                <h1 class="mb-4" style="text-align: center;">EDIT PENGALAMAN WISATA SAYA</h1>
             </div>
         </div>
     </div>

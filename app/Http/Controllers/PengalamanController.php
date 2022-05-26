@@ -44,8 +44,9 @@ class PengalamanController extends Controller
 
 
     public function editPengalamanSaya($id_pengalaman){
+        $pengalamansaya = PengalamanWisata::find($id_pengalaman);
         $updates = PengalamanWisata::find($id_pengalaman);
-        return view('user-page/edit-pengalaman-wisata-saya', compact('updates'));
+        return view('user-page/edit-pengalaman-wisata-saya', compact('updates','pengalamansaya'));
     }
 
     public function updatePengalamanSaya(request $request, $id_pengalaman)

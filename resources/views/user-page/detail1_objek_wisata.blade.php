@@ -40,10 +40,11 @@
                             <div class="row no-gutters">
                                 <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                                     <select id="assigned-user-filter" class="form-control" id="exampleFormControlSelect1">
+                                      <option value="Tampilkan Semua">Tampilkan Semua</option>
                                       @foreach ($kategori as $kategories)
                                       <option value="{{$kategories->nama_kategori}}">{{$kategories->nama_kategori}}</option>
                                       @endforeach
-                                      <option value="Tampilkan Semua">Tampilkan Semua</option>
+                                     
                                     </select>
                                 </div>
                                 <div class="col-lg-8 col-md-6 col-sm-12 p-0">

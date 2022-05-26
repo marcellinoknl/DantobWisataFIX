@@ -45,6 +45,7 @@ class objekWisataController extends Controller
             ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
             ->where('nama_wisata','LIKE','%'.$keyword.'%')
             ->simplePaginate(12);
+        $objek_wisata->appends($request->all());
         $kategori = Kategori_Wisata::all();
         $objwisatakabupatenfilter = DB::table('objwisatakabupaten')->get();
         return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'keyword'=>$keyword]);

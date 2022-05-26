@@ -48,7 +48,7 @@ Route::get('/event-wisata/detail1/{id}', [eventController::class, 'indexAction2'
 Route::get('/event-wisata/detail2/{id}', [eventController::class, 'indexAction3']);
 //berita
 Route::get('/beritawisata', [beritaController::class, 'indexAction']);
-Route::get('/beita-wisata/detail/{id}', [beritaController::class, 'indexAction2']);
+Route::get('/berita-wisata/detail/{id}', [beritaController::class, 'indexAction2']);
 //fasiltias
 Route::get('/fasilitaswisata', [fasilitasController::class, 'indexAction']);
 Route::get('/fasilitas-wisata/detail1/{id}', [fasilitasController::class, 'indexAction2']);

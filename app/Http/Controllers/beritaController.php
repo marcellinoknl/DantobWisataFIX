@@ -9,13 +9,17 @@ use Auth;
 
 class beritaController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $keyword = $request->keyword;
         $berita_wisata = DB::table('berita_wisata')
         ->select('berita_wisata.*','users.name')
         ->join('users', 'berita_wisata.id_user', '=', 'users.id')
-        ->get(); 
-        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata]);
+        ->where('judul_berita','LIKE','%'.$keyword.'%')
+        ->orwhere('isi_berita','LIKE','%'.$keyword.'%')
+        ->simplePaginate(6);
+        $berita_wisata->appends($request->all());
+        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'keyword'=>$keyword]);
     }
 
     public function kelolaindexAction()
