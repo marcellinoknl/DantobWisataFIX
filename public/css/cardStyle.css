@@ -10,8 +10,8 @@
     overflow: hidden;
 }
 .mycard-galeri{
-    width:320px;
-    height:300px;
+    width:200px;
+    height:200px;
     background-color:#333;
     border-radius: 10px;
     outline-offset: -8px;

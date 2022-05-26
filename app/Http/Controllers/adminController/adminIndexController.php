@@ -13,6 +13,11 @@ class adminIndexController extends Controller
         $objek = DB::table('objek_wisata')->count();
         $atraksi = DB::table('atraksi_wisata')->count();
         $fasilitas = DB::table('fasilitas_wisata')->count();
-        return view('admin.admin-index', compact('users','atraksi','objek','fasilitas'));
+        $event = DB::table('event_wisatas')->count();
+        $pengalaman = DB::table('pengalaman_wisata')->count();
+       
+        return view('admin.admin-index', compact('users','atraksi','objek','fasilitas','event','pengalaman'));
     }
+
+
 }

@@ -114,7 +114,7 @@
                         <a href="{{url('/kelolagaleri')}}"><i class="ti-gallery"></i> Kelola Galeri Wisata </a>
                         @endif
                     </li>
-                    <li><a class="sidebar-sub-toggle"><i class="ti-settings"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-car"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
                             <li><a href="{{url('/sampul-fasilitas')}}">Kelola Sampul Fasilitas</a></li>
@@ -133,7 +133,7 @@
                        
                         </ul>
                     </li>
-                    @endif
+                         @endif
                     @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolauser')}}"><i class="ti-user"></i> Kelola Akun User </a></li>
                     <li><a href="{{url('/')}}"><i class="ti-home"></i> Halaman Pengunjung </a></li>
@@ -155,58 +155,6 @@
                         </div>
                     </div>
                     <div class="float-right">
-                        <div class="dropdown dib">
-                            <div class="header-icon" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <div class="drop-down dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-content-heading">
-                                        <span class="text-left">Notifikasi</span>
-                                    </div>
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Marcel</div>
-                                                        <div class="notification-text">user baru</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Samuel</div>
-                                                        <div class="notification-text">Notif baru</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
-                                                    <div class="notification-content">
-                                                        <small class="notification-timestamp pull-right">02:34
-                                                            PM</small>
-                                                        <div class="notification-heading">Noel</div>
-                                                        <div class="notification-text">Pengalaman Baru
-                                                            ...</div>
-                                                    </div>
-                                                </a>
-                                            </li>
-
-                                            <li class="text-center">
-                                                <a href="#" class="more-link">Lihat Selengkapnya</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">

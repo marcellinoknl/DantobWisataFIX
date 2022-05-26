@@ -8,6 +8,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
+                            
                             <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
                         </div>
                     </div>
@@ -28,7 +29,7 @@
             <!-- /# row -->
             <section id="main-content">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="card">
                             <div class="stat-widget-one">
                                 <div class="stat-icon dib"><i class=" ti-user color-primary border-primary"></i>
@@ -40,10 +41,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="card">
                             <div class="stat-widget-one">
-                                <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
+                                <div class="stat-icon dib"><i class="ti-direction-alt color-success border-success"></i>
                                 </div>
                                 <div class="stat-content dib">
 
@@ -53,10 +54,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="card">
                             <div class="stat-widget-one">
-                                <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                                <div class="stat-icon dib"><i class="ti-layout color-green border-green"></i>
                                 </div>
                                 <div class="stat-content dib">
                                     <div class="stat-text">Total Objek Wisata </div>
@@ -65,16 +66,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="card">
                             <div class="stat-widget-one">
-                                <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                <div class="stat-icon dib"><i class="ti-car color-danger border-danger"></i></div>
                                 <div class="stat-content dib">
                                     <div class="stat-text">Total Fasilitas</div>
                                     <div class="stat-digit">{{$fasilitas}}</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-agenda color-warning border-warning"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">Total Event</div>
+                                    <div class="stat-digit">{{$event}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-id-badge color-info border-info"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">Total Pengalaman</div>
+                                    <div class="stat-digit">{{$pengalaman}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
                     </div>
                 </div>
 

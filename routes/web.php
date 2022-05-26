@@ -73,6 +73,7 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
 
         //Index utama
         Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
+
         //Kelola Objek Wisatawa
         Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
         Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
@@ -200,6 +201,8 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
 Route::group(['middleware' => ['auth',  'ceklevel:2,3']], function () {
         //Index utama
         Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
+
+
         //Kelola Objek Wisatawa
         Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
         Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
