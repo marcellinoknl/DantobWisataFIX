@@ -18,9 +18,7 @@ class AdminRole
     {
         if (auth()->user()->role == 3) {
             return $next($request);
-        } elseif (auth()->user()->role == 2) {
-            return $next($request);
         }
-        return redirect()->back()->with('error', "Anda tidak memiliki Akses ke Halaman Admin");
+        return redirect()->back()->with('error', "Koneksi Gagal");
     }
 }

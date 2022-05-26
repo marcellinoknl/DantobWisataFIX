@@ -80,41 +80,64 @@
                     <li class="label">Kelola Data Wisata</li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-
+                            @if ( auth()->user()->role ==3)
                             <li><a href="{{url('/kelolakat')}}">Kelola Kategori Wisata</a></li>
                             <li><a href="{{url('/kelolakab')}}">Kelola Kabupaten</a></li>
-
                             <li><a href="{{url('/kelolaobjek')}}">Kelola Per-Objek Wisata</a></li>
-
+                            @else
+                            <li><a href="{{url('/kelolaobjek')}}">Kelola Objek Wisata</a></li>
+                            @endif
                         </ul>
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction-alt"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
+                            @if ( auth()->user()->role ==3)
                             <li><a href="{{url('/sampul-atraksi')}}">Kelola Sampul Atraksi</a></li>
                             <li><a href="{{url('/kelolaatraksi')}}">Kelola Atraksi Wisata</a></li>
+                            @else
+                            <li><a href="{{url('/kelolaatraksi')}}">Kelola Atraksi Wisata</a></li>
+                            @endif
                         </ul>
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-layers"></i> Kelola Event <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                            <li><a href="{{url('/sampul-event')}}">Kelola Sampul Event</a></li>
-                            <li><a href="{{url('/kelolaevent')}}">Kelola Event Wisata</a></li>
+                        @if ( auth()->user()->role ==3)
+                        <li><a href="{{url('/sampul-event')}}">Kelola Sampul Event</a></li>
+                        <li><a href="{{url('/kelolaevent')}}">Kelola Event Wisata</a></li> 
+                        @else
+                        <li><a href="{{url('/kelolaevent')}}">Kelola Event Wisata</a></li>
+                        @endif
                         </ul>
                     <li><a href="{{url('/kelolaberita')}}"><i class="ti-announcement"></i> Kelola Berita Wisata </a></li>
-                    <li><a href="{{url('/kelolagaleri')}}"><i class="ti-gallery"></i> Kelola Galeri Wisata </a></li>
+                    <li>
+                        @if ( auth()->user()->role ==3)
+                        <a href="{{url('/kelolagaleri')}}"><i class="ti-gallery"></i> Kelola Galeri Wisata </a>
+                        @endif
+                    </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-settings"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
+                            @if ( auth()->user()->role ==3)
                             <li><a href="{{url('/sampul-fasilitas')}}">Kelola Sampul Fasilitas</a></li>
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Per-Fasilitas</a></li>
+                            @else
+                            <li><a href="{{url('/daftar-fasilitas')}}">Kelola Fasilitas</a></li>
+                            @endif
                         </ul>
                     </li>
+                    @if ( auth()->user()->role ==3)
                     <li><a class="sidebar-sub-toggle"><i class="ti-id-badge"></i>Pengalaman Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
+                           
                             <li><a href="{{url('/kelolapengalamanwisata')}}">Kelola Pengalaman Wisata</a></li>
                             <li><a href="{{url('/persetujuanpengalamanwisata')}}">Persetujuan Pengalaman</a></li>
+                       
                         </ul>
                     </li>
+                    @endif
+                    @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolauser')}}"><i class="ti-user"></i> Kelola Akun User </a></li>
                     <li><a href="{{url('/')}}"><i class="ti-home"></i> Halaman Pengunjung </a></li>
+                    @endif
             </div>
         </div>
     </div>
