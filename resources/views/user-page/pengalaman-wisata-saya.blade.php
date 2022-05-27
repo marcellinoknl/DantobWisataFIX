@@ -34,7 +34,7 @@
             <div class="col-12 col-md-8 py-4">
              <div class="card">
                  <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
-                Anda Belum Menambahkan Pengalaman Wisata Anda Menambahkan
+                Anda Belum Menambahkan Pengalaman Wisata Anda
              <center>  <a href="{{url('/tambah-pengalamanwisata')}}"><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Tambahkan Pengalaman</button></a></center>
                  </div>
                </div>
