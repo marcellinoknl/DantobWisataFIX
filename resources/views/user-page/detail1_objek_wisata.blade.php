@@ -100,7 +100,7 @@
                 
             </div>
             @endif
-            {{$objek_wisata -> links()}}
+      
         </div>
     </div>
 </div>
