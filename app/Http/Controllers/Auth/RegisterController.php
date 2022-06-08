@@ -96,7 +96,9 @@ class RegisterController extends Controller
                 $create = User::Create([
                     'email'             => $user_google->getEmail(),
                     'name'              => $user_google->getName(),
+                    // $table->integer('role')->default(0);
                     'password'          => Hash::make('12345678'),
+                    'role'          => Hash::make('12345678'),
                     'email_verified_at' => now()
                 ]);
 
