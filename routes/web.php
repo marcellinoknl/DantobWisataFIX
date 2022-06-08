@@ -28,9 +28,9 @@ use App\Http\Controllers\PengalamanController;
 
 // --USER SIDE--
 //Home Page
-Route::get('/', [homepageController::class, 'indexAction']);
-Route::get('/auth/redirect', 'App\Http\Controllers\Auth\RegisterController@redirectToProvider');
-Route::get('/auth/callback', 'App\Http\Controllers\Auth\RegisterController@handleProviderCallback');
+Route::get('/', [homepageController::class, 'indexAction'])->name('beranda');
+Route::get('/auth/google', [App\Http\Controllers\Auth\RegisterController::class,'redirectToProvider'])->name('google.login');
+Route::get('/auth/google/callback', [App\Http\Controllers\Auth\RegisterController::class,'handleProviderCallback'])->name('google.callback');
 // Route::get('/beranda',[MahasiswaController::class, 'Peraturan']);
 
 

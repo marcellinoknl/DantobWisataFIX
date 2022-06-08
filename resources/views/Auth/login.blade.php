@@ -133,14 +133,12 @@
                                {{ __('Forgot Your Password?') }}
                            </a>
 @endif -->
+                        <a class="btn btn-light" href="{{route('google.login')}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> Atau Login Dengan Google</a><br>
                      </form>
                      <p class="text-center">
                         <span>Belum Mempunyai Akun?</span>
                         <a href="{{ url('/register') }}"><br>
                            <span>Daftar Sekarang</span><br>
-                           
-                           <a class="btn btn-light" href="{{ '/auth/redirect'}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> Atau Login Dengan Google</a><br>
-                        
                         </a>
                      </p>
                   </div>
