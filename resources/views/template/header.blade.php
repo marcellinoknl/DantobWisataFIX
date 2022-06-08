@@ -124,6 +124,8 @@
                                     type="button">Event</button></a>
                             <a href="{{ url('/beritawisata') }}"><button class="dropdown-item"
                                     type="button">Berita</button></a>
+                           <a href="{{ url('/desawisata') }}"><button class="dropdown-item"
+                                    type="button">Desa Wisata</button></a>         
                         </div>
                     </div>
                     <li class="nav-item {{Request::segment(1) === 'fasilitaswisata' ? 'active' : null }}"><a href="{{ url('/fasilitaswisata') }}"

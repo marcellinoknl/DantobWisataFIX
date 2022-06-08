@@ -76,19 +76,20 @@
                         </a></div>
                     <li class="label">Halaman Utama</li>
                     <li><a href="{{url('/admin-wisata')}}"><i class="ti-dashboard"></i> Dashboard </a></li>
-
+                    
                     <li class="label">Kelola Data Wisata</li>
+                    <li><a href="{{url('/kelolakab')}}"><i class="ti-bookmark"></i> Kelola Kabupaten</a></li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
                             <li><a href="{{url('/kelolakat')}}">Kelola Kategori Wisata</a></li>
-                            <li><a href="{{url('/kelolakab')}}">Kelola Kabupaten</a></li>
                             <li><a href="{{url('/kelolaobjek')}}">Kelola Per-Objek Wisata</a></li>
                             @else
                             <li><a href="{{url('/kelolaobjek')}}">Kelola Objek Wisata</a></li>
                             @endif
                         </ul>
                     </li>
+
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction-alt"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
