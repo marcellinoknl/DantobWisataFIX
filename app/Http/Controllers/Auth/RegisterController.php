@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -90,8 +91,8 @@ class RegisterController extends Controller
             //$user_google menyimpan data google account seperti email, foto, dsb
 
             if($user != null){
-                \auth()->register($user, true);
-                return redirect()->route('home');
+                Auth::login($user);
+                return redirect()->intended('/');
             }else{
                 $create = User::Create([
                     'email'             => $user_google->getEmail(),
@@ -101,12 +102,12 @@ class RegisterController extends Controller
                 ]);
 
 
-                \auth()->register($create, true);
-                return redirect()->route('home');
+                Auth::login($create);
+                return redirect()->intended('/');
             }
 
         } catch (\Exception $e) {
-            return redirect()->route('home');
+            return redirect()->route('login');
         }
 
 
