@@ -33,6 +33,10 @@ Route::get('/auth/google', [App\Http\Controllers\Auth\RegisterController::class,
 Route::get('/auth/google/callback', [App\Http\Controllers\Auth\RegisterController::class,'handleProviderCallback'])->name('google.callback');
 // Route::get('/beranda',[MahasiswaController::class, 'Peraturan']);
 
+//desawisata
+Route::get('/desawisata', [App\Http\Controllers\DesaWisataController::class, 'indexAction']);
+Route::get('/objek-wisata/detail1/{id}', [objekWisataController::class, 'indexAction2']);
+Route::get('/objek-wisata/detail2/{id}', [objekWisataController::class, 'indexAction3']);
 
 //Destination => objek wisata
 Route::get('/objek-wisata', [objekWisataController::class, 'indexAction']);

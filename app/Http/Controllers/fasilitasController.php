@@ -12,7 +12,7 @@ class fasilitasController extends Controller
 {
     public function indexAction()
     {
-        $sampul_fasilitas = DB::table('sampul_fasilitas')->get(); 
+        $sampul_fasilitas = DB::table('sampul_fasilitas')->orderBy('nama_sampul', 'ASC')->get(); 
         return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas]);
     }
 

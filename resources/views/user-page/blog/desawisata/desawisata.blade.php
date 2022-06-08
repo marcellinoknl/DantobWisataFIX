@@ -14,12 +14,10 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Budaya dan Warisan
-            Unik di Danau
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Desa Wisata yang ada di daerah Danau
             Toba</h1>
-        <p class="caption" style=" color:black;">Memiliki Budaya dan Warisan yang unik menjadikan Danau Toba
-            sebagai destinasi yang harus di kunjungi.
-            Berbagai macam wisata yang menyatu dengan budaya yang ada membuat kamu tidak akan melukapan keindahan Danau
+        <p class="caption" style=" color:black;">Desa Wisata di Danau Toba juga tak kalah menarik
+            Berbagai macam Desa Wisata yang ada di daerah sekitaran Danau Toba serta budaya yang ada membuat kamu tidak akan melukapan keindahan Danau
             Toba.
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
@@ -58,6 +56,7 @@
         </div>
     </div>
 </div>
+
 
 
 @include('template/footer')
