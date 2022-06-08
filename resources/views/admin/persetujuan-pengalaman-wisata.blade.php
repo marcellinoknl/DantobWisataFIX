@@ -100,7 +100,7 @@
                                                                     <!-- Modal content-->
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h4 class="modal-title">Hapus Kategori Wisata
+                                                                            <h4 class="modal-title">Hapus Pengalaman Wisata
                                                                             </h4>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal"><i
@@ -108,8 +108,8 @@
                                                                         </div>
                                                                         <div class="modal-body">
                                                                             <p>Apakah Anda yakin ingin menghapus
-                                                                                Wisata
-                                                                                <b>{{ $pengalaman->judul }}</b> ?
+                                                                                Pengalaman dari 
+                                                                                <b> {{$pengalaman->name}}</b> ?
                                                                             </p>
                                                                         </div>
                                                                         <div class="modal-footer">

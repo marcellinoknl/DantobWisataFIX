@@ -92,7 +92,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction-alt"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
-                            <li><a href="{{url('/sampul-atraksi')}}">Kelola Sampul Atraksi</a></li>
+                            <li><a href="{{url('/sampul-atraksi')}}">Kelola Kategori Atraksi</a></li>
                             <li><a href="{{url('/kelolaatraksi')}}">Kelola Atraksi Wisata</a></li>
                             @else
                             <li><a href="{{url('/kelolaatraksi')}}">Kelola Atraksi Wisata</a></li>
@@ -102,7 +102,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-layers"></i> Kelola Event <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
                         @if ( auth()->user()->role ==3)
-                        <li><a href="{{url('/sampul-event')}}">Kelola Sampul Event</a></li>
+                        <li><a href="{{url('/sampul-event')}}">Kelola Kategori Event</a></li>
                         <li><a href="{{url('/kelolaevent')}}">Kelola Event Wisata</a></li> 
                         @else
                         <li><a href="{{url('/kelolaevent')}}">Kelola Event Wisata</a></li>
@@ -117,7 +117,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-car"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
-                            <li><a href="{{url('/sampul-fasilitas')}}">Kelola Sampul Fasilitas</a></li>
+                            <li><a href="{{url('/sampul-fasilitas')}}">Kelola KategoriFasilitas</a></li>
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Per-Fasilitas</a></li>
                             @else
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Fasilitas</a></li>

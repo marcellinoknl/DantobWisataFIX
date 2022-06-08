@@ -123,8 +123,7 @@ class fasilitasController extends Controller
         $fasilitas->id_user = Auth::user()->id;
         $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas;
         $fasilitas->id_obj_wisata_kabupaten = $request->id_obj_wisata_kabupaten;
-        $fasilitas->lokasi = $request->lokasi;
-        if ($request->hasFile('file_foto')) {
+         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
             $request->file('file_foto')->move('images/fasilitas', $file);
             $fasilitas->file_foto = $file;

@@ -43,18 +43,10 @@
                                                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center" width="8%">Nomor
-                                                                            </th>
-                                                                            <th class="text-center" width="15%">Judul
-                                                                                Atraksi</th>
-                                                                            <th class="text-center" width="15%">
-                                                                                Kategori</th>
-                                                                            <!-- <th class="text-center" width="20%">
-                                                                                Deskripsi Atraksi</th> -->
-                                                                            <th class="text-center" width="20%">Foto
-                                                                                Atraksi</th>
-                                                                            <th class="text-center" width="25%">Aksi
-                                                                            </th>
+                                                                            <th class="text-center" >Nomor</th>
+                                                                            <th class="text-center" width="35%">Judul Atraksi</th>
+                                                                            <th class="text-center" width="35%">Kategori</th>
+                                                                            <th class="text-center" width="30%">Aksi</th>
                                                                         </tr>
                                                                         <?php $number = 1; ?>
                                                                     </thead>
@@ -72,12 +64,12 @@
                                                                                 <!-- <td class="text-center">
                                                                                     {!! $atraksiwisatas->deskripsi !!}
                                                                                 </td> -->
-                                                                                <td>
+                                                                                {{-- <td>
                                                                             <img
                                                                                             src="{{ 'images/Atraksi/' . $atraksiwisatas->file_foto }}"
                                                                                             style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"
                                                                                             alt="" data-toggle="modal"
-                                                                                            data-target="#myModalgambar{{ $atraksiwisatas->atraksi_id  }}" /></td>
+                                                                                            data-target="#myModalgambar{{ $atraksiwisatas->atraksi_id  }}" /></td> --}}
                                                                                 
                                                                                 <td>
                                                                                 <center> 
@@ -160,17 +152,10 @@
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
-                                                                    <th class="text-center" width="8%">Nomor
-                                                                    </th>
-                                                                    <th class="text-center" width="15%">Judul
-                                                                        Atraksi</th>
-                                                                    <th class="text-center" width="15%">
-                                                                        Kategori</th>
-                                                                    <!-- <th class="text-center" width="20%">
-                                                                        Deskripsi Atraksi</th> -->
-                                                                    <th class="text-center" width="20%">Foto
-                                                                        Atraksi</th>
-                                                                    <th class="text-center" width="25%">Aksi
+                                                                    <th class="text-center" >Nomor</th>
+                                                                    <th class="text-center" width="35%">Judul Atraksi</th>
+                                                                    <th class="text-center" width="35%">Kategori</th>
+                                                                    <th class="text-center" width="30%">Aksi
                                                                     </th>
                                                                 </tr>
                                                             </tfoot>

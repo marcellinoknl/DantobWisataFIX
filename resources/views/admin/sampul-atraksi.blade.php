@@ -6,7 +6,7 @@
    <div class="col-lg-8 p-r-0 title-margin-right">
       <div class="page-header">
          <div class="page-title">
-            <h1>KELOLA SAMPUL ATRAKSI WISATA</h1>
+            <h1>KELOLA KATEGORI ATRAKSI WISATA</h1>
          </div>
       </div>
    </div>
@@ -16,7 +16,7 @@
          <div class="page-title">
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-               <li class="breadcrumb-item active">Kelola Sampul Atraksi</li>
+               <li class="breadcrumb-item active">Kelola Kategori Atraksi</li>
             </ol>
          </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="row">
          <div class="col-lg-12">
             <a href="{{ url('/tambah-sampul-atraksi')}}">
-             <button class="btn btn-success"style="color:black; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Sampul Atraksi</button>
+             <button class="btn btn-success"style="color:black; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Kategori Atraksi</button>
             </a>
             <section id="main-content">
                <div class="row">
@@ -43,10 +43,9 @@
                               <table id="example" class="table table-striped table-bordered" style="width:100%">
                                  <thead>
                                     <tr>
-                                       <th class="text-center" width="15%">Nomor</th>
-                                       <th class="text-center" width="20%">Nama Sampul</th>
-                                       <th class="text-center" width="35%">Gambar</th>
-                                       <th class="text-center" width="30%">Aksi</th>
+                                       <th class="text-center" >Nomor</th>
+                                       <th class="text-center" width="50%">Kategori</th>               
+                                       <th class="text-center" width="50%">Aksi</th>
                                     </tr>
                                     <?php $number = 1; ?>
                                  </thead>
@@ -55,8 +54,8 @@
                                     <tr>
                                        <td class="text-center"><?php echo $number++; ?></td>
                                        <td class="text-center">{{$sampuls->nama_sampul}}</td>
-                                       <td class="text-center"><img  src="{{'images/Atraksi/'.$sampuls->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"
-                                          data-target="#myModalgambar{{ $sampuls->id }}"/></td>
+                                       {{-- <td class="text-center"><img  src="{{'images/Atraksi/'.$sampuls->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"
+                                          data-target="#myModalgambar{{ $sampuls->id }}"/></td> --}}
                                        <td class="text-center">                                                                                                                                                     
                                           <button class="btn btn-warning" onclick="window.location.href='/ubah-sampulatraksi/{{$sampuls->id}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
                                           <button class="btn btn-danger"
@@ -97,14 +96,14 @@
                            <!-- Modal content-->
                            <div class="modal-content">
                            <div class="modal-header">
-                           <h4 class="modal-title">Hapus  Sampul Atraksi Wisata
+                           <h4 class="modal-title">Hapus  Kategori Atraksi Wisata
                            </h4>
                            <button type="button" class="close"
                               data-dismiss="modal"><i
                               class="ti-close"></i></button>
                            </div>
                            <div class="modal-body">
-                           <p>Apakah Anda yakin ingin menghapus Sampul Atraksi Wisata
+                           <p>Apakah Anda yakin ingin menghapus Kategori Atraksi Wisata
                            <b>{{ $sampuls->nama_sampul}}</b> ?
                            </p>
                            </div>
@@ -127,10 +126,9 @@
                            </tbody>
                            <tfoot>
                               <tr>
-                                 <th class="text-center" width="15%">Nomor</th>
-                                 <th class="text-center" width="20%">Nama Sampul</th>
-                                 <th class="text-center" width="35%">Gambar</th>
-                                 <th class="text-center" width="30%">Aksi</th>
+                                        <th class="text-center" >Nomor</th>
+                                       <th class="text-center" width="50%">Kategori </th>               
+                                       <th class="text-center" width="50%">Aksi</th>
                               </tr>   
                            </tfoot>
                            </table>

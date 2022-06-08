@@ -16,7 +16,7 @@
          <div class="page-title">
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-               <li class="breadcrumb-item active">Table-Export</li>
+               <li class="breadcrumb-item active">Kelola Fasilitas</li>
             </ol>
          </div>
       </div>
@@ -43,13 +43,13 @@
                               <table id="example" class="table table-striped table-bordered" style="width:100%">
                                  <thead>
                                     <tr>
-                                       <th class="text-center" width="5%">Nomor</th>
-                                       <th class="text-center" width="15%">Nama Fasilitas</th>
+                                       <th class="text-center" >Nomor</th>
+                                       <th class="text-center" width="35%">Nama Fasilitas</th>
                                        <!-- <th class="text-center" width="20%">Deskripsi Fasilitas</th> -->
-                                       <th class="text-center" width="10%">Kabupaten</th>
-                                       <th class="text-center" width="10%">Kategori</th>
-                                       <th class="text-center" width="15%">Gambar</th>
-                                       <th class="text-center" width="30%">Aksi</th>
+                                       <th class="text-center" width="15%">Kabupaten</th>
+                                       <th class="text-center" width="15%">Kategori</th>
+                                       {{-- <th class="text-center" width="15%">Gambar</th> --}}
+                                       <th class="text-center" width="35%">Aksi</th>
                                     </tr>
                                     <?php $number = 1; ?>
                                  </thead>
@@ -61,8 +61,7 @@
                                        <!-- <td class="text-center">{!! $fasilitas->deskripsi !!}</td> -->
                                        <td class="text-center">{{$fasilitas->nama_kab}}</td>
                                        <td class="text-center">{{$fasilitas->nama_sampul}}</td>
-                                       <td class="text-center"><img  src="{{'images/fasilitas/'.$fasilitas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"
-                                          data-target="#myModalgambar{{  $fasilitas->id_fasilitas  }}"/></td>
+                                       
                                        <td>
                                           <center>
                                           <button class="btn btn-info" onclick="window.location.href='/lihat-fasilitaswisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-eye" style="color:black;"></span></button>
@@ -137,13 +136,13 @@
                            </tbody>
                            <tfoot>
                               <tr>
-                                 <th class="text-center" width="5%">Nomor</th>
-                                 <th class="text-center" width="15%">Nama Fasilitas</th>
+                                 <th class="text-center" >Nomor</th>
+                                 <th class="text-center" width="35%">Nama Fasilitas</th>
                                  <!-- <th class="text-center" width="20%">Deskripsi Fasilitas</th> -->
-                                 <th class="text-center" width="20%">Lokasi</th>
-                                 <th class="text-center" width="10%">Kategori</th>
-                                 <th class="text-center" width="15%">Gambar</th>
-                                 <th class="text-center" width="20%">Aksi</th>
+                                 <th class="text-center" width="15%">Kabupaten</th>
+                                 <th class="text-center" width="15%">Kategori</th>
+                                 {{-- <th class="text-center" width="15%">Gambar</th> --}}
+                                 <th class="text-center" width="35%">Aksi</th>
                               </tr>
                            </tfoot>
 

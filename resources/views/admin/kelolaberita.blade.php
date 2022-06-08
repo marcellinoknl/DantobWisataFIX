@@ -43,11 +43,9 @@
                               <table id="example" class="table table-striped table-bordered" style="width:100%">
                                  <thead>
                                     <tr>
-                                       <th class="text-center" width="15%">Nomor</th>
-                                       <th class="text-center" width="40%">Judul Berita</th>
-                                       <!-- <th class="text-center" width="30%">Isi Berita</th> -->
-                                       <th class="text-center" width="20%">Foto</th>
-                                       <th class="text-center" width="25%">Aksi</th>
+                                       <th class="text-center" >Nomor</th>
+                                       <th class="text-center" width="50%">Judul Berita</th>
+                                       <th class="text-center" width="50%">Aksi</th>
                                     </tr>
                                     <?php $number = 1; ?>
                                  </thead>
@@ -56,12 +54,9 @@
                                     <tr>
                                        <td class="text-center"><?php echo $number++; ?></td>
                                        <td class="text-center">{{$beritawisatas->judul_berita}}</td>
-
                                        <!-- <td class="text-center">{!!$beritawisatas->isi_berita !!}</td> -->
-                                       <td class="text-center"><img  src="{{'images/berita/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"data-target="#myModalgambar{{$beritawisatas->id_berita }}"/></td>
-                                       
-
-                                       <td>
+                                       {{-- <td class="text-center"><img  src="{{'images/berita/'.$beritawisatas->file_foto }}" style="width:200px; height: 130px; object-fit: cover; border:1px solid black;" data-toggle="modal"data-target="#myModalgambar{{$beritawisatas->id_berita }}"/></td> --}}
+                                        <td>
                                           <center> 
                                              <button class="btn btn-info" onclick="window.location.href='/lihat-beritawisata/{{$beritawisatas->id_berita}}'"><span class="ti-eye" style="color:black;"></span></button>
                                              <button class="btn btn-warning" onclick="window.location.href='/ubah-berita-wisata/{{$beritawisatas->id_berita}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
@@ -135,11 +130,9 @@
                            </tbody>
                            <tfoot>
                               <tr>
-                                 <th class="text-center" width="15%">Nomor</th>
-                                 <th class="text-center" width="40%">Judul Berita</th>
-                                 <!-- <th class="text-center" width="30%">Isi Berita</th> -->
-                                 <th class="text-center" width="20%">Foto</th>
-                                 <th class="text-center" width="25%">Aksi</th>
+                                 <th class="text-center" >Nomor</th>
+                                       <th class="text-center" width="50%">Judul Berita</th>
+                                       <th class="text-center" width="50%">Aksi</th>
                               </tr>
                            </tfoot>
                            </table>

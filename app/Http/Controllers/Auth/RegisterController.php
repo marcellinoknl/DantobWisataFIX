@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -55,6 +56,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
+    
 
     /**
      * Create a new user instance after a valid registration.
@@ -70,6 +72,43 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role'=>1 ,
         ]);
+      }
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('google')->redirect();
     }
-    
+
+    public function handleProviderCallback(\Request $request)
+    {
+        try {
+            $user_google    = Socialite::driver('google')->user();
+            $user           = User::where('email', $user_google->getEmail())->first();
+
+            //jika user ada maka langsung di redirect ke halaman home
+            //jika user tidak ada maka simpan ke database
+            //$user_google menyimpan data google account seperti email, foto, dsb
+
+            if($user != null){
+                \auth()->register($user, true);
+                return redirect()->route('home');
+            }else{
+                $create = User::Create([
+                    'email'             => $user_google->getEmail(),
+                    'name'              => $user_google->getName(),
+                    'password'          => Hash::make('12345678'),
+                    'email_verified_at' => now()
+                ]);
+
+
+                \auth()->register($create, true);
+                return redirect()->route('home');
+            }
+
+        } catch (\Exception $e) {
+            return redirect()->route('home');
+        }
+
+
+    }
 }

@@ -87,7 +87,7 @@
                      <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('login') }}"enctype="multipart/form-data">
                         @csrf
                         <div class=" mb-3">
-                           <label for="email" class=" form-label ">{{ __('EMAIL OR USERNAME') }}</label>
+                           <label for="email" class=" form-label ">{{ __('EMAIL ') }}</label>
                            <input id="email" placeholder="Masukkan Email atau User Name Anda"type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                            @error('email')
     <span class="invalid-feedback" role="alert">
@@ -136,8 +136,11 @@
                      </form>
                      <p class="text-center">
                         <span>Belum Mempunyai Akun?</span>
-                        <a href="{{ url('/register') }}">
-                        <span>Daftar Sekarang</span>
+                        <a href="{{ url('/register') }}"><br>
+                           <span>Daftar Sekarang</span><br>
+                           
+                           <a class="btn btn-light" href="{{ '/auth/redirect'}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> Atau Login Dengan Google</a><br>
+                        
                         </a>
                      </p>
                   </div>

@@ -43,16 +43,14 @@
                               <table id="example" class="table table-striped table-bordered" style="width:100%">
                                  <thead>
                                     <tr>
-                                       <th class="text-center" width="10%">
-                                          No
+                                       <th class="text-center" >
+                                          Nomor
                                        </th>
-                                       <th class="text-center" width="15%">
+                                       <th class="text-center" width="50%">
                                           Nama Kabupaten
                                        </th>
-                                       <th class="text-center" width="20%">
-                                          Gambar
-                                       </th>
-                                       <th class="text-center" width="20%">
+                                      
+                                       <th class="text-center" width="50%">
                                           Aksi
                                        </th>
                                     </tr>
@@ -67,14 +65,14 @@
                                        <td class="text-center">
                                           {{ $kabupatens->nama_kab }}
                                        </td>
-                                       <td>
+                                       {{-- <td>
                                           <center><img
                                              src="{{ 'images/objekwisata/' . $kabupatens->file_foto }}"
                                              style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"
                                              alt="" data-toggle="modal"
                                              data-target="#myModalgambar{{ $kabupatens->id_obj_wisata_kabupaten }}" />
                                           </center>
-                                       </td>
+                                       </td> --}}
                                        <td>
                                           <center>
                                              <button class="btn btn-warning"
@@ -152,10 +150,16 @@
                            </tbody>
                            <tfoot>
                               <tr>
-                                  <th class="text-center" width="10%">No</th>
-                                  <th class="text-center" width="15%">Nama Kabupaten</th>
-                                  <th class="text-center" width="20%">Gambar</th>
-                                  <th class="text-center" width="20%">Aksi</th>
+                                 <th class="text-center" >
+                                    Nomor
+                                 </th>
+                                 <th class="text-center" width="50%">
+                                    Nama Kabupaten
+                                 </th>
+                                
+                                 <th class="text-center" width="50%">
+                                    Aksi
+                                 </th>
                               </tr>
                           </tfoot>
                            </table>

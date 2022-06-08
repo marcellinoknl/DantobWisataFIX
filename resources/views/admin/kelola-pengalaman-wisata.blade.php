@@ -40,7 +40,8 @@
                                                     <div class="row">
                                                         <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                             <thead>
-                                                                <tr>                                                                            <th class="text-center" width="20%">Tanggal 
+                                                                <tr>                                                                            
+                                                                    <th class="text-center" width="20%">Tanggal 
                                                                             </th>
                                                                             <th class="text-center" width="25%">Judul</th>
                                                                             <th class="text-center" width="25%">Penulis
@@ -103,8 +104,8 @@
                                                                         </div>
                                                                         <div class="modal-body">
                                                                             <p>Apakah Anda yakin ingin menghapus
-                                                                                Wisata
-                                                                                <b>{{ $kat->judul}}</b> ?
+                                                                                Pengalaman dari
+                                                                                <b> {{$kat->name}}</b> ?
                                                                             </p>
                                                                         </div>
                                                                         <div class="modal-footer">

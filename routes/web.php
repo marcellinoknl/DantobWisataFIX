@@ -29,6 +29,8 @@ use App\Http\Controllers\PengalamanController;
 // --USER SIDE--
 //Home Page
 Route::get('/', [homepageController::class, 'indexAction']);
+Route::get('/auth/redirect', 'App\Http\Controllers\Auth\RegisterController@redirectToProvider');
+Route::get('/auth/callback', 'App\Http\Controllers\Auth\RegisterController@handleProviderCallback');
 // Route::get('/beranda',[MahasiswaController::class, 'Peraturan']);
 
 

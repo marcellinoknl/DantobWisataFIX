@@ -43,12 +43,9 @@
                                                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center" width="10%">No
-                                                                            </th>
-                                                                            <th class="text-center" width="60%">Nama
-                                                                                Kategori</th>
-                                                                            <th class="text-center" width="30%">Aksi
-                                                                            </th>
+                                                                            <th class="text-center" >Nomor</th>
+                                                                            <th class="text-center" width="50%">Nama Kategori</th>
+                                                                            <th class="text-center" width="50%">Aksi</th>
                                                                         </tr>
                                                                         <?php $number = 1; ?>
                                                                     </thead>
@@ -125,9 +122,9 @@
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
-                                                                    <th class="text-center" width="10%">No</th>
-                                                                    <th class="text-center" width="60%">Nama Kategori</th>
-                                                                    <th class="text-center" width="30%">Aksi</th>
+                                                                             <th class="text-center" >Nomor</th>
+                                                                            <th class="text-center" width="50%">Nama Kategori</th>
+                                                                            <th class="text-center" width="50%">Aksi</th>
                                                                 </tr>
                                                             </tfoot>
                                                             </table>

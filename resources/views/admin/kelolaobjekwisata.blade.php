@@ -45,12 +45,11 @@
                                                             <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th class="text-center" width="10%">No</th>
-                                                                        <th class="text-center" width="10%">Nama Wisata</th>
-                                                                        <th class="text-center" width="10%">Kabupaten</th>
-                                                                        <th class="text-center" width="10%">Kategori</th>
-                                                                        <th class="text-center" width="25%">Foto Wisata</th>
-                                                                        <th class="text-center" width="15%">Aksi</th>
+                                                                        <th class="text-center" >Nomor</th>
+                                                                        <th class="text-center" width="25%">Nama Wisata</th>
+                                                                        <th class="text-center" width="25%">Kabupaten</th>
+                                                                        <th class="text-center" width="25%">Kategori</th>                                                                        
+                                                                        <th class="text-center" width="25%">Aksi</th>
                                                                     </tr>
                                                                     <?php $number = 1; ?>
                                                                 </thead>
@@ -63,12 +62,12 @@
                                                                         <td class="text-center">{{$objekwisatas->nama_kategori}}</td>
                                                                         
 
-                                                                        <td>
+                                                                        {{-- <td>
                                                                         <img
                                                                                         src="{{ 'images/objekwisata/' . $objekwisatas->file_foto }}"
                                                                                         style="width:200px; height: 130px; object-fit: cover; border:1px solid black;"
                                                                                         alt="" data-toggle="modal"
-                                                                                        data-target="#myModalgambar{{ $objekwisatas->id_obj_wisata  }}" /></td>
+                                                                                        data-target="#myModalgambar{{ $objekwisatas->id_obj_wisata  }}" /></td> --}}
                                                                       
                                                                         <td>
                                                                         <center> 
@@ -138,12 +137,11 @@
                                                         </tbody>
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <th class="text-center" width="10%">No</th>
-                                                                        <th class="text-center" width="10%">Nama Wisata</th>
-                                                                        <th class="text-center" width="10%">Kabupaten</th>
-                                                                        <th class="text-center" width="10%">Kategori</th>
-                                                                        <th class="text-center" width="25%">Foto Wisata</th>
-                                                                        <th class="text-center" width="15%">Aksi</th>
+                                                                        <th class="text-center" >Nomor</th>
+                                                                        <th class="text-center" width="25%">Nama Wisata</th>
+                                                                        <th class="text-center" width="25%">Kabupaten</th>
+                                                                        <th class="text-center" width="25%">Kategori</th>                                                                        
+                                                                        <th class="text-center" width="25%">Aksi</th>
                                                                     </tr>
                                                                 </tfoot>
                                                             </table>
