@@ -18,6 +18,4 @@ class adminIndexController extends Controller
        
         return view('admin.admin-index', compact('users','atraksi','objek','fasilitas','event','pengalaman'));
     }
-
-
 }

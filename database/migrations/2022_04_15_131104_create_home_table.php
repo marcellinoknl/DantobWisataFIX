@@ -15,6 +15,8 @@ class CreateHomeTable extends Migration
     {
         Schema::create('home', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('judul');
+            $table->longtext('deskripsi');
             $table->timestamps();
         });
     }
