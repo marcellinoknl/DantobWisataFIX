@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homepageController;
+use App\Http\Controllers\ControllerHome;
 use App\Http\Controllers\objekWisataController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\atraksiController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\DesaWisataController;
 
 // --USER SIDE--
 //Home Page
+
 Route::get('/', [homepageController::class, 'indexAction'])->name('beranda');
 Route::get('/auth/google', [App\Http\Controllers\Auth\RegisterController::class,'redirectToProvider'])->name('google.login');
 Route::get('/auth/google/callback', [App\Http\Controllers\Auth\RegisterController::class,'handleProviderCallback'])->name('google.callback');
@@ -80,6 +82,10 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
 
         //Index utama
         Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
+        Route::get('/ubah-home/{id}', [homepageController::class, 'edit']);
+        Route::post('/edit-home/{id}', [homepageController::class, 'update'])->name('deskripsi.ubah');
+        // Route::get('/ubah-deskripsi', [ControllerHome::class, 'edit']);
+        // Route::post('/ubah-deskripsi/{id}', [KabupatenController::class, 'update'])->name('deskripsi.ubah');
 
         //Kelola Objek Wisata
         Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);

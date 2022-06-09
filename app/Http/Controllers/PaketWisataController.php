@@ -16,7 +16,7 @@ class PaketWisataController extends Controller
 
     public function kelolaindexActionView($id)
     {
-        $view = DesaWisata::find($id);
+        $view = PaketWisata::find($id);
         return view('admin.desawisata.lihat-desawisata', compact('view'));
     }
 

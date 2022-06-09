@@ -81,6 +81,8 @@
                     @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolakab')}}"><i class="ti-bookmark"></i> Kelola Kabupaten</a></li>
                     @endif
+                    {{-- <li><a href="{{url('/ubah-deskripsi')}}"><i class="ti-bookmark"></i> Kelola Home</a></li> --}}
+
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)

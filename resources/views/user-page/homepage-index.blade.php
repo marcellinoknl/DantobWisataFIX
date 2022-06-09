@@ -36,20 +36,26 @@
                     @endforeach
                 </div>
             </div>
+         
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 d-flex align-self-stretch ftco-animate">
 
                         <div class="w-100">
-                            <h1 class="mb-4"style="font-weight: bold">Pariwisata Danau Toba</h1>
-                            <p style="color: black"class="caption text-justify">Danau Toba terletak di Sumatera Utara, Indonesia. Danau Toba terbentuk dari letusan gunung api Toba yang sangat dahsyat yang terjadi sekitar 74.000 tahun yang lalu.
-                                 Dengan luas lebih dari 1.145 kilometer persegi dan kedalaman 450 meter.
-                                Ingin tahu lebih tentang danau Toba? 
-                                Yuk jelajahi website ini.
+                            @foreach ($deskripsi    as $deskripsis)
+                            <h1 class="mb-4"style="font-weight: bold">{{$deskripsis->judul}}</h1>
+                            <p style="color: black"class="caption text-justify">{!!$deskripsis->deskripsi!!}
+                             @endforeach
                             </p>
                             <p><a href="{{ url('/objek-wisata') }}" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>
+                            <div class="row" style="float: right;"> 
+                              
+                            <a href='/ubah-home/{{$deskripsis->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Ubah Deskripsi</button></a>
+                    
+                             
+                            </div>
                         </div>
-
+                       
                 </div>
             </div>
         </div>
@@ -140,6 +146,12 @@
         </div>
     </div>
 </section>
+<script>
+    function myAuthFunc() {
+      alert("Anda harus Login terlebih dahulu");
+     
+    }
+    </script>
 
 {{-- <section class="ftco-section services-section">
     <div class="container">
