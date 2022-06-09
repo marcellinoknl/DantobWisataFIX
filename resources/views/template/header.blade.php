@@ -90,18 +90,36 @@
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                             <a href="{{ url('/atraksi') }}"><button class="dropdown-item"
                                     type="button">Atraksi</button></a>
+                            <a href="{{ url('/beritawisata') }}"><button class="dropdown-item"
+                                        type="button">Berita</button></a>
                             <a href="{{ url('/eventwisata') }}"><button class="dropdown-item"
                                     type="button">Event</button></a>
-                            <a href="{{ url('/beritawisata') }}"><button class="dropdown-item"
-                                    type="button">Berita</button></a>
                         </div>
                     </div>
-                    <li class="nav-item {{Request::segment(1) === 'fasilitaswisata' ? 'active' : null }}"><a href="{{ url('/fasilitaswisata') }}"
-                            class="nav-link">Fasilitas</a></li>
-                    <li class="nav-item {{Request::segment(1) === 'galeriwisata' ? 'active' : null }}"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
-                    </li>
-                    <li class="nav-item {{Request::segment(1) === 'pengalaman-wisata' ? 'active' : null }}"><a href="{{ url('/pengalaman-wisata') }}" class="nav-link">Pengalaman Wisata</a>
-                    </li>
+                    <div class="navbar-nav ml-auto dropdown show">
+                        <li class="nav-item {{Request::segment(1) === 'fasilitaswisata'||Request::segment(1) === 'paketwisata' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <a href="/blog" class="nav-link">Akomodasi</a>
+                        </li>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a href="{{ url('/fasilitaswisata') }}"><button class="dropdown-item"
+                                    type="button">Fasilitas</button></a>
+                            <a href="{{ url('/paketwisata') }}"><button class="dropdown-item"
+                                    type="button">Paket Wisata</button></a>                                  
+                        </div>
+                    </div>
+                    <div class="navbar-nav ml-auto dropdown show">
+                        <li class="nav-item {{Request::segment(1) === 'galeriwisata'||Request::segment(1) === 'pengalamanwisata' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <a href="/blog" class="nav-link">Artikel</a>
+                        </li>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a href="{{ url('/galeriwisata') }}"><button class="dropdown-item"
+                                    type="button">Galeri</button></a>
+                            <a href="{{ url('/pengalaman-wisata') }}"><button class="dropdown-item"
+                                    type="button">Pengalaman Wisata</button></a>                                  
+                        </div>
+                    </div>
                     
                     
                         @if (Route::has('login'))
@@ -120,25 +138,35 @@
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                             <a href="{{ url('/atraksi') }}"><button class="dropdown-item"
                                     type="button">Atraksi</button></a>
-                            <a href="{{ url('/eventwisata') }}"><button class="dropdown-item"
-                                    type="button">Event</button></a>
                             <a href="{{ url('/beritawisata') }}"><button class="dropdown-item"
                                     type="button">Berita</button></a>
                            <a href="{{ url('/desawisata') }}"><button class="dropdown-item"
-                                    type="button">Desa Wisata</button></a>         
+                                    type="button">Desa Wisata</button></a>
+                            <a href="{{ url('/eventwisata') }}"><button class="dropdown-item"
+                                    type="button">Event</button></a>                                          
                         </div>
                     </div>
-                    <li class="nav-item {{Request::segment(1) === 'fasilitaswisata' ? 'active' : null }}"><a href="{{ url('/fasilitaswisata') }}"
-                            class="nav-link">Fasilitas</a></li>
-                    <li class="nav-item {{Request::segment(1) === 'galeriwisata' ? 'active' : null }}"><a href="{{ url('/galeriwisata') }}" class="nav-link">Galeri</a>
-                    </li>
-
+                    <div class="navbar-nav ml-auto dropdown show">
+                        <li class="nav-item {{Request::segment(1) === 'fasilitaswisata'||Request::segment(1) === 'paketwisata' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <a href="/blog" class="nav-link">Akomodasi</a>
+                        </li>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                            <a href="{{ url('/fasilitaswisata') }}"><button class="dropdown-item"
+                                    type="button">Fasilitas</button></a>
+                            <a href="{{ url('/paketwisata') }}"><button class="dropdown-item"
+                                    type="button">Paket Wisata</button></a>                                  
+                        </div>
+                    </div>
+                        
                     <div class="navbar-nav ml-auto dropdown show">
                         <li class="nav-item {{Request::segment(1) === 'pengalaman-wisata'||Request::segment(1) === 'pengalamanwisata-saya' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Artikel</a>
                         </li>
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                           <a href="{{ url('/galeriwisata') }}"><button class="dropdown-item"
+                            type="button">Galeri</button></a>
                             <a href="{{ url('/pengalaman-wisata') }}"><button class="dropdown-item"
                                     type="button">Pengalaman Wisata</button></a>
                             <a href="{{ url('/pengalamanwisata-saya') }}"><button class="dropdown-item"

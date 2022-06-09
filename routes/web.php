@@ -13,6 +13,7 @@ use App\Http\Controllers\KategoriWisataController;
 use App\Http\Controllers\adminController\adminIndexController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\PengalamanController;
+use App\Http\Controllers\DesaWisataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,8 @@ Route::get('/auth/google/callback', [App\Http\Controllers\Auth\RegisterControlle
 
 //desawisata
 Route::get('/desawisata', [App\Http\Controllers\DesaWisataController::class, 'indexAction']);
-Route::get('/objek-wisata/detail1/{id}', [objekWisataController::class, 'indexAction2']);
-Route::get('/objek-wisata/detail2/{id}', [objekWisataController::class, 'indexAction3']);
+Route::get('/desa-wisata/detail1/{id}', [App\Http\Controllers\DesaWisataController::class, 'indexAction2']);
+Route::get('/desa-wisata/detail2/{id}', [App\Http\Controllers\DesaWisataController::class, 'indexAction3']);
 
 //Destination => objek wisata
 Route::get('/objek-wisata', [objekWisataController::class, 'indexAction']);
@@ -80,7 +81,7 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         //Index utama
         Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
 
-        //Kelola Objek Wisatawa
+        //Kelola Objek Wisata
         Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
         Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);
         Route::get('/ubah-objek-wisata/{id}', [objekWisataController::class, 'edit']);
@@ -88,6 +89,16 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::post('/tambah-objek-wisata/store', [objekWisataController::class, 'store'])->name('formobjekwisata.store');
         Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
         Route::get('/lihat-objekwisata/{id}', [objekWisataController::class, 'kelolaindexActionView']);
+
+        
+        //Kelola Desa Wisata
+        Route::get('/keloladesawisata', [DesaWisataController::class, 'kelolaindexAction']);
+        Route::get('/tambah-desa-wisata', [DesaWisataController::class, 'tambah']);
+        Route::get('/ubah-desa-wisata/{id}', [DesaWisataController::class, 'edit']);
+        Route::post('/ubah-desa-wisata/{id}', [DesaWisataController::class, 'update'])->name('desawisata.ubah');
+        Route::post('/tambah-desa-wisata/store', [DesaWisataController::class, 'store'])->name('formdesawisata.store');
+        Route::get('/desawisata/hapus/{id}', [DesaWisataController::class, 'hapus'])->name('desawisata.hapus');
+        Route::get('/lihat-desawisata/{id}', [DesaWisataController::class, 'kelolaindexActionView']);
 
         //kelolaberita
         Route::get('/kelolaberita', [beritaController::class, 'kelolaindexAction']);

@@ -41,7 +41,7 @@
                 @foreach ($objwisatakabupaten as $objekwisatas)
                 <div class="col-6 col-md-3 py-4">
                         <div class="mycard">
-                            <a href="{{ url('/objek-wisata/detail1/' . $objekwisatas->id_obj_wisata_kabupaten) }}">
+                            <a href="{{ url('/desa-wisata/detail1/' . $objekwisatas->id_obj_wisata_kabupaten) }}">
                                 <img src="{{ url('images/objekwisata/' . $objekwisatas->file_foto) }}" alt=""
                                     class="mycard-image">
                             </a>

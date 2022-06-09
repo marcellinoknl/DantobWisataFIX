@@ -78,7 +78,9 @@
                     <li><a href="{{url('/admin-wisata')}}"><i class="ti-dashboard"></i> Dashboard </a></li>
                     
                     <li class="label">Kelola Data Wisata</li>
+                    @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolakab')}}"><i class="ti-bookmark"></i> Kelola Kabupaten</a></li>
+                    @endif
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> Kelola Objek Wisata <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
@@ -89,7 +91,7 @@
                             @endif
                         </ul>
                     </li>
-
+                    <li><a href="{{url('/keloladesawisata')}}"><i class="ti-file"></i>Kelola Desa Wisata</a></li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction-alt"></i> Kelola Atraksi <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
@@ -118,7 +120,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-car"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             @if ( auth()->user()->role ==3)
-                            <li><a href="{{url('/sampul-fasilitas')}}">Kelola KategoriFasilitas</a></li>
+                            <li><a href="{{url('/sampul-fasilitas')}}">Kelola Kategori Fasilitas</a></li>
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Per-Fasilitas</a></li>
                             @else
                             <li><a href="{{url('/daftar-fasilitas')}}">Kelola Fasilitas</a></li>
@@ -135,6 +137,7 @@
                         </ul>
                     </li>
                          @endif
+                         <li><a href="{{url('/kelolapaketwisata')}}"><i class="ti-package"></i>Kelola Paket Wisata</a></li>
                     @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolauser')}}"><i class="ti-user"></i> Kelola Akun User </a></li>
                     <li><a href="{{url('/')}}"><i class="ti-home"></i> Halaman Pengunjung </a></li>
