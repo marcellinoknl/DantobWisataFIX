@@ -15,6 +15,7 @@ use App\Http\Controllers\adminController\adminIndexController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\PengalamanController;
 use App\Http\Controllers\DesaWisataController;
+use App\Http\Controllers\PaketWisataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,10 @@ Route::get('/auth/google/callback', [App\Http\Controllers\Auth\RegisterControlle
 Route::get('/desawisata', [App\Http\Controllers\DesaWisataController::class, 'indexAction']);
 Route::get('/desa-wisata/detail1/{id}', [App\Http\Controllers\DesaWisataController::class, 'indexAction2']);
 Route::get('/desa-wisata/detail2/{id}', [App\Http\Controllers\DesaWisataController::class, 'indexAction3']);
+
+//paket wisata
+Route::get('/paketwisata', [PaketWisataController::class, 'indexAction']);
+Route::get('/paket-wisata/detail/{id}', [PaketWisataController::class, 'indexAction3']);
 
 //Destination => objek wisata
 Route::get('/objek-wisata', [objekWisataController::class, 'indexAction']);
@@ -105,6 +110,15 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::post('/tambah-desa-wisata/store', [DesaWisataController::class, 'store'])->name('formdesawisata.store');
         Route::get('/desawisata/hapus/{id}', [DesaWisataController::class, 'hapus'])->name('desawisata.hapus');
         Route::get('/lihat-desawisata/{id}', [DesaWisataController::class, 'kelolaindexActionView']);
+
+        //Paket Wisata 
+        Route::get('/kelolapaketwisata', [PaketWisataController::class, 'kelolaindexAction']);
+        Route::get('/tambah-paket-wisata', [PaketWisataController::class, 'tambah']);
+        Route::get('/ubah-paket-wisata/{id}', [PaketWisataController::class, 'edit']);
+        Route::post('/ubah-paket-wisata/{id}', [PaketWisataController::class, 'update'])->name('paketwisata.ubah');
+        Route::post('/tambah-paket-wisata/store', [PaketWisataController::class, 'store'])->name('formpaketwisata.store');
+        Route::get('/paketwisata/hapus/{id}', [PaketWisataController::class, 'hapus'])->name('paketwisata.hapus');
+        Route::get('/lihat-paketwisata/{id}', [PaketWisataController::class, 'kelolaindexActionView']);        
 
         //kelolaberita
         Route::get('/kelolaberita', [beritaController::class, 'kelolaindexAction']);
