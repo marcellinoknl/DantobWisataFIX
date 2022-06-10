@@ -11,7 +11,7 @@ class KelolaEvent extends Seeder
         \App\Models\EventWisata::insert([
             [ 
                 'id_sampul_event' => '3',
-                'judul_event' => 'Lake Toba Bike Adventure',               
+                'judul_event' => 'Toba Bike Adventure',               
                 'deskripsi_event' => '
                 Lokasi 				: Danau Toba
                 Jadwal Penyelanggaraan	: 01 April 2021 – 04 April 2021
@@ -81,7 +81,7 @@ class KelolaEvent extends Seeder
              ],
              [ 
                'id_sampul_event' => '2',
-               'judul_event' => 'Samosir Jazz Culture 2022',               
+               'judul_event' => 'Samosir Jazz Culture',               
                'deskripsi_event' => '
                Samosir Jazz Culture (SJC) 2022 akan hadir bagi para penggemar musik jaz sembari menikmati panorama Danau Toba. Event musik Ini adalah cara lain yang seru untuk menikmati alunan musik dan menikmati yang memukau. Samosir Jazz Culture 2022 berlangsung di Samosir, Sumatera Utara ini menyusung kampanye Ecofriendly dan Sustainabiity.  Penyelenggara mengimbau penggunaan *tumbler* untuk isi ulang minum dengan kotak “ecogreen” UMKM setempat. Selain melantunkan lagu-lagu Batak yang diaransemen ke dalam genre musik jaz juga menampilkan produk-produk UMKM Samosir yang tiada duanya. Samosir Jazz Culture 2022 digelar pada Sabtu, 30 April 2022 di Open Stage Tuktuk, Kabupaten Samosir, Sumatera Utara.
                Berikut beberapa musisi yang akan ikut serta dalam meramaikan Samosir Jazz Culture, yaitu:
@@ -99,7 +99,7 @@ class KelolaEvent extends Seeder
             ],
             [ 
                'id_sampul_event' => '2',
-               'judul_event' => 'Toba Caldera World Music Festival 2021',               
+               'judul_event' => 'Caldera World Music',               
                'deskripsi_event' => 'Toba Caldera World Music Festival 2021 jadi pesta besar buat merayakan Geopark Kaldera Toba yang sudah ditetapkan menjadi bagian dari UNESCO Global Geopark (UGG). Untuk tema Toba Caldera World Music Festival 2021 yang dipilih adalah "Sound of The Earth" dan akan di selenggarakan pada tanggal 1 Oktober 2021 - 3 Oktober 2022. Lewat event yang dikemas secara menarik ini diharapkan masyarakat luas bisa lebih kenal sama Danau Toba sekaligus dapat edukasi soal budaya dan seni melalui musik yang disajikan. Pada Festival kali ini ada musisi dari empat negara yang dijadwalkan tampil secara daring. Sedangkan, enam musisi nasional yang berasal dari beberapa provinsi di Indonesia akan hadir ke lokasi perhelatan. Toba Caldera World Music Festival juga turut melibatkan pegiat budaya, seni, dan musisi lokal dari Kawasan Danau Toba.',
                'file_foto' => 'TheCaldera.png'
             ],

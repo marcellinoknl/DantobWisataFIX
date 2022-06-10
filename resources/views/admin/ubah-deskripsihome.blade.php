@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/"><i class="ti-close"></i> Batal</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/'"><i class="ti-close"></i> Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>

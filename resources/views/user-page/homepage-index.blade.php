@@ -41,20 +41,39 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 d-flex align-self-stretch ftco-animate">
 
+                        @guest
+                            
                         <div class="w-100">
-                            @foreach ($deskripsi    as $deskripsis)
+                            @foreach ($deskripsi as $deskripsis)
                             <h1 class="mb-4"style="font-weight: bold">{{$deskripsis->judul}}</h1>
                             <p style="color: black"class="caption text-justify">{!!$deskripsis->deskripsi!!}
-                             @endforeach
                             </p>
+                            @endforeach
+                           
                             <p><a href="{{ url('/objek-wisata') }}" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>
-                            <div class="row" style="float: right;"> 
-                              
-                            <a href='/ubah-home/{{$deskripsis->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Ubah Deskripsi</button></a>
-                    
-                             
-                            </div>
+                            
                         </div>
+              
+                        @else
+                        <div class="w-100">
+                            @foreach ($deskripsi as $deskripsis)
+                            <h1 class="mb-4"style="font-weight: bold">{{$deskripsis->judul}}</h1>
+                            <p style="color: black"class="caption text-justify">{!!$deskripsis->deskripsi!!}
+                          
+                            </p>
+                            @if( auth()->user()->role ==3) 
+                            <div class="row" style="float: right;"> 
+                            <a href='/ubah-home/{{$deskripsis->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Ubah Deskripsi</button></a>
+                            </div>
+                            @else
+                            
+                            @endif
+                            @endforeach
+                           
+                            <p><a href="{{ url('/objek-wisata') }}" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>
+                            
+                        </div>
+                        @endguest
                        
                 </div>
             </div>
