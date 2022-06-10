@@ -45,13 +45,13 @@
                             @foreach ($deskripsi    as $deskripsis)
                             <h1 class="mb-4"style="font-weight: bold">{{$deskripsis->judul}}</h1>
                             <p style="color: black"class="caption text-justify">{!!$deskripsis->deskripsi!!}
-                             @endforeach
+                             
                             </p>
                             <p><a href="{{ url('/objek-wisata') }}" class="btn btn-primary py-3 px-4"style="background-color:#FF5959">Telusuri Destinasi Wisata</a></p>
                             <div class="row" style="float: right;"> 
                               
                             <a href='/ubah-home/{{$deskripsis->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Ubah Deskripsi</button></a>
-                    
+                            @endforeach
                              
                             </div>
                         </div>
