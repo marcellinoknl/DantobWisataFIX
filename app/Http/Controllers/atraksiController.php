@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Atraksi_Wisata;
 use App\Models\SampulAtraksi;
+use App\Models\DeskripsiAtraksiModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class atraksiController extends Controller
     public function indexAction()
     {
         $sampul_atraksi = DB::table('sampul_atraksi')->get();
-        return view('user-page.blog.atraksi', ['sampul_atraksi' => $sampul_atraksi]);
+        $deskripsi = DB::table('deskripsiatraksi')->get();
+        return view('user-page.blog.atraksi', ['sampul_atraksi' => $sampul_atraksi],['deskripsi' => $deskripsi]);
     }
     public function kelolaindexAction()
     {
@@ -132,6 +134,31 @@ class atraksiController extends Controller
         $sampulatraksi = SampulAtraksi::all();
         return view('admin.sampul-atraksi', compact('sampulatraksi'));
     }
+    public function editat($id)
+    {
+        $update = DeskripsiAtraksiModel::find($id);
+       
+        return view('admin.ubah-deskripsiatraksi', compact('update'));
+    }
+
+    public function updateat(request $request, $id)
+    
+        {
+            $this->validate(
+                $request,
+                [
+                   
+                    'judul_home' => 'required',
+                    'deskripsi_home' => 'required'
+                ]
+            );
+        $update = DeskripsiAtraksiModel::find($id);
+        $update->judul = $request->judul_home;
+        $update->deskripsi = $request->deskripsi_home;
+        $update->save();
+
+        return redirect('/atraksi');
+        }
     public function tambahsampul()
     {
         return view('admin.tambah-sampul-atraksi');

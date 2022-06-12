@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(KelolaBerita::class);
         $this->call(KelolaAtraksi::class);
         $this->call(RolesSedeer::class);
+        $this->call(homeSeeder::class);
     }
 }

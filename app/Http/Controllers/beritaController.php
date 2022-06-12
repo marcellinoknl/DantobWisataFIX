@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Berita_Wisata;
+use App\Models\DeskripsiBeritaModel;
 use Illuminate\Http\Request;
 use Auth;
 
 class beritaController extends Controller
 {
     public function indexAction(Request $request)
-    {
+    {    $deskripsi = DB::table('deskripsiberita')->get();
         $keyword = $request->keyword;
         $berita_wisata = DB::table('berita_wisata')
         ->select('berita_wisata.*','users.name')
@@ -19,7 +20,7 @@ class beritaController extends Controller
         ->orwhere('isi_berita','LIKE','%'.$keyword.'%')
         ->simplePaginate(6);
         $berita_wisata->appends($request->all());
-        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'keyword'=>$keyword]);
+        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword]);
     }
 
     public function kelolaindexAction()
@@ -32,7 +33,31 @@ class beritaController extends Controller
         $view = Berita_Wisata::find($id_berita);
         return view('admin.kelola-berita-wisata-view', compact('view'));
     }
+    public function editat($id)
+    {
+        $update = DeskripsiBeritaModel::find($id);
+       
+        return view('admin.ubah-deskripsiberita', compact('update'));
+    }
 
+    public function updateat(request $request, $id)
+    
+        {
+            $this->validate(
+                $request,
+                [
+                   
+                    'judul_home' => 'required',
+                    'deskripsi_home' => 'required'
+                ]
+            );
+        $update = DeskripsiBeritaModel::find($id);
+        $update->judul = $request->judul_home;
+        $update->deskripsi = $request->deskripsi_home;
+        $update->save();
+
+        return redirect('/beritawisata');
+        }
 
     public function indexAction2($id_berita)
     {

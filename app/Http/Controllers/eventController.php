@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\EventWisata;
 use App\Models\SampulEvent;
 use Illuminate\Support\Facades\DB;
+use App\Models\DeskripsiEventModel;
 use Illuminate\Http\Request;
 
 class eventController extends Controller
@@ -12,7 +13,8 @@ class eventController extends Controller
     public function indexAction()
     {
         $sampul_event = DB::table('sampul_event')->get();
-        return view('user-page.blog.event', ['sampul_event' => $sampul_event]);
+        $deskripsi = DB::table('deskripsievent')->get();
+        return view('user-page.blog.event', ['sampul_event' => $sampul_event],['deskripsi' => $deskripsi]);
     }
 
     public function kelolaindexAction()
@@ -24,6 +26,31 @@ class eventController extends Controller
             ->get();
         return view('admin.kelolaevent', compact('eventwisata'));
     }
+    public function editat($id)
+    {
+        $update = DeskripsiEventModel::find($id);
+       
+        return view('admin.ubah-deskripsievent', compact('update'));
+    }
+
+    public function updateat(request $request, $id)
+    
+        {
+            $this->validate(
+                $request,
+                [
+                   
+                    'judul_home' => 'required',
+                    'deskripsi_home' => 'required'
+                ]
+            );
+        $update = DeskripsiEventModel::find($id);
+        $update->judul = $request->judul_home;
+        $update->deskripsi = $request->deskripsi_home;
+        $update->save();
+
+        return redirect('/eventwisata');
+        }
 
     public function indexAction2($id)
     {

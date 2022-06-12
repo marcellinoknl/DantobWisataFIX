@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> UBAH DESKRIPSI HOME</h1>
+                            <h1> UBAH DESKRIPSI ATRAKSI</h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Deskripsi Home</li>
+                                <li class="breadcrumb-item active">Kelola Deskripsi Atraksi</li>
                             </ol>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/'"><i class="ti-close"></i> Batal</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/atraksi'"><i class="ti-close"></i> Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>
