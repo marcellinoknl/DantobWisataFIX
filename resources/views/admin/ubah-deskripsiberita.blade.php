@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> UBAH DESKRIPSI EVENT</h1>
+                            <h1> UBAH DESKRIPSI BERITA</h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Deskripsi Event</li>
+                                <li class="breadcrumb-item active">Kelola Deskripsi Berita</li>
                             </ol>
                         </div>
                     </div>
@@ -29,14 +29,14 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('deskripsi.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('deskripsiberita.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Judul  </label>
                                         <div class="col-sm-9">
 
-                                            <input type="text"  id="judul_berita" name="judul_home" class="form-control @error('judul_home') is-invalid @enderror"value="{{$update->judul}}">
-                                            @error('judul_home')
+                                            <input type="text"  id="judul_berita" name="judul_berita" class="form-control @error('judul_berita') is-invalid @enderror"value="{{$update->judul}}">
+                                            @error('judul_berita')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -62,8 +62,8 @@
                                     </div>
                                     <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <textarea type="text" id="ckedtor" name="deskripsi_home"  cols="200px" rows="20"class="form-control @error('deskripsi_home') is-invalid @enderror ckeditor">{{$update->deskripsi}}</textarea>
-                                        @error('deskripsi_home')
+                                        <textarea type="text" id="ckedtor" name="deskripsi_berita"  cols="200px" rows="20"class="form-control @error('deskripsi_berita') is-invalid @enderror ckeditor">{{$update->deskripsi}}</textarea>
+                                        @error('deskripsi_berita')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>

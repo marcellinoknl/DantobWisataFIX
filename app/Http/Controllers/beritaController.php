@@ -47,13 +47,13 @@ class beritaController extends Controller
                 $request,
                 [
                    
-                    'judul_home' => 'required',
-                    'deskripsi_home' => 'required'
+                    'judul_berita' => 'required',
+                    'deskripsi_berita' => 'required'
                 ]
             );
         $update = DeskripsiBeritaModel::find($id);
-        $update->judul = $request->judul_home;
-        $update->deskripsi = $request->deskripsi_home;
+        $update->judul = $request->judul_berita;
+        $update->deskripsi = $request->deskripsi_berita;
         $update->save();
 
         return redirect('/beritawisata');

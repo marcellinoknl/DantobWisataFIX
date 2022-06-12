@@ -129,7 +129,7 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::get('/berita/hapus/{id}', [beritaController::class, 'hapus'])->name('beritawisata.hapus');
         Route::get('/lihat-beritawisata/{id}', [beritaController::class, 'kelolaindexActionView']);
         Route::get('/ubah-berita/{id}', [beritaController::class, 'editat']);
-        Route::post('/edit-berita/{id}', [beritaController::class, 'updateat'])->name('deskripsi.ubah');
+        Route::post('/edit-berita/{id}', [beritaController::class, 'updateat'])->name('deskripsiberita.ubah');
 
         //kelola galeriwisata
         Route::get('/kelolagaleri', [geleriWisataController::class, 'kelolaindexAction']);
@@ -157,7 +157,7 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::get('/atraksiwisata/hapus/{id}', [atraksiController::class, 'hapus'])->name('atraksiwisata.hapus');
         Route::get('/lihat-atraksiwisata/{id}', [atraksiController::class, 'kelolaindexActionView']);
         Route::get('/ubah-atraksi/{id}', [atraksiController::class, 'editat']);
-        Route::post('/edit-atraksi/{id}', [atraksiController::class, 'updateat'])->name('deskripsi.ubah');
+        Route::post('/edit-atraksi/{id}', [atraksiController::class, 'updateat'])->name('deskripsiatraksi.ubah');
 
         //kelola event
         Route::get('/kelolaevent', [eventController::class, 'kelolaindexAction']);
@@ -168,7 +168,7 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::get('/eventwisata/hapus/{id}', [eventController::class, 'hapus'])->name('eventwisata.hapus');
         Route::get('/lihat-eventwisata/{id}', [eventController::class, 'kelolaindexActionView']);
         Route::get('/ubah-event/{id}', [eventController::class, 'editat']);
-        Route::post('/edit-event/{id}', [eventController::class, 'updateat'])->name('deskripsi.ubah');
+        Route::post('/edit-event/{id}', [eventController::class, 'updateat'])->name('deskripsievent.ubah');
 
 
         //kelola kabupaten

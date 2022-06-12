@@ -13,7 +13,7 @@ class DeskripsiBerita extends Migration
      */
     public function up()
     {
-        Schema::create('DeskripsiBerita', function (Blueprint $table) {
+        Schema::create('deskripsiberita', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
             $table->longtext('deskripsi');
