@@ -85,6 +85,10 @@ Route::get('/pengalaman-wisata/detail/{id}', [PengalamanController::class, 'inde
 
 Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
 
+    //logo
+        Route::get('/kelolalogo', [adminIndexController::class, 'editat']);
+        Route::post('/edit-logo/{id}', [adminIndexController::class, 'updateat'])->name('deskripsilogo.ubah');
+
         //Index utama
         Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
         Route::get('/ubah-home/{id}', [homepageController::class, 'edit']);
