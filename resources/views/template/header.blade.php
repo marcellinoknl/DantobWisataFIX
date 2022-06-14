@@ -70,7 +70,11 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">Pariwisata<span>Danau Toba</span></a>
+            @foreach ($logo as $logos )
+            
+            <a class="navbar-brand" href="{{ url('/') }}"><img  class="center" src="{{ url('images/logo/'.$logos->file_foto)}}" style="width:50px;height:50px; margin-bottom:5px;border-radius: 30px; border: 1px solid;display: block;margin-left: auto;margin-right: auto;"><span>{{$logos->caption}}</span></a>
+            
+            @endforeach
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -127,7 +131,7 @@
                                         class="fa fa-sign-in" aria-hidden="true"></i> Masuk</a></li>
                         @endif
                     @else
-                    <li class="nav-item "><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
+                    <li class="nav-item {{Request::segment(1) === '' ? 'active' : null }}"><a href="{{ url('/') }}" class="nav-link">Beranda</a></li>
                     <li class="nav-item  {{Request::segment(1) === 'objek-wisata' ? 'active' : null }}"><a href="{{ url('/objek-wisata') }}" class="nav-link">Destinasi
                             Wisata</a></li>
                     <div class="navbar-nav ml-auto dropdown show">

@@ -9,13 +9,15 @@ use Illuminate\Support\Facades\DB;
 class homepageController extends Controller
 {
     public function indexAction() {
+        $logo = DB::table('logo_webs')->get();
         $objekwisata = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(1)->get();
         $objekwisataa = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(8)->get();
         $event = DB::table('sampul_event')->orderBy('created_at','desc')->limit(4)->get();
         $deskripsi = DB::table('home')->get();
-        return view('user-page.homepage-index',compact('objekwisata','objekwisataa','event','deskripsi'));
+        return view('user-page.homepage-index',compact('objekwisata','objekwisataa','event','deskripsi','logo'));
     }
-    public function edit($id)
+
+    public function edit($id)   
     {
         $update = HomeModel::find($id);
        
