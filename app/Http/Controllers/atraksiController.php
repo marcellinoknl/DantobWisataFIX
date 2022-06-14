@@ -148,13 +148,13 @@ class atraksiController extends Controller
                 $request,
                 [
                    
-                    'judul_home' => 'required',
-                    'deskripsi_home' => 'required'
+                    'judul_atraksi' => 'required',
+                    'deskripsi_atraksi' => 'required'
                 ]
             );
         $update = DeskripsiAtraksiModel::find($id);
-        $update->judul = $request->judul_home;
-        $update->deskripsi = $request->deskripsi_home;
+        $update->judul = $request->judul_atraksi;
+        $update->deskripsi = $request->deskripsi_atraksi;
         $update->save();
 
         return redirect('/atraksi');

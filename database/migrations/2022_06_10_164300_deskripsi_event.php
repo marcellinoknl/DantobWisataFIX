@@ -13,7 +13,7 @@ class DeskripsiEvent extends Migration
      */
     public function up()
     {
-        Schema::create('DeskripsiEvent', function (Blueprint $table) {
+        Schema::create('deskripsievent', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
             $table->longtext('deskripsi');

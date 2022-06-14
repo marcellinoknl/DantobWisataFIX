@@ -28,5 +28,13 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesSedeer::class);
         $this->call(homeSeeder::class);
         $this->call(deskripsiberitaSeeder::class);
+        $this->call(DeskripsiDestinasi::class);
+        $this->call(DeskripsiEvent::class);
+        $this->call(DeskripsiAtraksi::class);
+        $this->call(DeskripsiGaleri::class);
+        $this->call(DeskripsiPaket::class);
+        $this->call(DeskripsiPengalaman::class);
+        $this->call(DeskripsiDewi::class);
+        $this->call(DeskripsiFasilitas::class);
     }
 }

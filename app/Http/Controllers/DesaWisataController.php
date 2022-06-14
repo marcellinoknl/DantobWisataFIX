@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Kabupaten;
+use App\Models\DewiDeskripsi;
 use App\Models\DesaWisata;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -11,8 +12,9 @@ class DesaWisataController extends Controller
     public function indexAction()
     {
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
+        $deskripsi = DB::table('dewi_deskripsis')->get();
 
-        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten'));
+        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten','deskripsi'));
     }
 
     public function kelolaindexActionView($id)
@@ -20,6 +22,32 @@ class DesaWisataController extends Controller
         $view = DesaWisata::find($id);
         return view('admin.desawisata.lihat-desawisata', compact('view'));
     }
+    public function editat($id)
+    {
+        $update = DewiDeskripsi::find($id);
+       
+        return view('admin.ubah-deskripsidewi', compact('update'));
+    }
+
+    public function updateat(request $request, $id)
+    
+        {
+            $this->validate(
+                $request,
+                [
+                   
+                    'judul_event' => 'required',
+                    'deskripsi_event' => 'required'
+                ]
+            );
+        $update = DewiDeskripsi::find($id);
+        $update->judul = $request->judul_event;
+        $update->deskripsi = $request->deskripsi_event;
+        $update->save();
+
+        return redirect('/desawisata');
+        }
+
 
     public function kelolaindexAction()
     {

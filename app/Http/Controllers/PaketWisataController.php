@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\PaketWisata;
+use App\Models\DeskripsiPaket;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -11,8 +12,9 @@ class PaketWisataController extends Controller
     {
         $paketbg = DB::table('paket_wisatas')->inRandomOrder()->get();
         $paket = DB::table('paket_wisatas')->get();
+        $deskripsi = DB::table('deskripsi_pakets')->get();
 
-        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg'));
+        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg','deskripsi'));
     }
 
     public function kelolaindexActionView($id)
@@ -70,7 +72,31 @@ class PaketWisataController extends Controller
         $update = PaketWisata::find($id);
         return view('admin.paketwisata.edit-paketwisata', compact('update'));
     }
+    //Deskripsi Paket
+    public function editat($id)
+    {
+        $update = DeskripsiPaket::find($id);
+        return view('admin.ubah-deskripsipaket', compact('update'));
+    }
+    public function updateat(request $request, $id)
+    
+    {
+        $this->validate(
+            $request,
+            [
+               
+                'judul_fasilitas' => 'required',
+                'deskripsi_fasilitas' => 'required'
+            ]
+        );
+    $update = DeskripsiPaket::find($id);
+    $update->judul = $request->judul_fasilitas;
+    $update->deskripsi = $request->deskripsi_fasilitas;
+    $update->save();
 
+
+        return redirect('/paketwisata');
+        }
     public function update(request $request, $id)
     {
         $this->validate(

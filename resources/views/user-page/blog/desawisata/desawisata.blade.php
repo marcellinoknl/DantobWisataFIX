@@ -14,12 +14,29 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Desa Wisata yang ada di daerah Danau
-            Toba</h1>
-        <p class="caption" style=" color:black;">Desa Wisata di Danau Toba juga tak kalah menarik
-            Berbagai macam Desa Wisata yang ada di daerah sekitaran Danau Toba serta budaya yang ada membuat kamu tidak akan melukapan keindahan Danau
-            Toba.
+        @guest
+        @foreach ($deskripsi as $dep )
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{$dep->judul}}
+        </h1>
+        <p class="caption" style=" color:black;">
+            {!!$dep->deskripsi!!}
         </p>
+        @endforeach
+        @else
+        @foreach ($deskripsi as $dep )
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{$dep->judul}}
+        </h1>
+        @if( auth()->user()->role ==3) 
+        <a href='/ubah-dewi/{{$dep->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark" >Ubah Deskripsi</button></a>
+        @else
+        @endif
+        <p class="caption" style=" color:black;">
+            {!!$dep->deskripsi!!}
+        </p>
+        @endforeach
+        @endguest
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">

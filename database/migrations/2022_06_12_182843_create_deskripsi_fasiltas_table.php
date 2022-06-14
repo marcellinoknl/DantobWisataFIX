@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DeskripsiAtraksi extends Migration
+class CreateDeskripsiFasiltasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class DeskripsiAtraksi extends Migration
      */
     public function up()
     {
-        Schema::create('deskripsiatraksi', function (Blueprint $table) {
+        Schema::create('deskripsi_fasiltas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
             $table->longtext('deskripsi');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -29,6 +28,6 @@ class DeskripsiAtraksi extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('deskripsi_fasiltas');
     }
 }

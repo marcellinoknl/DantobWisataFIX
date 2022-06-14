@@ -15,11 +15,32 @@ style="background-image: url(images/fasilitasbg.jpg); width: 100%; height:75%;">
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Cari Paket Wisata yang ingin Anda Tinjau</h1>
-        <p class="caption" style=" color:black;">Beberapa Objek Wisata di Danau Toba mempunyai paket wisata yang beragam.
+        @guest
+        @foreach ($deskripsi as $dep )
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{$dep->judul}}
+        </h1>
+        <p class="caption" style=" color:black;">
+            {!!$dep->deskripsi!!}
         </p>
-        <hr class="mt-2 mb-3" style="border:solid 0.5px" />
+        @endforeach
+        @else
+        @foreach ($deskripsi as $dep )
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{$dep->judul}}
+        </h1>
+        @if( auth()->user()->role ==3) 
+        <a href='/ubah-paket/{{$dep->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark" >Ubah Deskripsi</button></a>
+        @else
+        @endif
+        <p class="caption" style=" color:black;">
+            {!!$dep->deskripsi!!}
+        </p>
 
+       
+        @endforeach
+        @endguest
+        <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
 
         <div class="container p-md-2 ">

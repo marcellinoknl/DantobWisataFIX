@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> UBAH DESKRIPSI EVENT</h1>
+                            <h1> UBAH DESKRIPSI PAKET</h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Deskripsi Event</li>
+                                <li class="breadcrumb-item active">Kelola Deskripsi Paket </li>
                             </ol>
                         </div>
                     </div>
@@ -28,15 +28,16 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
+                        <div class="card">
                             <div class="card-body">
-                                <form action="{{route('deskripsievent.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('deskripsipaket.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Judul  </label>
                                         <div class="col-sm-9">
 
-                                            <input type="text"  id="judul_berita" name="judul_event" class="form-control @error('judul_event') is-invalid @enderror"value="{{$update->judul}}">
-                                            @error('judul_event')
+                                            <input type="text"  id="judul_berita" name="judul_fasilitas" class="form-control @error('judul_fasilitas') is-invalid @enderror"value="{{$update->judul}}">
+                                            @error('judul_fasilitas')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -62,8 +63,8 @@
                                     </div>
                                     <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <textarea type="text" id="ckedtor" name="deskripsi_event"  cols="200px" rows="20"class="form-control @error('deskripsi_event') is-invalid @enderror ckeditor">{{$update->deskripsi}}</textarea>
-                                        @error('deskripsi_event')
+                                        <textarea type="text" id="ckedtor" name="deskripsi_fasilitas"  cols="200px" rows="20"class="form-control @error('deskripsi_fasilitas') is-invalid @enderror ckeditor">{{$update->deskripsi}}</textarea>
+                                        @error('deskripsi_fasilitas')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -71,7 +72,7 @@
                                     </div>
                                 </div>
                                     <br><br>
-                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/eventwisata'"><i class="ti-close"></i> Batal</button>
+                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/paketwisata'"><i class="ti-close"></i> Batal</button>
                                     <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                                 </form>
                             </div>

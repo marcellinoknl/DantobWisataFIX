@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\GaleriWisata;
+use App\Models\DeskripsiGaleri;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -11,7 +11,8 @@ class geleriWisataController extends Controller
     public function indexAction()
     {
         $galeriwisata = DB::table('galeri_wisata')->get(); 
-        return view('user-page.galeri-wisata', ['galeriwisata' => $galeriwisata]);
+        $deskripsi = DB::table('deskripsi_galeris')->get();
+        return view('user-page.galeri-wisata', ['galeriwisata' => $galeriwisata],['deskripsi' => $deskripsi]);
         
     }
     public function kelolaindexAction()
@@ -55,7 +56,31 @@ class geleriWisataController extends Controller
         $update = GaleriWisata::find($galeri_id);
         return view('admin.ubah-galeriwisata', compact('update'));
     }
+    public function editat($id)
+    {
+        $update = DeskripsiGaleri::find($id);
+       
+        return view('admin.ubah-deskripsigaleri', compact('update'));
+    }
 
+    public function updateat(request $request, $id)
+    
+    {
+        $this->validate(
+            $request,
+            [
+               
+                'judul_fasilitas' => 'required',
+                'deskripsi_fasilitas' => 'required'
+            ]
+        );
+    $update = DeskripsiGaleri::find($id);
+    $update->judul = $request->judul_fasilitas;
+    $update->deskripsi = $request->deskripsi_fasilitas;
+    $update->save();
+
+        return redirect('/galeriwisata');
+        }
     public function update(request $request, $galeri_id)
     {   
         $this->validate(
