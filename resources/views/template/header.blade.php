@@ -98,6 +98,8 @@
                                         type="button">Berita</button></a>
                             <a href="{{ url('/eventwisata') }}"><button class="dropdown-item"
                                     type="button">Event</button></a>
+                            <a href="{{ url('/desawisata') }}"><button class="dropdown-item"
+                                    type="button">Desa Wisata</button></a>
                         </div>
                     </div>
                     <div class="navbar-nav ml-auto dropdown show">
