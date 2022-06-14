@@ -12,9 +12,10 @@ class eventController extends Controller
 {
     public function indexAction()
     {
+        $logo = DB::table('logo_webs')->get();
         $sampul_event = DB::table('sampul_event')->get();
         $deskripsi = DB::table('deskripsievent')->get();
-        return view('user-page.blog.event', ['sampul_event' => $sampul_event],['deskripsi' => $deskripsi]);
+        return view('user-page.blog.event', ['sampul_event' => $sampul_event],['deskripsi' => $deskripsi,'logo' => $logo]);
     }
 
     public function kelolaindexAction()
@@ -54,11 +55,12 @@ class eventController extends Controller
 
     public function indexAction2($id)
     {
+        $logo = DB::table('logo_webs')->get();
         $sampul_event = SampulEvent::find($id);
         $event_wisata = DB::table('event_wisatas')
             ->where('id_sampul_event', '=', $id)
             ->get();
-        return view('user-page.blog.detail1_event_wisata', ['event_wisata' => $event_wisata, 'sampul_event' => $sampul_event]);
+        return view('user-page.blog.detail1_event_wisata', ['event_wisata' => $event_wisata, 'sampul_event' => $sampul_event,'logo' => $logo]);
     }
     public function kelolaindexActionView($id_event)
     {
@@ -68,9 +70,9 @@ class eventController extends Controller
 
     public function indexAction3($id_event)
     {
-
+        $logo = DB::table('logo_webs')->get();
         $event_wisata_detail = EventWisata::find($id_event);
-        return view('user-page.blog.detail2_event_wisata', ['event_wisata_detail' => $event_wisata_detail]);
+        return view('user-page.blog.detail2_event_wisata', ['event_wisata_detail' => $event_wisata_detail,'logo' => $logo]);
     }
 
 

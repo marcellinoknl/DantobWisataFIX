@@ -10,11 +10,12 @@ class PaketWisataController extends Controller
 {
     public function indexAction()
     {
+        $logo = DB::table('logo_webs')->get();
         $paketbg = DB::table('paket_wisatas')->inRandomOrder()->get();
         $paket = DB::table('paket_wisatas')->get();
         $deskripsi = DB::table('deskripsi_pakets')->get();
 
-        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg','deskripsi'));
+        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg','deskripsi','logo'));
     }
 
     public function kelolaindexActionView($id)
@@ -25,16 +26,15 @@ class PaketWisataController extends Controller
 
     public function kelolaindexAction()
     {
-
         $paketwisatas = PaketWisata::all();
         return view('admin.paketwisata.kelolapaketwisata', compact('paketwisatas'));
     }
 
     public function indexAction3($id)
     {
-
+        $logo = DB::table('logo_webs')->get();
         $paketwisatadetails = PaketWisata::find($id);
-        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails]);
+        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails,'logo'=>$logo]);
     }
 
     public function tambah()

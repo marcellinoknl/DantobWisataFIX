@@ -13,13 +13,15 @@ class fasilitasController extends Controller
 {
     public function indexAction()
     {
+        $logo = DB::table('logo_webs')->get();
         $sampul_fasilitas = DB::table('sampul_fasilitas')->orderBy('nama_sampul', 'ASC')->get();
         $deskripsi = DB::table('deskripsi_fasiltas')->get(); 
-        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi]);
+        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi,'logo'=>$logo]);
     }
 
     public function indexAction2(Request $request,$id)
     {
+        $logo = DB::table('logo_webs')->get();
         $keyword = $request->keyword;
         $sampul_fasilitas = SampulFasilitas::find($id);
         $fasilitias_wisata = DB::table('fasilitas_wisata')
@@ -32,20 +34,20 @@ class fasilitasController extends Controller
             ->get();
         
             $kabupaten = Kabupaten::all();
-        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword]);
+        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword, 'logo'=>$logo]);
     }
     
 
     public function indexAction3($id_fasilitas)
     {
-     
+        $logo = DB::table('logo_webs')->get();
         $fasilitas_wisata_detail = Fasilitas::find($id_fasilitas);
         $fasilitias_wisata_detail_user = DB::table('fasilitas_wisata')
         ->select('users.name','users.id')
         ->join('users', 'fasilitas_wisata.id_user', '=', 'users.id')
         ->where('fasilitas_wisata.id_fasilitas','=',$id_fasilitas)
         ->get();
-        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user]);
+        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user,'logo'=>$logo]);
     }
     public function kelolaindexActionView($id_fasilitas)
     {
