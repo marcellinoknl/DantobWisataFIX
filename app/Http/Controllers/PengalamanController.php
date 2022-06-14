@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Objek_Wisata;
 use App\Models\PengalamanWisata;
+use App\Models\DeskripPengalaman;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -16,7 +17,7 @@ class PengalamanController extends Controller
         ->join ('users', 'users.id', '=', 'pengalaman_wisata.id_user')
         ->where('status','=',"approved")
         ->get();
-        
+       
         return view('user-page.pengalaman', ['pengalaman' => $pengalaman]);
     }
 
@@ -38,10 +39,33 @@ class PengalamanController extends Controller
         $pengalamansaya = DB::table('pengalaman_wisata')
         ->where('id_user', '=',Auth::user()->id)
         ->get();
+        $deskripsi = DB::table('deskripsi_pengalaman')->get();
        
-        return view('user-page.pengalaman-wisata-saya', ['pengalamansaya' => $pengalamansaya]);
+        return view('user-page.pengalaman-wisata-saya', ['pengalamansaya' => $pengalamansaya],['deskripsi' => $deskripsi]);
     }
+    public function editat($id)
+    {
+        $update = DeskripPengalaman::find($id);
+        return view('admin.ubah-deskripspengalaman', compact('update'));
+    }
+    public function updateat(request $request, $id)
+    
+    {
+        $this->validate(
+            $request,
+            [
+               
+                'judul_fasilitas' => 'required',
+                'deskripsi_fasilitas' => 'required'
+            ]
+        );
+    $update = DeskripPengalaman::find($id);
+    $update->judul = $request->judul_fasilitas;
+    $update->deskripsi = $request->deskripsi_fasilitas;
+    $update->save();
 
+    return redirect('/pengalamanwisata-saya');
+    }
 
     public function editPengalamanSaya($id_pengalaman){
         $pengalamansaya = PengalamanWisata::find($id_pengalaman);

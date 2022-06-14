@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Objek_Wisata;
 use App\Models\Kategori_Wisata;
 use App\Models\Kabupaten;
+use App\Models\DeskripsiDestinasi;
 
 use Illuminate\Http\Request;
 
@@ -14,8 +15,10 @@ class objekWisataController extends Controller
     public function indexAction()
     {
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
-
-        return view('user-page.objek-wisata', compact('objwisatakabupaten'));
+        $deskripsi = DB::table('deskripsi_destinasis')->get();
+       
+       
+        return view('user-page.objek-wisata', compact('objwisatakabupaten','deskripsi'));
     }
 
     public function kelolaindexAction()
@@ -50,6 +53,31 @@ class objekWisataController extends Controller
         $objwisatakabupatenfilter = DB::table('objwisatakabupaten')->get();
         return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'keyword'=>$keyword]);
     }
+    public function editat($id)
+    {
+        $update = DeskripsiDestinasi::find($id);
+       
+        return view('admin.ubah-deskripsidestinasi', compact('update'));
+    }
+
+    public function updateat(request $request, $id)
+    
+        {
+            $this->validate(
+                $request,
+                [
+                   
+                    'judul_atraksi' => 'required',
+                    'deskripsi_atraksi' => 'required'
+                ]
+            );
+        $update = DeskripsiDestinasi::find($id);
+        $update->judul = $request->judul_atraksi;
+        $update->deskripsi = $request->deskripsi_atraksi;
+        $update->save();
+
+        return redirect('/objek-wisata');
+        }
 
     public function indexAction3($id_obj_wisata)
     {

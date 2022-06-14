@@ -13,32 +13,30 @@
 <!-- Product -->
 <div class="bg0 m-t-23 p-b-140">
     <div class="container">
-                       @guest
-                            @foreach ($deskripsi as $deskripsis)
-                            <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">{{$deskripsis->judul}}</h1>
-                            <p class="caption" style=" color:black;"> <p style="color: black"class="caption text-justify">{!!$deskripsis->deskripsi!!}</p>
-                            <hr class="mt-2 mb-3" style="border:solid 0.5px" />
-                            <br>
-                            @endforeach
-                        </div>
-                        @else
-                        <div class="container p-md-2 p-2">
-                            <div class="container">
-                            @foreach ($deskripsi as $deskripsis)
-                            <h1 class="mb-4"style="font-weight: bold">{{$deskripsis->judul}}</h1>
-                          @if( auth()->user()->role ==3) 
-                            <div class="row" style="float: right;">  
-                            <a href='/ubah-berita/{{$deskripsis->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark"  >Ubah Deskripsi</button></a>
-                            </div>
-                            @else
-                            @endif
-                            @endforeach
-                                    @endguest
-                            <p style="color: black"class="caption text-justify">{!!$deskripsis->deskripsi!!}
-                                <hr class="mt-2 mb-3" style="border:solid 0.5px" />
-                            </p>
-                        </div>
-                      
+        @guest
+        @foreach ($deskripsi as $dep )
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{$dep->judul}}
+        </h1>
+        <p class="caption" style=" color:black;">
+            {!!$dep->deskripsi!!}
+        </p>
+        @endforeach
+        @else
+        @foreach ($deskripsi as $dep )
+        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
+            {{$dep->judul}}
+        </h1>
+        @if( auth()->user()->role ==3) 
+        <a href='/ubah-event/{{$dep->id}}'><button type="button" class="btn btn-outline-success float-lg-right" data-mdb-ripple-color="dark" >Ubah Deskripsi</button></a>
+        @else
+        @endif
+        <p class="caption" style=" color:black;">
+            {!!$dep->deskripsi!!}
+        </p>
+        @endforeach
+        @endguest
+        <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
             @if(empty($sampul_event) || count($sampul_event) == 0)

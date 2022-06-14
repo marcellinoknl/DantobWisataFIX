@@ -5,6 +5,7 @@ use Auth;
 use App\Models\Fasilitas;
 use App\Models\SampulFasilitas;
 use App\Models\Kabupaten;
+use App\Models\DeskripsiFasiltas;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,9 @@ class fasilitasController extends Controller
 {
     public function indexAction()
     {
-        $sampul_fasilitas = DB::table('sampul_fasilitas')->orderBy('nama_sampul', 'ASC')->get(); 
-        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas]);
+        $sampul_fasilitas = DB::table('sampul_fasilitas')->orderBy('nama_sampul', 'ASC')->get();
+        $deskripsi = DB::table('deskripsi_fasiltas')->get(); 
+        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi]);
     }
 
     public function indexAction2(Request $request,$id)
@@ -32,6 +34,7 @@ class fasilitasController extends Controller
             $kabupaten = Kabupaten::all();
         return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword]);
     }
+    
 
     public function indexAction3($id_fasilitas)
     {
@@ -200,6 +203,29 @@ class fasilitasController extends Controller
         $update->save();
 
         return redirect('daftar-fasilitas');
+    }
+    public function editat($id)
+    {
+        $update = DeskripsiFasiltas::find($id);
+        return view('admin.ubah-deskripsifasilitas', compact('update'));
+    }
+    public function updateat(request $request, $id)
+    
+    {
+        $this->validate(
+            $request,
+            [
+               
+                'judul_fasilitas' => 'required',
+                'deskripsi_fasilitas' => 'required'
+            ]
+        );
+    $update = DeskripsiFasiltas::find($id);
+    $update->judul = $request->judul_fasilitas;
+    $update->deskripsi = $request->deskripsi_fasilitas;
+    $update->save();
+
+    return redirect('/fasilitaswisata');
     }
 
 

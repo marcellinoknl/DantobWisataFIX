@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> UBAH DESKRIPSI EVENT</h1>
+                            <h1> UBAH DESKRIPSI DESA WISATA</h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Deskripsi Event</li>
+                                <li class="breadcrumb-item active"> Deskripsi Desa Wisata</li>
                             </ol>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('deskripsievent.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('deskripsidewi.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Judul  </label>

@@ -40,13 +40,13 @@ class eventController extends Controller
                 $request,
                 [
                    
-                    'judul_home' => 'required',
-                    'deskripsi_home' => 'required'
+                    'judul_event' => 'required',
+                    'deskripsi_event' => 'required'
                 ]
             );
         $update = DeskripsiEventModel::find($id);
-        $update->judul = $request->judul_home;
-        $update->deskripsi = $request->deskripsi_home;
+        $update->judul = $request->judul_event;
+        $update->deskripsi = $request->deskripsi_event;
         $update->save();
 
         return redirect('/eventwisata');

@@ -29,7 +29,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('deskripsiberita.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('deskripsiatraksi.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Judul  </label>

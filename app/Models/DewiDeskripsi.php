@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DeskripsiEventModel extends Model
+class DewiDeskripsi extends Model
 {
     use HasFactory;
-    protected $table = 'deskripsievent';
+    protected $table = 'dewi_deskripsis';
     protected $primaryKey = 'id';
 }

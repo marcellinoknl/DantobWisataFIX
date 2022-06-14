@@ -104,6 +104,8 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::post('/tambah-objek-wisata/store', [objekWisataController::class, 'store'])->name('formobjekwisata.store');
         Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
         Route::get('/lihat-objekwisata/{id}', [objekWisataController::class, 'kelolaindexActionView']);
+        Route::get('/ubah-destinasi/{id}', [objekWisataController::class, 'editat']);
+        Route::post('/edit-destinasi/{id}', [objekWisataController::class, 'updateat'])->name('deskdestinasi.ubah');
 
         
         //Kelola Desa Wisata
@@ -114,6 +116,8 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::post('/tambah-desa-wisata/store', [DesaWisataController::class, 'store'])->name('formdesawisata.store');
         Route::get('/desawisata/hapus/{id}', [DesaWisataController::class, 'hapus'])->name('desawisata.hapus');
         Route::get('/lihat-desawisata/{id}', [DesaWisataController::class, 'kelolaindexActionView']);
+        Route::get('/ubah-dewi/{id}', [DesaWisataController::class, 'editat']);
+        Route::post('/edit-dewi/{id}', [DesaWisataController::class, 'updateat'])->name('deskripsidewi.ubah');
 
         //Paket Wisata 
         Route::get('/kelolapaketwisata', [PaketWisataController::class, 'kelolaindexAction']);
@@ -122,7 +126,9 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::post('/ubah-paket-wisata/{id}', [PaketWisataController::class, 'update'])->name('paketwisata.ubah');
         Route::post('/tambah-paket-wisata/store', [PaketWisataController::class, 'store'])->name('formpaketwisata.store');
         Route::get('/paketwisata/hapus/{id}', [PaketWisataController::class, 'hapus'])->name('paketwisata.hapus');
-        Route::get('/lihat-paketwisata/{id}', [PaketWisataController::class, 'kelolaindexActionView']);        
+        Route::get('/lihat-paketwisata/{id}', [PaketWisataController::class, 'kelolaindexActionView']);
+        Route::get('/ubah-paket/{id}', [PaketWisataController::class, 'editat']);
+        Route::post('/edit-paket/{id}', [PaketWisataController::class, 'updateat'])->name('deskripsipaket.ubah');        
 
         //kelolaberita
         Route::get('/kelolaberita', [beritaController::class, 'kelolaindexAction']);
@@ -142,7 +148,8 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::post('/ubah-galeri-wisata/{id}', [geleriWisataController::class, 'update'])->name('galeriwisata.ubah');
         Route::post('/tambah-galeri-wisata/store', [geleriWisataController::class, 'store'])->name('formgaleriwisata.store');
         Route::get('/galeri/hapus/{id}', [geleriWisataController::class, 'hapus'])->name('galeriwisata.hapus');
-
+        Route::get('/ubah-galeri/{id}', [geleriWisataController::class, 'editat']);
+        Route::post('/edit-galeri/{id}', [geleriWisataController::class, 'updateat'])->name('deskripsigaleri.ubah');
         //fasilitas
         Route::get('/daftar-fasilitas', [fasilitasController::class, 'kelolaindexActionDaftarFasilitas']);
         Route::get('/tambah-fasilitas-wisata', [fasilitasController::class, 'tambahfasilitas']);
@@ -151,7 +158,8 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::post('/tambah-fasilitas/store', [fasilitasController::class, 'storefasilitas'])->name('formdaftarfasilitas.store');
         Route::get('/fasilitas/hapus/{id}', [fasilitasController::class, 'hapus'])->name('fasilitas.hapus');
         Route::get('/lihat-fasilitaswisata/{id}', [fasilitasController::class, 'kelolaindexActionView']);
-
+        Route::get('/ubah-fasilitas/{id}', [fasilitasController::class, 'editat']);
+        Route::post('/edit-fasilitas/{id}', [fasilitasController::class, 'updateat'])->name('deskripsifasilitas.ubah');
         //kelola atraksi
         Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
         Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);
@@ -222,6 +230,8 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
          Route::post('/ubah-pengalaman-wisata/{id}', [PengalamanController::class, 'update'])->name('pengalamanwisata.ubah');
          Route::post('/tambah-pengalaman-wisata/store', [PengalamanController::class, 'store'])->name('formpengalamanwisata.store');
          Route::get('/pengalamanwisata/hapus/{id}', [PengalamanController::class, 'hapus'])->name('pengalamanwisata.hapus');
+         Route::get('/ubah-deskpengalaman/{id}', [PengalamanController::class, 'editat']);
+         Route::post('/edit-deskpengalaman/{id}', [PengalamanController::class, 'updateat'])->name('deskripsipengalaman.ubah');
        
         //Persetujuan pengalaman wisata
          Route::get('/persetujuanpengalamanwisata', [PengalamanController::class, 'kelolaindexAction2']);
