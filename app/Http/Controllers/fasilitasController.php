@@ -31,8 +31,7 @@ class fasilitasController extends Controller
             ->where('id_sampul_fasilitas', '=', $id)
             ->where('nama_fasilitas','LIKE','%'.$keyword.'%')
             ->orderBy('id_fasilitas')
-            ->get();
-        
+            ->simplePaginate(6);
             $kabupaten = Kabupaten::all();
         return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword, 'logo'=>$logo]);
     }
@@ -126,7 +125,9 @@ class fasilitasController extends Controller
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
         $fasilitas->lokasi = $request->lokasi;
         $fasilitas->deskripsi = $request->deskripsi;
-       $fasilitas->id_user = Auth::user()->id;
+
+        $fasilitas->lokasi = $request->lokasi;
+        $fasilitas->id_user = Auth::user()->id;
         $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas;
         $fasilitas->id_obj_wisata_kabupaten = $request->id_obj_wisata_kabupaten;
          if ($request->hasFile('file_foto')) {

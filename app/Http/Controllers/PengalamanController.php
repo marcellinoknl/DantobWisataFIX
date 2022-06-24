@@ -257,7 +257,6 @@ class PengalamanController extends Controller
                 'judul' => 'required',
                 'deskripsi' => 'required',
                 'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
-               
             ]
         );
             $TambahPengalaman = new PengalamanWisata();

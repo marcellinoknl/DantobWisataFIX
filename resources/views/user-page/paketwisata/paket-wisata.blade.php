@@ -1,12 +1,11 @@
 @include('template/header')
 
-<div class="hero-wrap  "
-style="background-image: url(images/fasilitasbg.jpg); width: 100%; height:75%;">
-    <div class="overlay" style="width:100%;height: 75%;"></div>
+<div class="hero-wrap  " style="background-image: url(images/fasilitasbg.jpg); width: 100%; height:100%;">
+    <div class="overlay" style="width:100%;height: 100%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate">
-           
+                <h1 class="mb-4" style="text-align: center;">PAKET WISATA</h1>
             </div>
         </div>
     </div>
@@ -36,24 +35,14 @@ style="background-image: url(images/fasilitasbg.jpg); width: 100%; height:75%;">
         <p class="caption" style=" color:black;">
             {!!$dep->deskripsi!!}
         </p>
-
-       
         @endforeach
         @endguest
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
 
-        <div class="container p-md-2 ">
-          <center>
-            <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Paket Wisata yang Ingin Kamu Tinjau!
-            </h4>
-          </center>
-            <br>
-
-
 
 <!-- TEST -->
-       
+<div class="container p-md-2 p-2">
          
             @if(empty($paket) || count($paket) == 0)
            <br><br>

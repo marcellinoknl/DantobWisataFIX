@@ -16,7 +16,7 @@
          <div class="page-title">
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-               <li class="breadcrumb-item active">Table-Export</li>
+               <li class="breadcrumb-item active">Kelola Berita</li>
             </ol>
          </div>
       </div>

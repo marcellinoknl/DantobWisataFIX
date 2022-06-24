@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Ubah Persetujuan Wisata</li>
+                                <li class="breadcrumb-item active">Ubah Persetujuan Pengalaman Wisata</li>
                             </ol>
                         </div>
                     </div>

@@ -20,8 +20,9 @@
                         <li><a href="{{ url('/atraksi') }}" class="py-2 d-block"style="color:black">Atraksi Wisata</a></li>
                         <li><a href="{{ url('/eventwisata') }}" class="py-2 d-block"style="color:black">Event Wisata</a></li>
                         <li><a href="{{ url('/fasilitaswisata') }}" class="py-2 d-block"style="color:black">Fasilitas Wisata</a></li>
-                        <li><a href="#" class="py-2 d-block"style="color:black">Galeri Wisata</a></li>
+                        <li><a href="{{ url('/galeriwisata') }}" class="py-2 d-block"style="color:black">Galeri Wisata</a></li>
                         <li><a href="{{ url('/beritawisata') }}" class="py-2 d-block"style="color:black">Berita Wisata</a></li>
+                        <li><a href="{{ url('/desawisata') }}" class="py-2 d-block"style="color:black">Desa Wisata</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,9 +40,8 @@
                     <h2 class="ftco-heading-2">Punya Pertanyaan?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><a href="#"style="color:black"style="color:black"><span class="icon fa fa-phone"></span><span class="text">+62 821-6686-1855</span></a></li>
-                            <li><a href="#"style="color:black"style="color:black"><span class="icon fa fa-envelope"></span><span
-                                        class="text">wisatadantob@gmail.com</span></a></li>
+                            <li><span class="icon fa fa-envelope"></span><span
+                                        class="text">wisatadantob@gmail.com</span></li>
                         </ul>
                     </div>
                 </div>
