@@ -76,24 +76,27 @@
             <div class="row g-2 g-md-4">
                 @foreach ($fasilitias_wisata as $fasilitias_wisatas)
                     <div class="col-6 col-md-4 py-4 task-list-row" data-assigned-user="{{$fasilitias_wisatas->nama_kab}}">
-                        <article class="postcard light red">
-                            <a class="postcard__img_link" href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
-                                <img class="postcard__img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" width="200px" height="300px" />
-                            </a>
-                            
-                            <div class="postcard__text t-dark">
-                                <div class="col-md-1"></div>
-                                <h1 class="postcard__title red"><a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">{{$fasilitias_wisatas->nama_fasilitas}}</a></h1>
+                        <div class="card"  style="width: 350px; height:auto; border-radius: 5%;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
+                                        <img class="card-img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image Title" width="100%" height="100%" />
+                                    </a>
+                                </div>
                                 <?php   
-                                $deskripsi = substr($fasilitias_wisatas->deskripsi,0,50);
-                                ?> 
-                                <div class="postcard__bar"></div>
+                                $lokasi = substr($fasilitias_wisatas->lokasi,0,20);
+                                ?>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$fasilitias_wisatas->nama_fasilitas}}</h5>
 
-                                    <li class="tag__item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$fasilitias_wisatas->lokasi}}</li>
-                                    <li class="tag__item"><i class="fa fa-home" aria-hidden="true"></i> {{$fasilitias_wisatas->nama_kab}}</li>
-                           
+                                        <li class="tag__item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$lokasi}}...</li>
+                                        <li class="tag__item"><i class="fa fa-home" aria-hidden="true"></i> {{$fasilitias_wisatas->nama_kab}}</li>
+                                        <a href="#" class="btn btn-primary">View Profile</a>
+                                    </div>
+                                </div>
                             </div>
-                        </article>
+                        </div>
                     </div>
                 @endforeach
                 <span>
