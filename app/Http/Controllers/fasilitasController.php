@@ -124,8 +124,9 @@ class fasilitasController extends Controller
         $fasilitas = new Fasilitas();
 
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
+        $fasilitas->lokasi = $request->lokasi;
         $fasilitas->deskripsi = $request->deskripsi;
-        $fasilitas->id_user = Auth::user()->id;
+       $fasilitas->id_user = Auth::user()->id;
         $fasilitas->id_sampul_fasilitas = $request->id_sampul_fasilitas;
         $fasilitas->id_obj_wisata_kabupaten = $request->id_obj_wisata_kabupaten;
          if ($request->hasFile('file_foto')) {

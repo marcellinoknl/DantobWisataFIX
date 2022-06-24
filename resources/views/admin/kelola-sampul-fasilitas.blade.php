@@ -114,7 +114,7 @@
                                                 class="btn btn-secondary"
                                                 data-dismiss="modal">Batal</button>
                                              <button class="btn btn-danger"
-                                                onclick="window.location.href='/sampul-atraksi/hapus/{{$sampuls->id}}'"
+                                                onclick="window.location.href='/sampul-fasilitas/hapus/{{$sampuls->id}}'"
                                                 data-toggle="modal"
                                                 data-target="#myModal"><span
                                                 class="ti-trash"
