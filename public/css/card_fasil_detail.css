@@ -54,7 +54,7 @@
 }
 
 .postcard .postcard__img {
-  max-height: 180px;
+  max-height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -142,7 +142,7 @@
 }
 
 .postcard:hover .postcard__bar {
-  width: 100px;
+  width: 180px;
 }
 
 @media screen and (min-width: 769px) {
@@ -159,7 +159,7 @@
             justify-content: start;
   }
   .postcard .postcard__img {
-    max-width: 300px;
+    max-width: 100%;
     max-height: 100%;
     -webkit-transition: -webkit-transform 0.3s ease;
     transition: -webkit-transform 0.3s ease;
