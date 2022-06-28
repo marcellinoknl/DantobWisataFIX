@@ -67,7 +67,7 @@
                                 <img src="{{ url('images/paketwisata/' . $pakets->file_foto) }}" alt=""
                                     class="mycard-image">
                             </a>
-                            <h3 class="mycard-title"> >{{ $pakets->nama_paket }}</h3>
+                            <h3 class="mycard-title">{{ $pakets->nama_paket }}</h3>
                         </div>
                     </div>
                 @endforeach

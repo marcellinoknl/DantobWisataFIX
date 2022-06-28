@@ -32,10 +32,21 @@
                                 <form action="{{route('paketwisata.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nama Paket Wisata}</label>
+                                            <label class="col-sm-3 col-form-label">Nama Paket Wisata</label>
                                             <div class="col-sm-9">
                                                 <input type="text" id="nama_paket" name="nama_paket" class="form-control  @error('nama_paket') is-invalid @enderror" value="{{$update->nama_paket}}">
                                                 @error('nama_paket')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kontak (WA)</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" id="nohp" name="nohp" class="form-control  @error('nohp') is-invalid @enderror" value="{{$update->nohp}}">
+                                                @error('nohp')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
