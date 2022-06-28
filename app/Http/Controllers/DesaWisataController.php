@@ -66,20 +66,22 @@ class DesaWisataController extends Controller
     public function indexAction2($id_obj_wisata_kabupaten)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
         $desawisatas = DB::table('desa_wisatas')
             ->where('id_obj_wisata_kabupaten', '=', $id_obj_wisata_kabupaten)
             ->get();
         
         $objwisatakabupatenfilter = DB::table('objwisatakabupaten')->get();
-        return view('user-page.blog.desawisata.detail1_desa_wisata', ['desawisatas' => $desawisatas, 'objwisatakabupaten' => $objwisatakabupaten,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'logo'=>$logo]);
+        return view('user-page.blog.desawisata.detail1_desa_wisata', ['desawisatas' => $desawisatas, 'objwisatakabupaten' => $objwisatakabupaten,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function indexAction3($id)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $desawisatadetails = DesaWisata::find($id);
-        return view('user-page.blog.desawisata.detail2_desa_wisata', ['desawisatadetails' => $desawisatadetails,'logo'=>$logo]);
+        return view('user-page.blog.desawisata.detail2_desa_wisata', ['desawisatadetails' => $desawisatadetails,'logo'=>$logo,'sosial'=>$sosial]);
     }
     
     public function tambah()

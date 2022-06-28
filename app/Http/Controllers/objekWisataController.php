@@ -43,6 +43,7 @@ class objekWisataController extends Controller
     public function indexAction2(Request $request,$id_obj_wisata_kabupaten)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $keyword = $request->keyword;
         $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
         $objek_wisata = DB::table('objek_wisata')
@@ -54,7 +55,7 @@ class objekWisataController extends Controller
         
         $kategori = Kategori_Wisata::all();
         $objwisatakabupatenfilter = DB::table('objwisatakabupaten')->get();
-        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'keyword'=>$keyword,'logo'=>$logo]);
+        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial]);
     }
     public function editat($id)
     {
@@ -85,8 +86,9 @@ class objekWisataController extends Controller
     public function indexAction3($id_obj_wisata)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
-        return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail,'logo'=>$logo]);
+        return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function tambah()

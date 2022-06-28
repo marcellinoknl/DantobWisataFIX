@@ -46,6 +46,10 @@
                     <div class="block-23 mb-3">
                         <ul>
                             <li>
+<<<<<<< HEAD
+                                
+=======
+>>>>>>> 384b015fac1e19081e716fb6311c4aeabc5476cf
                                 <a href="mailto:wisatadantob@gmail.com" class="py-2 d-block"style="color:black"><span class="icon fa fa-envelope">&nbsp;wisatadantob@gmail.com</span></a>
                             </li>
                         </ul>
