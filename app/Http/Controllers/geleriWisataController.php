@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\counter;
 use App\Models\GaleriWisata;
 use App\Models\DeskripsiGaleri;
 use Illuminate\Support\Facades\DB;
@@ -12,9 +13,10 @@ class geleriWisataController extends Controller
     {
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
+        $projects = counter::latest()->paginate(5);
         $galeriwisata = DB::table('galeri_wisata')->get(); 
         $deskripsi = DB::table('deskripsi_galeris')->get();
-        return view('user-page.galeri-wisata', ['galeriwisata' => $galeriwisata],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.galeri-wisata', ['galeriwisata' => $galeriwisata],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
         
     }
     public function kelolaindexAction()

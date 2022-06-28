@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use App\Models\counter;
 use App\Models\Fasilitas;
 use App\Models\SampulFasilitas;
 use App\Models\Kabupaten;
@@ -14,16 +15,18 @@ class fasilitasController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $projects = counter::latest()->paginate(5);
         $sosial = DB::table('sosial_media')->get();
         $sampul_fasilitas = DB::table('sampul_fasilitas')->orderBy('nama_sampul', 'ASC')->get();
         $deskripsi = DB::table('deskripsi_fasiltas')->get(); 
-        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
 
     public function indexAction2(Request $request,$id)
     {
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
+        $projects = counter::latest()->paginate(5);
         $keyword = $request->keyword;
         $sampul_fasilitas = SampulFasilitas::find($id);
         $fasilitias_wisata = DB::table('fasilitas_wisata')
@@ -35,13 +38,14 @@ class fasilitasController extends Controller
             ->orderBy('id_fasilitas')
             ->simplePaginate(6);
             $kabupaten = Kabupaten::all();
-        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword, 'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword, 'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
     
 
     public function indexAction3($id_fasilitas)
     {
         $logo = DB::table('logo_webs')->get();
+        $projects = counter::latest()->paginate(5);
         $sosial = DB::table('sosial_media')->get();
         $fasilitas_wisata_detail = Fasilitas::find($id_fasilitas);
         $fasilitias_wisata_detail_user = DB::table('fasilitas_wisata')
@@ -49,7 +53,7 @@ class fasilitasController extends Controller
         ->join('users', 'fasilitas_wisata.id_user', '=', 'users.id')
         ->where('fasilitas_wisata.id_fasilitas','=',$id_fasilitas)
         ->get();
-        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
     public function kelolaindexActionView($id_fasilitas)
     {

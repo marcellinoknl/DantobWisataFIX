@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\PaketWisata;
+use App\Models\counter;
 use App\Models\DeskripsiPaket;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -12,11 +13,12 @@ class PaketWisataController extends Controller
     {
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
+        $projects = counter::latest()->paginate(5);
         $paketbg = DB::table('paket_wisatas')->inRandomOrder()->get();
         $paket = DB::table('paket_wisatas')->get();
         $deskripsi = DB::table('deskripsi_pakets')->get();
 
-        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg','deskripsi','logo','sosial'));
+        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg','deskripsi','logo','sosial','projects'));
     }
 
     public function kelolaindexActionView($id)
@@ -35,8 +37,9 @@ class PaketWisataController extends Controller
     {
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
+        $projects = counter::latest()->paginate(5);
         $paketwisatadetails = PaketWisata::find($id);
-        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
 
     public function tambah()
