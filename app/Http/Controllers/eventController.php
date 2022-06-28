@@ -13,9 +13,10 @@ class eventController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $sampul_event = DB::table('sampul_event')->get();
         $deskripsi = DB::table('deskripsievent')->get();
-        return view('user-page.blog.event', ['sampul_event' => $sampul_event],['deskripsi' => $deskripsi,'logo' => $logo]);
+        return view('user-page.blog.event', ['sampul_event' => $sampul_event],['deskripsi' => $deskripsi,'logo' => $logo,'sosial' => $sosial]);
     }
 
     public function kelolaindexAction()

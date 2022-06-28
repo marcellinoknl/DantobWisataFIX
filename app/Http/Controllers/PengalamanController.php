@@ -13,39 +13,43 @@ class PengalamanController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $pengalaman = DB::table('pengalaman_wisata')
         ->select('pengalaman_wisata.*', 'users.name')
         ->join ('users', 'users.id', '=', 'pengalaman_wisata.id_user')
         ->where('status','=',"approved")
         ->get();
        
-        return view('user-page.pengalaman', ['pengalaman' => $pengalaman,'logo'=>$logo]);
+        return view('user-page.pengalaman', ['pengalaman' => $pengalaman,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function indexAction2($id_pengalaman)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $pengalaman_wisata_detail = PengalamanWisata::find($id_pengalaman);
-        return view('user-page.detail-pengalaman-wisata', ['pengalaman_wisata_detail' => $pengalaman_wisata_detail,'logo'=>$logo]);
+        return view('user-page.detail-pengalaman-wisata', ['pengalaman_wisata_detail' => $pengalaman_wisata_detail,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function indexActiontambahpengalaman()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $pengalamanplus = DB::table('pengalaman_wisata')->get();
-        return view('user-page.tambah-pengalaman', ['pengalamanplus' => $pengalamanplus,'logo'=>$logo]);
+        return view('user-page.tambah-pengalaman', ['pengalamanplus' => $pengalamanplus,'logo'=>$logo,'sosial'=>$sosial]);
     }
 //pengalaman saya
 
     public function indexActionpengalamansaya()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $pengalamansaya = DB::table('pengalaman_wisata')
         ->where('id_user', '=',Auth::user()->id)
         ->get();
         $deskripsi = DB::table('deskripsi_pengalaman')->get();
        
-        return view('user-page.pengalaman-wisata-saya', ['pengalamansaya' => $pengalamansaya],['deskripsi' => $deskripsi,'logo'=>$logo]);
+        return view('user-page.pengalaman-wisata-saya', ['pengalamansaya' => $pengalamansaya],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial]);
     }
     public function editat($id)
     {
@@ -73,9 +77,10 @@ class PengalamanController extends Controller
 
     public function editPengalamanSaya($id_pengalaman){
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $pengalamansaya = PengalamanWisata::find($id_pengalaman);
         $updates = PengalamanWisata::find($id_pengalaman);
-        return view('user-page/edit-pengalaman-wisata-saya', compact('updates','pengalamansaya','logo'));
+        return view('user-page/edit-pengalaman-wisata-saya', compact('updates','pengalamansaya','logo','sosial'));
     }
 
     public function updatePengalamanSaya(request $request, $id_pengalaman)

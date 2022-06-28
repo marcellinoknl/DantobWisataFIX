@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Objek_Wisata;
 use Illuminate\Http\Request;
+use App\Models\SosialModel;
 use App\Models\HomeModel;
 
 use Illuminate\Support\Facades\DB;
@@ -10,11 +11,12 @@ class homepageController extends Controller
 {
     public function indexAction() {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $objekwisata = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(1)->get();
         $objekwisataa = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(8)->get();
         $event = DB::table('sampul_event')->orderBy('created_at','desc')->limit(4)->get();
         $deskripsi = DB::table('home')->get();
-        return view('user-page.homepage-index',compact('objekwisata','objekwisataa','event','deskripsi','logo'));
+        return view('user-page.homepage-index',compact('objekwisata','objekwisataa','event','deskripsi','logo','sosial'));
     }
 
     public function edit($id)   

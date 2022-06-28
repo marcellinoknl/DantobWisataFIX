@@ -80,6 +80,7 @@
                     <li class="label">Kelola Data Wisata</li>
                     @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolalogo')}}"><i class="ti-image"></i> Kelola Logo</a></li>
+                    <li><a href="{{url('/kelolasosial')}}"><i class="ti-image"></i> Kelola Sosial</a></li>
                     @endif
                     @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolakab')}}"><i class="ti-bookmark"></i> Kelola Kabupaten</a></li>
