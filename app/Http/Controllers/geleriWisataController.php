@@ -11,9 +11,10 @@ class geleriWisataController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $galeriwisata = DB::table('galeri_wisata')->get(); 
         $deskripsi = DB::table('deskripsi_galeris')->get();
-        return view('user-page.galeri-wisata', ['galeriwisata' => $galeriwisata],['deskripsi' => $deskripsi,'logo'=>$logo]);
+        return view('user-page.galeri-wisata', ['galeriwisata' => $galeriwisata],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial]);
         
     }
     public function kelolaindexAction()

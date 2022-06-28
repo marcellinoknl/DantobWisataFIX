@@ -7,6 +7,7 @@ use App\Http\Controllers\objekWisataController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\atraksiController;
 use App\Http\Controllers\eventController;
+use App\Http\Controllers\SosialMediaController;
 use App\Http\Controllers\beritaController;
 use App\Http\Controllers\fasilitasController;
 use App\Http\Controllers\geleriWisataController;
@@ -92,9 +93,10 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);
         Route::get('/ubah-home/{id}', [homepageController::class, 'edit']);
         Route::post('/edit-home/{id}', [homepageController::class, 'update'])->name('deskripsi.ubah');
-        // Route::get('/ubah-deskripsi', [ControllerHome::class, 'edit']);
-        // Route::post('/ubah-deskripsi/{id}', [KabupatenController::class, 'update'])->name('deskripsi.ubah');
-
+        Route::get('/admin-wisata', [SosialMediaController::class, 'indexAction1']);
+        Route::get('/kelolasosial', [SosialMediaController::class, 'editat']);
+        Route::post('/edit-sosial/{id}', [SosialMediaController::class, 'updateat'])->name('sosial.ubah');
+      
         //Kelola Objek Wisata
         Route::get('/kelolaobjek', [objekWisataController::class, 'kelolaindexAction']);
         Route::get('/tambah-objek-wisata', [objekWisataController::class, 'tambah']);

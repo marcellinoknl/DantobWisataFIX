@@ -5,11 +5,13 @@
                 <div class="ftco-footer-widget pt-md-5 mb-4">
                     <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Pariwisata<span>Danau Toba</span></a>
                     <p></p>
+                    @foreach ($sosial as $sosials )
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft" >
-                        <li class="ftco-animate" ><a href="#" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
-                        <li class="ftco-animate"><a href="#"style="background-color:#3b5998 "><span class="fa fa-facebook" ></span></a></li>
-                        <li class="ftco-animate"><a href="#"style="background-color:#3f729b "><span class="fa fa-instagram" ></span></a></li>
+                        <li class="ftco-animate" ><a href=" {{ url($sosials->twitter) }}" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
+                        <li class="ftco-animate"><a href="{{ url($sosials->facebook) }}"style="background-color:#3b5998 "><span class="fa fa-facebook" ></span></a></li>
+                        <li class="ftco-animate"><a href="{{ url($sosials->instagram) }}"style="background-color:#3f729b "><span class="fa fa-instagram" ></span></a></li>
                     </ul>
+                    @endforeach
                 </div>
             </div>
             <div class="col-md pt-5 border-left">

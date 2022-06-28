@@ -14,9 +14,10 @@ class fasilitasController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $sampul_fasilitas = DB::table('sampul_fasilitas')->orderBy('nama_sampul', 'ASC')->get();
         $deskripsi = DB::table('deskripsi_fasiltas')->get(); 
-        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi,'logo'=>$logo]);
+        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function indexAction2(Request $request,$id)

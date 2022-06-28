@@ -12,10 +12,11 @@ class DesaWisataController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
         $deskripsi = DB::table('dewi_deskripsis')->get();
 
-        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten','deskripsi','logo'));
+        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten','deskripsi','logo','sosial'));
     }
 
     public function kelolaindexActionView($id)

@@ -15,11 +15,12 @@ class objekWisataController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
         $deskripsi = DB::table('deskripsi_destinasis')->get();
        
        
-        return view('user-page.objek-wisata', compact('objwisatakabupaten','deskripsi','logo'));
+        return view('user-page.objek-wisata', compact('objwisatakabupaten','deskripsi','logo','sosial'));
     }
 
     public function kelolaindexAction()

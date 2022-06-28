@@ -13,6 +13,7 @@ class beritaController extends Controller
     public function indexAction(Request $request)
     {    
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $deskripsi = DB::table('deskripsiberita')->get();
         $keyword = $request->keyword;
         $berita_wisata = DB::table('berita_wisata')
@@ -22,7 +23,7 @@ class beritaController extends Controller
         ->orwhere('isi_berita','LIKE','%'.$keyword.'%')
         ->simplePaginate(6);
         $berita_wisata->appends($request->all());
-        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword,'logo'=>$logo]);
+        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function kelolaindexAction()
@@ -64,8 +65,9 @@ class beritaController extends Controller
     public function indexAction2($id_berita)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $berita_wisata_detail = Berita_Wisata::find($id_berita);
-        return view('user-page.blog.detail_berita', ['berita_wisata_detail' => $berita_wisata_detail,'logo'=>$logo]);
+        return view('user-page.blog.detail_berita', ['berita_wisata_detail' => $berita_wisata_detail,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function tambah()

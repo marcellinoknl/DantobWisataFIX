@@ -11,11 +11,12 @@ class PaketWisataController extends Controller
     public function indexAction()
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $paketbg = DB::table('paket_wisatas')->inRandomOrder()->get();
         $paket = DB::table('paket_wisatas')->get();
         $deskripsi = DB::table('deskripsi_pakets')->get();
 
-        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg','deskripsi','logo'));
+        return view('user-page.paketwisata.paket-wisata', compact('paket','paketbg','deskripsi','logo','sosial'));
     }
 
     public function kelolaindexActionView($id)
