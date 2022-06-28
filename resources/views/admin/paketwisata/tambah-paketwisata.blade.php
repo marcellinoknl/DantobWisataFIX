@@ -46,6 +46,19 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Kontak (WA)</label>
+                                        <div class="col-sm-9">
+                                            <input type="text"id="nohp" name="nohp"
+                                                class="form-control @error('nohp') is-invalid @enderror" value="{{old('nohp')}}" >
+
+                                            @error('nohp')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Gambar</label>
                                         <div class="col-sm-9">
                                             <img class="img-preview img-fluid mb-3 col-sm-5" alt="">

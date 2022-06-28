@@ -17,6 +17,7 @@ class CreatePaketWisatasTable extends Migration
             $table->id();
             $table->string('nama_paket');
             $table->string('file_foto');
+            $table->string('nohp')->nullable();
             $table->text('deskripsi');
             $table->timestamps();
         });

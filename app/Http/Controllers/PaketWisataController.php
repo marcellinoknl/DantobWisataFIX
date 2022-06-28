@@ -34,8 +34,9 @@ class PaketWisataController extends Controller
     public function indexAction3($id)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $paketwisatadetails = PaketWisata::find($id);
-        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails,'logo'=>$logo]);
+        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails,'logo'=>$logo,'sosial'=>$sosial]);
     }
 
     public function tambah()
@@ -52,12 +53,14 @@ class PaketWisataController extends Controller
             [
                 'nama_paket' => 'required',
                 'deskripsi' => 'required',
+                'nohp' => 'required',
                 'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
             ]
         );
         $objek = new PaketWisata();
         $objek->nama_paket = $request->nama_paket;
         $objek->deskripsi = $request->deskripsi;
+        $objek->nohp = $request->nohp;
         if ($request->hasFile('file_foto')) {
             $file = $request->file('file_foto')->getClientOriginalName();
             $request->file('file_foto')->move('images/desawisata', $file);
@@ -88,6 +91,7 @@ class PaketWisataController extends Controller
                
                 'judul_fasilitas' => 'required',
                 'deskripsi_fasilitas' => 'required'
+                
             ]
         );
     $update = DeskripsiPaket::find($id);
@@ -105,7 +109,7 @@ class PaketWisataController extends Controller
             [
                 'nama_paket' => 'required',
                 'deskripsi' => 'required',
-                'deskripsi' => 'required',
+                'nohp' => 'required',
                 'file_foto' => 'max:5000' ,'dimensions:max_width=1200',
                
             ]
@@ -120,6 +124,7 @@ class PaketWisataController extends Controller
         $update->nama_paket = $request->nama_paket;
         $update->file_foto = $file;
         $update->deskripsi = $request->deskripsi;
+        $update->nohp = $request->nohp;
         $update->save();
 
         return redirect('/kelolapaketwisata');

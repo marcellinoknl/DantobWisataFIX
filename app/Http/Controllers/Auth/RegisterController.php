@@ -73,6 +73,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role'=>1 ,
         ]);
+        return redirect()->route('/')->with('success','Berhasil Mendaftarkan Akun');
       }
 
     public function redirectToProvider()
@@ -92,7 +93,7 @@ class RegisterController extends Controller
 
             if($user != null){
                 Auth::login($user);
-                return redirect()->intended('/');
+                return redirect()->intended('/')->with('success','Berhasil Login Dengan Google');
             }else{
                 $create = User::Create([
                     'email'             => $user_google->getEmail(),
@@ -103,7 +104,7 @@ class RegisterController extends Controller
 
 
                 Auth::login($create);
-                return redirect()->intended('/');
+                return redirect()->intended('/')->with('success','Akun Google Anda Telah Didaftarkan');
             }
 
         } catch (\Exception $e) {
