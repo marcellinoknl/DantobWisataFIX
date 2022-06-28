@@ -30,11 +30,12 @@ class atraksiController extends Controller
     public function indexAction2($id)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $sampul_atraksi = SampulAtraksi::find($id);
         $atrkasi_wisata = DB::table('atraksi_wisata')
             ->where('id_sampul_atraksi', '=', $id)
             ->get();
-        return view('user-page.blog.detail1_atraksi_wisata', ['atrkasi_wisata' => $atrkasi_wisata, 'sampul_atraksi' => $sampul_atraksi,'logo' => $logo]);
+        return view('user-page.blog.detail1_atraksi_wisata', ['atrkasi_wisata' => $atrkasi_wisata, 'sampul_atraksi' => $sampul_atraksi,'logo' => $logo,'sosial'=>$sosial]);
     }
     public function kelolaindexActionView($id_atraksi)
     {
@@ -45,8 +46,9 @@ class atraksiController extends Controller
     public function indexAction3($atraksi_id)
     {
         $logo = DB::table('logo_webs')->get();
+        $sosial = DB::table('sosial_media')->get();
         $atraksi_wisata_detail = Atraksi_Wisata::find($atraksi_id);
-        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail,'logo' => $logo]);
+        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail,'logo' => $logo,'sosial'=>$sosial]);
     }
 
 

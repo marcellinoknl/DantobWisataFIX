@@ -42,8 +42,10 @@
                     <h2 class="ftco-heading-2">Punya Pertanyaan?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon fa fa-envelope"></span><span
-                                        class="text">wisatadantob@gmail.com</span></li>
+                            <li>
+                                
+                                <a href="mailto:wisatadantob@gmail.com" class="py-2 d-block"style="color:black"><span class="icon fa fa-envelope">&nbsp;wisatadantob@gmail.com</span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
