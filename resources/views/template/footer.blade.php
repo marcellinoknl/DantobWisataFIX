@@ -4,7 +4,10 @@
             <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
                     <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Pariwisata<span>Danau Toba</span></a>
-                    <p></p>
+                    <br><br>
+                    @foreach ($projects as $project )
+                    <p style="color:black">Total Visits : {{$project->views}} </p>
+                    @endforeach
                     @foreach ($sosial as $sosials )
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft" >
                         <li class="ftco-animate" ><a href=" {{ url($sosials->twitter) }}" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
