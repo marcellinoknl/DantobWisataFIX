@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Atraksi_Wisata;
 use App\Models\SampulAtraksi;
+use App\Models\counter;
 use App\Models\DeskripsiAtraksiModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -12,11 +13,13 @@ class atraksiController extends Controller
 {
     public function indexAction()
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $sampul_atraksi = DB::table('sampul_atraksi')->get();
         $deskripsi = DB::table('deskripsiatraksi')->get();
-        return view('user-page.blog.atraksi', ['sampul_atraksi' => $sampul_atraksi,'deskripsi' => $deskripsi,'logo' => $logo,'sosial' => $sosial]);
+        return view('user-page.blog.atraksi', ['sampul_atraksi' => $sampul_atraksi,'deskripsi' => $deskripsi,'logo' => $logo,'sosial' => $sosial,'projects' => $projects]);
     }
     public function kelolaindexAction()
     {
@@ -29,13 +32,15 @@ class atraksiController extends Controller
 
     public function indexAction2($id)
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $sampul_atraksi = SampulAtraksi::find($id);
         $atrkasi_wisata = DB::table('atraksi_wisata')
             ->where('id_sampul_atraksi', '=', $id)
             ->get();
-        return view('user-page.blog.detail1_atraksi_wisata', ['atrkasi_wisata' => $atrkasi_wisata, 'sampul_atraksi' => $sampul_atraksi,'logo' => $logo,'sosial'=>$sosial]);
+        return view('user-page.blog.detail1_atraksi_wisata', ['atrkasi_wisata' => $atrkasi_wisata, 'sampul_atraksi' => $sampul_atraksi,'logo' => $logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
     public function kelolaindexActionView($id_atraksi)
     {
@@ -45,10 +50,12 @@ class atraksiController extends Controller
     
     public function indexAction3($atraksi_id)
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $atraksi_wisata_detail = Atraksi_Wisata::find($atraksi_id);
-        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail,'logo' => $logo,'sosial'=>$sosial]);
+        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail,'logo' => $logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
 
 

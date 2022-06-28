@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\counter;
 use Illuminate\Support\Facades\DB;
 use App\Models\Berita_Wisata;
 use App\Models\DeskripsiBeritaModel;
@@ -12,6 +12,8 @@ class beritaController extends Controller
 {
     public function indexAction(Request $request)
     {    
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $deskripsi = DB::table('deskripsiberita')->get();
@@ -23,7 +25,7 @@ class beritaController extends Controller
         ->orwhere('isi_berita','LIKE','%'.$keyword.'%')
         ->simplePaginate(6);
         $berita_wisata->appends($request->all());
-        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
 
     public function kelolaindexAction()
@@ -64,10 +66,12 @@ class beritaController extends Controller
 
     public function indexAction2($id_berita)
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $berita_wisata_detail = Berita_Wisata::find($id_berita);
-        return view('user-page.blog.detail_berita', ['berita_wisata_detail' => $berita_wisata_detail,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.blog.detail_berita', ['berita_wisata_detail' => $berita_wisata_detail,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
 
     public function tambah()

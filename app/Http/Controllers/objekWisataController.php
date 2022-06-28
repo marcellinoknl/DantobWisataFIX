@@ -7,20 +7,22 @@ use App\Models\Objek_Wisata;
 use App\Models\Kategori_Wisata;
 use App\Models\Kabupaten;
 use App\Models\DeskripsiDestinasi;
-
+use App\Models\counter;
 use Illuminate\Http\Request;
 
 class objekWisataController extends Controller
 {
     public function indexAction()
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
         $deskripsi = DB::table('deskripsi_destinasis')->get();
        
        
-        return view('user-page.objek-wisata', compact('objwisatakabupaten','deskripsi','logo','sosial'));
+        return view('user-page.objek-wisata', compact('objwisatakabupaten','deskripsi','logo','sosial','projects'));
     }
 
     public function kelolaindexAction()
@@ -42,6 +44,8 @@ class objekWisataController extends Controller
 
     public function indexAction2(Request $request,$id_obj_wisata_kabupaten)
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $keyword = $request->keyword;
@@ -55,7 +59,7 @@ class objekWisataController extends Controller
         
         $kategori = Kategori_Wisata::all();
         $objwisatakabupatenfilter = DB::table('objwisatakabupaten')->get();
-        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.detail1_objek_wisata', ['objek_wisata' => $objek_wisata, 'objwisatakabupaten' => $objwisatakabupaten,'kategori'=>$kategori,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
     public function editat($id)
     {
@@ -85,10 +89,12 @@ class objekWisataController extends Controller
 
     public function indexAction3($id_obj_wisata)
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
-        return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
 
     public function tambah()

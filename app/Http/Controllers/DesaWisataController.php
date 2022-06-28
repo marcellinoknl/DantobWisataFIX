@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Kabupaten;
+use App\Models\counter;
 use App\Models\DewiDeskripsi;
 use App\Models\DesaWisata;
 use Illuminate\Support\Facades\DB;
@@ -11,12 +12,14 @@ class DesaWisataController extends Controller
 {
     public function indexAction()
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
         $deskripsi = DB::table('dewi_deskripsis')->get();
 
-        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten','deskripsi','logo','sosial'));
+        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten','deskripsi','logo','sosial','projects'));
     }
 
     public function kelolaindexActionView($id)
@@ -65,6 +68,8 @@ class DesaWisataController extends Controller
     //user
     public function indexAction2($id_obj_wisata_kabupaten)
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
@@ -73,15 +78,17 @@ class DesaWisataController extends Controller
             ->get();
         
         $objwisatakabupatenfilter = DB::table('objwisatakabupaten')->get();
-        return view('user-page.blog.desawisata.detail1_desa_wisata', ['desawisatas' => $desawisatas, 'objwisatakabupaten' => $objwisatakabupaten,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.blog.desawisata.detail1_desa_wisata', ['desawisatas' => $desawisatas, 'objwisatakabupaten' => $objwisatakabupaten,'objwisatakabupatenfilter'=>$objwisatakabupatenfilter,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
 
     public function indexAction3($id)
     {
+        $projects = counter::latest()->paginate(5);
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $desawisatadetails = DesaWisata::find($id);
-        return view('user-page.blog.desawisata.detail2_desa_wisata', ['desawisatadetails' => $desawisatadetails,'logo'=>$logo,'sosial'=>$sosial]);
+        return view('user-page.blog.desawisata.detail2_desa_wisata', ['desawisatadetails' => $desawisatadetails,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
     
     public function tambah()
