@@ -16,7 +16,8 @@
                         </a>
                     </div>
                 @endif
-                <span class="subheading">Selamat Datang Di Wisata Kawasan Danau Toba</span>
+                <h1 style="font:caption">Selamat Datang Di Wisata Kawasan Danau Toba</h1>
+                {{-- <span class="subheading">Selamat Datang Di Wisata Kawasan Danau Toba</span> --}}
                 <h1 class="mb-4">Kunjugi Tempat Favorit Anda</h1>
                 <p class="caps">Kepingan Surga Toba</p>
             </div>
