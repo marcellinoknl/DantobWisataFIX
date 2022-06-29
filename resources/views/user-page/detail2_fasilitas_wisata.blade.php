@@ -5,17 +5,20 @@
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-
+            <div class="sharethis-sticky-share-buttons"></div>
         </div>
     </div>
 </div>
+
 <!-- Product -->
+
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
 
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
             {{ $fasilitas_wisata_detail->nama_fasilitas }}</h1>
+            
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="postcard__subtitle small">
@@ -40,6 +43,7 @@
         </div>
     </div>
 </div>
+
 
 
 {{-- <!-- Load more -->

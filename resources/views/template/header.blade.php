@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+    
     <title>Wisata Kawasan Danau Toba</title>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62bc6e0c40d1560012bceaff&product=sticky-share-buttons" async="async"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{{ asset('images/simanjarunjubg.jpg') }}">

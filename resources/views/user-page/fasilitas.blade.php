@@ -55,6 +55,7 @@
             </div>
              @else
             <div class="row g-2 g-md-4">
+                <div class="sharethis-inline-share-buttons"></div>
                 @foreach ($sampul_fasilitas as $sampuls)
                 <div class="row g-2 g-md-3 ">
                     <div class="col-6 col-md-4 py-4 px-4">

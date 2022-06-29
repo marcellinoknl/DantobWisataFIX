@@ -1,4 +1,6 @@
 @include('template/header')
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62bc5f99adf272001257a450&product=inline-share-buttons"
+ async="async"></script>
 <div class="hero-wrap js-fullheight" style="background-image: url('images/bgpa.jpeg');">
     <div class="overlay"></div>
     <div class="container">
@@ -90,6 +92,7 @@
                 <h2 class="mb-4">Destinasi Wisata</h2>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-md-12 ftco-animate">
                 <div class="project-wrap">
@@ -104,7 +107,9 @@
                        </div>
                     </div>
                     </div>
+                   
                      @else
+                     <div class="sharethis-inline-share-buttons"></div>
                      <div class="row g-2 g-md-4">
                          @foreach ($objekwisataa as $objekwisatas)
                              <div class="col-6 col-md-3 py-4">
