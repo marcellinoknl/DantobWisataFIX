@@ -8,6 +8,7 @@ use App\Models\Kategori_Wisata;
 use App\Models\Kabupaten;
 use App\Models\DeskripsiDestinasi;
 use App\Models\counter;
+use App\Models\Like;
 use Illuminate\Http\Request;
 
 class objekWisataController extends Controller
@@ -94,7 +95,8 @@ class objekWisataController extends Controller
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
-        return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
+        $like = Like::where('id_obj_wisata',$objek_wisata_detail->id_obj_wisata)->count();
+        return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
 
     public function tambah()

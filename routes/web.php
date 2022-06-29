@@ -17,6 +17,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\PengalamanController;
 use App\Http\Controllers\DesaWisataController;
 use App\Http\Controllers\PaketWisataController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,7 @@ Route::get('/pengalamanwisata-saya', [PengalamanController::class, 'indexActionp
 Route::get('/ubah-pengalamansaya/{id}', [PengalamanController::class, 'editPengalamanSaya']);
 Route::post('/edit-pengalamanwisata-saya/{id}', [PengalamanController::class, 'updatePengalamanSaya'])->name('pengalamansaya.ubah')->middleware('auth');
 Route::get('/pengalaman-wisata/detail/{id}', [PengalamanController::class, 'indexAction2']);
+Route::get('/objek-wisata/detail2/like/{id}', [LikeController::class, 'like'])->middleware('auth');
 
 //--USER SIDE--
 
