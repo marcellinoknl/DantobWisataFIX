@@ -1,10 +1,10 @@
 @include('template/header')
-<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62bc5f99adf272001257a450&product=inline-share-buttons"
- async="async"></script>
+
 <div class="hero-wrap js-fullheight" style="background-image: url('images/bgpa.jpeg');">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+            <div class="sharethis-sticky-share-buttons"></div>
             <div class="col-md-7 ftco-animate">
                 @if (session('error'))
                     <div class="dropdown">

@@ -5,7 +5,8 @@
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-
+            <div class="sharethis-sticky-share-buttons"></div>
+            <div class="sharethis-sticky-share-buttons"></div>
         </div>
     </div>
 </div>

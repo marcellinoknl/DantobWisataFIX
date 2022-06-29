@@ -4,7 +4,8 @@
     <div class="overlay" style="width:100%;height: 100%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-            <div class="col-md-12 ftco-animate">
+          <div class="sharethis-sticky-share-buttons"></div> 
+          <div class="col-md-12 ftco-animate">
                 <h1 class="mb-4" style="text-align: center;">CERITA WISATA SAYA</h1>
             </div>
         </div>
