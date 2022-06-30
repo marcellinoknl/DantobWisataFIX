@@ -19,7 +19,8 @@
         </h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
-        <a href="/objek-wisata/detail2/like/{{$objek_wisata_detail->id_obj_wisata}}"class ="text-danger "><i class="fa fa-heart"></i> {{$like}} Suka</a>
+        <a href="/objek-wisata/detail2/like/{{$objek_wisata_detail->id_obj_wisata}}"class ="text-danger" style="font-weight: bold; "><i class="fa fa-heart"></i> {{$like}} Suka</a>&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$objek_wisata_detail->views}} kali dikunjungi</i>
         <div class="container p-md-2 p-2">
             <p  class="caption text-justify" style=" color:black;">
                 {!! $objek_wisata_detail->deskripsi !!}
