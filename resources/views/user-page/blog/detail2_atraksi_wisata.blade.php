@@ -10,18 +10,24 @@
     </div>
 </div>
 <!-- Product -->
+<br>
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
+       
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
             {{ $atraksi_wisata_detail->judul }}</h1>
+         
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
+      
         <br>
+
         <div class="container p-md-2 p-2">
+            <a href="/atraksi-wisata/detail2/like/{{$atraksi_wisata_detail->atraksi_id}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
             <p class="caption text-justify" style=" color:black;">
                 {!!$atraksi_wisata_detail->deskripsi !!}
             </p>
-
+            
             <div class="row g-2 g-md-4">
 
             </div>

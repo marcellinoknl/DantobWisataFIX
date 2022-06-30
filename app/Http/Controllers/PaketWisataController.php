@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\PaketWisata;
 use App\Models\counter;
 use App\Models\DeskripsiPaket;
+use App\Models\LikePaketWisata;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,8 @@ class PaketWisataController extends Controller
         $sosial = DB::table('sosial_media')->get();
         $projects = counter::latest()->paginate(5);
         $paketwisatadetails = PaketWisata::find($id);
-        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
+        $like = LikePaketWisata::where('id',$paketwisatadetails->id)->count();
+        return view('user-page.paketwisata.detail_paket-wisata', ['paketwisatadetails' => $paketwisatadetails,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
 
     public function tambah()

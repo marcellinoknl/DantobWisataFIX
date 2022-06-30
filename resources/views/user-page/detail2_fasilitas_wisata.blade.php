@@ -11,7 +11,7 @@
 </div>
 
 <!-- Product -->
-
+<br>
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
@@ -35,6 +35,7 @@
             <i class="fa fa-map-marker" aria-hidden="true"></i> {{ $fasilitas_wisata_detail->lokasi }}
                                  
         </div>
+        <a href="/fasilitas-wisata/detail2/like/{{$fasilitas_wisata_detail->id_fasilitas}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
         <div class="container p-md-2 p-2">
             <p class="caption text-justify" style=" color:black;">
                 {!! $fasilitas_wisata_detail->deskripsi !!}

@@ -80,6 +80,12 @@ Route::get('/ubah-pengalamansaya/{id}', [PengalamanController::class, 'editPenga
 Route::post('/edit-pengalamanwisata-saya/{id}', [PengalamanController::class, 'updatePengalamanSaya'])->name('pengalamansaya.ubah')->middleware('auth');
 Route::get('/pengalaman-wisata/detail/{id}', [PengalamanController::class, 'indexAction2']);
 Route::get('/objek-wisata/detail2/like/{id}', [LikeController::class, 'like'])->middleware('auth');
+Route::get('/atraksi-wisata/detail2/like/{id}', [LikeController::class, 'likeAtraksi'])->middleware('auth');
+Route::get('/event-wisata/detail2/like/{id}', [LikeController::class, 'likeEvent'])->middleware('auth');
+Route::get('/berita-wisata/detail/like/{id}', [LikeController::class, 'likeBerita'])->middleware('auth');
+Route::get('/desa-wisata/detail2/like/{id}', [LikeController::class, 'likeDesaWisata'])->middleware('auth');
+Route::get('/fasilitas-wisata/detail2/like/{id}', [LikeController::class, 'likeFasilitas'])->middleware('auth');
+Route::get('/paket-wisata/detail/like/{id}', [LikeController::class, 'likePaketWisata'])->middleware('auth');
 
 //--USER SIDE--
 

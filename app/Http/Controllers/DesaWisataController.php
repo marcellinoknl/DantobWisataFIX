@@ -5,6 +5,7 @@ use App\Models\Kabupaten;
 use App\Models\counter;
 use App\Models\DewiDeskripsi;
 use App\Models\DesaWisata;
+use App\Models\LikeDesaWisata;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -88,7 +89,8 @@ class DesaWisataController extends Controller
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $desawisatadetails = DesaWisata::find($id);
-        return view('user-page.blog.desawisata.detail2_desa_wisata', ['desawisatadetails' => $desawisatadetails,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
+        $like = LikeDesaWisata::where('id',$desawisatadetails->id)->count();
+        return view('user-page.blog.desawisata.detail2_desa_wisata', ['desawisatadetails' => $desawisatadetails,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
     
     public function tambah()

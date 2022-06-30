@@ -19,6 +19,7 @@
         </h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
+        <a href="/desa-wisata/detail2/like/{{$desawisatadetails->id}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
         <div class="container p-md-2 p-2">
             <p  class="caption text-justify" style=" color:black;">
                 {!! $desawisatadetails->deskripsi !!}
