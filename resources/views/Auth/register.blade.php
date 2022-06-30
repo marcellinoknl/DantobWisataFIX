@@ -89,7 +89,7 @@
                            <label for="password" class=" col-form-label text-md-end">{{ __('Kata Sandi') }}</label>
                            </div>
                            <div class="input-group input-group-merge">
-                           <input id="password" type="password" placeholder="Masukkan Password Anda"class="form-control @error('password') is-invalid @enderror" name="password" aria-describedby="password" required autocomplete="new-password">
+                           <input id="password" type="password" placeholder="Masukkan Kata Sandi Anda"class="form-control @error('password') is-invalid @enderror" name="password" aria-describedby="password" required autocomplete="new-password">
                            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                            @error('password')
     <span class="invalid-feedback" role="alert">
@@ -103,25 +103,25 @@
                            <label for="password-confirm" class=" col-form-label text-md-end">{{ __('Konfirmasi Kata Sandi') }}</label>
                            </div>
                            <div class="input-group input-group-merge">
-                           <input id="password-confirm"placeholder="Konfirmasi Password Anda" type="password" class="form-control" name="password_confirmation" aria-describedby="password" required autocomplete="new-password"   aria-describedby="password">
+                           <input id="password-confirm"placeholder="Konfirmasi Kata Sandi Anda" type="password" class="form-control" name="password_confirmation" aria-describedby="password" required autocomplete="new-password"   aria-describedby="password">
                            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                         </div>
                         </div>
                         <div class="mb-3">
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                              <label class="form-check-label" for="terms-conditions">
+                              <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" required/>
+                              <label class="form-check-label" for="terms-conditions" >
                               Saya setuju terkait
-                              <a href="javascript:void(0);">privacy policy & terms</a>
+                              <a href="javascript:void(0);"style="color:#1877F2;">privacy policy & terms</a>
                               </label>
                            </div>
                         </div>
-                        <button class="btn btn-secondary d-grid w-100" style="background-color:green">Daftarkan Sekarang</button>
+                        <button class="btn btn-secondary d-grid w-100" style="background-color:#1877F2">Daftarkan Sekarang</button>
                      </form>
                      <p class="text-center">
-                        <span>Sudah Punya Akun?</span>
+                        <span>Sudah Mempunyai Akun?</span>
                         <a href="{{ url('/login') }}">
-                        <span>Masuk</span>
+                        <span style="color:#1877F2">Masuk</span>
                         </a>
                      </p>
                   </div>

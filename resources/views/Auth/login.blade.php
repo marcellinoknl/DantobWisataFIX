@@ -76,7 +76,7 @@
                         @csrf
                         <div class=" mb-3">
                            <label for="email" class=" form-label ">{{ __('EMAIL ') }}</label>
-                           <input id="email" placeholder="Masukkan Email atau User Name Anda"type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                           <input id="email" placeholder="Masukkan Email Anda"type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                            @error('email')
     <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
@@ -87,7 +87,7 @@
                            <div class="d-flex justify-content-between">
                               <label for="password" class=" col-form-label text-md-end">{{ __('Kata Sandi') }}</label>
                               <a href="{{ url('/password/reset') }}">
-                              <small>Lupa Kata Sandi?</small>
+                              <small style="color: #1877F2">Lupa Kata Sandi?</small>
                               </a>
                            </div>
                            <div class="input-group input-group-merge">
@@ -104,7 +104,7 @@
                         </div>
                         <div class=" mb-3">
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                              <input class="form-check-input" type="checkbox" name="remember" id="remember"  {{ old('remember') ? 'checked' : '' }}>
                               <label class="form-check-label" for="remember">{{ __('Ingat Saya') }}</label>
                            </div>
                         </div>
@@ -128,7 +128,7 @@
                      <p class="text-center">
                         <span><b></b></span>
                         <a href="{{ url('/register') }}"><br>
-                           <span>Daftar Sekarang</span><br>
+                           <span style="color:#566A7F">Belum Mempunyai Akun? </span><span style="color:#1877F2">Daftar Sekarang</span><br>
                         </a>
                      </p>
                   </div>
