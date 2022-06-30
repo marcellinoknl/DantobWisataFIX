@@ -64,13 +64,13 @@
                                        
                                        <td>
                                           <center>
-                                          <button class="btn btn-info" onclick="window.location.href='/lihat-fasilitaswisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-eye" style="color:black;"></span></button>
-                                          <button class="btn btn-warning" onclick="window.location.href='/ubah-fasilitas-wisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-pencil-alt" style="color:black;"></span></button>
+                                          <button class="btn btn-info" onclick="window.location.href='/lihat-fasilitaswisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-eye" style="color:white;"></span></button>
+                                          <button class="btn btn-warning" onclick="window.location.href='/ubah-fasilitas-wisata/{{$fasilitas->id_fasilitas}}'"><span class="ti-pencil-alt" style="color:white;"></span></button>
                                           <button class="btn btn-danger"
                                              data-toggle="modal"
                                              data-target="#myModal{{ $fasilitas->id_fasilitas  }}"><span
                                              class="ti-trash"
-                                             style="color:black;">
+                                             style="color:#f2f2f2;">
                                           </span></button>
                                        </center>
                            </div>

@@ -18,6 +18,7 @@ class CreateObjekWisataTable extends Migration
             $table->string('nama_wisata');
             $table->text('deskripsi');
             $table->string('file_foto');
+            $table->integer('views')->default(0);
             $table->integer('id_obj_wisata_kabupaten')->unsigned();
             $table->foreign('id_obj_wisata_kabupaten')->references('id_obj_wisata_kabupaten')->on('objwisatakabupaten')->onDelete('cascade'); 
             $table->integer('id_kat_wisata')->unsigned();
