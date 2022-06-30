@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
+    @foreach ($logo as $logos )
+    <title>{{$logos->title}}</title>
     
-    <title>Wisata Kawasan Danau Toba</title>
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62bc6e0c40d1560012bceaff&product=sticky-share-buttons" async="async"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{{ asset('images/simanjarunjubg.jpg') }}">
+    
+    <link rel="icon" href="{{ url('images/logo/'.$logos->file_foto)}}">
+  
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
 
@@ -74,7 +77,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            @foreach ($logo as $logos )
+
             
             <a class="navbar-brand" href="{{ url('/') }}"><img  class="center" src="{{ url('images/logo/'.$logos->file_foto)}}" style="width:50px;height:50px; margin-bottom:5px;border-radius: 30px; border: 1px solid;display: block;margin-left: auto;margin-right: auto;"><span>{{$logos->caption}}</span></a>
             

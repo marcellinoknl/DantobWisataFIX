@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\LogoWeb;
 use App\Models\SosialMedia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SosialMediaController extends Controller
 {
@@ -14,8 +16,9 @@ class SosialMediaController extends Controller
     public function editat()
     {
         $update = SosialMedia::find(1);
+        $logo = DB::table('logo_webs')->get();
        
-        return view('admin.kelolalsosial', compact('update'));
+        return view('admin.kelolalsosial', compact('update','logo'));
     }
     
     public function updateat(request $request,$id)

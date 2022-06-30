@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class adminIndexController extends Controller
 {
     public function indexAction() {
+        $logo = DB::table('logo_webs')->get();
         $users = DB::table('users')->count();
         $objek = DB::table('objek_wisata')->count();
         $atraksi = DB::table('atraksi_wisata')->count();
@@ -16,14 +17,15 @@ class adminIndexController extends Controller
         $event = DB::table('event_wisatas')->count();
         $pengalaman = DB::table('pengalaman_wisata')->count();
        
-        return view('admin.admin-index', compact('users','atraksi','objek','fasilitas','event','pengalaman'));
+        return view('admin.admin-index', compact('users','atraksi','objek','fasilitas','event','pengalaman','logo'));
     }
 
     public function editat()
     {
         $update = LogoWeb::find(1);
+        $logo = DB::table('logo_webs')->get();
        
-        return view('admin.kelolalogo', compact('update'));
+        return view('admin.kelolalogo', compact('update','logo'));
     }
 
     public function updateat(request $request,$id)
@@ -33,6 +35,7 @@ class adminIndexController extends Controller
                 $request,
                 [
                     'caption' => 'required',
+                    'title' => 'required',
                     'file_foto.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
                     'file_foto' =>'max:3000',
                     'file_foto' =>'dimensions:max_width=1200'
@@ -47,6 +50,7 @@ class adminIndexController extends Controller
             }
 
         $update->caption = $request->caption;
+        $update->title = $request->title;
         $update->file_foto = $file;
         $update->save();
 

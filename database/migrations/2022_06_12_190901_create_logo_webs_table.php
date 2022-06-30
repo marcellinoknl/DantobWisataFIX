@@ -16,6 +16,7 @@ class CreateLogoWebsTable extends Migration
         Schema::create('logo_webs', function (Blueprint $table) {
             $table->id();
             $table->string('caption');
+            $table->string('title');
             $table->string('file_foto');
             $table->timestamps();
         });

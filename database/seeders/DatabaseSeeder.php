@@ -36,6 +36,9 @@ class DatabaseSeeder extends Seeder
         $this->call(DeskripsiPengalaman::class);
         $this->call(DeskripsiDewi::class);
         $this->call(DeskripsiFasilitas::class);
+        $this->call(SosialMediaSeeder::class);
+        $this->call(CounterSeeder::class);
         $this->call(LogoSeeder::class);
+        
     }
 }

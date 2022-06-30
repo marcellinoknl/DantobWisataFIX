@@ -28,13 +28,15 @@ class eventController extends Controller
             ->select('event_wisatas.*', 'sampul_event.nama_sampul')
             ->join('sampul_event', 'sampul_event.id', '=', 'event_wisatas.id_sampul_event')
             ->get();
-        return view('admin.kelolaevent', compact('eventwisata'));
+            $logo = DB::table('logo_webs')->get();
+        return view('admin.kelolaevent', compact('eventwisata','logo'));
     }
     public function editat($id)
     {
         $update = DeskripsiEventModel::find($id);
+        $logo = DB::table('logo_webs')->get();
        
-        return view('admin.ubah-deskripsievent', compact('update'));
+        return view('admin.ubah-deskripsievent', compact('update','logo'));
     }
 
     public function updateat(request $request, $id)
@@ -71,7 +73,8 @@ class eventController extends Controller
     public function kelolaindexActionView($id_event)
     {
         $view = EventWisata::find($id_event);
-        return view('admin.kelola-event-wisata-view', compact('view'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-event-wisata-view', compact('view','logo'));
     }
 
     public function indexAction3($id_event)
@@ -88,8 +91,9 @@ class eventController extends Controller
     public function tambah()
     {
         $sampul = SampulEvent::all();
+        $logo = DB::table('logo_webs')->get();
 
-        return view('admin.tambah-event-wisata', compact('sampul'));
+        return view('admin.tambah-event-wisata', compact('sampul','logo'));
     }
     public function store(Request $request)
     {   $this->validate(
@@ -122,7 +126,8 @@ class eventController extends Controller
     {
         $update = EventWisata::find($id_event);
         $kategori = DB::table('sampul_event')->get();
-        return view('admin.ubah-eventwisata', compact('kategori','update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-eventwisata', compact('kategori','update','logo'));
     }
 
     public function update(request $request, $id_event)
@@ -164,11 +169,13 @@ class eventController extends Controller
     public function kelolaindexActionSampul()
     {
         $sampul = SampulEvent::all();
-        return view('admin.sampul-event', compact('sampul'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.sampul-event', ['logo' => $logo,'sampul'=>$sampul]);
     }
     public function tambahsampul()
     {
-        return view('admin.tambah-sampul-event');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-sampul-event', compact('logo'));
     }
 
     public function storesampul(Request $request)
@@ -198,7 +205,9 @@ class eventController extends Controller
     public function editsampul($id)
     {
         $update = SampulEvent::find($id);
-        return view('admin.ubah-sampulevent', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+
+        return view('admin.ubah-sampulevent', compact('update','logo'));
     }
 
     public function updatesampul(request $request, $id)

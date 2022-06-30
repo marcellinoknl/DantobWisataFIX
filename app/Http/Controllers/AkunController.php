@@ -18,7 +18,8 @@ class AkunController extends Controller
     public function index()
     {
         $userset = UserModel::all();
-        return view('admin.kelolauser', compact('userset'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelolauser', compact('userset','logo'));
     }
 
     /**
@@ -29,9 +30,10 @@ class AkunController extends Controller
     public function tambah()
     {
         $akunplus = Roles::all();
+        $logo = DB::table('logo_webs')->get();
 
 
-        return view('admin.tambahuser', compact('akunplus'));
+        return view('admin.tambahuser', compact('akunplus','logo'));
     }
 
     /**
@@ -68,7 +70,8 @@ class AkunController extends Controller
     {
         $update = UserModel::find($id);
         $akunplus = Roles::all();
-        return view('admin.ubahuser', compact('update','akunplus'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubahuser', compact('update','akunplus','logo'));
     }
 
     /**

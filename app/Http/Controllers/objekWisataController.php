@@ -34,13 +34,15 @@ class objekWisataController extends Controller
             ->join('objwisatakabupaten', 'objwisatakabupaten.id_obj_wisata_kabupaten', '=', 'objek_wisata.id_obj_wisata_kabupaten')
             ->join('kategori_wisata', 'kategori_wisata.id_kategori', '=', 'objek_wisata.id_kat_wisata')
             ->get();
-        return view('admin.kelolaobjekwisata', compact('objekwisata'));
+            $logo = DB::table('logo_webs')->get();
+        return view('admin.kelolaobjekwisata', compact('objekwisata','logo'));
     }
 
     public function kelolaindexActionView($id_obj_wisata)
     {
         $view = Objek_Wisata::find($id_obj_wisata);
-        return view('admin.kelola-objek-wisata-view', compact('view'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-objek-wisata-view', compact('view','logo'));
     }
 
     public function indexAction2(Request $request,$id_obj_wisata_kabupaten)
@@ -65,8 +67,9 @@ class objekWisataController extends Controller
     public function editat($id)
     {
         $update = DeskripsiDestinasi::find($id);
+        $logo = DB::table('logo_webs')->get();
        
-        return view('admin.ubah-deskripsidestinasi', compact('update'));
+        return view('admin.ubah-deskripsidestinasi', compact('update','logo'));
     }
 
     public function updateat(request $request, $id)
@@ -81,6 +84,7 @@ class objekWisataController extends Controller
                 ]
             );
         $update = DeskripsiDestinasi::find($id);
+        
         $update->judul = $request->judul_atraksi;
         $update->deskripsi = $request->deskripsi_atraksi;
         $update->save();
@@ -102,8 +106,9 @@ class objekWisataController extends Controller
     public function tambah()
     {
         $kabupaten = Kabupaten::all();
+        $logo = DB::table('logo_webs')->get();
         $kategori = Kategori_Wisata::all();
-        return view('admin.tambah-objek-wisata', compact('kabupaten', 'kategori'));
+        return view('admin.tambah-objek-wisata', compact('kabupaten', 'kategori','logo'));
     }
 
 
@@ -137,10 +142,11 @@ class objekWisataController extends Controller
 
     public function edit($id_obj_wisata)
     {
+        $logo = DB::table('logo_webs')->get();
         $update = Objek_Wisata::find($id_obj_wisata);
         $kabupaten = DB::table('objwisatakabupaten')->get();
         $kategori = DB::table('kategori_wisata')->get();
-        return view('admin.ubah-objekwisata', compact('update', 'kabupaten', 'kategori'));
+        return view('admin.ubah-objekwisata', compact('update', 'kabupaten', 'kategori','logo'));
     }
 
     public function update(request $request, $id_obj_wisata)

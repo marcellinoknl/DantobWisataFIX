@@ -58,13 +58,15 @@ class fasilitasController extends Controller
     public function kelolaindexActionView($id_fasilitas)
     {
         $view = Fasilitas::find($id_fasilitas);
-        return view('admin.kelola-fasilitas-wisata-view', compact('view'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-fasilitas-wisata-view', compact('view','logo'));
     }
 
     public function kelolaindexActionSampul()
     {
         $sampulfasilitas = SampulFasilitas::all();
-        return view('admin.kelola-sampul-fasilitas', compact('sampulfasilitas'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-sampul-fasilitas', compact('sampulfasilitas','logo'));
     }
     public function kelolaindexActionDaftarFasilitas()
     {
@@ -73,12 +75,14 @@ class fasilitasController extends Controller
             ->join('sampul_fasilitas', 'sampul_fasilitas.id', '=', 'fasilitas_wisata.id_sampul_fasilitas')
             ->join('objwisatakabupaten', 'objwisatakabupaten.id_obj_wisata_kabupaten', '=', 'fasilitas_wisata.id_obj_wisata_kabupaten')
             ->get();
-        return view('admin.kelola-fasilitas', compact('fasilitas'));
+            $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-fasilitas', compact('fasilitas','logo'));
     }
 
     public function tambahsampul()
     {
-        return view('admin.tambah-sampul-fasilitas');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-sampul-fasilitas', ['logo' => $logo]);
     }
     public function store(Request $request)
     {   $this->validate(
@@ -108,7 +112,8 @@ class fasilitasController extends Controller
     {
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
         $kabupaten = DB::table('objwisatakabupaten')->get();
-        return view('admin.tambah-fasilitas-wisata', compact('sampul_fasilitas','kabupaten'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-fasilitas-wisata', compact('sampul_fasilitas','kabupaten','logo'));
     }
 
     public function storefasilitas(Request $request)
@@ -152,12 +157,14 @@ class fasilitasController extends Controller
         $update = Fasilitas::find($id_fasilitas);
         $sampul_fasilitas = DB::table('sampul_fasilitas')->get();
         $kabupaten = DB::table('objwisatakabupaten')->get();
-        return view('admin.ubah-fasilitaswisata', compact('update', 'sampul_fasilitas','kabupaten'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-fasilitaswisata', compact('update', 'sampul_fasilitas','kabupaten','logo'));
     }
     public function editsampul($id)
     {
         $update = SampulFasilitas::find($id);
-        return view('admin.ubah-sampulfasilitas-wisata', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-sampulfasilitas-wisata', compact('update','logo'));
     }
 
     public function updatesampul(request $request, $id)
@@ -218,7 +225,8 @@ class fasilitasController extends Controller
     public function editat($id)
     {
         $update = DeskripsiFasiltas::find($id);
-        return view('admin.ubah-deskripsifasilitas', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-deskripsifasilitas', compact('update','logo'));
     }
     public function updateat(request $request, $id)
     

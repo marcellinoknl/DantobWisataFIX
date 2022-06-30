@@ -31,18 +31,21 @@ class beritaController extends Controller
     public function kelolaindexAction()
     {
         $kelolaberita = Berita_Wisata::all();
-        return view('admin.kelolaberita', compact('kelolaberita'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelolaberita', compact('kelolaberita','logo'));
     }
     public function kelolaindexActionView($id_berita)
     {
         $view = Berita_Wisata::find($id_berita);
-        return view('admin.kelola-berita-wisata-view', compact('view'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-berita-wisata-view', compact('view','logo'));
     }
     public function editat($id)
     {
         $update = DeskripsiBeritaModel::find($id);
+        $logo = DB::table('logo_webs')->get();
        
-        return view('admin.ubah-deskripsiberita', compact('update'));
+        return view('admin.ubah-deskripsiberita', compact('update','logo'));
     }
 
     public function updateat(request $request, $id)
@@ -76,7 +79,8 @@ class beritaController extends Controller
 
     public function tambah()
     {
-        return view('admin.tambah-berita-wisata');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-berita-wisata', ['logo' => $logo]);
     }
 
 
@@ -112,7 +116,8 @@ class beritaController extends Controller
     public function edit($id_berita)
     {
         $update =  Berita_Wisata::find($id_berita);
-        return view('admin.ubah-beritawisata', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-beritawisata', compact('update','logo'));
     }
 
     public function update(request $request, $id_berita)

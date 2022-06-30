@@ -15,9 +15,9 @@ class CreateSosialMediaTable extends Migration
     {
         Schema::create('sosial_media', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('facebook');
-            $table->string('instagram');
-            $table->string('twitter');
+            $table->string('facebook')->default('https://www.facebook.com/profile.php?id=100082362470457');
+            $table->string('instagram')->default('https://www.instagram.com/wisatadantob');
+            $table->string('twitter')->default('https://twitter.com/wisatadantob');
             $table->timestamps();
         });
     }

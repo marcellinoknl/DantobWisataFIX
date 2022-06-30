@@ -25,13 +25,15 @@ class DesaWisataController extends Controller
     public function kelolaindexActionView($id)
     {
         $view = DesaWisata::find($id);
-        return view('admin.desawisata.lihat-desawisata', compact('view'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.desawisata.lihat-desawisata', compact('view','logo'));
     }
     public function editat($id)
     {
         $update = DewiDeskripsi::find($id);
+        $logo = DB::table('logo_webs')->get();
        
-        return view('admin.ubah-deskripsidewi', compact('update'));
+        return view('admin.ubah-deskripsidewi', compact('update','logo'));
     }
 
     public function updateat(request $request, $id)
@@ -61,7 +63,8 @@ class DesaWisataController extends Controller
             ->select('desa_wisatas.*', 'objwisatakabupaten.nama_kab')
             ->join('objwisatakabupaten', 'objwisatakabupaten.id_obj_wisata_kabupaten', '=', 'desa_wisatas.id_obj_wisata_kabupaten')
             ->get();
-        return view('admin.desawisata.keloladesawisata', compact('desawisatas'));
+            $logo = DB::table('logo_webs')->get();
+        return view('admin.desawisata.keloladesawisata', compact('desawisatas','logo'));
     }
 
 
@@ -94,7 +97,8 @@ class DesaWisataController extends Controller
     public function tambah()
     {
         $kabupaten = Kabupaten::all();
-        return view('admin.desawisata.tambah-desawisata', compact('kabupaten'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.desawisata.tambah-desawisata', compact('kabupaten','logo'));
     }
 
 
@@ -128,7 +132,8 @@ class DesaWisataController extends Controller
     {
         $update = DesaWisata::find($id);
         $kabupaten = DB::table('objwisatakabupaten')->get();
-        return view('admin.desawisata.edit-desawisata', compact('update', 'kabupaten'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.desawisata.edit-desawisata', compact('update', 'kabupaten','logo'));
     }
 
     public function update(request $request, $id)

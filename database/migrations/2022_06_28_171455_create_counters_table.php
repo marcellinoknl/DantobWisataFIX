@@ -15,7 +15,7 @@ class CreateCountersTable extends Migration
     {
         Schema::create('counters', function (Blueprint $table) {
             $table->id();
-            $table->integer('views');
+            $table->integer('views')->default('0');
             $table->timestamps();
         });
     }

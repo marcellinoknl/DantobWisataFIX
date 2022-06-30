@@ -58,7 +58,8 @@ class PengalamanController extends Controller
     public function editat($id)
     {
         $update = DeskripPengalaman::find($id);
-        return view('admin.ubah-deskripspengalaman', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-deskripspengalaman', compact('update','logo'));
     }
     public function updateat(request $request, $id)
     
@@ -123,7 +124,8 @@ class PengalamanController extends Controller
             ->join('users', 'users.id', '=', 'pengalaman_wisata.id_user')
            ->where('status','=',"approved")
             ->get();
-        return view('admin.kelola-pengalaman-wisata', compact('pengalaman'));
+            $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-pengalaman-wisata', compact('pengalaman','logo'));
     }
 
     public function kelolaindexAction2()
@@ -133,22 +135,26 @@ class PengalamanController extends Controller
             ->join ('users', 'users.id', '=', 'pengalaman_wisata.id_user')
             ->where ('pengalaman_wisata.status','=','pending')
             ->get();
-        return view('admin.persetujuan-pengalaman-wisata', compact('persetujuan'));
+            $logo = DB::table('logo_webs')->get();
+        return view('admin.persetujuan-pengalaman-wisata', compact('persetujuan','logo'));
     }
 
     public function editpersetujuan($id_pengalaman){
             $update = PengalamanWisata::find($id_pengalaman);
-            return view('admin/edit-persetujuan', compact('update'));
+            $logo = DB::table('logo_webs')->get();
+            return view('admin/edit-persetujuan', compact('update','logo'));
     }
     public function editpengalaman($id_pengalaman){
         $update = PengalamanWisata::find($id_pengalaman);
-        return view('admin/ubah-pengalaman', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin/ubah-pengalaman', compact('update','logo'));
 }
 
     public function kelolaindexActionView($id_pengalaman)
     {
         $viewpersetujuan = PengalamanWisata::find($id_pengalaman);
-        return view('admin.lihat-persetujuan', compact('viewpersetujuan'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.lihat-persetujuan', compact('viewpersetujuan','logo'));
     }
 
     public function update(request $request, $id_pengalaman)
@@ -230,8 +236,9 @@ class PengalamanController extends Controller
     public function tambah()
     {
         $pengalaman = PengalamanWisata::all();
+        $logo = DB::table('logo_webs')->get();
         // $kategori = Kategori_Wisata::all();
-        return view('admin.tambah-pengalaman-wisata', compact('pengalaman'));
+        return view('admin.tambah-pengalaman-wisata', compact('pengalaman','logo'));
     }
 
 

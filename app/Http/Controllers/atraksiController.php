@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\LogoWeb;
 use App\Models\Atraksi_Wisata;
 use App\Models\SampulAtraksi;
 use App\Models\counter;
@@ -27,7 +27,8 @@ class atraksiController extends Controller
             ->select('atraksi_wisata.*', 'sampul_atraksi.nama_sampul')
             ->join('sampul_atraksi', 'sampul_atraksi.id', '=', 'atraksi_wisata.id_sampul_atraksi')
             ->get();
-        return view('admin.kelolaatraksi', compact('atraksi'));
+            $logo = DB::table('logo_webs')->get();
+        return view('admin.kelolaatraksi', compact('atraksi','logo'));
     }
 
     public function indexAction2($id)
@@ -45,7 +46,8 @@ class atraksiController extends Controller
     public function kelolaindexActionView($id_atraksi)
     {
         $view = Atraksi_Wisata::find($id_atraksi);
-        return view('admin.kelola-atraksi-wisata-view', compact('view'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-atraksi-wisata-view', compact('view','logo'));
     }
     
     public function indexAction3($atraksi_id)
@@ -62,8 +64,9 @@ class atraksiController extends Controller
     public function tambah()
     {
         $sampul = SampulAtraksi::all();
+        $logo = DB::table('logo_webs')->get();
 
-        return view('admin.tambah-atraksi-wisata', compact('sampul'));
+        return view('admin.tambah-atraksi-wisata', compact('sampul','logo'));
     }
 
 
@@ -100,7 +103,8 @@ class atraksiController extends Controller
     {
         $update = Atraksi_Wisata::find($atraksi_id);
         $kategori = DB::table('sampul_atraksi')->get();
-        return view('admin.ubah-atraksiwisata', compact('update', 'kategori'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-atraksiwisata', compact('update', 'kategori','logo'));
     }
 
     public function update(request $request, $atraksi_id)
@@ -144,13 +148,16 @@ class atraksiController extends Controller
     public function kelolaindexActionSampul()
     {
         $sampulatraksi = SampulAtraksi::all();
-        return view('admin.sampul-atraksi', compact('sampulatraksi'));
+        $logo = DB::table('logo_webs')->get();
+        
+        return view('admin.sampul-atraksi', compact('sampulatraksi','logo'));
     }
     public function editat($id)
     {
         $update = DeskripsiAtraksiModel::find($id);
+        $logo = DB::table('logo_webs')->get();
        
-        return view('admin.ubah-deskripsiatraksi', compact('update'));
+        return view('admin.ubah-deskripsiatraksi', compact('update','logo'));
     }
 
     public function updateat(request $request, $id)
@@ -173,7 +180,8 @@ class atraksiController extends Controller
         }
     public function tambahsampul()
     {
-        return view('admin.tambah-sampul-atraksi');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-sampul-atraksi', ['logo' => $logo]);
     }
 
     public function storesampul(Request $request)
@@ -204,7 +212,8 @@ class atraksiController extends Controller
     public function editsampul($id)
     {
         $update = SampulAtraksi::find($id);
-        return view('admin.ubah-sampulatraksi', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-sampulatraksi', compact('update','logo'));
     }
 
     public function updatesampul(request $request, $id)

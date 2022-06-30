@@ -23,11 +23,13 @@ class geleriWisataController extends Controller
     {
 
         $galeriwisata = GaleriWisata::all();
-        return view('admin.kelolagaleri', compact('galeriwisata'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelolagaleri', compact('galeriwisata','logo'));
     }
     public function tambah()
     {
-        return view('admin.tambah-galeri-wisata');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-galeri-wisata', ['logo' => $logo]);
     }
 
 
@@ -58,13 +60,15 @@ class geleriWisataController extends Controller
     public function edit($galeri_id)
     {
         $update = GaleriWisata::find($galeri_id);
-        return view('admin.ubah-galeriwisata', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-galeriwisata', compact('update','logo'));
     }
     public function editat($id)
     {
         $update = DeskripsiGaleri::find($id);
+         $logo = DB::table('logo_webs')->get();
        
-        return view('admin.ubah-deskripsigaleri', compact('update'));
+        return view('admin.ubah-deskripsigaleri', compact('update','logo'));
     }
 
     public function updateat(request $request, $id)

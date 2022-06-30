@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Kategori_Wisata;
+use App\Models\LogoWeb;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KategoriWisataController extends Controller
 {
@@ -14,12 +16,15 @@ class KategoriWisataController extends Controller
     public function index()
     {
         $kategori = Kategori_Wisata::all();
-        return view('admin.kelola-kategori-wisata', compact('kategori'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-kategori-wisata', compact('kategori','logo'));
     }
 
     public function tambah()
     {
-        return view('admin.tambah-kelola-kategori-wisata');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-kelola-kategori-wisata', ['logo' => $logo]);
+       
     }
 
 
@@ -66,7 +71,9 @@ class KategoriWisataController extends Controller
     public function edit($id_kategori)
     {
         $update = Kategori_Wisata::find($id_kategori);
-        return view('admin.ubah-kategoriwisata', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        
+        return view('admin.ubah-kategoriwisata', compact('update','logo'));
     }
 
     /**

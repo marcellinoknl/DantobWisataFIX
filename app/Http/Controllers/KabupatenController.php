@@ -12,12 +12,14 @@ class KabupatenController extends Controller
     {
 
         $kabupaten = Kabupaten::all();
-        return view('admin.kelola-kab', compact('kabupaten'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.kelola-kab', compact('kabupaten','logo'));
     }
 
     public function tambah()
     {
-        return view('admin.tambah-kabupaten-wisata');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.tambah-kabupaten-wisata', ['logo' => $logo]);
     }
 
     public function store(Request $request)
@@ -46,7 +48,8 @@ class KabupatenController extends Controller
     public function edit($id_obj_wisata_kabupaten)
     {
         $update = Kabupaten::find($id_obj_wisata_kabupaten);
-        return view('admin.ubah-kabupaten-wisata', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-kabupaten-wisata', compact('update','logo'));
     }
 
     public function update(request $request, $id_obj_wisata_kabupaten)

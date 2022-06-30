@@ -16,6 +16,7 @@ class LogoSeeder extends Seeder
         \App\Models\LogoWeb::insert([
             [
                 'caption' => 'Danau Toba',
+                'title' => 'Toba Journey',
                 'file_foto' => 'galeribul2.jpg'
             ]
         ]);

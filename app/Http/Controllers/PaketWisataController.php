@@ -24,13 +24,15 @@ class PaketWisataController extends Controller
     public function kelolaindexActionView($id)
     {
         $view = PaketWisata::find($id);
-        return view('admin.paketwisata.lihat-paketwisata', compact('view'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.paketwisata.lihat-paketwisata', compact('view','logo'));
     }
 
     public function kelolaindexAction()
     {
         $paketwisatas = PaketWisata::all();
-        return view('admin.paketwisata.kelolapaketwisata', compact('paketwisatas'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.paketwisata.kelolapaketwisata', compact('paketwisatas','logo'));
     }
 
     public function indexAction3($id)
@@ -44,7 +46,8 @@ class PaketWisataController extends Controller
 
     public function tambah()
     {
-        return view('admin.paketwisata.tambah-paketwisata');
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.paketwisata.tambah-paketwisata', compact('logo'));
     }
 
 
@@ -77,13 +80,15 @@ class PaketWisataController extends Controller
     public function edit($id)
     {
         $update = PaketWisata::find($id);
-        return view('admin.paketwisata.edit-paketwisata', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.paketwisata.edit-paketwisata', compact('update','logo'));
     }
     //Deskripsi Paket
     public function editat($id)
     {
         $update = DeskripsiPaket::find($id);
-        return view('admin.ubah-deskripsipaket', compact('update'));
+        $logo = DB::table('logo_webs')->get();
+        return view('admin.ubah-deskripsipaket', compact('update','logo'));
     }
     public function updateat(request $request, $id)
     

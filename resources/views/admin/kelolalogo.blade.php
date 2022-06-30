@@ -50,6 +50,17 @@
                               </div>
                           </div>
                           <div class="mb-3 row">
+                           <label class="col-sm-3 col-form-label">Title</label>
+                           <div class="col-sm-9">
+                               <input type="text" id="caption" name="title" class="form-control @error('title') is-invalid @enderror "value="{{$update->title}}">
+                               @error('title')
+                                   <div class="invalid-feedback">
+                                       {{ $message }}
+                                   </div>
+                               @enderror
+                           </div>
+                       </div>
+                          <div class="mb-3 row">
                            <label class="col-sm-3 col-form-label">Gambar Logo Website</label>
                            <div class="col-sm-9">
                                <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/logo/'.$update->file_foto)}}">
