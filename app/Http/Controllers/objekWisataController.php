@@ -94,6 +94,8 @@ class objekWisataController extends Controller
 
     public function indexAction3($id_obj_wisata)
     {
+        //counting views page
+        Objek_Wisata::find($id_obj_wisata)->increment('views');
         $projects = counter::latest()->paginate(5);
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
