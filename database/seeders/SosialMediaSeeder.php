@@ -14,7 +14,7 @@ class SosialMediaSeeder extends Seeder
                 
             ],
             [
-                'instagram' => 'https://www.instagram.com/wisatadantob/'
+                'instagram' => 'https://www.instagram.com/toba.journey/?hl=id'
                 
             ],
             [
