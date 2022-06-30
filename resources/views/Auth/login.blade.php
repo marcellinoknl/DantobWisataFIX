@@ -109,7 +109,7 @@
                            </div>
                         </div>
                         <div class="mb-3">
-                           <button class="btn btn-secondary d-grid w-100" style="background-color:green" type="submit">Masuk</button>
+                           <button class="btn btn-primary d-grid w-100" style="background-color:#1877F2" type="submit">Masuk</button>
                         </div>
                         <!-- <div class=" mb-3">
                            <div class=" col-md-6 offset-md-4">
@@ -122,11 +122,11 @@
                            </a>
 @endif -->              
                            <h5 style="text-align: center;">Atau</h5>
-                        <button class="btn btn-secondary d-grid w-100" style="background-color:white" type="submit"><a class="btn btn-light" href="{{route('google.login')}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> Login Dengan Google</a></button>
+                        <button class="btn btn-secondary d-grid w-100" style="background-color:white" type="submit"><a  href="{{route('google.login')}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> <font color="black">Login Dengan Google</font></a></button>
                            
                      </form>
                      <p class="text-center">
-                        <span>Belum Mempunyai Akun?</span>
+                        <span><b></b></span>
                         <a href="{{ url('/register') }}"><br>
                            <span>Daftar Sekarang</span><br>
                         </a>
