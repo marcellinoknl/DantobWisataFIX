@@ -10,6 +10,7 @@
     </div>
 </div>
 <!-- Product -->
+<br>
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
@@ -18,6 +19,7 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
+        <a href="/event-wisata/detail2/like/{{$event_wisata_detail->id_event}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
             <p class="caption text-justify" style=" color:black;">
                 {!!$event_wisata_detail->deskripsi_event !!}
             </p>

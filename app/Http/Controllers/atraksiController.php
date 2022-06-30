@@ -5,6 +5,7 @@ use App\Models\LogoWeb;
 use App\Models\Atraksi_Wisata;
 use App\Models\SampulAtraksi;
 use App\Models\counter;
+use App\Models\LikeAtraksi;
 use App\Models\DeskripsiAtraksiModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -57,7 +58,8 @@ class atraksiController extends Controller
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $atraksi_wisata_detail = Atraksi_Wisata::find($atraksi_id);
-        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail,'logo' => $logo,'sosial'=>$sosial,'projects'=>$projects]);
+        $like = LikeAtraksi::where('atraksi_id',$atraksi_wisata_detail->atraksi_id)->count();
+        return view('user-page.blog.detail2_atraksi_wisata', ['atraksi_wisata_detail' => $atraksi_wisata_detail,'logo' => $logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
 
 

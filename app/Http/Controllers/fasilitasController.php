@@ -7,6 +7,7 @@ use App\Models\Fasilitas;
 use App\Models\SampulFasilitas;
 use App\Models\Kabupaten;
 use App\Models\DeskripsiFasiltas;
+use App\Models\LikeFasilitas;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,8 @@ class fasilitasController extends Controller
         ->join('users', 'fasilitas_wisata.id_user', '=', 'users.id')
         ->where('fasilitas_wisata.id_fasilitas','=',$id_fasilitas)
         ->get();
-        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
+        $like = LikeFasilitas::where('id_fasilitas',$fasilitas_wisata_detail->id_fasilitas)->count();
+        return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
     public function kelolaindexActionView($id_fasilitas)
     {

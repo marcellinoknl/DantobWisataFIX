@@ -11,6 +11,7 @@
     </div>
 </div>
 <!-- Product -->
+<br>
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
@@ -18,6 +19,7 @@
             {{ $berita_wisata_detail->judul_berita }}</h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
+        <a href="/berita-wisata/detail/like/{{$berita_wisata_detail->id_berita}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
         <div class="container p-md-2 p-2">
             <p class="caption" style=" color:black;">
                 {!!$berita_wisata_detail->isi_berita !!}

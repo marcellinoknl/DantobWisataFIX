@@ -6,6 +6,7 @@ use App\Models\EventWisata;
 use App\Models\SampulEvent;
 use Illuminate\Support\Facades\DB;
 use App\Models\DeskripsiEventModel;
+use App\Models\LikeEvent;
 use Illuminate\Http\Request;
 
 class eventController extends Controller
@@ -84,7 +85,8 @@ class eventController extends Controller
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $event_wisata_detail = EventWisata::find($id_event);
-        return view('user-page.blog.detail2_event_wisata', ['event_wisata_detail' => $event_wisata_detail,'logo' => $logo,'sosial'=>$sosial,'projects'=>$projects]);
+        $like = LikeEvent::where('id_event',$event_wisata_detail->id_event)->count();
+        return view('user-page.blog.detail2_event_wisata', ['event_wisata_detail' => $event_wisata_detail,'logo' => $logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
 
 
