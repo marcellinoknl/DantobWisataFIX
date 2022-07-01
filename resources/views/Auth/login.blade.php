@@ -96,10 +96,10 @@
                                  
                               <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                               @error('password')
-    <span class="invalid-feedback" role="alert">
-                                                                                                     <strong>{{ $message }}</strong>
-                                                                                                     </span>
-@enderror
+                             <span class="invalid-feedback" role="alert">
+                         <strong>{{ $message }}</strong>
+                         </span>
+                           @enderror
                            </div>
                         </div>
                         <div class=" mb-3">
@@ -122,12 +122,7 @@
                            </a>
 @endif -->              
                            <h5 style="text-align: center;">Atau</h5>
-<<<<<<< HEAD
-                        <button class="btn btn-secondary d-grid w-100" style="background-color:white" type="submit"><a  href="{{route('google.login')}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> Login Dengan Google</a></button>
-                       
-=======
-                        <button class="btn btn-secondary d-grid w-100" style="background-color:white;" type="submit"><a  href="{{route('google.login')}}" style="color:black;"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" />Login Dengan Google</a></button>
->>>>>>> 50306690d198bdbab125c871e1da2911b27a5ea1
+        <button class="btn btn-secondary d-grid w-100" style="background-color:white" type="submit"><a  href="{{route('google.login')}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> Login Dengan Google</a></button>
                            
                      </form>
                      <p class="text-center">

@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<!-- Product -->
+
 <br>
 <div class="bg0 m-t-23 p-b-140">
 
@@ -33,6 +33,7 @@
         </div>
         <br>
         <a href="/fasilitas-wisata/detail2/like/{{$fasilitas_wisata_detail->id_fasilitas}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
+        <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$fasilitas_wisata_detail->views}} kali dikunjungi</i>
         <div class="container p-md-2 p-2">
             <p class="caption text-justify" style=" color:black;">
                 {!! $fasilitas_wisata_detail->deskripsi !!}

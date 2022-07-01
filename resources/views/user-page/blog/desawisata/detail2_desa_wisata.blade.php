@@ -1,7 +1,7 @@
 @include('template/header')
 
 <div class="hero-wrap  "
-    style="background-image:url({{ asset('images/objekwisata/' . $desawisatadetails->file_foto) }}); width: 100%; height:75%;">
+    style="background-image:url({{ asset('images/desawisata/' . $desawisatadetails->file_foto) }}); width: 100%; height:75%;">
     <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
@@ -20,6 +20,7 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <a href="/desa-wisata/detail2/like/{{$desawisatadetails->id}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
+        &nbsp;&nbsp;&nbsp;<i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$desawisatadetails->views}} kali dikunjungi</i>
         <div class="container p-md-2 p-2">
             <p  class="caption text-justify" style=" color:black;">
                 {!! $desawisatadetails->deskripsi !!}

@@ -16,6 +16,7 @@ class CreatePaketWisatasTable extends Migration
         Schema::create('paket_wisatas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_paket');
+            $table->integer('views')->default(0);
             $table->string('file_foto');
             $table->string('nohp')->nullable();
             $table->text('deskripsi');

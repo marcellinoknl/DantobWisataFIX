@@ -15,6 +15,7 @@ class fasilitasController extends Controller
 {
     public function indexAction()
     {
+        counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $projects = counter::latest()->paginate(5);
         $sosial = DB::table('sosial_media')->get();
@@ -45,7 +46,9 @@ class fasilitasController extends Controller
 
     public function indexAction3($id_fasilitas)
     {
+        Fasilitas::find($id_fasilitas)->increment('views');
         $logo = DB::table('logo_webs')->get();
+        counter::increment('views');
         $projects = counter::latest()->paginate(5);
         $sosial = DB::table('sosial_media')->get();
         $fasilitas_wisata_detail = Fasilitas::find($id_fasilitas);

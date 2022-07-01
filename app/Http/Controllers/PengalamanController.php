@@ -28,6 +28,7 @@ class PengalamanController extends Controller
     public function indexAction2($id_pengalaman)
     {
         $logo = DB::table('logo_webs')->get();
+        $projects = counter::latest()->paginate(5);
         $sosial = DB::table('sosial_media')->get();
         $pengalaman_wisata_detail = PengalamanWisata::find($id_pengalaman);
         return view('user-page.detail-pengalaman-wisata', ['pengalaman_wisata_detail' => $pengalaman_wisata_detail,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);

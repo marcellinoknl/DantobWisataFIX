@@ -38,6 +38,7 @@ class PaketWisataController extends Controller
 
     public function indexAction3($id)
     {
+        PaketWisata::find($id)->increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $projects = counter::latest()->paginate(5);

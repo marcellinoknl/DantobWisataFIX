@@ -76,21 +76,13 @@
              @else
             <div class="row g-2 g-md-4">
                 @foreach ($fasilitias_wisata as $fasilitias_wisatas)
-<<<<<<< HEAD
-                    <div class="col-6 col-md-4 py-4 task-list-row" data-assigned-user="{{$fasilitias_wisatas->nama_kab}}">
-                        <div class="card"  style="width: 100%; height:100% ;">
-                            <div class="row no-gutters">
-                                <div class="col-sm-5">
-                                    <a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
-                                    <img class="card-img" src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image notfound" width="100%" height="100%"/>
-=======
                     <div class="col-6 col-md-6 py-4 task-list-row" data-assigned-user="{{$fasilitias_wisatas->nama_kab}}">
                         <div class="card"  style="width: 100%; height:auto; border-radius: 10px;">
                             <div class="row no-gutters">
                                 <div class="col-sm-5">
                                     <a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}">
                                         <img class="card-img" style="border-radius: 10px 0px 0xp 10px;"src="{{ url('images/fasilitas/' . $fasilitias_wisatas->file_foto) }}" alt="Image notfound" width="100%" height="100%"/>
->>>>>>> 50306690d198bdbab125c871e1da2911b27a5ea1
+
                                     </a>
                                 </div>
                                 <?php   
