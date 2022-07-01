@@ -17,6 +17,7 @@ class CreateDesaWisatasTable extends Migration
             $table->id();
             $table->string('nama_desa');
             $table->text('deskripsi');
+            $table->integer('views')->default(0);
             $table->string('file_foto');
             $table->integer('id_obj_wisata_kabupaten')->unsigned();
             $table->foreign('id_obj_wisata_kabupaten')->references('id_obj_wisata_kabupaten')->on('objwisatakabupaten')->onDelete('cascade'); 

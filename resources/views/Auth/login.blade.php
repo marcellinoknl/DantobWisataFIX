@@ -122,7 +122,10 @@
                            </a>
 @endif -->              
                            <h5 style="text-align: center;">Atau</h5>
-        <button class="btn btn-secondary d-grid w-100" style="background-color:white" type="submit"><a  href="{{route('google.login')}}"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" /> Login Dengan Google</a></button>
+
+
+                        <button class="btn btn-secondary d-grid w-100" style="background-color:white;" type="submit"><a  href="{{route('google.login')}}" style="color:black;"><img src="/images/google.jpg" width="25" height="25" border='0' alt="Submit this form" name="sub_but" />Login Dengan Google</a></button>
+
                            
                      </form>
                      <p class="text-center">

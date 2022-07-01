@@ -19,7 +19,7 @@
         </h1>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
-        <a href="/desa-wisata/detail2/like/{{$desawisatadetails->id}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
+        <a href="/desa-wisata/detail2/like/{{$desawisatadetails->id}}"class ="text-danger"style="font-weight: bold; "><i class="fa fa-heart"></i> {{$like}} Suka</a>
         &nbsp;&nbsp;&nbsp;<i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$desawisatadetails->views}} kali dikunjungi</i>
         <div class="container p-md-2 p-2">
             <p  class="caption text-justify" style=" color:black;">
@@ -106,7 +106,7 @@
         });
     });
 
-    /*---------------------------------------------*/
+    /---------------------------------------------/
 
     $('.js-addcart-detail').each(function() {
         var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();

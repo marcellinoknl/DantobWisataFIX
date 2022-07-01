@@ -75,6 +75,7 @@ class beritaController extends Controller
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $berita_wisata_detail = Berita_Wisata::find($id_berita);
+        Berita_Wisata::find($id_berita)->increment('views');
         $like = LikeBerita::where('id_berita',$berita_wisata_detail->id_berita)->count();
         return view('user-page.blog.detail_berita', ['berita_wisata_detail' => $berita_wisata_detail,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }

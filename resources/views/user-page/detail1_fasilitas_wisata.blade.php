@@ -76,6 +76,9 @@
              @else
             <div class="row g-2 g-md-4">
                 @foreach ($fasilitias_wisata as $fasilitias_wisatas)
+
+
+
                     <div class="col-6 col-md-6 py-4 task-list-row" data-assigned-user="{{$fasilitias_wisatas->nama_kab}}">
                         <div class="card"  style="width: 100%; height:auto; border-radius: 10px;">
                             <div class="row no-gutters">
