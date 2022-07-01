@@ -82,6 +82,7 @@ class eventController extends Controller
     {
         $projects = counter::latest()->paginate(5);
         counter::increment('views');
+        EventWisata::find($id_event)->increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $event_wisata_detail = EventWisata::find($id_event);

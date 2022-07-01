@@ -16,6 +16,7 @@ class CreateBeritaWisataTable extends Migration
         Schema::create('berita_wisata', function (Blueprint $table) {
             $table->increments('id_berita');
             $table->string('judul_berita');
+            $table->integer('views')->default(0);
             $table->longtext('isi_berita');
             $table->string('file_foto');
             $table->bigInteger('id_user')->unsigned();

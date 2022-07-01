@@ -54,6 +54,7 @@ class atraksiController extends Controller
     public function indexAction3($atraksi_id)
     {
         $projects = counter::latest()->paginate(5);
+        Atraksi_Wisata::find($atraksi_id)->increment('views');
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();

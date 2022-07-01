@@ -19,8 +19,9 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <div class="container p-md-2 p-2">
-        <a href="/event-wisata/detail2/like/{{$event_wisata_detail->id_event}}"class ="text-danger"><i class="fa fa-heart"></i> {{$like}} Suka</a>
-            <p class="caption text-justify" style=" color:black;">
+        <a href="/event-wisata/detail2/like/{{$event_wisata_detail->id_event}}"class ="text-danger"style="font-weight: bold; "><i class="fa fa-heart"></i> {{$like}} Suka</a>
+        &nbsp;&nbsp;&nbsp; <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$event_wisata_detail->views}} kali dikunjungi</i>    
+        <p class="caption text-justify" style=" color:black;">
                 {!!$event_wisata_detail->deskripsi_event !!}
             </p>
 

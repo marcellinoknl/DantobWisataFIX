@@ -89,10 +89,11 @@ class DesaWisataController extends Controller
     {
         $projects = counter::latest()->paginate(5);
         counter::increment('views');
+        DesaWisata::find($id)->increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $desawisatadetails = DesaWisata::find($id);
-        $like = LikeDesaWisata::where('id',$desawisatadetails->id)->count();
+        $like = LikeDesaWisata::where('id_desawisata',$desawisatadetails->id)->count();
         return view('user-page.blog.desawisata.detail2_desa_wisata', ['desawisatadetails' => $desawisatadetails,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
     
