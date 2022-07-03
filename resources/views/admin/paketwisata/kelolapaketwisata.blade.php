@@ -38,7 +38,7 @@
                 
                                                         <div class="container">
                                                             <a href="{{ url('/tambah-paket-wisata')}}">
-                                                                <button class="btn btn-success"style="color:black; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Paket Wisata</button>
+                                                                <button class="btn btn-success"style="color:white; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Paket Wisata</button>
                                                             </a>
                                                             <div class="col-lg-12"></div>
                                                             <div class="row">
