@@ -97,7 +97,8 @@
 
                                         <li class="tag__item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$lokasi}}...</li>
                                         <li class="tag__item"><i class="fa fa-home" aria-hidden="true"></i> {{$fasilitias_wisatas->nama_kab}}</li>
-                                        <a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}" class="btn btn-primary">Lihat</a>
+                                        <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$fasilitias_wisatas->views}}</i>
+                                        <a href="{{ url('/fasilitas-wisata/detail2/' . $fasilitias_wisatas->id_fasilitas) }}" class="btn btn-primary float-right">Lihat</a>
                                     </div>
                                 </div>
                             </div>

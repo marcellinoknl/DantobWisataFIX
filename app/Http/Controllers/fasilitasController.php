@@ -26,6 +26,7 @@ class fasilitasController extends Controller
 
     public function indexAction2(Request $request,$id)
     {
+ 
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $projects = counter::latest()->paginate(5);
@@ -39,10 +40,9 @@ class fasilitasController extends Controller
             ->where('nama_fasilitas','LIKE','%'.$keyword.'%')
             ->orderBy('id_fasilitas')
             ->simplePaginate(6);
-            $kabupaten = Kabupaten::all();
+        $kabupaten = Kabupaten::all();
         return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword, 'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }
-    
 
     public function indexAction3($id_fasilitas)
     {
@@ -58,6 +58,7 @@ class fasilitasController extends Controller
         ->where('fasilitas_wisata.id_fasilitas','=',$id_fasilitas)
         ->get();
         $like = LikeFasilitas::where('id_fasilitas',$fasilitas_wisata_detail->id_fasilitas)->count();
+
         return view('user-page.detail2_fasilitas_wisata', ['fasilitas_wisata_detail' => $fasilitas_wisata_detail,'fasilitias_wisata_detail_user'=>$fasilitias_wisata_detail_user,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'like'=>$like]);
     }
     public function kelolaindexActionView($id_fasilitas)
