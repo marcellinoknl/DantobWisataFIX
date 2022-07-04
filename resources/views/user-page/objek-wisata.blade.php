@@ -1,15 +1,8 @@
 @include('template/header')
 @foreach ($destinasis as $destinasi )
-<<<<<<< HEAD
-
-   
-
-<div class="hero-wrap js-fullheight " style="background-image: url({{asset('images/destinasi/'. $destinasi->file_foto)}}); width: 100%; height:75%; ">
-    <div class="overlay" style="width:100%;height: 100%;"></div>
-=======
-<div class="hero-wrap  " style="background-image: url({{asset('images/destinasi/'. $destinasi->file_foto)}}); width: 100%; height:75%; ">
+<div class="hero-wrap " style="background-image: url({{asset('images/destinasi/'. $destinasi->file_foto)}}); width: 100%; height:75%; ">
     <div class="overlay" style="width:100%;height: 75%;"></div>
->>>>>>> 1d458fac83bcb9c4cb85cc871f1906e264d655f4
+
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="sharethis-sticky-share-buttons"></div>

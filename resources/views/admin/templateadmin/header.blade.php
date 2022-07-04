@@ -89,7 +89,7 @@
                             <li><a href="{{url('/kelolatagline')}}">Tagline Beranda</a></li>
                             <li><a href="{{url('/kelolaheaderdestinasi')}}">Tagline Destinasi</a></li>
 
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Atraksi</a></li>
+                            <li><a href="{{url('/kelolaheaderatraksi')}}">Tagline Atraksi</a></li>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Event</a></li>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Desa Wisata</a></li>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Berita</a></li>
