@@ -10,6 +10,7 @@ use App\Models\DeskripsiFasiltas;
 use App\Models\LikeFasilitas;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\FasilModel;
 
 class fasilitasController extends Controller
 {
@@ -17,11 +18,12 @@ class fasilitasController extends Controller
     {
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
+        $fasils = DB::table('fasil_models')->get();
         $projects = counter::latest()->paginate(5);
         $sosial = DB::table('sosial_media')->get();
         $sampul_fasilitas = DB::table('sampul_fasilitas')->orderBy('nama_sampul', 'ASC')->get();
         $deskripsi = DB::table('deskripsi_fasiltas')->get(); 
-        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
+        return view('user-page.fasilitas', ['sampul_fasilitas' => $sampul_fasilitas],['deskripsi' => $deskripsi,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'fasils'=>$fasils]);
     }
 
     public function indexAction2(Request $request,$id)
@@ -74,6 +76,40 @@ class fasilitasController extends Controller
         $logo = DB::table('logo_webs')->get();
         return view('admin.kelola-sampul-fasilitas', compact('sampulfasilitas','logo'));
     }
+     //header FASIL
+     public function editfas()
+     {
+         $update = FasilModel::find(1);
+         $logo = DB::table('logo_webs')->get();
+         $fasils = DB::table('fasil_models')->get();
+         return view('admin.taglinefasilitas', compact('update','logo','fasils'));
+     }
+ 
+     public function updatfas(request $request,$id)
+     
+         {
+             $this->validate(
+                 $request,
+                 [
+                    
+                     'caption' => 'required',
+                     'file_foto' => 'mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+                 ]
+             );
+             $update = FasilModel::find($id);
+             $file = $update->file_foto;
+             if ($request->hasFile('file_foto')) {
+                 $file = $request->file('file_foto')->getClientOriginalName();
+                 $request->file('file_foto')->move('images/fasil', $file);
+                 $update->file_foto = $file;
+             }
+ 
+         $update->tagline = $request->caption;
+         $update->file_foto = $file;
+         $update->save();
+ 
+         return redirect('/fasilitaswisata');
+         }
     public function kelolaindexActionDaftarFasilitas()
     {
         $fasilitas = DB::table('fasilitas_wisata')

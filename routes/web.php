@@ -175,6 +175,9 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::get('/lihat-fasilitaswisata/{id}', [fasilitasController::class, 'kelolaindexActionView']);
         Route::get('/ubah-fasilitas/{id}', [fasilitasController::class, 'editat']);
         Route::post('/edit-fasilitas/{id}', [fasilitasController::class, 'updateat'])->name('deskripsifasilitas.ubah');
+         //Kelola Header Fasilitas
+         Route::get('/kelolaheaderfasilitas', [fasilitasController::class, 'editfas']);
+         Route::post('/edit-headerfasilitas/{id}', [fasilitasController::class, 'updatfas'])->name('fasil.ubah');
         //kelola atraksi
         Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
         Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);
