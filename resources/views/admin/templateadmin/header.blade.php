@@ -88,13 +88,13 @@
                         <ul>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Beranda</a></li>
                             <li><a href="{{url('/kelolaheaderdestinasi')}}">Tagline Destinasi</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Atraksi</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Event</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Desa Wisata</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Berita</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Fasilitas</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Paket Wisata</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Galeri</a></li>
+                            <li><a href="{{url('/kelolaheaderatraksi')}}">Tagline Atraksi</a></li>
+                            <li><a href="{{url('/kelolaheaderevent')}}">Tagline Event</a></li>
+                            <li><a href="{{url('/kelolaheaderdesawisata')}}">Tagline Desa Wisata</a></li>
+                            <li><a href="{{url('/kelolaheaderberita')}}">Tagline Berita</a></li>
+                            <li><a href="{{url('/kelolaheaderfasilitas')}}">Tagline Fasilitas</a></li>
+                            <li><a href="{{url('/kelolaheaderpaketwisata')}}">Tagline Paket Wisata</a></li>
+                            <li><a href="{{url('/kelolaheadergaleri')}}">Tagline Galeri</a></li>
                         </ul>
                     </li>
                     
