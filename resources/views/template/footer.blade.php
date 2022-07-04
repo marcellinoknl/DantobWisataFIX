@@ -3,29 +3,7 @@
         <div class="row mb-5">
             <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
-                    <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Pariwisata<span>Danau Toba</span></a>
-                    <br><br>
-                    @foreach ($sosial as $sosials )
-                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft" >
-                        <li class="ftco-animate" ><a href=" {{ url($sosials->twitter) }}" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
-                        <li class="ftco-animate"><a href="{{ url($sosials->facebook) }}"style="background-color:#3b5998 "><span class="fa fa-facebook" ></span></a></li>
-                        <li class="ftco-animate"><a href="{{ url($sosials->instagram) }}"style="background-color:#3f729b "><span class="fa fa-instagram" ></span></a></li>
-                    </ul>
-                    @endforeach
-
-                                        <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
-                <!-- Histats.com  START  (aync)-->
-                <script type="text/javascript">var _Hasync= _Hasync|| [];
-                    _Hasync.push(['Histats.start', '1,4676617,4,429,112,75,00011011']);
-                    _Hasync.push(['Histats.fasi', '1']);
-                    _Hasync.push(['Histats.track_hits', '']);
-                    (function() {
-                    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-                    hs.src = ('//s10.histats.com/js15_as.js');
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-                    })();</script>
-                    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4676617&101" alt="counter create hit" border="0"></a></noscript>
-                    <!-- Histats.com  END  -->
+                    <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Pariwisata<span>Danau Toba</span></a> 
                 </div>
             </div>
             <div class="col-md pt-5 border-left">
@@ -45,24 +23,30 @@
             <div class="col-md pt-5 border-left">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
                     <h2 class="ftco-heading-2">Link Terkait</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.indonesia.travel" target="_blank" class="py-2 d-block" style="color:black">Wonderful Indonesia</a></li>
-
+                    @foreach ($sosial as $sosials )
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft" >
+                        <li class="ftco-animate" ><a href=" {{ url($sosials->twitter) }}" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
+                        <li class="ftco-animate"><a href="{{ url($sosials->facebook) }}"style="background-color:#3b5998 "><span class="fa fa-facebook" ></span></a></li>
+                        <li class="ftco-animate"><a href="{{ url($sosials->instagram) }}"style="background-color:#3f729b "><span class="fa fa-instagram" ></span></a></li>
                     </ul>
+                    @endforeach
+
+                          <br>              <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+                <!-- Histats.com  START  (aync)-->
+                <script type="text/javascript">var _Hasync= _Hasync|| [];
+                    _Hasync.push(['Histats.start', '1,4676617,4,429,112,75,00011011']);
+                    _Hasync.push(['Histats.fasi', '1']);
+                    _Hasync.push(['Histats.track_hits', '']);
+                    (function() {
+                    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                    hs.src = ('//s10.histats.com/js15_as.js');
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+                    })();</script>
+                    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4676617&101" alt="counter create hit" border="0"></a></noscript>
+                    <!-- Histats.com  END  -->
                 </div>
             </div>
-            <div class="col-md pt-5 border-left">
-                <div class="ftco-footer-widget pt-md-5 mb-4">
-                    <h2 class="ftco-heading-2">Punya Pertanyaan?</h2>
-                    <div class="block-23 mb-3">
-                        <ul>
-                            <li>
-                                <a href="mailto:wisatadantob@gmail.com" class="py-2 d-block"style="color:black"><span class="icon fa fa-envelope">&nbsp;wisatadantob@gmail.com</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
