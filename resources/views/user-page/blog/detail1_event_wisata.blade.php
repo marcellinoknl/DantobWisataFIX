@@ -16,14 +16,14 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Telusuri Event {{$sampul_event->nama_sampul}}</h1>
+        {{-- <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Telusuri Event {{$sampul_event->nama_sampul}}</h1>
         <p class="caption" style=" color:black;">Event {{$sampul_event->nama_sampul}} menjadikan Keunikan tersendiri dimana masyarakat di sekitaran Danau Toba merayakannya.
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
-        <br>
+        <br> --}}
         <div class="container p-md-2 p-2">
-            <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Event Wisata di {{$sampul_event->nama_sampul}} yang Ingin Kamu Tinjau!
-            </h4>
+            {{-- <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Event Wisata di {{$sampul_event->nama_sampul}} yang Ingin Kamu Tinjau!
+            </h4> --}}
             @if(empty($event_wisata) || count($event_wisata) == 0)
             <br><br>
             <div class="row justify-content-md-center">

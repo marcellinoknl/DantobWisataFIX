@@ -32,8 +32,9 @@
         </div>
     </div>
 </div>
+<br><br>
 
-
+{{-- 
 <section class="ftco-section services-section">
     <div class="container">
         <div class="row d-flex">
@@ -87,10 +88,55 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- Banner -->
 
-<section class="ftco-section">
+<!--Paket Wisata-->
+<div class="container">
+    <div class="row justify-content-center pb-4">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Paket Wisata</h2>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12 ftco-animate">
+            <div class="project-wrap">
+                @if(empty($paketwisata) || count($paketwisata) == 0)
+                <br><br>
+                <div class="row justify-content-md-center">
+                <div class="col-12 col-md-8 py-4">
+                 <div class="card">
+                     <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
+                       Paket Wisata Belum Ditambahkan
+                     </div>
+                   </div>
+                </div>
+                </div>
+               
+                 @else
+                 <div class="sharethis-inline-share-buttons"></div>
+                 <div class="row g-2 g-md-4">
+                     @foreach ($paketwisata as $paketwisatas)
+                         <div class="col-6 col-md-3 py-4">
+                             <div class="mycard-detail-home">
+                                <a href="{{ url('/paket-wisata/detail/' . $paketwisatas->id) }}">
+                                    <img src="{{ url('images/paketwisata/' . $paketwisatas->file_foto) }}" alt=""
+                                        class="mycard-image">
+                                </a>
+                                 <h3 class="mycard-title-detail-home" >{{ $paketwisatas->nama_paket }}</h3>
+                             </div>
+                         </div>
+                     @endforeach
+                 </div>
+                 @endif
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Destinasi Wisata-->
     <div class="container">
         <div class="row justify-content-center pb-4">
             <div class="col-md-12 heading-section text-center ftco-animate">
@@ -133,9 +179,9 @@
             </div>
         </div>
     </div>
-</section>
 
-<section class="ftco-section">
+
+<!-- Event Wisata-->
     <div class="container">
         <div class="row justify-content-center pb-4">
             <div class="col-md-12 heading-section text-center ftco-animate">
@@ -175,7 +221,7 @@
             </div>
         </div>
     </div>
-</section>
+
 <script>
     function myAuthFunc() {
       alert("Anda harus Login terlebih dahulu");

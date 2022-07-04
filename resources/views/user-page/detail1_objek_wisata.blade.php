@@ -16,19 +16,19 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi {{$objwisatakabupaten->nama_kab}}</h1>
+        {{-- <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi {{$objwisatakabupaten->nama_kab}}</h1>
         <p class="caption" style=" color:black;">Indahnya pesona Alam {{$objwisatakabupaten->nama_kab}} yang tidak ada duanya, akan memanjakan mata anda ketika mengunjunginya. Temukan Informasi mengenai Wisata Alam {{$objwisatakabupaten->nama_kab}} di bawah ini!
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
 
-        <br>
+        <br> --}}
 
         <div class="container p-md-2 ">
-          <center>
+          {{-- <center>
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Destinasi Wisata di {{$objwisatakabupaten->nama_kab}} yang Ingin Kamu Tinjau!
             </h4>
           </center>
-            <br>
+            <br> --}}
 
   <!-- SEARCH-->
   <div class="row">

@@ -17,7 +17,7 @@
 <!-- Product -->
 <div class="bg0 m-t-23 p-b-140">
     <div class="container">
-        @guest
+        {{-- @guest
         @foreach ($deskripsi as $dep )
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
             {{$dep->judul}}
@@ -42,7 +42,7 @@
        
         @endforeach
         @endguest
-        <hr class="mt-2 mb-3" style="border:solid 0.5px" />
+        <hr class="mt-2 mb-3" style="border:solid 0.5px" /> --}}
         <br>
         <div class="container p-md-2 p-2">
             @if(empty($sampul_atraksi) || count($sampul_atraksi) == 0)
