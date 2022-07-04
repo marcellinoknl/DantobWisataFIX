@@ -143,7 +143,7 @@ class PaketWisataController extends Controller
         return redirect('/kelolapaketwisata');
     }
 
-        //header destinasi
+        //header paket wisata
         public function editpkt()
         {
             $update = PaketwisataHeader::find(1);
@@ -152,14 +152,14 @@ class PaketWisataController extends Controller
             return view('admin.taglinepaketwisata', compact('update','logo','paketheaders'));
         }
     
-        public function updatdpkt(request $request,$id)
+        public function updatepkt(request $request,$id)
         
             {
                 $this->validate(
                     $request,
                     [
                        
-                        'caption' => 'required',
+                        'tagline' => 'required',
                         'file_foto' => 'mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
                     ]
                 );
@@ -171,7 +171,7 @@ class PaketWisataController extends Controller
                     $update->file_foto = $file;
                 }
     
-            $update->tagline = $request->caption;
+            $update->tagline = $request->tagline;
             $update->file_foto = $file;
             $update->save();
     

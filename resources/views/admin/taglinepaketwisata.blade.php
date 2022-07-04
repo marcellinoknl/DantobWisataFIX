@@ -36,13 +36,13 @@
                   <div class="col-lg-12">
                      <div class="card">
                         <h1>HEADER PAKET WISATA</h1>
-                        <form action="{{route('paketwisata.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('paketwisataheader.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                            {{ csrf_field() }}
                            <div class="mb-3 row">
                               <label class="col-sm-3 col-form-label">Tagline</label>
                               <div class="col-sm-9">
-                                  <input type="text" id="caption" name="caption" class="form-control @error('caption') is-invalid @enderror "value="{{$update->tagline}}">
-                                  @error('caption')
+                                  <input type="text" id="tagline" name="tagline" class="form-control @error('tagline') is-invalid @enderror "value="{{$update->tagline}}">
+                                  @error('tagline')
                                       <div class="invalid-feedback">
                                           {{ $message }}
                                       </div>
