@@ -15,15 +15,15 @@
 <!-- Product -->
 <div class="bg0 m-t-23 p-b-140">
 
-    <div class="container">
+    {{-- <div class="container">
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Fasilitas {{$sampul_fasilitas->nama_sampul}}</h1>
         <p class="caption" style=" color:black;">Fasilitas {{$sampul_fasilitas->nama_sampul}} yang tersedia, antara lain
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
-        <br>
+        <br> --}}
         <div class="container p-md-2 p-2">
-            <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Fasilitas {{$sampul_fasilitas->nama_sampul}} yang Ingin Kamu Tinjau!
-            </h4>
+            {{-- <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Fasilitas {{$sampul_fasilitas->nama_sampul}} yang Ingin Kamu Tinjau!
+            </h4> --}}
             <br>
   <div class="row">
     <div class="col-lg-12 card-margin">
