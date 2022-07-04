@@ -84,7 +84,20 @@
                     <li class="label">Kelola Data Wisata</li>
                     @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolalogo')}}"><i class="ti-image"></i> Kelola Logo</a></li>
-                    <li><a href="{{url('/kelolatagline')}}"><i class="ti-image"></i> Kelola Tagline</a></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> Kelola Header<span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Beranda</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Destinasi</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Atraksi</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Event</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Desa Wisata</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Berita</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Fasilitas</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Paket Wisata</a></li>
+                            <li><a href="{{url('/kelolatagline')}}">Tagline Galeri</a></li>
+                        </ul>
+                    </li>
+                    
                     <li><a href="{{url('/kelolasosial')}}"><i class="ti-email"></i> Kelola Sosial Media</a></li>
                     @endif
                     @if ( auth()->user()->role ==3)
