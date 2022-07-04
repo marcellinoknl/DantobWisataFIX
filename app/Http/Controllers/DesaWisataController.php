@@ -8,19 +8,21 @@ use App\Models\DesaWisata;
 use App\Models\LikeDesaWisata;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\DewiHeader;
 
 class DesaWisataController extends Controller
 {
     public function indexAction()
     {
         $projects = counter::latest()->paginate(5);
+        $dewi = DB::table('dewi_headers')->get();
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
         $deskripsi = DB::table('dewi_deskripsis')->get();
 
-        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten','deskripsi','logo','sosial','projects'));
+        return view('user-page.blog.desawisata.desawisata', compact('objwisatakabupaten','deskripsi','logo','sosial','projects','dewi'));
     }
 
     public function kelolaindexActionView($id)
@@ -75,6 +77,7 @@ class DesaWisataController extends Controller
         $projects = counter::latest()->paginate(5);
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
+        $dewi = DB::table('dewi_headers')->get();
         $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = Kabupaten::find($id_obj_wisata_kabupaten);
         $desawisatas = DB::table('desa_wisatas')
@@ -103,7 +106,40 @@ class DesaWisataController extends Controller
         $logo = DB::table('logo_webs')->get();
         return view('admin.desawisata.tambah-desawisata', compact('kabupaten','logo'));
     }
+   //header desa wisata
+   public function editdew()
+   {
+       $update = DewiHeader::find(1);
+       $logo = DB::table('logo_webs')->get();
+       $dewi = DB::table('dewi_headers')->get();
+       return view('admin.taglinedewi', compact('update','logo','dewi'));
+   }
 
+   public function updatedew(request $request,$id)
+   
+       {
+           $this->validate(
+               $request,
+               [
+                  
+                   'tagline' => 'required',
+                   'file_foto' => 'mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+               ]
+           );
+           $update = DewiHeader::find($id);
+           $file = $update->file_foto;
+           if ($request->hasFile('file_foto')) {
+               $file = $request->file('file_foto')->getClientOriginalName();
+               $request->file('file_foto')->move('images/dewiheader', $file);
+               $update->file_foto = $file;
+           }
+
+       $update->tagline = $request->tagline;
+       $update->file_foto = $file;
+       $update->save();
+
+       return redirect('/desawisata');
+       }
 
 
     public function store(Request $request)
