@@ -6,6 +6,7 @@ use App\Models\EventWisata;
 use App\Models\SampulEvent;
 use Illuminate\Support\Facades\DB;
 use App\Models\DeskripsiEventModel;
+use App\Models\EventHeaders;
 use App\Models\LikeEvent;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class eventController extends Controller
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $sampul_event = DB::table('sampul_event')->get();
+        $eventheaders = DB::table('event_headers')->get();
         $deskripsi = DB::table('deskripsievent')->get();
-        return view('user-page.blog.event', ['sampul_event' => $sampul_event],['deskripsi' => $deskripsi,'logo' => $logo,'sosial' => $sosial,'projects' => $projects]);
+        return view('user-page.blog.event', ['sampul_event' => $sampul_event],['deskripsi' => $deskripsi,'logo' => $logo,'sosial' => $sosial,'projects' => $projects,'eventheaders'=>$eventheaders]);
     }
 
     public function kelolaindexAction()
@@ -236,6 +238,43 @@ class eventController extends Controller
 
         return redirect('sampul-event');
     }
+
+        //header event wisata
+        public function editev()
+        {
+            $update = EventHeaders::find(1);
+            $logo = DB::table('logo_webs')->get();
+            $eventheaders = DB::table('event_headers')->get();
+            return view('admin.taglineevent', compact('update','logo','eventheaders'));
+        }
+
+        public function updateev(request $request,$id)
+
+            {
+                $this->validate(
+                    $request,
+                    [
+                    
+                        'tagline' => 'required',
+                        'file_foto' => 'mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+                    ]
+                );
+                $update = EventHeaders::find($id);
+                $file = $update->file_foto;
+                if ($request->hasFile('file_foto')) {
+                    $file = $request->file('file_foto')->getClientOriginalName();
+                    $request->file('file_foto')->move('images/eventheaders', $file);
+                    $update->file_foto = $file;
+                }
+
+            $update->tagline = $request->tagline;
+            $update->file_foto = $file;
+            $update->save();
+
+            return redirect('/eventwisata');
+            }
+
+
     public function hapusSampul($id)
     {
         $hapus = SampulEvent::find($id);
