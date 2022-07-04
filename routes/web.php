@@ -96,6 +96,9 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
     //logo
         Route::get('/kelolalogo', [adminIndexController::class, 'editat']);
         Route::post('/edit-logo/{id}', [adminIndexController::class, 'updateat'])->name('deskripsilogo.ubah');
+    //Tagline
+        Route::get('/kelolatagline', [homepageController::class, 'edittag']);
+        Route::post('/edit-tagline/{id}', [homepageController::class, 'updatetag'])->name('tag.ubah');    
 
         //Index utama
         Route::get('/admin-wisata', [adminIndexController::class, 'indexAction']);

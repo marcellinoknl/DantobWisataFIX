@@ -6,7 +6,7 @@
    <div class="col-lg-8 p-r-0 title-margin-right">
       <div class="page-header">
          <div class="page-title">
-            <h1>KELOLA LOGO WISATA</span></h1>
+            <h1>KELOLA TAGLINE </span></h1>
          </div>
       </div>
    </div>
@@ -16,7 +16,7 @@
          <div class="page-title">
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
-               <li class="breadcrumb-item active">Kelola Logo</li>
+               <li class="breadcrumb-item active">Kelola Tagline</li>
             </ol>
          </div>
       </div>
@@ -35,14 +35,14 @@
                <div class="row">
                   <div class="col-lg-12">
                      <div class="card">
-                        <h1>LOGO WISATA</h1>
-                        <form action="{{route('deskripsilogo.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
+                        {{-- <h1>Facebook</h1> --}}
+                        <form action="{{route('tag.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                            {{ csrf_field() }}
                            <div class="mb-3 row">
-                              <label class="col-sm-3 col-form-label">Tagline</label>
+                              <label class="col-sm-3 col-form-label">Tagline1</label>
                               <div class="col-sm-9">
-                                  <input type="text" id="caption" name="caption" class="form-control @error('caption') is-invalid @enderror "value="{{$update->caption}}">
-                                  @error('caption')
+                                  <input type="text" id="caption" name="tag1" class="form-control @error('tag1') is-invalid @enderror "value="{{$update->tagline1}}">
+                                  @error('tag1')
                                       <div class="invalid-feedback">
                                           {{ $message }}
                                       </div>
@@ -50,34 +50,28 @@
                               </div>
                           </div>
                           <div class="mb-3 row">
-                           <label class="col-sm-3 col-form-label">Title</label>
+                           <label class="col-sm-3 col-form-label">Tagline2</label>
                            <div class="col-sm-9">
-                               <input type="text" id="caption" name="title" class="form-control @error('title') is-invalid @enderror "value="{{$update->title}}">
-                               @error('title')
+                               <input type="text" id="caption" name="tag2" class="form-control @error('tag2') is-invalid @enderror "value="{{$update->tagline2}}">
+                               @error('tag2')
                                    <div class="invalid-feedback">
                                        {{ $message }}
                                    </div>
                                @enderror
                            </div>
                        </div>
-                          <div class="mb-3 row">
-                           <label class="col-sm-3 col-form-label">Gambar Logo Website</label>
-                           <div class="col-sm-9">
-                               <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/logo/'.$update->file_foto)}}">
-                              
-                               <div class="custom-file">
-                                   <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror " id="gambarwisata" onchange="previewImage()"name="file_foto"  value="{{$update->file_foto}}">
-                                   <label class="custom-file-label" for="customFile">Pilih Gambar</label>
-                                   <br/><label style="color:red">Maks. Ukuran: 5MB <br/> Maks. Lebar: 1200 Pixel</label>
-                                 </div>
-                                 @error('file_foto')
-                                 <div class="invalid-feedback">
-                                     {{ $message }}
-                                 </div>
-                             @enderror
-                           </div>
-                       </div> 
-                        <button type="button" class="btn btn-danger" onclick="window.location.href='/'"><i class="ti-close"></i> Batal</button>
+                       <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Tagline3</label>
+                        <div class="col-sm-9">
+                            <input type="text" id="caption" name="tag3" class="form-control @error('tag3') is-invalid @enderror "value="{{$update->tagline3}}">
+                            @error('tag3')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+                          <button type="button" class="btn btn-danger" onclick="window.location.href='/'"><i class="ti-close"></i> Batal</button>
                         <button type="submit" class="btn btn-success"><i class="ti-check"></i> Ubah</button>
                      </form>
                      </div>

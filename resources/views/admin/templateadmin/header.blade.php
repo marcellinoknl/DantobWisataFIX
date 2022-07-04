@@ -84,6 +84,7 @@
                     <li class="label">Kelola Data Wisata</li>
                     @if ( auth()->user()->role ==3)
                     <li><a href="{{url('/kelolalogo')}}"><i class="ti-image"></i> Kelola Logo</a></li>
+                    <li><a href="{{url('/kelolatagline')}}"><i class="ti-image"></i> Kelola Tagline</a></li>
                     <li><a href="{{url('/kelolasosial')}}"><i class="ti-email"></i> Kelola Sosial Media</a></li>
                     @endif
                     @if ( auth()->user()->role ==3)

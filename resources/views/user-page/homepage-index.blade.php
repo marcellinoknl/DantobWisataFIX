@@ -18,10 +18,12 @@
                         </a>
                     </div>
                 @endif
-                <h1 style="font:caption">Selamat Datang Di Wisata Kawasan Danau Toba</h1>
+                @foreach ($logos as $logoss )
+                <h1 style="font:caption">{{$logoss->tagline1}}</h1>
                 {{-- <span class="subheading">Selamat Datang Di Wisata Kawasan Danau Toba</span> --}}
-                <h1 class="mb-4">Kunjugi Tempat Favorit Anda</h1>
-                <p class="caps">Kepingan Surga Toba</p>
+                <h1 class="mb-4">{{$logoss->tagline2}}</h1>
+                <p class="caps">{{$logoss->tagline3}}</p>
+                @endforeach
             </div>
 
         </div>

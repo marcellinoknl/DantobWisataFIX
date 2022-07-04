@@ -7,6 +7,7 @@ use App\Models\Objek_Wisata;
 use Illuminate\Http\Request;
 use App\Models\SosialModel;
 use App\Models\HomeModel;
+use App\Models\Tagline;
 
 
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,7 @@ class homepageController extends Controller
 {
     public function indexAction() {
         $projects = counter::latest()->paginate(5);
+        $logos = DB::table('taglines')->get();
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
@@ -21,7 +23,7 @@ class homepageController extends Controller
         $objekwisataa = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(8)->get();
         $event = DB::table('sampul_event')->orderBy('created_at','desc')->limit(4)->get();
         $deskripsi = DB::table('home')->get();
-        return view('user-page.homepage-index',compact('objekwisata','objekwisataa','event','deskripsi','logo','sosial','projects'));
+        return view('user-page.homepage-index',compact('objekwisata','objekwisataa','event','deskripsi','logo','sosial','projects','logos'));
     }
 
     public function edit($id)   
@@ -48,7 +50,38 @@ class homepageController extends Controller
         $update->save();
 
         return redirect('/');
-    }}
+    }
+    public function edittag()
+    {
+       
+        $update = Tagline::find(1);
+        $logo = DB::table('logo_webs')->get();
+        $logos = DB::table('taglines')->get();
+       
+        return view('admin.kelolalaTagline', compact('update','logo','logos'));
+    }
+
+    public function updatetag(request $request,$id)
+    
+        {
+            $this->validate(
+                $request,
+                [
+                    'tag1' => 'required',
+                    'tag2' => 'required',
+                    'tag2' => 'required'
+
+                ]
+            );
+            $update = Tagline::find($id);
+            $update->tagline1 = $request->tag1;
+            $update->tagline2 = $request->tag2;
+            $update->tagline3 = $request->tag3;
+            $update->save();
+        return redirect('/');
+        }
+
+}
 
     // public function indexUserDestinasi(id_obj_wisata){
     //     $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
