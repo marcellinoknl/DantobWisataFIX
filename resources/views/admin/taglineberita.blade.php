@@ -35,7 +35,7 @@
                <div class="row">
                   <div class="col-lg-12">
                      <div class="card">
-                        <h1>HEADER DESTINASI</h1>
+                        <h1>HEADER BERITA</h1>
                         <form action="{{route('beritaheader.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                            {{ csrf_field() }}
                            <div class="mb-3 row">

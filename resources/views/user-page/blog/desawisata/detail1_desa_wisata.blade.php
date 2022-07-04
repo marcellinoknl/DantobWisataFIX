@@ -7,7 +7,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="sharethis-sticky-share-buttons"></div>
             <div class="col-md-12 ftco-animate">
-           
+                <h1 class="mb-4" style="text-align: center;">{{ $objwisatakabupaten->nama_kab }}</h1>
             </div>
         </div>
     </div>
@@ -16,25 +16,19 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Desa Wisata yang ada {{$objwisatakabupaten->nama_kab}}</h1>
+        {{-- <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Desa Wisata yang ada {{$objwisatakabupaten->nama_kab}}</h1>
         <p class="caption" style=" color:black;">Indahnya pesona Desa Wisata di {{$objwisatakabupaten->nama_kab}} yang tidak ada duanya, akan memanjakan mata anda ketika mengunjunginya. Temukan Informasi mengenai Desa Wisata {{$objwisatakabupaten->nama_kab}} di bawah ini!
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
-
-        <br>
-
+        <br> --}}
         <div class="container p-md-2 ">
-          <center>
+          {{-- <center>
             <h4 class="heading" style="font-weight: bold ; color:black;">Pilih Desa Wisata di {{$objwisatakabupaten->nama_kab}} yang Ingin Kamu Tinjau!
             </h4>
           </center>
-            <br>
-
-
-
+            <br> --}}
 <!-- TEST -->
-       
-         
+        
             @if(empty($desawisatas) || count($desawisatas) == 0)
            <br><br>
 
