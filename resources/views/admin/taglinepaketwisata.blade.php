@@ -6,7 +6,7 @@
    <div class="col-lg-8 p-r-0 title-margin-right">
       <div class="page-header">
          <div class="page-title">
-            <h1>KELOLA HEADER DESTINASI</span></h1>
+            <h1>KELOLA HEADER PAKET WISATA</span></h1>
          </div>
       </div>
    </div>
@@ -35,8 +35,8 @@
                <div class="row">
                   <div class="col-lg-12">
                      <div class="card">
-                        <h1>HEADER DESTINASI</h1>
-                        <form action="{{route('destinasi.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
+                        <h1>HEADER PAKET WISATA</h1>
+                        <form action="{{route('paketwisataheader.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                            {{ csrf_field() }}
                            <div class="mb-3 row">
                               <label class="col-sm-3 col-form-label">Tagline</label>
@@ -52,7 +52,7 @@
                           <div class="mb-3 row">
                            <label class="col-sm-3 col-form-label">Gambar</label>
                            <div class="col-sm-9">
-                               <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/destinasi/'.$update->file_foto)}}">
+                               <img class="img-preview img-fluid mb-3 col-sm-5" alt="" src="{{url('images/paketheader/'.$update->file_foto)}}">
                               
                                <div class="custom-file">
                                    <input type="file" class="custom-file-input @error('file_foto') is-invalid @enderror " id="gambarwisata" onchange="previewImage()"name="file_foto"  value="{{$update->file_foto}}">

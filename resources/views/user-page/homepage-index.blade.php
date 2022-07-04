@@ -2,9 +2,9 @@
 
 @foreach ($logos as $logoss )
 
-<div class="hero-wrap js-fullheight" style="background-image: url({{asset('images/beranda/'. $logoss->file_foto)}}); width: 100%; height:75%; ">
+<div class="hero-wrap" style="background-image: url({{asset('images/beranda/'. $logoss->file_foto)}}); width: 100%; height:75%; ">
    
-    <div class="overlay" style="width:100%;height: 100%;"></div>
+    <div class="overlay" style="width:100%;height: 75%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="sharethis-sticky-share-buttons"></div>

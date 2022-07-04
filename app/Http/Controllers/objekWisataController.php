@@ -168,8 +168,8 @@ class objekWisataController extends Controller
                 $request,
                 [
                    
-                    'caption' => 'required',
-                    'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+                    'tagline' => 'required',
+                    'file_foto' => 'mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
                 ]
             );
             $update = DestinasiModel::find($id);
@@ -180,7 +180,7 @@ class objekWisataController extends Controller
                 $update->file_foto = $file;
             }
 
-        $update->tagline = $request->caption;
+        $update->tagline = $request->tagline;
         $update->file_foto = $file;
         $update->save();
 
