@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\LogoWeb;
 use App\Models\Atraksi_Wisata;
+use App\Models\AtraksiHeader;
 use App\Models\SampulAtraksi;
 use App\Models\counter;
 use App\Models\LikeAtraksi;
@@ -17,10 +18,11 @@ class atraksiController extends Controller
         $projects = counter::latest()->paginate(5);
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
+        $atraksiheaders = DB::table('atraksi_headers')->get();
         $sosial = DB::table('sosial_media')->get();
         $sampul_atraksi = DB::table('sampul_atraksi')->get();
         $deskripsi = DB::table('deskripsiatraksi')->get();
-        return view('user-page.blog.atraksi', ['sampul_atraksi' => $sampul_atraksi,'deskripsi' => $deskripsi,'logo' => $logo,'sosial' => $sosial,'projects' => $projects]);
+        return view('user-page.blog.atraksi', ['sampul_atraksi' => $sampul_atraksi,'deskripsi' => $deskripsi,'logo' => $logo,'sosial' => $sosial,'projects' => $projects,'atraksiheaders'=>$atraksiheaders]);
     }
     public function kelolaindexAction()
     {
@@ -241,6 +243,43 @@ class atraksiController extends Controller
 
         return redirect('sampul-atraksi');
     }
+
+//header paket wisata
+public function editatr()
+{
+    $update = AtraksiHeader::find(1);
+    $logo = DB::table('logo_webs')->get();
+    $atraksiheaders = DB::table('atraksi_headers')->get();
+    return view('admin.taglineatraksi', compact('update','logo','atraksiheaders'));
+}
+
+public function updateatr(request $request,$id)
+
+    {
+        $this->validate(
+            $request,
+            [
+               
+                'tagline' => 'required',
+                'file_foto' => 'mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+            ]
+        );
+        $update = AtraksiHeader::find($id);
+        $file = $update->file_foto;
+        if ($request->hasFile('file_foto')) {
+            $file = $request->file('file_foto')->getClientOriginalName();
+            $request->file('file_foto')->move('images/atraksiheader', $file);
+            $update->file_foto = $file;
+        }
+
+    $update->tagline = $request->tagline;
+    $update->file_foto = $file;
+    $update->save();
+
+    return redirect('/atraksi');
+    }
+
+
     public function hapusSampul($id)
     {
         $hapus = SampulAtraksi::find($id);

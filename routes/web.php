@@ -125,6 +125,9 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         //Kelola Header Paket Wisata
         Route::get('/kelolaheaderpaketwisata', [PaketWisataController::class, 'editpkt']);
         Route::post('/edit-headerpaketwisata/{id}', [PaketWisataController::class, 'updatepkt'])->name('paketwisataheader.ubah');
+        //Kelola Header Atraksi Wisata
+        Route::get('/kelolaheaderatraksi', [atraksiController::class, 'editatr']);
+        Route::post('/edit-headeratarksi/{id}', [atraksiController::class, 'updateatr'])->name('atraksiheader.ubah');
 
         
         //Kelola Desa Wisata
