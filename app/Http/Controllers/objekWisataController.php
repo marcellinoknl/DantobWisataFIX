@@ -18,13 +18,14 @@ class objekWisataController extends Controller
     {
         $projects = counter::latest()->paginate(5);
         counter::increment('views');
+        $destinasis = DB::table('destinasi_models')->get();
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $objwisatakabupaten = DB::table('objwisatakabupaten')->get();
         $deskripsi = DB::table('deskripsi_destinasis')->get();
        
        
-        return view('user-page.objek-wisata', compact('objwisatakabupaten','deskripsi','logo','sosial','projects'));
+        return view('user-page.objek-wisata', compact('objwisatakabupaten','deskripsi','logo','sosial','projects','destinasis'));
     }
 
     public function kelolaindexAction()
