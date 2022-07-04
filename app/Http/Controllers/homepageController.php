@@ -67,24 +67,35 @@ class homepageController extends Controller
             $this->validate(
                 $request,
                 [
-                    'tag1' => 'required',
+                    
+                   
                     'tag2' => 'required',
-                    'tag2' => 'required'
+                    'tag3' => 'required',
+                    'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+                   
 
                 ]
             );
+           
             $update = Tagline::find($id);
-            $update->tagline1 = $request->tag1;
+            $file = $update->file_foto;
+            if ($request->hasFile('file_foto')) {
+                $file = $request->file('file_foto')->getClientOriginalName();
+                $request->file('file_foto')->move('images/beranda', $file);
+                $update->file_foto = $file;
+            }
+            
+
+           
             $update->tagline2 = $request->tag2;
             $update->tagline3 = $request->tag3;
+            $update->file_foto = $file;
+           
             $update->save();
         return redirect('/');
         }
 
 }
 
-    // public function indexUserDestinasi(id_obj_wisata){
-    //     $objek_wisata_detail = Objek_Wisata::find($id_obj_wisata);
-    //     return view('user-page.detail2_objek_wisata', ['objek_wisata_detail' => $objek_wisata_detail]);
-    // }
+
 

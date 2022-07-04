@@ -1,7 +1,10 @@
 @include('template/header')
 
-<div class="hero-wrap js-fullheight" style="background-image: url('images/bgpa.jpeg');">
-    <div class="overlay"></div>
+@foreach ($logos as $logoss )
+
+<div class="hero-wrap js-fullheight" style="background-image: url({{asset('images/beranda/'. $logoss->file_foto)}}); width: 100%; height:75%; ">
+   
+    <div class="overlay" style="width:100%;height: 100%;"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="sharethis-sticky-share-buttons"></div>
@@ -18,8 +21,8 @@
                         </a>
                     </div>
                 @endif
-                @foreach ($logos as $logoss )
-                <h1 style="font:caption">{{$logoss->tagline1}}</h1>
+               
+               
                 {{-- <span class="subheading">Selamat Datang Di Wisata Kawasan Danau Toba</span> --}}
                 <h1 class="mb-4">{{$logoss->tagline2}}</h1>
                 <p class="caps">{{$logoss->tagline3}}</p>

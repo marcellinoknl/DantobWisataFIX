@@ -15,7 +15,7 @@ class CreateTaglinesTable extends Migration
     {
         Schema::create('taglines', function (Blueprint $table) {
             $table->id();
-            $table->string('tagline1');
+            $table->string('file_foto');
             $table->string('tagline2');
             $table->string('tagline3');
             $table->timestamps();
