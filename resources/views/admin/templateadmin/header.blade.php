@@ -87,7 +87,7 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-direction"></i> Kelola Header<span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Beranda</a></li>
-                            <li><a href="{{url('/kelolatagline')}}">Tagline Destinasi</a></li>
+                            <li><a href="{{url('/kelolaheaderdestinasi')}}">Tagline Destinasi</a></li>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Atraksi</a></li>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Event</a></li>
                             <li><a href="{{url('/kelolatagline')}}">Tagline Desa Wisata</a></li>

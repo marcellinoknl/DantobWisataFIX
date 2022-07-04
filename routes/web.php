@@ -117,7 +117,10 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
         Route::get('/objekwisata/hapus/{id}', [objekWisataController::class, 'hapus'])->name('objekwisata.hapus');
         Route::get('/lihat-objekwisata/{id}', [objekWisataController::class, 'kelolaindexActionView']);
         Route::get('/ubah-destinasi/{id}', [objekWisataController::class, 'editat']);
-        Route::post('/edit-destinasi/{id}', [objekWisataController::class, 'updateat'])->name('deskdestinasi.ubah');
+        Route::post('/edit-destinasi/{id}', [objekWisataController::class, 'updatedes'])->name('deskdestinasi.ubah');
+        //Kelola Header Destinasi
+        Route::get('/kelolaheaderdestinasi', [objekWisataController::class, 'editdes']);
+        Route::post('/edit-headerdestinasi/{id}', [objekWisataController::class, 'updatdes'])->name('destinasi.ubah');
 
         
         //Kelola Desa Wisata

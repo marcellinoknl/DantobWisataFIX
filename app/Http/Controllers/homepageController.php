@@ -51,7 +51,7 @@ class homepageController extends Controller
 
         return redirect('/');
     }
-    public function edittag()
+    public function editdes()
     {
        
         $update = Tagline::find(1);
@@ -61,7 +61,7 @@ class homepageController extends Controller
         return view('admin.kelolalaTagline', compact('update','logo','logos'));
     }
 
-    public function updatetag(request $request,$id)
+    public function updatedes(request $request,$id)
     
         {
             $this->validate(
@@ -81,7 +81,7 @@ class homepageController extends Controller
             $file = $update->file_foto;
             if ($request->hasFile('file_foto')) {
                 $file = $request->file('file_foto')->getClientOriginalName();
-                $request->file('file_foto')->move('images/beranda', $file);
+                $request->file('file_foto')->move('images/header', $file);
                 $update->file_foto = $file;
             }
             

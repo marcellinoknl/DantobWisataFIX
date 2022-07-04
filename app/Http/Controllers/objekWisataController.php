@@ -10,6 +10,7 @@ use App\Models\DeskripsiDestinasi;
 use App\Models\counter;
 use App\Models\Like;
 use Illuminate\Http\Request;
+use App\Models\DestinasiModel;
 
 class objekWisataController extends Controller
 {
@@ -150,6 +151,40 @@ class objekWisataController extends Controller
         $kategori = DB::table('kategori_wisata')->get();
         return view('admin.ubah-objekwisata', compact('update', 'kabupaten', 'kategori','logo'));
     }
+    //header destinasi
+    public function editdes()
+    {
+        $update = DestinasiModel::find(1);
+        $logo = DB::table('logo_webs')->get();
+        $destinasis = DB::table('destinasi_models')->get();
+        return view('admin.taglinedestinasi', compact('update','logo','destinasis'));
+    }
+
+    public function updatdes(request $request,$id)
+    
+        {
+            $this->validate(
+                $request,
+                [
+                   
+                    'caption' => 'required',
+                    'file_foto' => 'required|mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+                ]
+            );
+            $update = DestinasiModel::find($id);
+            $file = $update->file_foto;
+            if ($request->hasFile('file_foto')) {
+                $file = $request->file('file_foto')->getClientOriginalName();
+                $request->file('file_foto')->move('images/destinasi', $file);
+                $update->file_foto = $file;
+            }
+
+        $update->tagline = $request->caption;
+        $update->file_foto = $file;
+        $update->save();
+
+        return redirect('/objek-wisata');
+        }
 
     public function update(request $request, $id_obj_wisata)
     {
