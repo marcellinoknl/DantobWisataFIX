@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Berita_Wisata;
 use App\Models\DeskripsiBeritaModel;
 use App\Models\LikeBerita;
+use App\Models\BeritaHeader;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -15,6 +16,7 @@ class beritaController extends Controller
     {    
         $projects = counter::latest()->paginate(5);
         counter::increment('views');
+        $berita = DB::table('berita_headers')->get();
         $logo = DB::table('logo_webs')->get();
         $sosial = DB::table('sosial_media')->get();
         $deskripsi = DB::table('deskripsiberita')->get();
@@ -26,7 +28,7 @@ class beritaController extends Controller
         ->orwhere('isi_berita','LIKE','%'.$keyword.'%')
         ->simplePaginate(6);
         $berita_wisata->appends($request->all());
-        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
+        return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'berita'=>$berita]);
     }
 
     public function kelolaindexAction()
@@ -122,6 +124,40 @@ class beritaController extends Controller
         $logo = DB::table('logo_webs')->get();
         return view('admin.ubah-beritawisata', compact('update','logo'));
     }
+       //header berita wisata
+   public function editber()
+   {
+       $update = BeritaHeader::find(1);
+       $logo = DB::table('logo_webs')->get();
+       $berita = DB::table('berita_headers')->get();
+       return view('admin.taglineberita', compact('update','logo','berita'));
+   }
+
+   public function updateber(request $request,$id)
+   
+       {
+           $this->validate(
+               $request,
+               [
+                  
+                   'tagline' => 'required',
+                   'file_foto' => 'mimes:jpeg,jpg,png,gif','max:5000' ,'dimensions:max_width=1200'
+               ]
+           );
+           $update = BeritaHeader::find($id);
+           $file = $update->file_foto;
+           if ($request->hasFile('file_foto')) {
+               $file = $request->file('file_foto')->getClientOriginalName();
+               $request->file('file_foto')->move('images/beritaheader', $file);
+               $update->file_foto = $file;
+           }
+
+       $update->tagline = $request->tagline;
+       $update->file_foto = $file;
+       $update->save();
+
+       return redirect('/beritawisata');
+       }
 
     public function update(request $request, $id_berita)
     {
