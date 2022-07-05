@@ -33,7 +33,9 @@
         </div>
         <br>
         <a href="/fasilitas-wisata/detail2/like/{{$fasilitas_wisata_detail->id_fasilitas}}"class ="text-danger"style="font-weight: bold;"><i class="fa fa-heart"></i> {{$like}} Suka</a>
-        <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$fasilitas_wisata_detail->views}} kali dikunjungi</i>
+        &nbsp;&nbsp;&nbsp;
+        <a href="#" style="color: black; font-weight: bold; "><i class="fa fa-eye"></i>  {{$fasilitas_wisata_detail->views}} Kali dikunjungi</a>
+        {{-- <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$fasilitas_wisata_detail->views}} kali dikunjungi</i> --}}
         <div class="container p-md-2 p-2">
             <p class="caption text-justify" style=" color:black;">
                 {!! $fasilitas_wisata_detail->deskripsi !!}

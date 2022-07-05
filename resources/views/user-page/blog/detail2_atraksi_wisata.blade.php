@@ -24,7 +24,7 @@
 
         <div class="container p-md-2 p-2">
             <a href="/atraksi-wisata/detail2/like/{{$atraksi_wisata_detail->atraksi_id}}"class ="text-danger"style="font-weight: bold; "><i class="fa fa-heart"></i> {{$like}} Suka</a>
-            &nbsp;&nbsp;&nbsp;<i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$atraksi_wisata_detail->views}} kali dikunjungi</i>
+            &nbsp;&nbsp;&nbsp;<a href="#" style="color: black; font-weight: bold; "><i class="fa fa-eye"></i>  {{$atraksi_wisata_detail->views}} Kali dikunjungi</a>
             <p class="caption text-justify" style=" color:black;">
                 {!!$atraksi_wisata_detail->deskripsi !!}
             </p>

@@ -20,7 +20,8 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <a href="/berita-wisata/detail/like/{{$berita_wisata_detail->id_berita}}"class ="text-danger"style="font-weight: bold; "><i class="fa fa-heart"></i> {{$like}} Suka</a>
-        &nbsp;&nbsp;&nbsp;<i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$berita_wisata_detail->views}} kali dikunjungi</i>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="#" style="color: black; font-weight: bold; "><i class="fa fa-eye"></i>  {{$berita_wisata_detail->views}} Kali dikunjungi</a>
+
         <div class="container p-md-2 p-2">
             <p class="caption" style=" color:black;">
                 {!!$berita_wisata_detail->isi_berita !!}

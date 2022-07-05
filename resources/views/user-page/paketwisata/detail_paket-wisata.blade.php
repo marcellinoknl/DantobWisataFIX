@@ -20,7 +20,9 @@
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
         <br>
         <a href="/paket-wisata/detail/like/{{$paketwisatadetails->id}}"class ="text-danger"style="font-weight: bold;"><i class="fa fa-heart"></i> {{$like}} Suka</a>
-        <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$paketwisatadetails->views}} kali dikunjungi</i>
+        &nbsp;&nbsp;&nbsp;
+        <a href="#" style="color: black; font-weight: bold; "><i class="fa fa-eye"></i>  {{$paketwisatadetails->views}} Kali dikunjungi</a>
+        {{-- <i class="fa fa-eye" style="color: black; font-weight: bold;">  {{$paketwisatadetails->views}} kali dikunjungi</i> --}}
         <div class="container p-md-2 p-2">
             <p  class="caption text-justify" style=" color:black; ">
                 {!! $paketwisatadetails->deskripsi !!}
