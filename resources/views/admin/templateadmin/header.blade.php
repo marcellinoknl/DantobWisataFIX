@@ -95,7 +95,7 @@
                             <li><a href="{{url('/kelolaheaderberita')}}">Tagline Berita</a></li>
                             <li><a href="{{url('/kelolaheaderfasilitas')}}">Tagline Fasilitas</a></li>
                             <li><a href="{{url('/kelolaheaderpaketwisata')}}">Tagline Paket Wisata</a></li>
-                            <li><a href="{{url('/kelolaheadergaleri')}}">Tagline Galeri</a></li>
+                            <li><a href="{{url('/kelolaheadergaleri')}}">Tagline Merchandise</a></li>
 
                         </ul>
                     </li>
