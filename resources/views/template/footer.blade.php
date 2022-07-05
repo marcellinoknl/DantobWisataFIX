@@ -6,45 +6,40 @@
                     <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Pariwisata<span>Danau Toba</span></a> 
                 </div>
             </div>
-            <div class="col-md pt-5 border-left">
+            <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
-                    <h2 class="ftco-heading-2">Infromasi Wisata</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ url('/objek-wisata') }}" class="py-2 d-block"style="color:black">Destinasi Wisata</a></li>
-                        <li><a href="{{ url('/atraksi') }}" class="py-2 d-block"style="color:black">Atraksi Wisata</a></li>
-                        <li><a href="{{ url('/eventwisata') }}" class="py-2 d-block"style="color:black">Event Wisata</a></li>
-                        <li><a href="{{ url('/fasilitaswisata') }}" class="py-2 d-block"style="color:black">Fasilitas Wisata</a></li>
-                        <li><a href="{{ url('/galeriwisata') }}" class="py-2 d-block"style="color:black">Galeri Wisata</a></li>
-                        <li><a href="{{ url('/beritawisata') }}" class="py-2 d-block"style="color:black">Berita Wisata</a></li>
-                        <li><a href="{{ url('/desawisata') }}" class="py-2 d-block"style="color:black">Desa Wisata</a></li>
-                    </ul>
+
                 </div>
             </div>
-            <div class="col-md pt-5 border-left">
+            <div class="col-md pt-5 ">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
-                    <h2 class="ftco-heading-2">Link Terkait</h2>
+                    <h2 class="ftco-heading-2">Toba Journey</h2>
                     @foreach ($sosial as $sosials )
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft" >
                         <li class="ftco-animate" ><a href=" {{ url($sosials->twitter) }}" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
                         <li class="ftco-animate"><a href="{{ url($sosials->facebook) }}"style="background-color:#3b5998 "><span class="fa fa-facebook" ></span></a></li>
                         <li class="ftco-animate"><a href="{{ url($sosials->instagram) }}"style="background-color:#3f729b "><span class="fa fa-instagram" ></span></a></li>
+                        <li class="ftco-animate"><a href="/"style="background-color:#FF0000 "><span class="fa fa-youtube" ></span></a></li>
                     </ul>
                     @endforeach
-
-                          <br>              <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
-                <!-- Histats.com  START  (aync)-->
-                <script type="text/javascript">var _Hasync= _Hasync|| [];
-                    _Hasync.push(['Histats.start', '1,4676617,4,429,112,75,00011011']);
-                    _Hasync.push(['Histats.fasi', '1']);
-                    _Hasync.push(['Histats.track_hits', '']);
-                    (function() {
-                    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-                    hs.src = ('//s10.histats.com/js15_as.js');
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-                    })();</script>
-                    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4676617&101" alt="counter create hit" border="0"></a></noscript>
-                    <!-- Histats.com  END  -->
+                    <script type="text/javascript">var _Hasync= _Hasync|| [];
+                        _Hasync.push(['Histats.start', '1,4676617,4,429,112,75,00011011']);
+                        _Hasync.push(['Histats.fasi', '1']);
+                        _Hasync.push(['Histats.track_hits', '']);
+                        (function() {
+                        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                        hs.src = ('//s10.histats.com/js15_as.js');
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+                        })();</script>
+                        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4676617&101" alt="counter create hit" border="0"></a></noscript>
+                        <!-- Histats.com  END  -->            <!-- Histats.com  START  (aync)-->
+                    <br>
+                    <div class="ftco-footer-widget pt-md-5 mb-4">
+ <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+                    </div>
+                                     
                 </div>
+           
             </div>
 
         </div>
@@ -52,12 +47,10 @@
             <div class="col-md-12 text-center">
 
                 <p style="color:black">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> All rights reserved | Pariwisata Danau Toba
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </script> All rights reserved | TOBA JOURNNEY
                 </p>
             </div>
         </div>
