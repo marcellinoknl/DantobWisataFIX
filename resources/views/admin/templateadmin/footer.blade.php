@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="footer">
 
-            <p><?php echo date("Y"); ?> © Pariwisata Danau Toba Admin. - <a href="{{ url('/')}}">Pariwisata Danau Toba</a></p>
+            <p><?php echo date("Y"); ?> © TOBA JOURNNEY Admin. - <a href="{{ url('/')}}">TOBA JOURNNEY</a></p>
         </div>
     </div>
 </div>

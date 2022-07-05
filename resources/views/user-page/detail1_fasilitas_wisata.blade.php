@@ -15,8 +15,8 @@
 <!-- Product -->
 <div class="bg0 m-t-23 p-b-140">
 
-    {{-- <div class="container">
-        <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Fasilitas {{$sampul_fasilitas->nama_sampul}}</h1>
+    <div class="container">
+       {{--  <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">Jelajahi Fasilitas {{$sampul_fasilitas->nama_sampul}}</h1>
         <p class="caption" style=" color:black;">Fasilitas {{$sampul_fasilitas->nama_sampul}} yang tersedia, antara lain
         </p>
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />

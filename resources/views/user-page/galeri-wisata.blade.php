@@ -18,7 +18,7 @@
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
-        @guest
+        {{-- @guest
         @foreach ($deskripsi as $dep )
         <h1 class="title" style="font-weight: bold ; font-size: 50px; color:black;">
             {{$dep->judul}}
@@ -44,7 +44,7 @@
         @endforeach
         @endguest
         <hr class="mt-2 mb-3" style="border:solid 0.5px" />
-        <br>
+        <br> --}}
         <div class="container p-md-2 p-2">
             @if(empty($galeriwisata) || count($galeriwisata) == 0)
             <br><br>
@@ -52,7 +52,7 @@
             <div class="col-12 col-md-8 py-4">
              <div class="card">
                  <div class="card-body text-center" style="font-size:30px; color:black; text-weight:bold;">
-                Konten Pada Galeri Belum Ditambahkan
+                Konten Pada Merchandise Belum Ditambahkan
                  </div>
                </div>
             </div>
