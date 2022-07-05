@@ -6,7 +6,7 @@
    <div class="col-lg-8 p-r-0 title-margin-right">
       <div class="page-header">
          <div class="page-title">
-            <h1>KELOLA HEADER GALERI</span></h1>
+            <h1>KELOLA HEADER MERCHANDISE</span></h1>
          </div>
       </div>
    </div>
@@ -35,7 +35,7 @@
                <div class="row">
                   <div class="col-lg-12">
                      <div class="card">
-                        <h1>HEADER GALERI WISATA</h1>
+                        <h1>HEADER MERCHANDISE</h1>
                         <form action="{{route('gal.ubah',$update->id)}}" method="post" enctype="multipart/form-data">
                            {{ csrf_field() }}
                            <div class="mb-3 row">
