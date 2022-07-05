@@ -19,7 +19,7 @@
                         <li class="ftco-animate" ><a href=" {{ url($sosials->twitter) }}" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
                         <li class="ftco-animate"><a href="{{ url($sosials->facebook) }}"style="background-color:#3b5998 "><span class="fa fa-facebook" ></span></a></li>
                         <li class="ftco-animate"><a href="{{ url($sosials->instagram) }}"style="background-color:#3f729b "><span class="fa fa-instagram" ></span></a></li>
-                        <li class="ftco-animate"><a href="/"style="background-color:#FF0000 "><span class="fa fa-youtube" ></span></a></li>
+                        <li class="ftco-animate"><a href="{{ url($sosials->youtube) }}"style="background-color:#FF0000 "><span class="fa fa-youtube" ></span></a></li>
                     </ul>
                     @endforeach
                     <script type="text/javascript">var _Hasync= _Hasync|| [];

@@ -18,6 +18,7 @@ class CreateSosialMediaTable extends Migration
             $table->string('facebook')->default('https://www.facebook.com/profile.php?id=100082362470457');
             $table->string('instagram')->default('https://www.instagram.com/toba.journey/?hl=id');
             $table->string('twitter')->default('https://twitter.com/wisatadantob');
+            $table->string('youtube')->default('https://twitter.com/wisatadantob');
             $table->timestamps();
         });
     }

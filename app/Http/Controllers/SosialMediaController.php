@@ -30,6 +30,7 @@ class SosialMediaController extends Controller
                     'caption1' => 'required',
                     'caption2' => 'required',
                     'caption3' => 'required',
+                    'caption4' => 'required',
                     
                 ]
             );
@@ -37,6 +38,7 @@ class SosialMediaController extends Controller
             $update->facebook = $request->caption1;
             $update->instagram = $request->caption2;
             $update->twitter = $request->caption3;
+            $update->youtube = $request->caption4;
             $update->save();
     
             return redirect()->back();

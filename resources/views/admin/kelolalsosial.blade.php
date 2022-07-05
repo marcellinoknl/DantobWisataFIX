@@ -61,6 +61,17 @@
                            </div>
                        </div>
                        <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Youtube</label>
+                        <div class="col-sm-9">
+                            <input type="text" id="caption" name="caption4" class="form-control @error('caption4') is-invalid @enderror "value="{{$update->youtube}}">
+                            @error('caption4')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+                       <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Twitter</label>
                         <div class="col-sm-9">
                             <input type="text" id="caption" name="caption3" class="form-control @error('caption3') is-invalid @enderror "value="{{$update->twitter}}">
