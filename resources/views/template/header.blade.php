@@ -79,7 +79,7 @@
         <div class="container">
 
             
-            <a class="navbar-brand" href="{{ url('/') }}"><img  class="center" src="{{ url('images/logo/'.$logos->file_foto)}}" style="width:50px;height:50px; margin-bottom:5px;border-radius: 30px; border: 1px solid;display: block;margin-left: auto;margin-right: auto;"><span>{{$logos->caption}}</span></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img  class="center" src="{{ url('images/logo/'.$logos->file_foto)}}" style="width:50px;height:50px; margin-bottom:5px;border-radius: 30px; border: 1px solid;display: block;margin-left: auto;margin-right: auto;"><span style="color:#1877F2">{{$logos->caption}}</span></a>
             
             @endforeach
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"

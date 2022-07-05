@@ -95,7 +95,7 @@
                                     $isi_berita = substr($beritas->isi_berita,0,100);
                                     ?>
                                     
-                                   <a href="{{ url('/berita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='text-decoration:underline'"
+                                   <a href="{{ url('/berita-wisata/detail/' . $beritas->id_berita) }}" onMouseOver="this.style='color:#1877F2'"
                                     onMouseOut="this.style='color:black'" style="color:black; ">
                                     <div class="title" style="text-weight:bold;">
                                         {{ $beritas->judul_berita }}
