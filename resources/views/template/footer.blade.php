@@ -3,7 +3,7 @@
         <div class="row mb-5">
             <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
-                    <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Pariwisata<span>Danau Toba</span></a> 
+                    <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Toba Journey<span>Danau Toba</span></a> 
                 </div>
             </div>
             <div class="col-md pt-5">
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md pt-5 ">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
-                    <h2 class="ftco-heading-2">Toba Journey</h2>
+            
                     @foreach ($sosial as $sosials )
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft" >
                         <li class="ftco-animate" ><a href=" {{ url($sosials->twitter) }}" style="background-color:#00acee"><span class="fa fa-twitter" ></span></a></li>
