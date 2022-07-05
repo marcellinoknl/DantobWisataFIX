@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> UBAH GALERI WISATA </h1>
+                            <h1> UBAH MERCHANDISE </h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Galeri Wisata</li>
+                                <li class="breadcrumb-item active">Kelola Merchandise</li>
                             </ol>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                 <form action="{{route('galeriwisata.ubah',$update->id_galeri)}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Judul</label>
+                                        <label class="col-sm-3 col-form-label">Deskripsi</label>
                                         <div class="col-sm-9">
                                             <input type="text" id="judul" name="judul" class="form-control @error('judul') is-invalid @enderror "value="{{$update->judul}}">
                                             @error('judul')
