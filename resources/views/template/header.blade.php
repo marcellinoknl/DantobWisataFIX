@@ -98,7 +98,7 @@
                     <li class="nav-item {{Request::segment(1) === 'fasilitaswisata' ? 'active' : null }}"><a href="{{ url('/fasilitaswisata') }}" class="nav-link">Fasilitas</a></li>
                     <li class="nav-item {{Request::segment(1) === 'galeriwisata' ? 'active' : null }}"><a href="{{ url('/galeriwisata') }}" class="nav-link">Merchandise</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
-                        <li class="nav-item {{Request::segment(1) === 'atraksi'||Request::segment(1) === 'eventwisata'||Request::segment(1) === 'beritawisata' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        <li class="nav-item {{Request::segment(1) === 'atraksi'||Request::segment(1) === 'eventwisata'||Request::segment(1) === 'beritawisata' ? 'active' : null }}" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Eksplorasi</a>
                         </li>
@@ -138,7 +138,7 @@
                     <li class="nav-item {{Request::segment(1) === 'fasilitaswisata' ? 'active' : null }}"><a href="{{ url('/fasilitaswisata') }}" class="nav-link">Fasilitas</a></li>
                     <li class="nav-item {{Request::segment(1) === 'galeriwisata' ? 'active' : null }}"><a href="{{ url('/galeriwisata') }}" class="nav-link">Merchandise</a></li>
                     <div class="navbar-nav ml-auto dropdown show">
-                        <li class="nav-item {{Request::segment(1) === 'atraksi'||Request::segment(1) === 'eventwisata'||Request::segment(1) === 'beritawisata' ? 'active' : null }}" type="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        <li class="nav-item {{Request::segment(1) === 'atraksi'||Request::segment(1) === 'eventwisata'||Request::segment(1) === 'beritawisata' ? 'active' : null }}"  id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <a href="/blog" class="nav-link">Eksplorasi</a>
                         </li>
