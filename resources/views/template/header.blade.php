@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+  
 
     {{-- card style --}}
     <link href="{{ asset('css/cardStyle.css') }}" rel="stylesheet">
