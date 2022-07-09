@@ -1,14 +1,9 @@
-<footer class="ftco-footer bg-bottom ftco-no-pt" style="background-color:#FFFFF ">
+<footer class="ftco-footer bg-bottom ftco-no-pt" style="background-color:#FFFF; border-top:0.5px ">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-4">
                     <a class="navbar-brand" href="{{ url('/') }}" style="color:black">Toba Journey<span>Danau Toba</span></a> 
-                </div>
-            </div>
-            <div class="col-md pt-5">
-                <div class="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
-
                 </div>
             </div>
             <div class="col-md pt-5 ">
@@ -42,7 +37,17 @@
            
             </div>
 
+            <div class="col-md pt-5">
+                <div class="ftco-footer-widget pt-md-5 mb-2">
+                    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                        <input type="text" placeholder="Cari..." name="search2">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
+                </div>
+            </div>
+
         </div>
+        
         <div class="row">
             <div class="col-md-12 text-center">
 
@@ -50,14 +55,46 @@
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> All rights reserved | TOBA JOURNNEY
+                    </script> All rights reserved | TOBA JOURNEY
                 </p>
             </div>
         </div>
     </div>
 </footer>
 
-
+<style>
+    
+    form.example input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 80%;
+      background: #f1f1f1;
+    }
+    
+    form.example button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #2196F3;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+    }
+    
+    form.example button:hover {
+      background: #0b7dda;
+    }
+    
+    form.example::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    </style>
 
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
