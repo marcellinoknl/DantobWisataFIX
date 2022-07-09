@@ -18,6 +18,7 @@ use App\Http\Controllers\PengalamanController;
 use App\Http\Controllers\DesaWisataController;
 use App\Http\Controllers\PaketWisataController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ use App\Http\Controllers\LikeController;
 */
 
 // --USER SIDE--
+
+//search page
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 //Home Page
 
 Route::get('/', [homepageController::class, 'indexAction'])->name('beranda');

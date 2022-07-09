@@ -1,4 +1,4 @@
-<footer class="ftco-footer bg-bottom ftco-no-pt" style="background-color:#F2F7ED; border-top:0.5px ">
+<footer class="ftco-footer bg-bottom ftco-no-pt" style="background-color:#FFFF; border-top:0.5px ">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md pt-5">
@@ -39,8 +39,8 @@
 
             <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-2">
-                    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-                        <input type="text" placeholder="Cari..." name="search2">
+                    <form class="searchdata" action="/search" style="margin:auto;max-width:300px">
+                        <input type="text" placeholder="Cari..." name="search2" >
                         <button type="submit"><i class="fa fa-search"></i></button>
                       </form>
                 </div>
@@ -64,7 +64,7 @@
 <style>
 
     
-    form.example input[type=text] {
+    form.searchdata input[type=text] {
       padding: 10px;
       font-size: 17px;
       border: 1px solid grey;
@@ -73,7 +73,7 @@
       background: #f1f1f1;
     }
     
-    form.example button {
+    form.searchdata button {
       float: left;
       width: 20%;
       padding: 10px;
@@ -85,11 +85,11 @@
       cursor: pointer;
     }
     
-    form.example button:hover {
+    form.searchdata button:hover {
       background: #0b7dda;
     }
     
-    form.example::after {
+    form.searchdata::after {
       content: "";
       clear: both;
       display: table;
