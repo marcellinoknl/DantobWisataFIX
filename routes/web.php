@@ -18,6 +18,7 @@ use App\Http\Controllers\PengalamanController;
 use App\Http\Controllers\DesaWisataController;
 use App\Http\Controllers\PaketWisataController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ use App\Http\Controllers\LikeController;
 */
 
 // --USER SIDE--
+
+//search page
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 //Home Page
 
 Route::get('/', [homepageController::class, 'indexAction'])->name('beranda');
@@ -200,6 +204,9 @@ Route::group(['middleware' => ['auth',  'ceklevel:3']], function () {
          //Kelola Header Fasilitas
          Route::get('/kelolaheaderfasilitas', [fasilitasController::class, 'editfas']);
          Route::post('/edit-headerfasilitas/{id}', [fasilitasController::class, 'updatfas'])->name('fasil.ubah');
+         //Kelpla Search Header
+         Route::get('/kelolaheadersearch', [SearchController::class, 'editfas']);
+         Route::post('/edit-headersearch/{id}', [SearchController::class, 'updatfas'])->name('search.ubah');
         //kelola atraksi
         Route::get('/kelolaatraksi', [atraksiController::class, 'kelolaindexAction']);
         Route::get('/tambah-atraksi-wisata', [atraksiController::class, 'tambah']);

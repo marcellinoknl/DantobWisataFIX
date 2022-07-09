@@ -41,7 +41,7 @@ class fasilitasController extends Controller
             ->where('id_sampul_fasilitas', '=', $id)
             ->where('nama_fasilitas','LIKE','%'.$keyword.'%')
             ->orderBy('id_fasilitas')
-            ->simplePaginate(6);
+            ->paginate(6);
         $kabupaten = Kabupaten::all();
         return view('user-page.detail1_fasilitas_wisata', ['fasilitias_wisata' => $fasilitias_wisata, 'sampul_fasilitas' => $sampul_fasilitas,'kabupaten'=>$kabupaten, 'keyword'=>$keyword, 'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects]);
     }

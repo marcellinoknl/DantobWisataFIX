@@ -6,7 +6,7 @@
    <div class="col-lg-8 p-r-0 title-margin-right">
       <div class="page-header">
          <div class="page-title">
-            <h1>KELOLA GALERI WISATA</span></h1>
+            <h1>KELOLA MERCHANDISE</span></h1>
          </div>
       </div>
    </div>
@@ -16,7 +16,7 @@
          <div class="page-title">
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="{{url('/admin-wisata')}}">Dashboard</a></li>
-               <li class="breadcrumb-item active">Kelola Galeri</li>
+               <li class="breadcrumb-item active">Kelola Merchandise</li>
             </ol>
          </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="row">
          <div class="col-lg-12">
             <a href="{{ url('/tambah-galeri-wisata')}}"> 
-               <button class="btn btn-success"style="color:white; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Galeri Wisata</button>
+               <button class="btn btn-success"style="color:white; font-family: arial;"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Merchandise</button>
             </a>
             <section id="main-content">
                <div class="row">

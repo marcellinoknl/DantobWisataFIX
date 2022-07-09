@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-r-0 title-margin-right">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1> TAMBAH GALERI WISATA </h1>
+                            <h1> TAMBAH MERCHANDISE </h1>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="page-title">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin-wisata')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Kelola Galeri Wisata</li>
+                                <li class="breadcrumb-item active">Kelola Merchandise</li>
                             </ol>
                         </div>
                     </div>

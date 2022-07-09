@@ -26,7 +26,7 @@ class beritaController extends Controller
         ->join('users', 'berita_wisata.id_user', '=', 'users.id')
         ->where('judul_berita','LIKE','%'.$keyword.'%')
         ->orwhere('isi_berita','LIKE','%'.$keyword.'%')
-        ->simplePaginate(6);
+        ->paginate(6);
         $berita_wisata->appends($request->all());
         return view('user-page.blog.berita', ['berita_wisata' => $berita_wisata,'deskripsi' =>$deskripsi,'keyword'=>$keyword,'logo'=>$logo,'sosial'=>$sosial,'projects'=>$projects,'berita'=>$berita]);
     }

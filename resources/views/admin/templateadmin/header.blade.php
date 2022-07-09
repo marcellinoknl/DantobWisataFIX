@@ -96,6 +96,7 @@
                             <li><a href="{{url('/kelolaheaderfasilitas')}}">Tagline Fasilitas</a></li>
                             <li><a href="{{url('/kelolaheaderpaketwisata')}}">Tagline Paket Wisata</a></li>
                             <li><a href="{{url('/kelolaheadergaleri')}}">Tagline Merchandise</a></li>
+                            <li><a href="{{url('/kelolaheadersearch')}}">Tagline Search</a></li>
 
                         </ul>
                     </li>
@@ -140,7 +141,7 @@
                     <li><a href="{{url('/kelolaberita')}}"><i class="ti-announcement"></i> Kelola Berita Wisata </a></li>
                     <li>
                         @if ( auth()->user()->role ==3)
-                        <a href="{{url('/kelolagaleri')}}"><i class="ti-gallery"></i> Kelola Galeri Wisata </a>
+                        <a href="{{url('/kelolagaleri')}}"><i class="ti-gallery"></i> Kelola Merchandise </a>
                         @endif
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-car"></i> Kelola Fasilitas <span class="sidebar-collapse-icon ti-angle-down"></span></a>
