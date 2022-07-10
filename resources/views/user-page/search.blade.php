@@ -109,9 +109,29 @@
 <div class="card">
     <h5 class="card-header"style="font-weight: bold">Destinasi Wisata</h5>
     <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      @foreach ($destinasi as $destinasis)
+          <?php   
+          $text = substr($destinasis->deskripsi,0,100);
+          ?>
+          <div class="card mb-3" style="max-width: auto;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="{{ url('/objek-wisata/detail2/' . $destinasis->id_obj_wisata) }}">
+                <img src="{{ url('images/objekwisata/' . $destinasis->file_foto) }}" class="img-fluid rounded-start" alt="destinasi" height="100px">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="{{ url('/objek-wisata/detail2/' . $destinasis->id_obj_wisata) }}">
+                  <h5 class="card-title">{{$destinasis->nama_wisata}}</h5>
+                  </a>
+                  <p class="card-text" style="color:black;">{!!$text!!}</p>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
     </div>
   </div>
 </div>
@@ -120,9 +140,29 @@
   <div class="card">
     <h5 class="card-header"style="font-weight: bold">Fasilitas</h5>
     <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      @foreach ($fasil as $fasils)
+          <?php   
+          $text = substr($fasils->deskripsi,0,100);
+          ?>
+          <div class="card mb-3" style="max-width: auto;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="{{ url('/fasilitas-wisata/detail2/' . $fasils->id_fasilitas) }}">
+                <img src="{{ url('images/fasilitas/' . $fasils->file_foto) }}" class="img-fluid rounded-start" alt="Fasilitas" height="100px">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="{{ url('/fasilitas-wisata/detail2/' . $fasils->id_fasilitas) }}">
+                  <h5 class="card-title">{{$fasils->nama_fasilitas}}</h5>
+                  </a>
+                  <p class="card-text" style="color:black;">{!!$text!!}</p>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
     </div>
   </div>    
 </div>
@@ -131,9 +171,29 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Atraksi</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        @foreach ($atraksi as $atraksis)
+        <?php   
+        $text = substr($atraksis->deskripsi,0,100);
+        ?>
+        <div class="card mb-3" style="max-width: auto;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <a href="{{ url('/atraksi-wisata/detail2/' . $atraksis->atraksi_id) }}">
+              <img src="{{ url('images/Atraksi/' . $atraksis->file_foto) }}" class="img-fluid rounded-start" alt="Atraksi" height="100px">
+              </a>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <a href="{{ url('/atraksi-wisata/detail2/' . $atraksis->atraksi_id) }}">
+                <h5 class="card-title">{{$atraksis->deskripsi}}</h5>
+                </a>
+                <p class="card-text" style="color:black;">{!!$text!!}</p>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
       </div>
     </div>    
   </div>
@@ -142,9 +202,29 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Event</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        @foreach ($event as $events)
+        <?php   
+        $text = substr($events->deskripsi_event,0,100);
+        ?>
+        <div class="card mb-3" style="max-width: auto;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <a href="{{ url('/event-wisata/detail2/' . $events->id_event) }}">
+              <img src="{{ url('images/eventwisata/' . $events->file_foto) }}" class="img-fluid rounded-start" alt="Event" height="100px">
+              </a>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <a href="{{ url('/event-wisata/detail2/' . $events->id_event) }}">
+                <h5 class="card-title">{{$events->judul_event}}</h5>
+                </a>
+                <p class="card-text" style="color:black;">{!!$text!!}</p>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
       </div>
     </div>    
   </div>
@@ -153,9 +233,29 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Desa Wisata</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        @foreach ($dewi as $dewis)
+          <?php   
+          $text = substr($dewis->deskripsi,0,100);
+          ?>
+          <div class="card mb-3" style="max-width: auto;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="{{ url('/desa-wisata/detail2/' . $dewis->id) }}">
+                <img src="{{ url('images/desawisata/' . $dewis->file_foto) }}" class="img-fluid rounded-start" alt="destinasi" height="100px">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="{{ url('/desa-wisata/detail2/' . $dewis->id) }}">
+                  <h5 class="card-title">{{$dewis->nama_desa}}</h5>
+                  </a>
+                  <p class="card-text" style="color:black;">{!!$text!!}</p>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
       </div>
     </div>    
   </div>
@@ -164,9 +264,29 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Berita Wisata</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+         @foreach ($berita as $beritas)
+          <?php   
+          $text = substr($beritas->isi_berita,0,100);
+          ?>
+           <div class="card mb-3" style="max-width: auto;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="{{ url('/berita-wisata/detail/' . $beritas->id_berita) }}">
+                <img src="{{ url('images/berita/' . $beritas->file_foto) }}" class="img-fluid rounded-start" alt="Berita" height="100px">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="{{ url('/berita-wisata/detail/' . $beritas->id_berita) }}">
+                  <h5 class="card-title">{{$beritas->judul_berita}}</h5>
+                  </a>
+                  <p class="card-text" style="color:black;">{!!$text!!}</p>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach 
       </div>
     </div>    
   </div>
