@@ -39,7 +39,7 @@
 
             <div class="col-md pt-5">
                 <div class="ftco-footer-widget pt-md-5 mb-2">
-                    <form class="searchdata" action="/search" style="margin:auto;max-width:300px">
+                    <form class="searchdata" action="/search?" style="margin:auto;max-width:300px">
                         <input type="text" placeholder="Cari..." name="search" >
                         <button type="submit"><i class="fa fa-search"></i></button>
                       </form>

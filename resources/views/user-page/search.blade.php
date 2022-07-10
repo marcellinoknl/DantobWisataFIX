@@ -50,7 +50,7 @@
     <div class="card">
       <h5 class="card-header" style="font-weight: bold">Paket Wisata</h5>
       <div class="card-body">
-      @if(isset($filters['search']))
+      @if(request('search'))
           @foreach ($paket as $pakets)
           <?php   
           $text = substr($pakets->deskripsi,0,100);
@@ -85,7 +85,7 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Merchandise</h5>
       <div class="card-body">
-              @if(isset($filters['search']))
+              @if(request('search'))
         @foreach ($merchandise as $merchandises)
         <div class="card mb-3" style="max-width: auto;">
           <div class="row g-0">
@@ -117,7 +117,7 @@
 <div class="card">
     <h5 class="card-header"style="font-weight: bold">Destinasi Wisata</h5>
     <div class="card-body">
-      @if(isset($filters['search']))
+      @if(request('search'))
       @foreach ($destinasi as $destinasis)
           <?php   
           $text = substr($destinasis->deskripsi,0,100);
@@ -152,7 +152,7 @@
   <div class="card">
     <h5 class="card-header"style="font-weight: bold">Fasilitas</h5>
     <div class="card-body">
-      @if(isset($filters['search']))
+      @if(request('search'))
       @foreach ($fasil as $fasils)
           <?php   
           $text = substr($fasils->deskripsi,0,100);
@@ -187,7 +187,7 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Atraksi</h5>
       <div class="card-body">
-        @if(isset($filters['search']))
+        @if(request('search'))
         @foreach ($atraksi as $atraksis)
         <?php   
         $text = substr($atraksis->deskripsi,0,100);
@@ -222,7 +222,7 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Event</h5>
       <div class="card-body">
-        @if(isset($filters['search']))
+        @if(request('search'))
         @foreach ($event as $events)
         <?php   
         $text = substr($events->deskripsi_event,0,100);
@@ -257,7 +257,7 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Desa Wisata</h5>
       <div class="card-body">
-        @if(isset($filters['search']))
+        @if(request('search'))
         @foreach ($dewi as $dewis)
           <?php   
           $text = substr($dewis->deskripsi,0,100);
@@ -292,7 +292,7 @@
     <div class="card">
       <h5 class="card-header"style="font-weight: bold">Berita Wisata</h5>
       <div class="card-body">
-        @if(isset($filters['search']))
+        @if(request('search'))
          @foreach ($berita as $beritas)
           <?php   
           $text = substr($beritas->isi_berita,0,100);
