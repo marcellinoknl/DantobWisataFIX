@@ -323,8 +323,4 @@
     </div>    
   </div>
 
-
-
-</div>
-</div>
 @include('template/footer')
