@@ -50,6 +50,7 @@
     <div class="card">
       <h5 class="card-header" style="font-weight: bold">Paket Wisata</h5>
       <div class="card-body">
+      @if(isset($filters['search']))
           @foreach ($paket as $pakets)
           <?php   
           $text = substr($pakets->deskripsi,0,100);
@@ -73,6 +74,9 @@
             </div>
           </div>
           @endforeach
+          @else
+          <p>Data Paket Wisata Tidak Ditemukan</p>
+          @endif
       </div>
     </div>
   </div>
