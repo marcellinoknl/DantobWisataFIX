@@ -202,7 +202,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <a href="{{ url('/atraksi-wisata/detail2/' . $atraksis->atraksi_id) }}">
-                <h5 class="card-title">{{$atraksis->deskripsi}}</h5>
+                <h5 class="card-title">{{$atraksis->judul}}</h5>
                 </a>
                 <p class="card-text" style="color:black;">{!!$text!!}</p>
   
@@ -322,5 +322,5 @@
       </div>
     </div>    
   </div>
-  
+
 @include('template/footer')
