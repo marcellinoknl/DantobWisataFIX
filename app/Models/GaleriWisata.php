@@ -11,4 +11,12 @@ class GaleriWisata extends Model
     
     protected $table = 'galeri_wisata';
     protected $primaryKey = 'id_galeri';
+
+    public function scopeFilter($query, array $filters){
+
+        if(isset($filters['search']) ? $filters['search'] :false){
+            return $query->where('judul','like','%'.$filters['search'].'%');
+                        // ->orWhere('deskripsi','like','%'.$filters['search'].'%');
+        }
+    }
 }

@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\counter;
+use App\Models\GaleriWisata;
+use App\Models\Objek_Wisata;
+use App\Models\PaketWisata;
 use App\Models\search;
 class SearchController extends Controller
 {
    public function search(){
+
+    $paket = PaketWisata::latest()->filter(request(['search']))->get();
+    $merchandise = GaleriWisata::latest()->filter(request(['search']))->get();
+
     $projects = counter::latest()->paginate(5);
     counter::increment('views');
     $logo = DB::table('logo_webs')->get();
     $search = DB::table('searches')->get();
     $sosial = DB::table('sosial_media')->get();
-    return view('user-page.search', compact('projects','logo','sosial','search'));
+    // $paket = DB::table('paket_wisatas')->get();
+    return view('user-page.search', compact('projects','logo','sosial','search','paket','merchandise'));
    }
      //header FASIL
      public function editfas()

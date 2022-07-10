@@ -61,7 +61,7 @@
             <div class="row g-2 g-md-4">
                 @foreach ($galeriwisata as $galeriwisatas)
              
-				<div class="col-3 col-md--3 py-4">
+				<div class="col-3 col-md-3 py-4">
 				<div class="mycard-galeri">
 						<img src="{{ url('images/galeriwisata/' . $galeriwisatas->file_foto) }}" alt="{{ $galeriwisatas->judul }}" id="myImg{{ $galeriwisatas->id_galeri }}"
 							class="mycard-image-galeri" data-toggle="modal"data-target="#myModalgambar{{$galeriwisatas->id_galeri }}">
@@ -81,8 +81,8 @@
                                  <div id="myModalgambar{{$galeriwisatas->id_galeri }}"
                                     class="modal fade" tabindex="-1" role="dialog">
                                     <div class="modal-dialog modal-dialog-centered">
-                                       <div class="modal-content"style="width:700px; height:500px">
-                                          <div class="modal-body" style="width:700px; height:700px">
+                                       <div class="modal-content"style="width:auto; height:auto">
+                                          <div class="modal-body" style="width:auto; height:auto">
                                              <img src="{{ url('images/galeriwisata/'.$galeriwisatas->file_foto) }}"
                                                 class="img-fluid"data-toggle="modal"data-target="#myModalgambar{{$galeriwisatas->id_galeri }}">
 												<h3  style="color:black; text-decoration: bold; font-weight: bold; text-align: center;">-{{ $galeriwisatas->judul }}-</h3>
