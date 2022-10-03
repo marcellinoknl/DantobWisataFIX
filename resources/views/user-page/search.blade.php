@@ -7,11 +7,12 @@
             <div class="sharethis-sticky-share-buttons"></div>
             <div class="col-md-12 ftco-animate">
                <h1 class="mb-4" style="text-align: center;">{{$searches->tagline}}</h1>
-               @endforeach
+   
             </div>
         </div>
     </div>
 </div>
+@endforeach
 <div class="bg0 m-t-23 p-b-140">
 
     <div class="container">
@@ -322,5 +323,8 @@
       </div>
     </div>    
   </div>
+
+  </div>
+</div>
 
 @include('template/footer')
