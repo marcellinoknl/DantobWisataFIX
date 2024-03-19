@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SosialMediaSeeder::class);
         $this->call(CounterSeeder::class);
         $this->call(LogoSeeder::class);
+        $this->call(TaglineSeeder::class);
         
     }
 }
