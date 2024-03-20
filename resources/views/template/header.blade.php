@@ -4,13 +4,13 @@
 <head>
     @foreach ($logo as $logos )
     <title>{{$logos->title}}</title>
-    
+
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62bc6e0c40d1560012bceaff&product=sticky-share-buttons" async="async"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link rel="icon" href="{{ url('images/logo/'.$logos->file_foto)}}">
-  
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-  
+
 
     {{-- card style --}}
     <link href="{{ asset('css/cardStyle.css') }}" rel="stylesheet">
@@ -77,9 +77,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
 
-            
+
             <a class="navbar-brand" href="{{ url('/') }}"><img  class="center" src="{{ url('images/logo/'.$logos->file_foto)}}" style="width:50px;height:50px; margin-bottom:5px;border-radius: 30px; border: 1px solid;display: block;margin-left: auto;margin-right: auto;"><span style="color:#1877F2">{{$logos->caption}}</span></a>
-            
+
             @endforeach
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -121,7 +121,7 @@
                             <a href="{{ url('/galeriwisata') }}"><button class="dropdown-item"
                                     type="button">Galeri</button></a>
                             <a href="{{ url('/pengalaman-wisata') }}"><button class="dropdown-item"
-                                    type="button">Pengalaman Wisata</button></a>                                  
+                                    type="button">Pengalaman Wisata</button></a>
                         </div>
                     </div> --}}
                         @if (Route::has('login'))
@@ -171,7 +171,7 @@
                                 document.getElementById('logout-form').submit();"><button
                class="dropdown-item" type="button">{{ __('Logout') }}</button></a>
                                 @endif
-                                
+
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     class="d-none">
                                     @csrf
