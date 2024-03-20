@@ -18,7 +18,7 @@ class homepageController extends Controller
         $logos = DB::table('taglines')->get();
         counter::increment('views');
         $logo = DB::table('logo_webs')->get();
-        $sosial = DB::table('sosial_media')->get();
+        $sosial = DB::table('sosial_media')->latest()->limit(1)->get();
         $objekwisata = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(1)->get();
         $objekwisataa = DB::table('objek_wisata')->orderBy('created_at','desc')->limit(8)->get();
         $event = DB::table('sampul_event')->orderBy('created_at','desc')->limit(4)->get();
